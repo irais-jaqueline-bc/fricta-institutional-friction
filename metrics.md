@@ -22,6 +22,7 @@
 ### Purpose
 
 Measures organizational barriers associated with digital adoption friction.
+
 ---
 
 ## InfraConstraintIndex
@@ -35,6 +36,7 @@ Measures organizational barriers associated with digital adoption friction.
 ### Purpose
 
 Measures technical infrastructure limitations associated with digital adoption.
+
 ---
 
 ## AdoptionReadinessIndex
