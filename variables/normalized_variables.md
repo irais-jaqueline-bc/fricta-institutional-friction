@@ -1,13 +1,13 @@
 # FRICTA — OFFICIAL NORMALIZED VARIABLES TABLE
 
-## SECTION 1 — GENERAL INFORMATION
+# SECTION 1 — GENERAL INFORMATION
 
 | Variable | Type | Normalization | Normalized Variable | Notes |
 |---|---|---|---|---|
 | state | categorical_nominal | none | none | metadata only |
 | institution_type | categorical_nominal | none | none | categorical descriptor |
-| children_served | ordinal | optional later | children_served_norm | contextual metadata |
-| staff_size | ordinal | optional later | staff_size_norm | used for derived variables |
+| children_served | ordinal | none | none | contextual metadata only |
+| staff_size | ordinal | none | none | used only for derived variables |
 
 ---
 
@@ -90,6 +90,10 @@ digital\_tool\_constraint = \frac{x_{max}-x}{x_{max}-x_{min}}
 
 More resource scarcity = MORE friction
 
+### Methodological Note
+
+This variable represents perceived infrastructural and operational resource scarcity.
+
 ### Normalization
 
 \[
@@ -117,7 +121,7 @@ More digital registration = LESS friction
 ### Normalization
 
 \[
-registration\_constraint = \frac{x_{max}-x}{x_{max}-x_{min}}
+administrative\_digitization\_constraint = \frac{x_{max}-x}{x_{max}-x_{min}}
 \]
 
 | Raw Value | Normalized |
@@ -133,7 +137,7 @@ registration\_constraint = \frac{x_{max}-x}{x_{max}-x_{min}}
 
 ### Direction
 
-More admin time = MORE friction
+More administrative time = MORE friction
 
 ### Normalization
 
@@ -178,7 +182,7 @@ admin\_disorganization = \frac{x_{max}-x}{x_{max}-x_{min}}
 
 ### Direction
 
-More usage = LESS friction
+More digital usage = LESS friction
 
 ### Normalization
 
@@ -201,12 +205,16 @@ digital\_usage\_constraint = \frac{x_{max}-x}{x_{max}-x_{min}}
 
 Previous implementation = LESS uncertainty/friction
 
+### Methodological Note
+
+This variable is treated as a proxy indicator of prior institutional digital exposure rather than direct organizational resistance.
+
 ### Binary Encoding
 
 | Raw Value | Normalized |
 |---|---|
 | 1 | 0.00 |
-| 0 | 1.00 |
+| 0 | 0.50 |
 
 ---
 
@@ -214,7 +222,7 @@ Previous implementation = LESS uncertainty/friction
 
 ### Direction
 
-More difficulty = MORE friction
+More implementation difficulty = MORE friction
 
 ### Normalization
 
@@ -314,12 +322,16 @@ system\_change\_resistance\_norm = \frac{x-x_{min}}{x_{max}-x_{min}}
 
 ### Direction
 
-Higher utility perception = LESS friction
+Higher perceived utility = LESS friction
+
+### Methodological Note
+
+This variable is treated as an auxiliary perception indicator rather than a direct structural friction variable.
 
 ### Normalization
 
 \[
-utility\_constraint = \frac{x_{max}-x}{x_{max}-x_{min}}
+perceived\_digital\_utility\_norm = \frac{x_{max}-x}{x_{max}-x_{min}}
 \]
 
 | Raw Value | Normalized |
