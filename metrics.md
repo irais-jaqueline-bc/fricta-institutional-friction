@@ -1,74 +1,76 @@
-# FRICTA Metrics
+# FRICTA — Weighting Methodology
 
-## Planned Indices
+## Methodological Position
 
-- AdoptionFrictionScore
-- OrgConstraintIndex
-- InfraConstraintIndex
-- AdoptionReadinessIndex
+FRICTA computes two scoring scenarios:
 
----
+1. Equal-weight baseline score
+2. Theoretically informed weighted score
 
-## OrgConstraintIndex
-
-### Variables included
-
-- admin_time_load
-- process_organization_level
-- lack_of_time
-- lack_of_personnel
-- lack_of_training
-
-### Purpose
-
-Measures organizational barriers associated with digital adoption friction.
+The theoretically informed weighting scenario is derived from digital adoption, organizational behavior, cognitive load, and institutional constraint literature, primarily based on the TOE framework, UTAUT, organizational readiness theory, cognitive load theory, and binding constraints methodology.
 
 ---
 
-## InfraConstraintIndex
+## Baseline Weighting Scenario
 
-### Variables included
-
-- computer_access
-- internet_stability
-- digital_tools_used
-
-### Purpose
-
-Measures technical infrastructure limitations associated with digital adoption.
+| Branch | Weight |
+|---|---|
+| Infrastructure Constraints Index (ICI) | 0.25 |
+| Organizational Constraints Index (OCI) | 0.25 |
+| Operational Load Index (OLI) | 0.25 |
+| Human Capacity & Adoption Readiness Index (HCARI) | 0.25 |
 
 ---
 
-## AdoptionReadinessIndex
+## Theoretically Informed Weighting Scenario
 
-### Variables included
-
-- perceived_usefulness
-- adoption_openness
-- pilot_interest
-
-### Purpose
-
-Measures institutional openness and willingness toward adopting new digital tools.
+| Branch | Weight | Theoretical Justification |
+|---|---|---|
+| Infrastructure Constraints Index (ICI) | 0.30 | TOE technological context; infrastructure operates as an enabling condition for digital adoption feasibility. |
+| Organizational Constraints Index (OCI) | 0.30 | TOE organizational context; institutional structure, governance, staffing, and process maturity condition implementation sustainability. |
+| Operational Load Index (OLI) | 0.25 | Cognitive load theory and administrative burden literature suggest operational saturation reduces institutional adoption capacity. |
+| Human Capacity & Adoption Readiness Index (HCARI) | 0.15 | UTAUT-based adoption factors remain important but are conditioned by organizational and infrastructural constraints. |
 
 ---
 
-## AdoptionFrictionScore
+## Baseline Formula
 
-### Variables included
+\[
+AFS_{baseline} = \frac{ICI + OCI + OLI + HCARI}{4}
+\]
 
-- record_system
-- admin_time_load
-- digital_use_frequency
-- implementation_difficulty
-- switching_difficulty
-- lack_of_time
-- lack_of_personnel
-- lack_of_training
-- lack_of_resources
+---
 
-### Purpose
+## Theoretically Informed Formula
 
-Measures the overall level of institutional friction associated with adopting and sustaining digital systems under contemporary operational conditions.
+\[
+AFS_{theoretical} =
+0.30(ICI) +
+0.30(OCI) +
+0.25(OLI) +
+0.15(HCARI)
+\]
 
-Higher scores indicate greater structural difficulty integrating digital tools into daily institutional processes.
+---
+
+## Symbol Definitions
+
+| Symbol | Meaning |
+|---|---|
+| ICI | Infrastructure Constraints Index |
+| OCI | Organizational Constraints Index |
+| OLI | Operational Load Index |
+| HCARI | Human Capacity & Adoption Readiness Index |
+| AFS | Adoption Friction Score |
+
+---
+
+## Methodological Note
+
+The theoretically informed weighting scenario does not represent empirically validated causal weights. Instead, it represents a theory-driven weighting structure derived from institutional digital adoption literature.
+
+The equal-weight baseline scenario is included to provide a neutral aggregation reference independent of theoretical assumptions.
+
+Final score robustness will later be evaluated through sensitivity analysis between equal-weight and theoretically informed weighting schemes.
+
+This approach follows transparency recommendations from composite indicator methodology literature, including OECD/JRC guidelines for indicator construction and weighting robustness assessment.
