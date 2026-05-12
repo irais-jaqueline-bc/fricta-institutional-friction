@@ -1,270 +1,313 @@
-# Methodology
+# FRICTA — Methodology
 
-## Research Design
+## 1. Research Objective
 
-FRICTA adopts an exploratory mixed-methods computational research design focused on identifying, modeling, and diagnosing digital adoption friction within Mexican childcare institutions.
+The objective of FRICTA is to identify which institutional factors are most strongly associated with digital adoption friction in Mexican childcare institutions through a computational institutional diagnostics framework.
 
-The project combines:
+FRICTA seeks to transform institutional survey responses into interpretable computational diagnostics capable of identifying infrastructural, organizational, operational, and human-capacity constraints associated with digital adoption processes.
 
-- institutional survey data,
-- computational scoring methodologies,
-- composite indicator construction,
-- and pilot-based institutional diagnostics.
-
-Rather than treating digital adoption as a binary condition, FRICTA conceptualizes adoption friction as a multidimensional operational phenomenon shaped by infrastructural constraints, organizational capacity, administrative workload, and institutional readiness.
-
-The methodological architecture of FRICTA is structured in four sequential layers:
-
-1. Data Collection  
-2. Friction Modeling  
-3. Institutional Diagnostics  
-4. Pilot Intervention Framework
-
-This structure allows the project to move beyond descriptive statistics and toward applied institutional analytics capable of generating operational recommendations for participating institutions.
+The framework is designed not only for descriptive analysis, but also for reproducible institutional scoring, exploratory predictive modeling, and recommendation-oriented diagnostics.
 
 ---
 
-# 1. Data Collection Layer
+# 2. Study Design
 
-## Survey Design
+FRICTA follows an exploratory cross-sectional observational design based on institutional survey responses collected from Mexican childcare institutions.
 
-Data collection is conducted through a structured institutional survey designed specifically for childcare and social assistance organizations operating in Mexico.
+The project adopts a computational institutional analytics approach in which survey responses are transformed into normalized multidimensional institutional friction indicators through formal mathematical aggregation procedures.
 
-The survey focuses on capturing variables associated with:
+The study is non-interventional during the current exploratory phase.
 
-- technological infrastructure,
-- organizational structure,
-- operational workload,
-- institutional readiness,
-- and perceived implementation barriers.
-
-The instrument was intentionally designed to remain short and operationally accessible in order to reduce participation friction among institutions with limited administrative capacity.
-
-The survey primarily contains:
-
-- categorical variables,
-- ordinal scales,
-- operational frequency indicators,
-- and perception-based adoption measures.
-
-No sensitive child-level personal data is collected.
+No institutional operational processes are modified during data collection.
 
 ---
 
-## Institutional Outreach
+# 3. Target Population
 
-Institutions are contacted through publicly available communication channels including:
+The target population includes Mexican childcare institutions involved in residential child protection, shelter, or institutional childcare services.
 
-- email,
+Target institutions include:
+
+- casas hogar,
+- orphanages,
+- nonprofit residential childcare organizations,
+- DIF-affiliated childcare institutions,
+- NGOs,
+- charitable childcare organizations,
+- and related institutional childcare centers operating within Mexico.
+
+---
+
+# 4. Sampling Strategy
+
+FRICTA uses a non-probabilistic voluntary-response sampling strategy.
+
+Institutions were contacted through:
+
+- direct email outreach,
+- WhatsApp outreach,
 - institutional directories,
-- nonprofit registries,
-- and social assistance networks.
+- manual institutional searches,
+- DIF-related directories,
+- and publicly available organizational contact information.
 
-The outreach process is documented through an outreach tracking system containing:
+Approximately 700 institutions were contacted across multiple Mexican states between May 4 and May 10.
 
-- institution identifier,
-- contact date,
-- communication channel,
-- response status,
-- and follow-up status.
+The exploratory target sample for the first research phase is approximately 57 institutional responses distributed across multiple Mexican states, with the objective of achieving at least one institutional response per state when possible.
 
-This process supports methodological transparency and response traceability.
+Due to institutional access limitations, response availability, and heterogeneous digital accessibility conditions, the sample should be interpreted as exploratory rather than nationally representative.
 
 ---
 
-## Variable Categories
+# 5. Inclusion Criteria
 
-Collected variables are grouped into five primary analytical categories:
+Responses are considered eligible when they meet the following conditions:
 
-| Category | Examples |
+- the institution operates as a childcare-related organization,
+- the institution provides residential, shelter, or institutional child support services,
+- the response corresponds to a real institution,
+- the survey response is sufficiently complete for computational scoring,
+- and the institution operates within Mexico.
+
+---
+
+# 6. Exclusion Criteria
+
+Responses may be excluded if they meet one or more of the following conditions:
+
+- duplicate submissions,
+- incomplete survey responses,
+- test responses,
+- invalid institutional responses,
+- non-childcare organizations,
+- or responses lacking sufficient scoring information.
+
+---
+
+# 7. Survey Platform
+
+Data collection is conducted through Google Forms.
+
+Survey URL:
+
+https://docs.google.com/forms/d/e/1FAIpQLScC-h8pH4d6xmhTas_gXx5XRGd8aNggweSTWloQFzlFDACb0Q/viewform
+
+The survey was designed to minimize institutional burden while collecting sufficient operational information for computational diagnostic analysis.
+
+---
+
+# 8. Survey Structure
+
+The survey is divided into multiple institutional dimensions:
+
+| Section | Purpose |
 |---|---|
-| Institutional Context | institution_type, state, children_count |
-| Infrastructure | computer_access, internet_stability |
-| Organizational Capacity | process_organization_level, admin_time_load |
-| Friction & Constraints | lack_of_time, lack_of_training |
-| Adoption Readiness | perceived_usefulness, adoption_openness |
+| General Information | Institutional metadata |
+| Digital Infrastructure | Technological and infrastructural constraints |
+| Administrative Processes | Organizational and workflow-related conditions |
+| Digital Adoption | Institutional digital readiness |
+| Friction Factors | Operational and implementation barriers |
+
+The survey includes both direct institutional variables and variables later transformed into normalized computational indicators.
 
 ---
 
-# 2. Friction Modeling Layer
+# 9. Dataset Structure
 
-## Composite Index Construction
+The dataset follows an institution-level structure where:
 
-FRICTA models digital adoption friction through the construction of composite institutional indices.
+- each row represents one institution,
+- each column represents one institutional variable,
+- responses are anonymous by default,
+- no personally identifiable child data is collected,
+- no sensitive child-level information is stored,
+- and institutional contact information is optional.
 
-The framework computes four primary analytical indices:
+The dataset stores institutional geographic state information for regional analysis purposes.
 
-| Index | Purpose |
+Timestamp collection is not used during the current exploratory phase.
+
+---
+
+# 10. Ethical and Privacy Considerations
+
+FRICTA prioritizes institutional anonymity and minimal-risk data collection.
+
+The project does not collect:
+
+- child names,
+- personal child records,
+- medical information,
+- legal case information,
+- or sensitive child-level data.
+
+Participation is voluntary.
+
+Institutional contact information is optional and is used only for future pilot participation or institutional follow-up.
+
+The framework operates exclusively at the institutional level rather than the individual child level.
+
+---
+
+# 11. Pilot Structure
+
+The project includes an exploratory pilot-validation stage.
+
+At the current stage, approximately 7–9 institutions have shown potential interest in future pilot participation.
+
+Within FRICTA, a pilot refers to institutional diagnostic validation through:
+
+- diagnostic report generation,
+- institutional friction scoring,
+- recommendation delivery,
+- onboarding procedures,
+- exportable institutional diagnostics,
+- and future testing of operational digital support tools.
+
+The pilot stage is intended to evaluate whether institutional computational diagnostics can support real operational decision-making environments.
+
+Future pilot stages may also include deployment of digital operational tools informed by FRICTA diagnostics.
+
+---
+
+# 12. Data Processing Pipeline
+
+The computational processing pipeline is structured as follows:
+
+Google Forms  
+→ CSV Export  
+→ Python Processing  
+→ Pandas Data Cleaning  
+→ Variable Normalization  
+→ Derived Variable Construction  
+→ scoring.py  
+→ Branch Aggregation  
+→ Adoption Friction Computation  
+→ Diagnostic Classification  
+→ Dashboard/API Integration
+
+This architecture was designed to maximize reproducibility, transparency, and modular computational analysis.
+
+---
+
+# 13. Computational Stack
+
+FRICTA uses a computational workflow primarily based on Python.
+
+Planned and current tools include:
+
+| Tool | Purpose |
 |---|---|
-| Infrastructure Constraints Index (ICI) | Measures infrastructural limitations |
-| Organizational Constraints Index (OCI) | Measures organizational and operational barriers |
-| Operational Load Index (OLI) | Measures administrative saturation and workload pressure |
-| Human Capacity & Adoption Readiness Index (HCARI) | Measures institutional openness and human readiness toward digital adoption |
+| Python | Core computational environment |
+| Pandas | Data cleaning and transformation |
+| NumPy | Numerical computation |
+| Scikit-learn | Exploratory predictive modeling |
+| Matplotlib | Visualization |
+| Seaborn | Statistical visualization |
+| FastAPI | API architecture |
+| Streamlit | Interactive dashboard development |
 
-These indices are later aggregated into the global Adoption Friction Score (AFS).
-
----
-
-## Data Normalization
-
-Variables are normalized onto comparable scales prior to aggregation.
-
-Depending on variable structure, normalization methods may include:
-
-- min-max normalization,
-- ordinal scaling conversion,
-- or binary transformation.
-
-Directional consistency is preserved across all variables such that:
-
-Higher scores consistently represent higher friction or stronger constraints.
+The computational architecture is intended to support reproducible institutional diagnostics and future scaling.
 
 ---
 
-## Weighting Methodology
+# 14. Statistical Analysis Plan
 
-FRICTA computes two scoring scenarios:
+FRICTA includes both descriptive and exploratory computational analysis procedures.
 
-### Equal-weight baseline model
+Planned statistical procedures include:
 
-All analytical dimensions contribute equally to the final score.
+- descriptive statistics,
+- branch score distribution analysis,
+- correlation matrix analysis,
+- branch-level comparative analysis,
+- sensitivity analysis,
+- exploratory predictive modeling,
+- feature importance estimation,
+- and exploratory classification analysis.
 
-$$
-AFS_{baseline}=\frac{ICI+OCI+OLI+HCARI}{4}
-$$
+If sample size permits, additional analyses may include:
 
-This baseline scenario is used to avoid premature assumptions regarding causal dominance among dimensions.
+- exploratory factor analysis,
+- internal consistency analysis,
+- and robustness analysis.
 
----
-
-### Theoretically informed weighting model
-
-FRICTA additionally computes a theoretically informed weighted scenario derived from:
-
-- TOE,
-- UTAUT,
-- organizational inertia theory,
-- cognitive load theory,
-- and binding constraints methodology.
-
-$$
-AFS_{theoretical}=0.30(ICI)+0.30(OCI)+0.25(OLI)+0.15(HCARI)
-$$
-
-The weighted structure reflects the theoretical assumption that infrastructural and organizational constraints act as higher-order institutional bottlenecks conditioning adoption feasibility.
-
-These weights are not presented as empirically validated causal coefficients, but as theory-driven analytical scenarios.
+The framework prioritizes interpretability and computational transparency during the current exploratory phase.
 
 ---
 
-## Sensitivity Analysis
+# 15. Predictive Modeling Strategy
 
-To reduce arbitrariness in composite indicator construction, FRICTA compares both weighting schemes through sensitivity analysis.
+FRICTA plans to evaluate whether institutional variables can predict digital adoption friction outcomes.
 
-This process evaluates whether institutional rankings and diagnostic outputs remain stable across different weighting assumptions.
+Potential exploratory modeling approaches include:
 
-Sensitivity analysis follows OECD composite indicator construction principles emphasizing:
+- linear regression,
+- regularized regression,
+- decision trees,
+- random forest models,
+- feature importance estimation,
+- and interpretable comparative modeling approaches.
 
-- transparency,
-- robustness,
-- and methodological reproducibility.
+Potential target variables include:
 
----
+- Adoption Friction Score (baseline),
+- Adoption Friction Score (theoretical weighting),
+- branch-level scores,
+- and institutional friction classification categories.
 
-# 3. Institutional Diagnostics Layer
+The predictive objective of the framework is:
 
-## Friction Profiling
-
-FRICTA does not only generate a global score.
-
-The framework additionally classifies institutions according to dominant friction patterns.
-
-Examples include:
-
-- infrastructure-constrained institutions,
-- organization-constrained institutions,
-- operational-overload institutions,
-- readiness-constrained institutions.
-
-This diagnostic logic transforms raw survey responses into interpretable institutional profiles.
+"Which institutional factors most strongly predict digital adoption friction in Mexican childcare institutions?"
 
 ---
 
-## Constraint-Oriented Interpretation
+# 16. Methodological Position
 
-FRICTA integrates the logic of binding constraints diagnostics.
+FRICTA should be interpreted as an exploratory computational institutional diagnostics framework rather than a finalized validated psychometric instrument.
 
-The framework assumes that not all barriers contribute equally to institutional stagnation.
+The framework prioritizes:
 
-Instead, the model seeks to identify which constraint appears most operationally restrictive within each institution.
+- interpretability,
+- reproducibility,
+- computational transparency,
+- multidimensional institutional analysis,
+- and recommendation-oriented diagnostics.
 
-This allows the framework to move from descriptive measurement toward actionable prioritization.
+The current weighting structure represents theory-driven assumptions rather than empirically validated causal coefficients.
 
----
-
-# 4. Pilot Intervention Framework
-
-## Pilot Objective
-
-The pilot phase is not designed as a full technological deployment.
-
-Instead, pilots focus on validating whether FRICTA can generate operationally meaningful institutional diagnostics and implementation recommendations.
-
-Participating institutions receive:
-
-- institutional friction analysis,
-- adoption readiness interpretation,
-- constraint identification,
-- and tailored strategic recommendations.
-
-FRICTA therefore provides:
-
-the diagnosis and implementation roadmap,
-but not the technological intervention itself.
+Further validation stages are planned through statistical analysis, pilot validation, and future longitudinal refinement.
 
 ---
 
-## Pilot Validation Logic
+# 17. Methodological Limitations
 
-Pilot validation evaluates whether:
+The current exploratory phase includes several limitations:
 
-- institutional profiles are coherent with operational realities,
-- recommendations are perceived as useful,
-- and diagnostic outputs align with observed institutional conditions.
+- non-probabilistic sampling,
+- voluntary-response bias,
+- possible regional imbalance,
+- self-reported institutional data,
+- limited sample size,
+- and exploratory weighting assumptions.
 
-This phase acts as an applied validation layer connecting computational modeling with real institutional environments.
+The framework does not currently claim national representativeness.
 
----
-
-# Analytical Framework
-
-The analytical structure of FRICTA combines:
-
-- computational social research,
-- institutional analytics,
-- digital transformation research,
-- and applied organizational diagnostics.
-
-The framework conceptualizes digital adoption not as a purely technological process, but as the interaction between:
-
-- infrastructure,
-- organizational structure,
-- operational capacity,
-- and human adaptability.
-
-This multidimensional perspective allows FRICTA to analyze why institutions with similar technological resources may experience radically different implementation outcomes.
+Instead, the objective of the exploratory phase is to evaluate whether institutional computational diagnostics can meaningfully capture digital adoption friction patterns within childcare institutions.
 
 ---
 
-# Methodological Position
+# 18. Reproducibility and Future Development
 
-FRICTA is positioned as an exploratory institutional analytics framework operating under constrained-sample conditions.
+FRICTA is designed as a reproducible computational research framework.
 
-The project does not claim causal certainty.
+Future development stages may include:
 
-Instead, it seeks to:
+- expanded institutional datasets,
+- longitudinal validation,
+- larger pilot implementations,
+- predictive benchmarking,
+- recommendation optimization,
+- and operational digital tool deployment informed by institutional diagnostics.
 
-- identify friction patterns,
-- estimate institutional constraints,
-- model adoption feasibility,
-- and generate reproducible diagnostic methodologies for future large-scale validation.
+The framework is intended to evolve from an exploratory institutional analytics system into a scalable computational diagnostics architecture for digital adoption analysis in childcare environments.
