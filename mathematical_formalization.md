@@ -661,11 +661,10 @@ After computing branch indices and Adoption Friction Scores, FRICTA may evaluate
 
 Potential modeling approaches include:
 
-- linear regression,
-- regularized regression,
-- decision trees,
-- random forest feature importance,
-- and interpretable model comparison.
+> Given the exploratory nature of this first phase and the specific sample size (N = 81), the predictive modeling layer is strictly constrained to prevent overfitting and ensure structural interpretability.
+> The modeling strategy is formalized through two sequential stages:
+>  1. **Regularized Linear Frameworks:** To evaluate the association between candidate predictors and the continuous target variables (AFS_{baseline} or AFS_{theoretical}), FRICTA utilizes Ordinary Least Squares (OLS) alongside regularized linear regressions (Ridge and Lasso). Lasso (\ell_1 regularization) is specifically deployed as a simultaneous feature selection and shrinkage mechanism to handle cases where the number of parameters approaches the sample size limit.
+>  2. **Restricted Non-Linear Exploration:** Tree-based methods (Decision Trees and Random Forest architectures) are utilized exclusively for non-parametric *Feature Importance* estimation. To mitigate the high risk of variance and data memorization inherent to an N = 81 dataset, these models are restricted to an ultra-low depth constraint (\text{max\_depth} \leq 3) and evaluated via k-fold cross-validation (k=5).
 
 The target variable may be:
 
