@@ -233,12 +233,12 @@ def apply_methodological_criteria(df):
 
 
 def main():
-    # CAMBIO: Ruta de entrada cruda (Local, oculta por .gitignore)
+    # RUTA DE ENTRADA: Oculta por .gitignore
     RAW_FILE = os.path.join(
         "data", "raw", "Uso de herramientas digitales en casas hogar.csv"
     )
-    # CAMBIO OPTIMIZADO: Carpeta en minúsculas y sin bloquear que irá a GitHub
-    PROCESSED_FILE = os.path.join("data", "data_processed", "clean_data.csv")
+    # RUTA DE SALIDA CORREGIDA: Apunta exactamente a 'data/processed/' según el esqueleto
+    PROCESSED_FILE = os.path.join("data", "processed", "clean_data.csv")
 
     try:
         print("[PIPELINE] Ejecutando módulo 'cleaning.py'...")
@@ -250,7 +250,7 @@ def main():
         mapping = get_column_mapping()
         df_mapped = df_raw.rename(columns=mapping)
 
-        # Respaldar las variables cualitativas de texto que servirán para lógicas derivadas complejas
+        # Respaldar las variables cualitativas de texto antes de la proyección
         tools_backup = df_mapped["current_digital_tools"].copy()
         children_backup = df_mapped["children_served"].copy()
         staff_backup = df_mapped["staff_size"].copy()
@@ -265,7 +265,7 @@ def main():
         # 4. Transformar variables core a sus Raw Values numéricos
         df_clean = transform_responses_to_raw_values(df_filtered)
 
-        # Reinyectar variables cualitativas críticas usando .loc de manera segura
+        # Reinyectar variables cualitativas críticas de manera segura usando .loc
         df_clean = df_clean.assign(
             current_digital_tools=tools_backup.loc[df_clean.index],
             children_served=children_backup.loc[df_clean.index],
