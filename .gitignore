@@ -1,3 +1,6 @@
 data/raw/*
 __pycache__/
 .ipynb_checkpoints/
+
+# Ocultar estrictamente el archivo de datos original (raw)
+data/Uso de herramientas digitales en casas hogar.csv
