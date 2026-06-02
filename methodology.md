@@ -53,7 +53,7 @@ Institutions were contacted through:
 
 Approximately 700 institutions were contacted across multiple Mexican states between May 4 and May 10.
 
-The exploratory target sample for the first research phase is approximately 57 institutional responses distributed across multiple Mexican states, with the objective of achieving at least one institutional response per state when possible.
+The exploratory target sample for the first research phase is approximately 81 institutional responses distributed across multiple Mexican states, with the objective of achieving at least one institutional response per state when possible.
 
 Due to institutional access limitations, response availability, and heterogeneous digital accessibility conditions, the sample should be interpreted as exploratory rather than nationally representative.
 
