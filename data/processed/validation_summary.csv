@@ -1,0 +1,2 @@
+n_institutions,mean_AFS_theoretical,std_AFS_theoretical,min_AFS_theoretical,max_AFS_theoretical,strongest_factor,strongest_factor_pearson,strongest_branch,strongest_branch_pearson
+81,0.4234996570644719,0.12763670960642795,0.1208333333333333,0.6809027777777777,implementation_difficulty_constraint,0.6951892192648772,HCARI,0.8624361822551465
