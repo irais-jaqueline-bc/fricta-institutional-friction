@@ -1,0 +1,82 @@
+state,institution_type,children_served,staff_size,available_devices,internet_constraint,current_digital_tools,information_recording_method,admin_time_load_norm,admin_disorganization,digital_usage_constraint,previous_digital_implementation,implementation_difficulty_norm,time_constraint_norm,staffing_constraint_norm,training_deficit_norm,resource_constraint_norm,system_change_resistance_norm,perceived_digital_utility_norm,willingness_constraint,pilot_openness
+Jalisco,Pública,1-10,1-5,0,3,Ninguna,1,1,5,1,0,2,3,3,3,4,1,4,5,1.0
+Baja California,Asociación civil / ONG,31-60,16-30,3,1,Excel;WhatsApp;Google Drive / Docs,4,4,3,4,1,4,3,3,3,3,4,4,4,1.0
+Chihuahua,Privada,11-30,1-5,1,4,Excel;WhatsApp,1,3,3,1,0,4,3,3,3,2,4,3,3,0.5
+Guanajuato,Asociación civil / ONG,60+,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,4,2,1,1,4,3,3,3,2,4,3,3,0.5
+Puebla,Pública,60+,30+,2,4,Excel;WhatsApp,3,4,3,1,0,3,3,3,3,2,3,4,3,1.0
+Estado de México,Asociación civil / ONG,31-60,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,4,1,2,1,5,3,3,3,1,5,4,2,0.0
+Ciudad de México,Pública,31-60,16-30,2,2,Excel;WhatsApp;Otra,3,2,3,1,0,3,3,3,3,4,4,4,5,1.0
+Tlaxcala,Privada,11-30,6-15,3,5,Excel;WhatsApp;Google Drive / Docs,2,2,3,4,1,2,3,3,3,3,3,4,5,1.0
+Ciudad de México,Pública,31-60,6-15,3,2,Excel;WhatsApp;Google Drive / Docs;Software especializado,3,1,3,4,1,3,3,3,3,2,3,4,3,1.0
+Ciudad de México,Asociación civil / ONG,60+,30+,3,4,Excel;WhatsApp,2,4,4,4,0,3,3,3,3,3,4,4,4,1.0
+Querétaro,Privada,11-30,6-15,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,3,1,4,1,5,3,3,3,1,5,4,2,0.0
+Puebla,Mixta,31-60,6-15,2,5,Excel;WhatsApp;Google Drive / Docs,3,3,1,4,1,5,3,3,3,1,5,4,1,0.0
+San Luis Potosí,Mixta,11-30,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,4,4,4,1,3,3,3,3,2,2,4,4,0.5
+Sonora,Pública,60+,30+,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,4,2,4,1,4,3,3,3,3,3,4,4,0.5
+Colima,Asociación civil / ONG,1-10,1-5,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,1,5,4,1,1,3,3,3,3,2,4,3,0.5
+Jalisco,Asociación civil / ONG,60+,30+,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,4,2,4,1,4,3,3,3,3,3,4,4,0.5
+Estado de México,Pública,11-30,6-15,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,2,3,4,1,3,3,3,3,3,5,4,2,0.5
+Durango,Asociación civil / ONG,1-10,1-5,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,1,5,4,1,1,3,3,3,3,2,4,5,1.0
+Sinaloa,Mixta,11-30,6-15,2,4,Excel;WhatsApp,3,3,1,2,1,3,3,3,3,3,2,4,4,0.5
+Nayarit,Privada,1-10,1-5,2,5,Excel;WhatsApp,3,2,3,4,1,2,3,3,3,3,4,4,4,1.0
+Morelos,Asociación civil / ONG,60+,30+,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,2,4,3,4,1,3,3,3,3,4,3,4,4,1.0
+Campeche,Asociación civil / ONG,11-30,1-5,1,2,WhatsApp,1,2,5,1,0,2,3,3,3,4,1,4,5,1.0
+Ciudad de México,Pública,1-10,1-5,1,4,WhatsApp,1,3,3,2,0,4,3,3,3,2,3,4,4,0.5
+Baja California,Mixta,31-60,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,3,1,4,1,5,3,3,3,1,5,4,1,0.0
+Nuevo León,Asociación civil / ONG,11-30,1-5,1,2,WhatsApp;Otra,1,3,3,1,0,4,3,3,3,3,4,3,2,0.5
+Tamaulipas,Pública,31-60,16-30,3,5,Excel;WhatsApp;Google Drive / Docs,2,4,4,4,1,3,3,3,3,3,3,4,4,0.5
+Sonora,Pública,11-30,6-15,0,3,Ninguna,1,3,3,1,0,3,3,3,3,4,2,4,4,1.0
+Michoacán,Asociación civil / ONG,31-60,16-30,3,5,Excel;WhatsApp;Google Drive / Docs,2,4,4,4,1,3,3,3,3,1,3,4,4,0.5
+Jalisco,Asociación civil / ONG,31-60,6-15,1,2,WhatsApp;Google Drive / Docs,2,4,2,2,1,4,3,3,3,2,4,4,4,0.5
+Baja California,Mixta,31-60,6-15,1,4,WhatsApp;Google Drive / Docs,1,3,1,2,1,5,3,3,3,3,5,4,2,0.0
+Hidalgo,Pública,31-60,6-15,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,1,5,4,1,2,3,3,3,3,2,4,5,1.0
+Estado de México,Asociación civil / ONG,31-60,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,3,1,2,1,4,3,3,3,1,4,4,3,0.5
+Ciudad de México,Privada,31-60,30+,3,2,Excel;WhatsApp;Google Drive / Docs;Software especializado,3,4,4,2,1,3,3,3,3,4,3,4,4,1.0
+Veracruz,Pública,11-30,6-15,1,2,WhatsApp,1,2,5,1,0,2,3,3,3,4,2,4,5,1.0
+Yucatán,Pública,11-30,16-30,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,3,1,4,1,5,3,3,3,1,5,4,1,0.0
+Nuevo León,Mixta,11-30,6-15,0,1,WhatsApp,1,2,4,2,0,3,3,3,3,4,2,4,5,1.0
+Guerrero,Pública,31-60,6-15,0,3,Ninguna,1,3,4,1,0,3,3,3,3,4,2,4,5,1.0
+Puebla,No estoy seguro,1-10,1-5,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,2,3,4,1,2,3,3,3,3,4,4,4,1.0
+Chihuahua,Privada,11-30,1-5,1,2,WhatsApp,1,2,4,1,0,2,3,3,3,3,2,3,5,1.0
+Baja California,Asociación civil / ONG,11-30,16-30,3,4,Excel;WhatsApp;Google Drive / Docs,2,4,4,4,1,3,3,3,3,1,3,4,5,1.0
+Sonora,Pública,31-60,16-30,1,1,WhatsApp,1,2,5,1,0,2,3,3,3,4,1,4,5,1.0
+Ciudad de México,Privada,31-60,30+,3,4,Excel;WhatsApp;Google Drive / Docs,2,2,4,4,1,3,3,3,3,1,3,4,4,1.0
+Baja California,Privada,11-30,16-30,3,1,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,3,1,4,1,5,3,3,3,1,5,4,2,0.0
+Guanajuato,Pública,11-30,6-15,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,1,5,4,1,1,3,3,3,3,2,4,5,1.0
+Ciudad de México,Pública,1-10,1-5,2,4,Excel;WhatsApp,3,2,3,4,0,3,3,3,3,4,3,4,3,0.5
+Aguascalientes,Privada,31-60,6-15,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,3,3,4,1,3,3,3,3,3,3,4,4,1.0
+Jalisco,Asociación civil / ONG,11-30,6-15,3,4,WhatsApp,2,3,3,4,0,3,3,3,3,2,3,4,5,1.0
+Estado de México,Privada,31-60,16-30,2,4,Excel;WhatsApp;Google Drive / Docs;Software especializado,2,3,1,4,1,5,3,3,3,1,5,4,1,0.0
+Jalisco,Mixta,31-60,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,3,1,4,1,4,3,3,3,1,4,4,2,0.0
+Tabasco,Privada,11-30,1-5,3,5,Excel;WhatsApp;Software especializado,4,2,3,4,1,2,3,3,3,3,3,4,5,1.0
+Guanajuato,Pública,11-30,6-15,0,1,Ninguna,1,1,5,1,0,2,3,3,3,4,1,4,5,1.0
+Jalisco,Privada,11-30,1-5,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,1,5,4,1,1,3,3,3,3,2,4,5,1.0
+Ciudad de México,Privada,11-30,6-15,3,4,Excel;WhatsApp;Google Drive / Docs,2,3,3,4,0,3,3,3,3,3,4,4,4,1.0
+Sonora,Privada,31-60,6-15,1,1,WhatsApp,1,3,5,2,0,2,3,3,3,3,1,4,5,1.0
+Nuevo León,Asociación civil / ONG,31-60,30+,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,4,2,4,1,4,3,3,3,1,3,4,4,0.5
+Nuevo León,Pública,60+,30+,2,4,Excel;WhatsApp;Otra,2,4,2,1,1,5,3,3,3,2,4,3,3,0.5
+Ciudad de México,Asociación civil / ONG,31-60,16-30,2,5,Excel;WhatsApp;Google Drive / Docs,2,4,2,4,1,4,3,3,3,1,4,4,4,0.5
+Baja California,Asociación civil / ONG,11-30,6-15,2,5,Excel;WhatsApp;Google Drive / Docs,3,4,2,2,1,4,3,3,3,1,5,4,2,0.5
+Estado de México,Mixta,31-60,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,3,1,2,1,5,3,3,3,1,5,4,2,0.0
+Puebla,Asociación civil / ONG,31-60,16-30,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,2,3,4,1,3,3,3,3,3,5,4,2,0.5
+Coahuila,Asociación civil / ONG,60+,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,4,4,2,1,3,3,3,3,1,3,4,4,0.5
+Ciudad de México,Privada,60+,16-30,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,2,4,4,4,1,3,3,3,3,1,3,4,3,0.0
+Baja California,Privada,11-30,6-15,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,2,5,4,1,2,3,3,3,3,2,4,5,1.0
+Chihuahua,Mixta,11-30,6-15,2,4,Excel;WhatsApp,3,2,1,2,1,3,3,3,3,3,2,4,5,0.5
+Morelos,Pública,11-30,6-15,1,1,WhatsApp,1,3,4,1,0,3,3,3,3,4,2,4,4,1.0
+Zacatecas,Mixta,11-30,6-15,2,4,Excel;WhatsApp,3,2,1,2,1,2,3,3,3,3,2,4,5,0.5
+Nayarit,Pública,31-60,16-30,2,4,Excel;WhatsApp,3,3,3,2,1,4,3,3,3,1,3,4,3,0.5
+Jalisco,Asociación civil / ONG,60+,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,4,2,2,1,4,3,3,3,2,4,4,3,0.5
+Chihuahua,Mixta,11-30,6-15,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,3,4,4,1,3,3,3,3,3,3,4,4,0.5
+Ciudad de México,Asociación civil / ONG,11-30,6-15,3,4,Excel;WhatsApp;Google Drive / Docs;Otra,2,2,3,4,1,3,3,3,3,4,3,3,3,0.5
+Chiapas,Asociación civil / ONG,31-60,6-15,1,2,WhatsApp;Google Drive / Docs,1,3,5,2,0,2,3,3,3,4,1,4,5,1.0
+Estado de México,Pública,60+,6-15,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,4,5,4,1,5,3,3,3,1,5,4,1,0.0
+Estado de México,Asociación civil / ONG,1-10,1-5,2,2,Excel;WhatsApp;Software especializado,3,4,5,4,1,2,3,3,3,3,2,4,4,1.0
+Guanajuato,Mixta,31-60,16-30,0,3,Ninguna,1,2,4,1,0,3,3,3,3,4,2,4,5,1.0
+Baja California,Privada,31-60,16-30,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,3,1,4,1,5,3,3,3,1,5,4,1,0.0
+Nuevo León,Asociación civil / ONG,60+,30+,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,2,4,3,4,1,3,3,3,3,1,2,4,4,0.5
+Sonora,Asociación civil / ONG,31-60,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,3,5,4,1,2,3,3,3,1,2,4,5,1.0
+Quintana Roo,Mixta,31-60,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,3,3,4,1,3,3,3,3,1,2,4,4,0.5
+Baja California Sur,Asociación civil / ONG,31-60,16-30,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,3,1,4,1,5,3,3,3,1,5,4,2,0.0
+Jalisco,Pública,11-30,6-15,2,2,Excel;WhatsApp;Google Drive / Docs,3,4,3,4,0,3,3,3,3,3,4,3,2,0.0
+Oaxaca,Mixta,31-60,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,4,2,2,1,4,3,3,3,2,4,4,3,0.5
