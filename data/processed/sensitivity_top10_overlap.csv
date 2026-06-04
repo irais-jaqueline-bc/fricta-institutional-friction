@@ -1,0 +1,5 @@
+baseline_score,alternative_score,top10_overlap_count,top10_overlap_ratio
+AFS_theoretical,AFS_equal_weights,8,0.8
+AFS_theoretical,AFS_organizational_heavy,9,0.9
+AFS_theoretical,AFS_human_heavy,8,0.8
+AFS_theoretical,AFS_infrastructure_heavy,6,0.6
