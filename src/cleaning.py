@@ -1,14 +1,11 @@
 import os
 import pandas as pd
 
-
 RAW_FILE = os.path.join(
     "data", "raw", "Uso de herramientas digitales en casas hogar.csv"
 )
 
-PROCESSED_FILE = os.path.join(
-    "data", "processed", "fricta_clean_anonymized.csv"
-)
+PROCESSED_FILE = os.path.join("data", "processed", "clean_data.csv")
 
 
 def load_raw_data(filepath):
@@ -27,7 +24,7 @@ def get_column_mapping():
         "Número aproximado de empleados": "staff_size",
         "¿Cuántas computadoras tienen disponibles?": "available_devices",
         "¿Qué tan estable es su acceso a internet?": "internet_stability",
-        "¿Qué herramientas digitales utilizan actualmente?": "digital_tools_used",
+        "¿Qué herramientas digitales utilizan actualmente?": "current_digital_tools",
         "¿Cómo registran la información de los niños?": "registration_system_type",
         "¿Cuánto tiempo diario se dedica a tareas administrativas?": "admin_time_load",
         "¿Qué tan organizados consideran sus procesos administrativos?": "administrative_organization",
@@ -36,7 +33,6 @@ def get_column_mapping():
         "¿Qué tan difícil fue implementarlas?": "implementation_difficulty",
         "¿Qué tanto tienen las siguientes dificultades?[Falta de tiempo]": "time_constraint",
         "¿Qué tanto tienen las siguientes dificultades?[Falta de personal]": "staffing_constraint",
-        "¿Qué tanto tienen las siguientes dificultades}[Falta de capacitación]": "training_deficit",
         "¿Qué tanto tienen las siguientes dificultades?[Falta de capacitación]": "training_deficit",
         "¿Qué tanto tienen las siguientes dificultades?[Falta de recursos]": "resource_constraint",
         "¿Qué tan difícil sería cambiar su sistema actual por uno nuevo?": "system_change_resistance",
@@ -193,12 +189,23 @@ def encode_variables(df):
             encoded_col = f"{col}_encoded"
             df[encoded_col] = df[col].map(mapping)
 
-            unknown_values = df.loc[
-                df[col].notna() & df[encoded_col].isna(), col
-            ].unique()
+            legacy_names = {
+                "time_constraint": "time_constraint_norm",
+                "staffing_constraint": "staffing_constraint_norm",
+                "training_deficit": "training_deficit_norm",
+                "resource_constraint": "resource_constraint_norm",
+                "implementation_difficulty": "implementation_difficulty_norm",
+                "system_change_resistance": "system_change_resistance_norm",
+                "admin_time_load": "admin_time_load_norm",
+            }
 
-            if len(unknown_values) > 0:
-                print(f"[ADVERTENCIA] Valores no reconocidos en {col}: {unknown_values}")
+        if col in legacy_names:
+            df[legacy_names[col]] = df[encoded_col]
+
+        unknown_values = df.loc[df[col].notna() & df[encoded_col].isna(), col].unique()
+
+        if len(unknown_values) > 0:
+            print(f"[ADVERTENCIA] Valores no reconocidos en {col}: {unknown_values}")
 
     return df
 
@@ -207,18 +214,28 @@ def create_tool_binary_columns(df):
     """Create binary variables from the digital tools multiple-choice field."""
     df = df.copy()
 
-    if "digital_tools_used" not in df.columns:
+    if "current_digital_tools" not in df.columns:
         print("[ADVERTENCIA] No existe la columna digital_tools_used.")
         return df
 
-    tools = df["digital_tools_used"].fillna("")
+    tools = df["current_digital_tools"].fillna("")
 
     df["uses_excel"] = tools.str.contains("Excel", case=False, regex=False).astype(int)
-    df["uses_whatsapp"] = tools.str.contains("WhatsApp", case=False, regex=False).astype(int)
-    df["uses_google_workspace"] = tools.str.contains("Google Drive / Docs", case=False, regex=False).astype(int)
-    df["uses_specialized_software"] = tools.str.contains("Software especializado", case=False, regex=False).astype(int)
-    df["uses_other_tool"] = tools.str.contains("Otra", case=False, regex=False).astype(int)
-    df["uses_no_tool"] = tools.str.contains("Ninguna", case=False, regex=False).astype(int)
+    df["uses_whatsapp"] = tools.str.contains(
+        "WhatsApp", case=False, regex=False
+    ).astype(int)
+    df["uses_google_workspace"] = tools.str.contains(
+        "Google Drive / Docs", case=False, regex=False
+    ).astype(int)
+    df["uses_specialized_software"] = tools.str.contains(
+        "Software especializado", case=False, regex=False
+    ).astype(int)
+    df["uses_other_tool"] = tools.str.contains("Otra", case=False, regex=False).astype(
+        int
+    )
+    df["uses_no_tool"] = tools.str.contains("Ninguna", case=False, regex=False).astype(
+        int
+    )
 
     df["digital_tool_variety"] = (
         df["uses_excel"]
@@ -254,7 +271,9 @@ def main():
         valid_cols = [col for col in mapping.values() if col in df_mapped.columns]
         df_projected = df_mapped[valid_cols].copy()
 
-        print("[PRIVACIDAD] Columnas sensibles eliminadas automáticamente por proyección.")
+        print(
+            "[PRIVACIDAD] Columnas sensibles eliminadas automáticamente por proyección."
+        )
         print(f"[INFO] Columnas conservadas: {valid_cols}")
 
         df_projected = clean_text_values(df_projected)

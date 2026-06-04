@@ -5,99 +5,118 @@ INPUT_FILE = os.path.join("data", "processed", "clean_data.csv")
 OUTPUT_FILE = os.path.join("data", "processed", "fricta_scored.csv")
 
 
-def load_clean_data(filepath):
-    if not os.path.exists(filepath):
-        raise FileNotFoundError(f"No se encontró el archivo: {filepath}")
-    return pd.read_csv(filepath)
-
-
 def normalize_direct(series, min_value, max_value):
+    series = pd.to_numeric(series, errors="coerce")
     return (series - min_value) / (max_value - min_value)
 
 
 def normalize_reverse(series, min_value, max_value):
+    series = pd.to_numeric(series, errors="coerce")
     return (max_value - series) / (max_value - min_value)
 
 
-def create_tool_variety(df):
-    tools = df["current_digital_tools"].fillna("")
+def load_data(filepath):
+    if not os.path.exists(filepath):
+        raise FileNotFoundError(f"No se encontró: {filepath}")
+    return pd.read_csv(filepath)
 
-    df["uses_excel"] = tools.str.contains("Excel", case=False, regex=False).astype(int)
-    df["uses_whatsapp"] = tools.str.contains(
-        "WhatsApp", case=False, regex=False
-    ).astype(int)
-    df["uses_google_workspace"] = tools.str.contains(
-        "Google", case=False, regex=False
-    ).astype(int)
-    df["uses_specialized_software"] = tools.str.contains(
-        "Software", case=False, regex=False
-    ).astype(int)
-    df["uses_no_tool"] = tools.str.contains("Ninguna", case=False, regex=False).astype(
-        int
-    )
 
-    df["digital_tool_variety"] = (
-        df["uses_excel"]
-        + df["uses_whatsapp"]
-        + df["uses_google_workspace"]
-        + df["uses_specialized_software"]
-    )
+def validate_required_columns(df):
+    required = [
+        "available_devices_encoded",
+        "internet_stability_encoded",
+        "registration_system_type_encoded",
+        "admin_time_load_encoded",
+        "administrative_organization_encoded",
+        "digital_usage_frequency_encoded",
+        "previous_digital_implementation_encoded",
+        "implementation_difficulty_encoded",
+        "time_constraint_encoded",
+        "staffing_constraint_encoded",
+        "training_deficit_encoded",
+        "resource_constraint_encoded",
+        "system_change_resistance_encoded",
+        "perceived_digital_utility_encoded",
+        "tool_adoption_willingness_encoded",
+        "pilot_openness_encoded",
+        "digital_tool_variety",
+    ]
 
-    return df
+    missing = [col for col in required if col not in df.columns]
+
+    if missing:
+        raise ValueError(f"Faltan columnas requeridas para scoring: {missing}")
 
 
 def compute_normalized_constraints(df):
     df = df.copy()
 
-    # Infrastructure: higher raw value = lower friction
-    df["device_constraint"] = normalize_reverse(df["available_devices"], 0, 3)
+    # Infrastructure constraints
+    df["device_constraint"] = normalize_reverse(df["available_devices_encoded"], 0, 3)
+
     df["internet_stability_constraint"] = normalize_reverse(
-        df["internet_constraint"], 1, 5
+        df["internet_stability_encoded"], 1, 5
     )
+
     df["digital_tool_variety_constraint"] = normalize_reverse(
-        df["digital_tool_variety"], 0, 4
+        df["digital_tool_variety"], 0, 5
     )
+
+    # Organizational constraints
     df["recording_system_constraint"] = normalize_reverse(
-        df["information_recording_method"], 1, 4
+        df["registration_system_type_encoded"], 1, 4
     )
 
-    # Organizational / administrative
     df["admin_time_load_constraint"] = normalize_direct(
-        df["admin_time_load_norm"], 1, 4
+        df["admin_time_load_encoded"], 1, 4
     )
+
     df["administrative_disorganization_constraint"] = normalize_reverse(
-        df["admin_disorganization"], 1, 5
+        df["administrative_organization_encoded"], 1, 5
     )
-    df["implementation_difficulty_constraint"] = normalize_direct(
-        df["implementation_difficulty_norm"], 1, 5
-    )
+
     df["system_change_resistance_constraint"] = normalize_direct(
-        df["system_change_resistance_norm"], 1, 5
+        df["system_change_resistance_encoded"], 1, 5
     )
 
-    # Operational load
-    df["time_constraint_score"] = normalize_direct(df["time_constraint_norm"], 1, 5)
-    df["staffing_constraint_score"] = normalize_direct(
-        df["staffing_constraint_norm"], 1, 5
-    )
-    df["resource_constraint_score"] = normalize_direct(
-        df["resource_constraint_norm"], 1, 5
-    )
-
-    # Human capacity / adoption readiness
+    # Operational / implementation constraints
     df["digital_usage_constraint_score"] = normalize_reverse(
-        df["digital_usage_constraint"], 1, 4
+        df["digital_usage_frequency_encoded"], 1, 4
     )
-    df["training_deficit_score"] = normalize_direct(df["training_deficit_norm"], 1, 5)
+
+    df["implementation_difficulty_constraint"] = normalize_direct(
+        df["implementation_difficulty_encoded"], 1, 5
+    )
+
+    df["previous_implementation_constraint"] = 1 - pd.to_numeric(
+        df["previous_digital_implementation_encoded"], errors="coerce"
+    )
+
+    # Human-capacity / adoption-readiness constraints
+    df["time_constraint_score"] = normalize_direct(df["time_constraint_encoded"], 1, 5)
+
+    df["staffing_constraint_score"] = normalize_direct(
+        df["staffing_constraint_encoded"], 1, 5
+    )
+
+    df["training_deficit_score"] = normalize_direct(
+        df["training_deficit_encoded"], 1, 5
+    )
+
+    df["resource_constraint_score"] = normalize_direct(
+        df["resource_constraint_encoded"], 1, 5
+    )
+
     df["willingness_constraint_score"] = normalize_reverse(
-        df["willingness_constraint"], 1, 5
+        df["tool_adoption_willingness_encoded"], 1, 5
     )
+
     df["perceived_utility_constraint"] = normalize_reverse(
-        df["perceived_digital_utility_norm"], 1, 4
+        df["perceived_digital_utility_encoded"], 1, 4
     )
-    df["pilot_openness_constraint"] = normalize_reverse(df["pilot_openness"], 0, 1)
-    df["previous_implementation_constraint"] = normalize_reverse(
-        df["previous_digital_implementation"], 0, 1
+
+    df["pilot_openness_constraint"] = 1 - pd.to_numeric(
+        df["pilot_openness_encoded"], errors="coerce"
     )
 
     return df
@@ -111,35 +130,35 @@ def compute_branch_scores(df):
             "device_constraint",
             "internet_stability_constraint",
             "digital_tool_variety_constraint",
-            "recording_system_constraint",
         ]
     ].mean(axis=1)
 
     df["OCI"] = df[
         [
+            "recording_system_constraint",
+            "admin_time_load_constraint",
             "administrative_disorganization_constraint",
-            "implementation_difficulty_constraint",
             "system_change_resistance_constraint",
         ]
     ].mean(axis=1)
 
     df["OLI"] = df[
         [
-            "admin_time_load_constraint",
-            "time_constraint_score",
-            "staffing_constraint_score",
-            "resource_constraint_score",
+            "digital_usage_constraint_score",
+            "implementation_difficulty_constraint",
+            "previous_implementation_constraint",
         ]
     ].mean(axis=1)
 
     df["HCARI"] = df[
         [
-            "digital_usage_constraint_score",
+            "time_constraint_score",
+            "staffing_constraint_score",
             "training_deficit_score",
+            "resource_constraint_score",
             "willingness_constraint_score",
             "perceived_utility_constraint",
             "pilot_openness_constraint",
-            "previous_implementation_constraint",
         ]
     ].mean(axis=1)
 
@@ -158,37 +177,28 @@ def compute_global_scores(df):
     return df
 
 
-def classify_friction(score):
-    if score < 0.25:
-        return "Low friction"
-    elif score < 0.50:
-        return "Moderate friction"
-    elif score < 0.75:
-        return "High friction"
-    else:
-        return "Critical friction"
+def check_score_quality(df):
+    score_cols = [
+        "time_constraint_score",
+        "staffing_constraint_score",
+        "training_deficit_score",
+        "resource_constraint_score",
+        "ICI",
+        "OCI",
+        "OLI",
+        "HCARI",
+        "AFS_theoretical",
+    ]
+
+    for col in score_cols:
+        if df[col].isna().any():
+            print(f"[ADVERTENCIA] Valores NaN detectados en {col}")
+
+        if df[col].std() == 0:
+            print(f"[ADVERTENCIA] Columna constante detectada en {col}")
 
 
-def identify_dominant_constraint(row):
-    branches = {
-        "Infrastructure": row["ICI"],
-        "Organizational": row["OCI"],
-        "Operational": row["OLI"],
-        "Human-capacity/adoption readiness": row["HCARI"],
-    }
-    return max(branches, key=branches.get)
-
-
-def add_diagnostics(df):
-    df = df.copy()
-
-    df["friction_category"] = df["AFS_theoretical"].apply(classify_friction)
-    df["dominant_constraint"] = df.apply(identify_dominant_constraint, axis=1)
-
-    return df
-
-
-def save_scored_data(df, filepath):
+def save_data(df, filepath):
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
     df.to_csv(filepath, index=False)
 
@@ -196,16 +206,19 @@ def save_scored_data(df, filepath):
 def main():
     print("[PIPELINE] Ejecutando módulo 'scoring.py'...")
 
-    df = load_clean_data(INPUT_FILE)
+    df = load_data(INPUT_FILE)
+
     print(f"[INFO] Filas cargadas: {len(df)}")
 
-    df = create_tool_variety(df)
+    validate_required_columns(df)
+
     df = compute_normalized_constraints(df)
     df = compute_branch_scores(df)
     df = compute_global_scores(df)
-    df = add_diagnostics(df)
 
-    save_scored_data(df, OUTPUT_FILE)
+    check_score_quality(df)
+
+    save_data(df, OUTPUT_FILE)
 
     print(f"[ÉXITO] Dataset scored exportado en: {OUTPUT_FILE}")
     print(

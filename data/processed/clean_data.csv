@@ -1,82 +1,82 @@
-state,institution_type,children_served,staff_size,available_devices,internet_constraint,current_digital_tools,information_recording_method,admin_time_load_norm,admin_disorganization,digital_usage_constraint,previous_digital_implementation,implementation_difficulty_norm,time_constraint_norm,staffing_constraint_norm,training_deficit_norm,resource_constraint_norm,system_change_resistance_norm,perceived_digital_utility_norm,willingness_constraint,pilot_openness
-Jalisco,Pública,1-10,1-5,0,3,Ninguna,1,1,5,1,0,2,3,3,3,4,1,4,5,1.0
-Baja California,Asociación civil / ONG,31-60,16-30,3,1,Excel;WhatsApp;Google Drive / Docs,4,4,3,4,1,4,3,3,3,3,4,4,4,1.0
-Chihuahua,Privada,11-30,1-5,1,4,Excel;WhatsApp,1,3,3,1,0,4,3,3,3,2,4,3,3,0.5
-Guanajuato,Asociación civil / ONG,60+,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,4,2,1,1,4,3,3,3,2,4,3,3,0.5
-Puebla,Pública,60+,30+,2,4,Excel;WhatsApp,3,4,3,1,0,3,3,3,3,2,3,4,3,1.0
-Estado de México,Asociación civil / ONG,31-60,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,4,1,2,1,5,3,3,3,1,5,4,2,0.0
-Ciudad de México,Pública,31-60,16-30,2,2,Excel;WhatsApp;Otra,3,2,3,1,0,3,3,3,3,4,4,4,5,1.0
-Tlaxcala,Privada,11-30,6-15,3,5,Excel;WhatsApp;Google Drive / Docs,2,2,3,4,1,2,3,3,3,3,3,4,5,1.0
-Ciudad de México,Pública,31-60,6-15,3,2,Excel;WhatsApp;Google Drive / Docs;Software especializado,3,1,3,4,1,3,3,3,3,2,3,4,3,1.0
-Ciudad de México,Asociación civil / ONG,60+,30+,3,4,Excel;WhatsApp,2,4,4,4,0,3,3,3,3,3,4,4,4,1.0
-Querétaro,Privada,11-30,6-15,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,3,1,4,1,5,3,3,3,1,5,4,2,0.0
-Puebla,Mixta,31-60,6-15,2,5,Excel;WhatsApp;Google Drive / Docs,3,3,1,4,1,5,3,3,3,1,5,4,1,0.0
-San Luis Potosí,Mixta,11-30,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,4,4,4,1,3,3,3,3,2,2,4,4,0.5
-Sonora,Pública,60+,30+,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,4,2,4,1,4,3,3,3,3,3,4,4,0.5
-Colima,Asociación civil / ONG,1-10,1-5,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,1,5,4,1,1,3,3,3,3,2,4,3,0.5
-Jalisco,Asociación civil / ONG,60+,30+,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,4,2,4,1,4,3,3,3,3,3,4,4,0.5
-Estado de México,Pública,11-30,6-15,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,2,3,4,1,3,3,3,3,3,5,4,2,0.5
-Durango,Asociación civil / ONG,1-10,1-5,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,1,5,4,1,1,3,3,3,3,2,4,5,1.0
-Sinaloa,Mixta,11-30,6-15,2,4,Excel;WhatsApp,3,3,1,2,1,3,3,3,3,3,2,4,4,0.5
-Nayarit,Privada,1-10,1-5,2,5,Excel;WhatsApp,3,2,3,4,1,2,3,3,3,3,4,4,4,1.0
-Morelos,Asociación civil / ONG,60+,30+,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,2,4,3,4,1,3,3,3,3,4,3,4,4,1.0
-Campeche,Asociación civil / ONG,11-30,1-5,1,2,WhatsApp,1,2,5,1,0,2,3,3,3,4,1,4,5,1.0
-Ciudad de México,Pública,1-10,1-5,1,4,WhatsApp,1,3,3,2,0,4,3,3,3,2,3,4,4,0.5
-Baja California,Mixta,31-60,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,3,1,4,1,5,3,3,3,1,5,4,1,0.0
-Nuevo León,Asociación civil / ONG,11-30,1-5,1,2,WhatsApp;Otra,1,3,3,1,0,4,3,3,3,3,4,3,2,0.5
-Tamaulipas,Pública,31-60,16-30,3,5,Excel;WhatsApp;Google Drive / Docs,2,4,4,4,1,3,3,3,3,3,3,4,4,0.5
-Sonora,Pública,11-30,6-15,0,3,Ninguna,1,3,3,1,0,3,3,3,3,4,2,4,4,1.0
-Michoacán,Asociación civil / ONG,31-60,16-30,3,5,Excel;WhatsApp;Google Drive / Docs,2,4,4,4,1,3,3,3,3,1,3,4,4,0.5
-Jalisco,Asociación civil / ONG,31-60,6-15,1,2,WhatsApp;Google Drive / Docs,2,4,2,2,1,4,3,3,3,2,4,4,4,0.5
-Baja California,Mixta,31-60,6-15,1,4,WhatsApp;Google Drive / Docs,1,3,1,2,1,5,3,3,3,3,5,4,2,0.0
-Hidalgo,Pública,31-60,6-15,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,1,5,4,1,2,3,3,3,3,2,4,5,1.0
-Estado de México,Asociación civil / ONG,31-60,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,3,1,2,1,4,3,3,3,1,4,4,3,0.5
-Ciudad de México,Privada,31-60,30+,3,2,Excel;WhatsApp;Google Drive / Docs;Software especializado,3,4,4,2,1,3,3,3,3,4,3,4,4,1.0
-Veracruz,Pública,11-30,6-15,1,2,WhatsApp,1,2,5,1,0,2,3,3,3,4,2,4,5,1.0
-Yucatán,Pública,11-30,16-30,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,3,1,4,1,5,3,3,3,1,5,4,1,0.0
-Nuevo León,Mixta,11-30,6-15,0,1,WhatsApp,1,2,4,2,0,3,3,3,3,4,2,4,5,1.0
-Guerrero,Pública,31-60,6-15,0,3,Ninguna,1,3,4,1,0,3,3,3,3,4,2,4,5,1.0
-Puebla,No estoy seguro,1-10,1-5,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,2,3,4,1,2,3,3,3,3,4,4,4,1.0
-Chihuahua,Privada,11-30,1-5,1,2,WhatsApp,1,2,4,1,0,2,3,3,3,3,2,3,5,1.0
-Baja California,Asociación civil / ONG,11-30,16-30,3,4,Excel;WhatsApp;Google Drive / Docs,2,4,4,4,1,3,3,3,3,1,3,4,5,1.0
-Sonora,Pública,31-60,16-30,1,1,WhatsApp,1,2,5,1,0,2,3,3,3,4,1,4,5,1.0
-Ciudad de México,Privada,31-60,30+,3,4,Excel;WhatsApp;Google Drive / Docs,2,2,4,4,1,3,3,3,3,1,3,4,4,1.0
-Baja California,Privada,11-30,16-30,3,1,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,3,1,4,1,5,3,3,3,1,5,4,2,0.0
-Guanajuato,Pública,11-30,6-15,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,1,5,4,1,1,3,3,3,3,2,4,5,1.0
-Ciudad de México,Pública,1-10,1-5,2,4,Excel;WhatsApp,3,2,3,4,0,3,3,3,3,4,3,4,3,0.5
-Aguascalientes,Privada,31-60,6-15,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,3,3,4,1,3,3,3,3,3,3,4,4,1.0
-Jalisco,Asociación civil / ONG,11-30,6-15,3,4,WhatsApp,2,3,3,4,0,3,3,3,3,2,3,4,5,1.0
-Estado de México,Privada,31-60,16-30,2,4,Excel;WhatsApp;Google Drive / Docs;Software especializado,2,3,1,4,1,5,3,3,3,1,5,4,1,0.0
-Jalisco,Mixta,31-60,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,3,1,4,1,4,3,3,3,1,4,4,2,0.0
-Tabasco,Privada,11-30,1-5,3,5,Excel;WhatsApp;Software especializado,4,2,3,4,1,2,3,3,3,3,3,4,5,1.0
-Guanajuato,Pública,11-30,6-15,0,1,Ninguna,1,1,5,1,0,2,3,3,3,4,1,4,5,1.0
-Jalisco,Privada,11-30,1-5,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,1,5,4,1,1,3,3,3,3,2,4,5,1.0
-Ciudad de México,Privada,11-30,6-15,3,4,Excel;WhatsApp;Google Drive / Docs,2,3,3,4,0,3,3,3,3,3,4,4,4,1.0
-Sonora,Privada,31-60,6-15,1,1,WhatsApp,1,3,5,2,0,2,3,3,3,3,1,4,5,1.0
-Nuevo León,Asociación civil / ONG,31-60,30+,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,4,2,4,1,4,3,3,3,1,3,4,4,0.5
-Nuevo León,Pública,60+,30+,2,4,Excel;WhatsApp;Otra,2,4,2,1,1,5,3,3,3,2,4,3,3,0.5
-Ciudad de México,Asociación civil / ONG,31-60,16-30,2,5,Excel;WhatsApp;Google Drive / Docs,2,4,2,4,1,4,3,3,3,1,4,4,4,0.5
-Baja California,Asociación civil / ONG,11-30,6-15,2,5,Excel;WhatsApp;Google Drive / Docs,3,4,2,2,1,4,3,3,3,1,5,4,2,0.5
-Estado de México,Mixta,31-60,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,3,1,2,1,5,3,3,3,1,5,4,2,0.0
-Puebla,Asociación civil / ONG,31-60,16-30,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,2,3,4,1,3,3,3,3,3,5,4,2,0.5
-Coahuila,Asociación civil / ONG,60+,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,4,4,2,1,3,3,3,3,1,3,4,4,0.5
-Ciudad de México,Privada,60+,16-30,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,2,4,4,4,1,3,3,3,3,1,3,4,3,0.0
-Baja California,Privada,11-30,6-15,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,2,5,4,1,2,3,3,3,3,2,4,5,1.0
-Chihuahua,Mixta,11-30,6-15,2,4,Excel;WhatsApp,3,2,1,2,1,3,3,3,3,3,2,4,5,0.5
-Morelos,Pública,11-30,6-15,1,1,WhatsApp,1,3,4,1,0,3,3,3,3,4,2,4,4,1.0
-Zacatecas,Mixta,11-30,6-15,2,4,Excel;WhatsApp,3,2,1,2,1,2,3,3,3,3,2,4,5,0.5
-Nayarit,Pública,31-60,16-30,2,4,Excel;WhatsApp,3,3,3,2,1,4,3,3,3,1,3,4,3,0.5
-Jalisco,Asociación civil / ONG,60+,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,4,2,2,1,4,3,3,3,2,4,4,3,0.5
-Chihuahua,Mixta,11-30,6-15,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,3,4,4,1,3,3,3,3,3,3,4,4,0.5
-Ciudad de México,Asociación civil / ONG,11-30,6-15,3,4,Excel;WhatsApp;Google Drive / Docs;Otra,2,2,3,4,1,3,3,3,3,4,3,3,3,0.5
-Chiapas,Asociación civil / ONG,31-60,6-15,1,2,WhatsApp;Google Drive / Docs,1,3,5,2,0,2,3,3,3,4,1,4,5,1.0
-Estado de México,Pública,60+,6-15,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,4,5,4,1,5,3,3,3,1,5,4,1,0.0
-Estado de México,Asociación civil / ONG,1-10,1-5,2,2,Excel;WhatsApp;Software especializado,3,4,5,4,1,2,3,3,3,3,2,4,4,1.0
-Guanajuato,Mixta,31-60,16-30,0,3,Ninguna,1,2,4,1,0,3,3,3,3,4,2,4,5,1.0
-Baja California,Privada,31-60,16-30,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,3,1,4,1,5,3,3,3,1,5,4,1,0.0
-Nuevo León,Asociación civil / ONG,60+,30+,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,2,4,3,4,1,3,3,3,3,1,2,4,4,0.5
-Sonora,Asociación civil / ONG,31-60,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,3,5,4,1,2,3,3,3,1,2,4,5,1.0
-Quintana Roo,Mixta,31-60,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,3,3,4,1,3,3,3,3,1,2,4,4,0.5
-Baja California Sur,Asociación civil / ONG,31-60,16-30,3,5,Excel;WhatsApp;Google Drive / Docs;Software especializado,4,3,1,4,1,5,3,3,3,1,5,4,2,0.0
-Jalisco,Pública,11-30,6-15,2,2,Excel;WhatsApp;Google Drive / Docs,3,4,3,4,0,3,3,3,3,3,4,3,2,0.0
-Oaxaca,Mixta,31-60,16-30,2,4,Excel;WhatsApp;Google Drive / Docs,2,4,2,2,1,4,3,3,3,2,4,4,3,0.5
+institution_id,state,institution_type,children_served,staff_size,available_devices,internet_stability,current_digital_tools,registration_system_type,admin_time_load,administrative_organization,digital_usage_frequency,previous_digital_implementation,implementation_difficulty,time_constraint,staffing_constraint,training_deficit,resource_constraint,system_change_resistance,perceived_digital_utility,tool_adoption_willingness,pilot_openness,available_devices_encoded,internet_stability_encoded,registration_system_type_encoded,admin_time_load_encoded,admin_time_load_norm,administrative_organization_encoded,digital_usage_frequency_encoded,previous_digital_implementation_encoded,implementation_difficulty_encoded,implementation_difficulty_norm,time_constraint_encoded,time_constraint_norm,staffing_constraint_encoded,staffing_constraint_norm,training_deficit_encoded,training_deficit_norm,resource_constraint_encoded,resource_constraint_norm,system_change_resistance_encoded,system_change_resistance_norm,perceived_digital_utility_encoded,tool_adoption_willingness_encoded,pilot_openness_encoded,uses_excel,uses_whatsapp,uses_google_workspace,uses_specialized_software,uses_other_tool,uses_no_tool,digital_tool_variety
+INST_001,Jalisco,Pública,1-10,1-5,0,No hay acceso,Ninguna,Papel,Menos de 1 hora,Muy alto,Nunca,No,Fácil,Nada,Poco,Medio,Muy alto,Muy fácil,Mucho,Muy dispuestos,Sí,0,1,1,1,1,5,1,0,2.0,2.0,1,1,2,2,3,3,5,5,1,1,4,5,1.0,0,0,0,0,0,1,0
+INST_002,Baja California,Asociación civil / ONG,31-60,16-30,6+,Muy inestable,Excel;WhatsApp;Google Drive / Docs,Software,5+ horas,Medio,Diario,Sí,Difícil,Alto,Alto,Alto,Alto,Difícil,Mucho,Dispuestos,Sí,3,2,4,4,4,3,4,1,4.0,4.0,4,4,4,4,4,4,4,4,4,4,4,4,1.0,1,1,1,0,0,0,3
+INST_003,Chihuahua,Privada,11-30,1-5,1-2,Estable,Excel;WhatsApp,Papel,3-5 horas,Medio,Rara vez,No,Difícil,Alto,Muy alto,Alto,Medio,Difícil,Algo,Neutrales,Tal vez,1,4,1,3,3,3,2,0,4.0,4.0,4,4,5,5,4,4,3,3,4,4,3,3,0.5,1,1,0,0,0,0,2
+INST_004,Guanajuato,Asociación civil / ONG,60+,16-30,3-5,Estable,Excel;WhatsApp;Google Drive / Docs,Mixto,5+ horas,Bajo,Rara vez,Sí,Difícil,Muy alto,Alto,Alto,Medio,Difícil,Algo,Neutrales,Tal vez,2,4,3,4,4,2,2,1,4.0,4.0,5,5,4,4,4,4,3,3,4,4,3,3,0.5,1,1,1,0,0,0,3
+INST_005,Puebla,Pública,60+,30+,3-5,Estable,Excel;WhatsApp,Excel,5+ horas,Medio,Rara vez,No,Moderado,Muy alto,Alto,Medio,Medio,Neutral,Mucho,Neutrales,Sí,2,4,2,4,4,3,2,0,3.0,3.0,5,5,4,4,3,3,3,3,3,3,4,3,1.0,1,1,0,0,0,0,2
+INST_006,Estado de México,Asociación civil / ONG,31-60,16-30,3-5,Estable,Excel;WhatsApp;Google Drive / Docs,Mixto,5+ horas,Muy bajo,Semanal,Sí,Muy difícil,Alto,Medio,Muy alto,Poco,Muy difícil,Mucho,Poco dispuestos,No,2,4,3,4,4,1,3,1,5.0,5.0,4,4,3,3,5,5,2,2,5,5,4,2,0.0,1,1,1,0,0,0,3
+INST_007,Ciudad de México,Pública,31-60,16-30,3-5,Inestable,Excel;WhatsApp;Otra,Excel,1-3 horas,Medio,Rara vez,No,,Medio,Alto,Alto,Muy alto,Difícil,Mucho,Muy dispuestos,Sí,2,3,2,2,2,3,2,0,,,3,3,4,4,4,4,5,5,4,4,4,5,1.0,1,1,0,0,1,0,3
+INST_008,Tlaxcala,Privada,11-30,6-15,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs,Mixto,1-3 horas,Medio,Diario,Sí,Fácil,Poco,Poco,Muy alto,Nada,Neutral,Mucho,Muy dispuestos,Sí,3,5,3,2,2,3,4,1,2.0,2.0,2,2,2,2,5,5,1,1,3,3,4,5,1.0,1,1,1,0,0,0,3
+INST_009,Ciudad de México,Pública,31-60,6-15,6+,Inestable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Excel,Menos de 1 hora,Medio,Diario,Sí,Moderado,Medio,Poco,Nada,Medio,Neutral,Mucho,Neutrales,Sí,3,3,2,1,1,3,4,1,3.0,3.0,3,3,2,2,1,1,3,3,3,3,4,3,1.0,1,1,1,1,0,0,4
+INST_010,Ciudad de México,Asociación civil / ONG,60+,30+,6+,Estable,Excel;WhatsApp,Mixto,5+ horas,Alto,Diario,No,,Alto,Medio,Alto,Alto,Difícil,Mucho,Dispuestos,Sí,3,4,3,4,4,4,4,0,,,4,4,3,3,4,4,4,4,4,4,4,4,1.0,1,1,0,0,0,0,2
+INST_011,Querétaro,Privada,11-30,6-15,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Software,3-5 horas,Muy bajo,Diario,Sí,Muy difícil,Medio,Medio,Muy alto,Poco,Muy difícil,Mucho,Poco dispuestos,No,3,5,4,3,3,1,4,1,5.0,5.0,3,3,3,3,5,5,2,2,5,5,4,2,0.0,1,1,1,1,0,0,4
+INST_012,Puebla,Mixta,31-60,6-15,3-5,Muy estable,Excel;WhatsApp;Google Drive / Docs,Excel,3-5 horas,Muy bajo,Diario,Sí,Muy difícil,Medio,Medio,Muy alto,Poco,Muy difícil,Mucho,Nada dispuestos,No,2,5,2,3,3,1,4,1,5.0,5.0,3,3,3,3,5,5,2,2,5,5,4,1,0.0,1,1,1,0,0,0,3
+INST_013,San Luis Potosí,Mixta,11-30,16-30,3-5,Estable,Excel;WhatsApp;Google Drive / Docs,Mixto,5+ horas,Alto,Diario,Sí,Moderado,Muy alto,Alto,Poco,Medio,Fácil,Mucho,Dispuestos,Tal vez,2,4,3,4,4,4,4,1,3.0,3.0,5,5,4,4,2,2,3,3,2,2,4,4,0.5,1,1,1,0,0,0,3
+INST_014,Sonora,Pública,60+,30+,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Software,5+ horas,Bajo,Diario,Sí,Difícil,Muy alto,Alto,Medio,Nada,Neutral,Mucho,Dispuestos,Tal vez,3,5,4,4,4,2,4,1,4.0,4.0,5,5,4,4,3,3,1,1,3,3,4,4,0.5,1,1,1,1,0,0,4
+INST_015,Colima,Asociación civil / ONG,1-10,1-5,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Software,Menos de 1 hora,Muy alto,Diario,Sí,Muy fácil,Nada,Poco,Medio,Nada,Fácil,Mucho,Neutrales,Tal vez,3,5,4,1,1,5,4,1,1.0,1.0,1,1,2,2,3,3,1,1,2,2,4,3,0.5,1,1,1,1,0,0,4
+INST_016,Jalisco,Asociación civil / ONG,60+,30+,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Software,5+ horas,Bajo,Diario,Sí,Difícil,Muy alto,Muy alto,Medio,Nada,Neutral,Mucho,Dispuestos,Tal vez,3,5,4,4,4,2,4,1,4.0,4.0,5,5,5,5,3,3,1,1,3,3,4,4,0.5,1,1,1,1,0,0,4
+INST_017,Estado de México,Pública,11-30,6-15,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Software,1-3 horas,Medio,Diario,Sí,Moderado,Poco,Poco,Muy alto,Nada,Muy difícil,Mucho,Poco dispuestos,Tal vez,3,5,4,2,2,3,4,1,3.0,3.0,2,2,2,2,5,5,1,1,5,5,4,2,0.5,1,1,1,1,0,0,4
+INST_018,Durango,Asociación civil / ONG,1-10,1-5,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Software,Menos de 1 hora,Muy alto,Diario,Sí,Muy fácil,Nada,Poco,Poco,Nada,Fácil,Mucho,Muy dispuestos,Sí,3,5,4,1,1,5,4,1,1.0,1.0,1,1,2,2,2,2,1,1,2,2,4,5,1.0,1,1,1,1,0,0,4
+INST_019,Sinaloa,Mixta,11-30,6-15,3-5,Estable,Excel;WhatsApp,Excel,3-5 horas,Muy bajo,Semanal,Sí,Moderado,Medio,Poco,Poco,Alto,Fácil,Mucho,Dispuestos,Tal vez,2,4,2,3,3,1,3,1,3.0,3.0,3,3,2,2,2,2,4,4,2,2,4,4,0.5,1,1,0,0,0,0,2
+INST_020,Nayarit,Privada,1-10,1-5,3-5,Muy estable,Excel;WhatsApp,Excel,1-3 horas,Medio,Diario,Sí,Fácil,Poco,Poco,Muy alto,Nada,Difícil,Mucho,Dispuestos,Sí,2,5,2,2,2,3,4,1,2.0,2.0,2,2,2,2,5,5,1,1,4,4,4,4,1.0,1,1,0,0,0,0,2
+INST_021,Morelos,Asociación civil / ONG,60+,30+,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Mixto,5+ horas,Medio,Diario,Sí,Moderado,Alto,Alto,Alto,Muy alto,Neutral,Mucho,Dispuestos,Sí,3,5,3,4,4,3,4,1,3.0,3.0,4,4,4,4,4,4,5,5,3,3,4,4,1.0,1,1,1,1,0,0,4
+INST_022,Campeche,Asociación civil / ONG,11-30,1-5,1-2,Inestable,WhatsApp,Papel,1-3 horas,Muy alto,Rara vez,No,Fácil,Poco,Poco,Medio,Muy alto,Muy fácil,Mucho,Muy dispuestos,Sí,1,3,1,2,2,5,2,0,2.0,2.0,2,2,2,2,3,3,5,5,1,1,4,5,1.0,0,1,0,0,0,0,1
+INST_023,Ciudad de México,Pública,1-10,1-5,1-2,Estable,WhatsApp,Papel,3-5 horas,Medio,Semanal,No,Difícil,Medio,Medio,Medio,Medio,Neutral,Mucho,Dispuestos,Tal vez,1,4,1,3,3,3,3,0,4.0,4.0,3,3,3,3,3,3,3,3,3,3,4,4,0.5,0,1,0,0,0,0,1
+INST_024,Baja California,Mixta,31-60,16-30,3-5,Estable,Excel;WhatsApp;Google Drive / Docs,Mixto,3-5 horas,Muy bajo,Diario,Sí,Muy difícil,Alto,Medio,Muy alto,Poco,Muy difícil,Mucho,Nada dispuestos,No,2,4,3,3,3,1,4,1,5.0,5.0,4,4,3,3,5,5,2,2,5,5,4,1,0.0,1,1,1,0,0,0,3
+INST_025,Nuevo León,Asociación civil / ONG,11-30,1-5,1-2,Inestable,WhatsApp;Otra,Papel,3-5 horas,Medio,Rara vez,No,Difícil,Alto,Muy alto,Alto,Alto,Difícil,Algo,Poco dispuestos,Tal vez,1,3,1,3,3,3,2,0,4.0,4.0,4,4,5,5,4,4,4,4,4,4,3,2,0.5,0,1,0,0,1,0,2
+INST_026,Tamaulipas,Pública,31-60,16-30,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs,Mixto,5+ horas,Alto,Diario,Sí,Moderado,Muy alto,Muy alto,Poco,Nada,Neutral,Mucho,Dispuestos,Tal vez,3,5,3,4,4,4,4,1,3.0,3.0,5,5,5,5,2,2,1,1,3,3,4,4,0.5,1,1,1,0,0,0,3
+INST_027,Sonora,Pública,11-30,6-15,0,No hay acceso,Ninguna,Papel,3-5 horas,Medio,Nunca,No,Moderado,Alto,Medio,Poco,Muy alto,Fácil,Mucho,Dispuestos,Sí,0,1,1,3,3,3,1,0,3.0,3.0,4,4,3,3,2,2,5,5,2,2,4,4,1.0,0,0,0,0,0,1,0
+INST_028,Michoacán,Asociación civil / ONG,31-60,16-30,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs,Mixto,5+ horas,Alto,Diario,Sí,Moderado,Muy alto,Medio,Muy alto,Poco,Neutral,Mucho,Dispuestos,Tal vez,3,5,3,4,4,4,4,1,3.0,3.0,5,5,3,3,5,5,2,2,3,3,4,4,0.5,1,1,1,0,0,0,3
+INST_029,Jalisco,Asociación civil / ONG,31-60,6-15,1-2,Inestable,WhatsApp;Google Drive / Docs,Mixto,5+ horas,Bajo,Semanal,Sí,Difícil,Alto,Medio,Alto,Medio,Difícil,Mucho,Dispuestos,Tal vez,1,3,3,4,4,2,3,1,4.0,4.0,4,4,3,3,4,4,3,3,4,4,4,4,0.5,0,1,1,0,0,0,2
+INST_030,Baja California,Mixta,31-60,6-15,1-2,Estable,WhatsApp;Google Drive / Docs,Papel,3-5 horas,Muy bajo,Semanal,Sí,Muy difícil,Alto,Medio,Muy alto,Alto,Muy difícil,Mucho,Poco dispuestos,No,1,4,1,3,3,1,3,1,5.0,5.0,4,4,3,3,5,5,4,4,5,5,4,2,0.0,0,1,1,0,0,0,2
+INST_031,Hidalgo,Pública,31-60,6-15,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Software,Menos de 1 hora,Muy alto,Diario,Sí,Fácil,Poco,Poco,Medio,Nada,Fácil,Mucho,Muy dispuestos,Sí,3,5,4,1,1,5,4,1,2.0,2.0,2,2,2,2,3,3,1,1,2,2,4,5,1.0,1,1,1,1,0,0,4
+INST_032,Estado de México,Asociación civil / ONG,31-60,16-30,3-5,Estable,Excel;WhatsApp;Google Drive / Docs,Mixto,3-5 horas,Muy bajo,Semanal,Sí,Difícil,Medio,Medio,Medio,Poco,Difícil,Mucho,Neutrales,Tal vez,2,4,3,3,3,1,3,1,4.0,4.0,3,3,3,3,3,3,2,2,4,4,4,3,0.5,1,1,1,0,0,0,3
+INST_033,Ciudad de México,Privada,31-60,30+,6+,Inestable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Excel,5+ horas,Alto,Semanal,Sí,Moderado,Medio,Poco,Poco,Muy alto,Neutral,Mucho,Dispuestos,Sí,3,3,2,4,4,4,3,1,3.0,3.0,3,3,2,2,2,2,5,5,3,3,4,4,1.0,1,1,1,1,0,0,4
+INST_034,Veracruz,Pública,11-30,6-15,1-2,Inestable,WhatsApp,Papel,1-3 horas,Muy alto,Rara vez,No,Fácil,Poco,Medio,Medio,Muy alto,Fácil,Mucho,Muy dispuestos,Sí,1,3,1,2,2,5,2,0,2.0,2.0,2,2,3,3,3,3,5,5,2,2,4,5,1.0,0,1,0,0,0,0,1
+INST_035,Yucatán,Pública,11-30,16-30,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Software,3-5 horas,Muy bajo,Diario,Sí,Muy difícil,Medio,Alto,Muy alto,Poco,Muy difícil,Mucho,Nada dispuestos,No,3,5,4,3,3,1,4,1,5.0,5.0,3,3,4,4,5,5,2,2,5,5,4,1,0.0,1,1,1,1,0,0,4
+INST_036,Nuevo León,Mixta,11-30,6-15,0,Muy inestable,WhatsApp,Papel,1-3 horas,Alto,Semanal,No,Moderado,Poco,Medio,Nada,Muy alto,Fácil,Mucho,Muy dispuestos,Sí,0,2,1,2,2,4,3,0,3.0,3.0,2,2,3,3,1,1,5,5,2,2,4,5,1.0,0,1,0,0,0,0,1
+INST_037,Guerrero,Pública,31-60,6-15,0,No hay acceso,Ninguna,Papel,3-5 horas,Alto,Nunca,No,Moderado,Medio,Poco,Poco,Muy alto,Fácil,Mucho,Muy dispuestos,Sí,0,1,1,3,3,4,1,0,3.0,3.0,3,3,2,2,2,2,5,5,2,2,4,5,1.0,0,0,0,0,0,1,0
+INST_038,Puebla,No estoy seguro,1-10,1-5,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Software,1-3 horas,Medio,Diario,Sí,Fácil,Poco,Poco,Muy alto,Nada,Difícil,Mucho,Dispuestos,Sí,3,5,4,2,2,3,4,1,2.0,2.0,2,2,2,2,5,5,1,1,4,4,4,4,1.0,1,1,1,1,0,0,4
+INST_039,Chihuahua,Privada,11-30,1-5,1-2,Inestable,WhatsApp,Papel,1-3 horas,Alto,Rara vez,No,Fácil,Poco,Medio,Alto,Alto,Fácil,Algo,Muy dispuestos,Sí,1,3,1,2,2,4,2,0,2.0,2.0,2,2,3,3,4,4,4,4,2,2,3,5,1.0,0,1,0,0,0,0,1
+INST_040,Baja California,Asociación civil / ONG,11-30,16-30,6+,Estable,Excel;WhatsApp;Google Drive / Docs,Mixto,5+ horas,Alto,Diario,Sí,Moderado,Alto,Medio,Alto,Poco,Neutral,Mucho,Muy dispuestos,Sí,3,4,3,4,4,4,4,1,3.0,3.0,4,4,3,3,4,4,2,2,3,3,4,5,1.0,1,1,1,0,0,0,3
+INST_041,Sonora,Pública,31-60,16-30,1-2,Muy inestable,WhatsApp,Papel,1-3 horas,Muy alto,Rara vez,No,Fácil,Poco,Poco,Medio,Muy alto,Muy fácil,Mucho,Muy dispuestos,Sí,1,2,1,2,2,5,2,0,2.0,2.0,2,2,2,2,3,3,5,5,1,1,4,5,1.0,0,1,0,0,0,0,1
+INST_042,Ciudad de México,Privada,31-60,30+,6+,Estable,Excel;WhatsApp;Google Drive / Docs,Mixto,1-3 horas,Alto,Diario,Sí,Moderado,Poco,Poco,Poco,Poco,Neutral,Mucho,Dispuestos,Sí,3,4,3,2,2,4,4,1,3.0,3.0,2,2,2,2,2,2,2,2,3,3,4,4,1.0,1,1,1,0,0,0,3
+INST_043,Baja California,Privada,11-30,16-30,6+,Muy inestable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Software,3-5 horas,Muy bajo,Diario,Sí,Muy difícil,Alto,Medio,Muy alto,Poco,Muy difícil,Mucho,Poco dispuestos,No,3,2,4,3,3,1,4,1,5.0,5.0,4,4,3,3,5,5,2,2,5,5,4,2,0.0,1,1,1,1,0,0,4
+INST_044,Guanajuato,Pública,11-30,6-15,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Software,Menos de 1 hora,Muy alto,Diario,Sí,Muy fácil,Nada,Poco,Poco,Nada,Fácil,Mucho,Muy dispuestos,Sí,3,5,4,1,1,5,4,1,1.0,1.0,1,1,2,2,2,2,1,1,2,2,4,5,1.0,1,1,1,1,0,0,4
+INST_045,Ciudad de México,Pública,1-10,1-5,3-5,Estable,Excel;WhatsApp,Excel,1-3 horas,Medio,Diario,No,Moderado,Alto,Alto,Muy alto,Muy alto,Neutral,Mucho,Neutrales,Tal vez,2,4,2,2,2,3,4,0,3.0,3.0,4,4,4,4,5,5,5,5,3,3,4,3,0.5,1,1,0,0,0,0,2
+INST_046,Aguascalientes,Privada,31-60,6-15,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Software,3-5 horas,Medio,Diario,Sí,Moderado,Medio,Poco,Muy alto,Nada,Neutral,Mucho,Dispuestos,Sí,3,5,4,3,3,3,4,1,3.0,3.0,3,3,2,2,5,5,1,1,3,3,4,4,1.0,1,1,1,1,0,0,4
+INST_047,Jalisco,Asociación civil / ONG,11-30,6-15,6+,Estable,WhatsApp,Mixto,3-5 horas,Medio,Diario,No,Moderado,Muy alto,Medio,Medio,Medio,Neutral,Mucho,Muy dispuestos,Sí,3,4,3,3,3,3,4,0,3.0,3.0,5,5,3,3,3,3,3,3,3,3,4,5,1.0,0,1,0,0,0,0,1
+INST_048,Estado de México,Privada,31-60,16-30,3-5,Estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Mixto,3-5 horas,Muy bajo,Diario,Sí,Muy difícil,Medio,Medio,Muy alto,Poco,Muy difícil,Mucho,Nada dispuestos,No,2,4,3,3,3,1,4,1,5.0,5.0,3,3,3,3,5,5,2,2,5,5,4,1,0.0,1,1,1,1,0,0,4
+INST_049,Jalisco,Mixta,31-60,16-30,3-5,Estable,Excel;WhatsApp;Google Drive / Docs,Mixto,3-5 horas,Muy bajo,Diario,Sí,Difícil,Medio,Alto,Muy alto,Poco,Difícil,Mucho,Poco dispuestos,No,2,4,3,3,3,1,4,1,4.0,4.0,3,3,4,4,5,5,2,2,4,4,4,2,0.0,1,1,1,0,0,0,3
+INST_050,Tabasco,Privada,11-30,1-5,6+,Muy estable,Excel;WhatsApp;Software especializado,Software,1-3 horas,Medio,Diario,Sí,Fácil,Poco,Poco,Muy alto,Nada,Neutral,Mucho,Muy dispuestos,Sí,3,5,4,2,2,3,4,1,2.0,2.0,2,2,2,2,5,5,1,1,3,3,4,5,1.0,1,1,0,1,0,0,3
+INST_051,Guanajuato,Pública,11-30,6-15,0,Muy inestable,Ninguna,Papel,Menos de 1 hora,Muy alto,Nunca,No,Fácil,Nada,Poco,Medio,Muy alto,Muy fácil,Mucho,Muy dispuestos,Sí,0,2,1,1,1,5,1,0,2.0,2.0,1,1,2,2,3,3,5,5,1,1,4,5,1.0,0,0,0,0,0,1,0
+INST_052,Jalisco,Privada,11-30,1-5,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Software,Menos de 1 hora,Muy alto,Diario,Sí,Muy fácil,Nada,Poco,Poco,Nada,Fácil,Mucho,Muy dispuestos,Sí,3,5,4,1,1,5,4,1,1.0,1.0,1,1,2,2,2,2,1,1,2,2,4,5,1.0,1,1,1,1,0,0,4
+INST_053,Ciudad de México,Privada,11-30,6-15,6+,Estable,Excel;WhatsApp;Google Drive / Docs,Mixto,3-5 horas,Medio,Diario,No,,Alto,Alto,Alto,Alto,Difícil,Mucho,Dispuestos,Sí,3,4,3,3,3,3,4,0,,,4,4,4,4,4,4,4,4,4,4,4,4,1.0,1,1,1,0,0,0,3
+INST_054,Sonora,Privada,31-60,6-15,1-2,Muy inestable,WhatsApp,Papel,3-5 horas,Muy alto,Semanal,No,Fácil,Poco,Poco,Poco,Alto,Muy fácil,Mucho,Muy dispuestos,Sí,1,2,1,3,3,5,3,0,2.0,2.0,2,2,2,2,2,2,4,4,1,1,4,5,1.0,0,1,0,0,0,0,1
+INST_055,Nuevo León,Asociación civil / ONG,31-60,30+,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Software,5+ horas,Bajo,Diario,Sí,Difícil,Muy alto,Muy alto,Medio,Poco,Neutral,Mucho,Dispuestos,Tal vez,3,5,4,4,4,2,4,1,4.0,4.0,5,5,5,5,3,3,2,2,3,3,4,4,0.5,1,1,1,1,0,0,4
+INST_056,Nuevo León,Pública,60+,30+,3-5,Estable,Excel;WhatsApp;Otra,Mixto,5+ horas,Bajo,Rara vez,Sí,Muy difícil,Muy alto,Muy alto,Medio,Medio,Difícil,Algo,Neutrales,Tal vez,2,4,3,4,4,2,2,1,5.0,5.0,5,5,5,5,3,3,3,3,4,4,3,3,0.5,1,1,0,0,1,0,3
+INST_057,Ciudad de México,Asociación civil / ONG,31-60,16-30,3-5,Muy estable,Excel;WhatsApp;Google Drive / Docs,Mixto,5+ horas,Bajo,Diario,Sí,Difícil,Muy alto,Alto,Medio,Poco,Difícil,Mucho,Dispuestos,Tal vez,2,5,3,4,4,2,4,1,4.0,4.0,5,5,4,4,3,3,2,2,4,4,4,4,0.5,1,1,1,0,0,0,3
+INST_058,Baja California,Asociación civil / ONG,11-30,6-15,3-5,Muy estable,Excel;WhatsApp;Google Drive / Docs,Excel,5+ horas,Bajo,Semanal,Sí,Difícil,Muy alto,Alto,Alto,Poco,Muy difícil,Mucho,Poco dispuestos,Tal vez,2,5,2,4,4,2,3,1,4.0,4.0,5,5,4,4,4,4,2,2,5,5,4,2,0.5,1,1,1,0,0,0,3
+INST_059,Estado de México,Mixta,31-60,16-30,3-5,Estable,Excel;WhatsApp;Google Drive / Docs,Mixto,3-5 horas,Muy bajo,Semanal,Sí,Muy difícil,Medio,Alto,Muy alto,Poco,Muy difícil,Mucho,Poco dispuestos,No,2,4,3,3,3,1,3,1,5.0,5.0,3,3,4,4,5,5,2,2,5,5,4,2,0.0,1,1,1,0,0,0,3
+INST_060,Puebla,Asociación civil / ONG,31-60,16-30,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Software,1-3 horas,Medio,Diario,Sí,Moderado,Poco,Poco,Muy alto,Nada,Muy difícil,Mucho,Poco dispuestos,Tal vez,3,5,4,2,2,3,4,1,3.0,3.0,2,2,2,2,5,5,1,1,5,5,4,2,0.5,1,1,1,1,0,0,4
+INST_061,Coahuila,Asociación civil / ONG,60+,16-30,3-5,Estable,Excel;WhatsApp;Google Drive / Docs,Mixto,5+ horas,Alto,Semanal,Sí,Moderado,Muy alto,Muy alto,Medio,Poco,Neutral,Mucho,Dispuestos,Tal vez,2,4,3,4,4,4,3,1,3.0,3.0,5,5,5,5,3,3,2,2,3,3,4,4,0.5,1,1,1,0,0,0,3
+INST_062,Ciudad de México,Privada,60+,16-30,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Mixto,5+ horas,Alto,Diario,Sí,Moderado,Medio,Nada,Poco,Poco,Neutral,Mucho,Neutrales,No,3,5,3,4,4,4,4,1,3.0,3.0,3,3,1,1,2,2,2,2,3,3,4,3,0.0,1,1,1,1,0,0,4
+INST_063,Baja California,Privada,11-30,6-15,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Software,1-3 horas,Muy alto,Diario,Sí,Fácil,Poco,Poco,Poco,Nada,Fácil,Mucho,Muy dispuestos,Sí,3,5,4,2,2,5,4,1,2.0,2.0,2,2,2,2,2,2,1,1,2,2,4,5,1.0,1,1,1,1,0,0,4
+INST_064,Chihuahua,Mixta,11-30,6-15,3-5,Estable,Excel;WhatsApp,Excel,1-3 horas,Muy bajo,Semanal,Sí,Moderado,Poco,Medio,Poco,Alto,Fácil,Mucho,Muy dispuestos,Tal vez,2,4,2,2,2,1,3,1,3.0,3.0,2,2,3,3,2,2,4,4,2,2,4,5,0.5,1,1,0,0,0,0,2
+INST_065,Morelos,Pública,11-30,6-15,1-2,Muy inestable,WhatsApp,Papel,3-5 horas,Alto,Rara vez,No,Moderado,Medio,Poco,Poco,Muy alto,Fácil,Mucho,Dispuestos,Sí,1,2,1,3,3,4,2,0,3.0,3.0,3,3,2,2,2,2,5,5,2,2,4,4,1.0,0,1,0,0,0,0,1
+INST_066,Zacatecas,Mixta,11-30,6-15,3-5,Estable,Excel;WhatsApp,Excel,1-3 horas,Muy bajo,Semanal,Sí,Fácil,Poco,Medio,Poco,Alto,Fácil,Mucho,Muy dispuestos,Tal vez,2,4,2,2,2,1,3,1,2.0,2.0,2,2,3,3,2,2,4,4,2,2,4,5,0.5,1,1,0,0,0,0,2
+INST_067,Nayarit,Pública,31-60,16-30,3-5,Estable,Excel;WhatsApp,Excel,3-5 horas,Medio,Semanal,Sí,Difícil,Alto,Alto,Medio,Poco,Neutral,Mucho,Neutrales,Tal vez,2,4,2,3,3,3,3,1,4.0,4.0,4,4,4,4,3,3,2,2,3,3,4,3,0.5,1,1,0,0,0,0,2
+INST_068,Jalisco,Asociación civil / ONG,60+,16-30,3-5,Estable,Excel;WhatsApp;Google Drive / Docs,Mixto,5+ horas,Bajo,Semanal,Sí,Difícil,Muy alto,Alto,Alto,Medio,Difícil,Mucho,Neutrales,Tal vez,2,4,3,4,4,2,3,1,4.0,4.0,5,5,4,4,4,4,3,3,4,4,4,3,0.5,1,1,1,0,0,0,3
+INST_069,Chihuahua,Mixta,11-30,6-15,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Software,3-5 horas,Alto,Diario,Sí,Moderado,Alto,Muy alto,Medio,Nada,Neutral,Mucho,Dispuestos,Tal vez,3,5,4,3,3,4,4,1,3.0,3.0,4,4,5,5,3,3,1,1,3,3,4,4,0.5,1,1,1,1,0,0,4
+INST_070,Ciudad de México,Asociación civil / ONG,11-30,6-15,6+,Estable,Excel;WhatsApp;Google Drive / Docs;Otra,Mixto,1-3 horas,Medio,Diario,Sí,Moderado,Muy alto,Muy alto,Muy alto,Muy alto,Neutral,Algo,Neutrales,Tal vez,3,4,3,2,2,3,4,1,3.0,3.0,5,5,5,5,5,5,5,5,3,3,3,3,0.5,1,1,1,0,1,0,4
+INST_071,Chiapas,Asociación civil / ONG,31-60,6-15,1-2,Inestable,WhatsApp;Google Drive / Docs,Papel,3-5 horas,Muy alto,Semanal,No,Fácil,Poco,Medio,Medio,Muy alto,Muy fácil,Mucho,Muy dispuestos,Sí,1,3,1,3,3,5,3,0,2.0,2.0,2,2,3,3,3,3,5,5,1,1,4,5,1.0,0,1,1,0,0,0,2
+INST_072,Estado de México,Pública,60+,6-15,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Software,5+ horas,Muy alto,Diario,Sí,Muy difícil,Muy alto,Alto,Muy alto,Poco,Muy difícil,Mucho,Nada dispuestos,No,3,5,4,4,4,5,4,1,5.0,5.0,5,5,4,4,5,5,2,2,5,5,4,1,0.0,1,1,1,1,0,0,4
+INST_073,Estado de México,Asociación civil / ONG,1-10,1-5,3-5,Inestable,Excel;WhatsApp;Software especializado,Excel,5+ horas,Muy alto,Diario,Sí,Fácil,Alto,Medio,Poco,Alto,Fácil,Mucho,Dispuestos,Sí,2,3,2,4,4,5,4,1,2.0,2.0,4,4,3,3,2,2,4,4,2,2,4,4,1.0,1,1,0,1,0,0,3
+INST_074,Guanajuato,Mixta,31-60,16-30,0,No hay acceso,Ninguna,Papel,1-3 horas,Alto,Nunca,No,Moderado,Poco,Poco,Medio,Muy alto,Fácil,Mucho,Muy dispuestos,Sí,0,1,1,2,2,4,1,0,3.0,3.0,2,2,2,2,3,3,5,5,2,2,4,5,1.0,0,0,0,0,0,1,0
+INST_075,Baja California,Privada,31-60,16-30,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Software,3-5 horas,Muy bajo,Diario,Sí,Muy difícil,Medio,Medio,Muy alto,Poco,Muy difícil,Mucho,Nada dispuestos,No,3,5,4,3,3,1,4,1,5.0,5.0,3,3,3,3,5,5,2,2,5,5,4,1,0.0,1,1,1,1,0,0,4
+INST_076,Nuevo León,Asociación civil / ONG,60+,30+,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Mixto,5+ horas,Medio,Diario,Sí,Moderado,Muy alto,Muy alto,Poco,Poco,Fácil,Mucho,Dispuestos,Tal vez,3,5,3,4,4,3,4,1,3.0,3.0,5,5,5,5,2,2,2,2,2,2,4,4,0.5,1,1,1,1,0,0,4
+INST_077,Sonora,Asociación civil / ONG,31-60,16-30,3-5,Estable,Excel;WhatsApp;Google Drive / Docs,Mixto,3-5 horas,Muy alto,Diario,Sí,Fácil,Poco,Poco,Medio,Poco,Fácil,Mucho,Muy dispuestos,Sí,2,4,3,3,3,5,4,1,2.0,2.0,2,2,2,2,3,3,2,2,2,2,4,5,1.0,1,1,1,0,0,0,3
+INST_078,Quintana Roo,Mixta,31-60,16-30,3-5,Estable,Excel;WhatsApp;Google Drive / Docs,Mixto,3-5 horas,Medio,Diario,Sí,Moderado,Muy alto,Alto,Poco,Poco,Fácil,Mucho,Dispuestos,Tal vez,2,4,3,3,3,3,4,1,3.0,3.0,5,5,4,4,2,2,2,2,2,2,4,4,0.5,1,1,1,0,0,0,3
+INST_079,Baja California Sur,Asociación civil / ONG,31-60,16-30,6+,Muy estable,Excel;WhatsApp;Google Drive / Docs;Software especializado,Software,3-5 horas,Muy bajo,Diario,Sí,Muy difícil,Medio,Medio,Muy alto,Poco,Muy difícil,Mucho,Poco dispuestos,No,3,5,4,3,3,1,4,1,5.0,5.0,3,3,3,3,5,5,2,2,5,5,4,2,0.0,1,1,1,1,0,0,4
+INST_080,Jalisco,Pública,11-30,6-15,3-5,Inestable,Excel;WhatsApp;Google Drive / Docs,Excel,5+ horas,Medio,Diario,No,,Medio,Medio,Medio,Alto,Difícil,Algo,Poco dispuestos,No,2,3,2,4,4,3,4,0,,,3,3,3,3,3,3,4,4,4,4,3,2,0.0,1,1,1,0,0,0,3
+INST_081,Oaxaca,Mixta,31-60,16-30,3-5,Estable,Excel;WhatsApp;Google Drive / Docs,Mixto,5+ horas,Bajo,Semanal,Sí,Difícil,Muy alto,Alto,Alto,Medio,Difícil,Mucho,Neutrales,Tal vez,2,4,3,4,4,2,3,1,4.0,4.0,5,5,4,4,4,4,3,3,4,4,4,3,0.5,1,1,1,0,0,0,3
