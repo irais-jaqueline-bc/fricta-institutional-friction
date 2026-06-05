@@ -4,3 +4,15 @@ __pycache__/
 
 # Ocultar estrictamente el archivo de datos original (raw)
 data/Uso de herramientas digitales en casas hogar.csv
+
+# Pilot validation artifacts
+pilot/reports/
+pilot/pilot_contact_list.csv
+
+# Any generated pilot exports
+pilot/*.pdf
+pilot/*.docx
+pilot/*.xlsx
+
+pilot/reports/**
+pilot/pilot_contact_list.csv
