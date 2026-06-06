@@ -4,6 +4,7 @@
 
 The final analytical dataset included **81 institutions**. The theoretical Adoption Friction Score (AFS_theoretical) had a mean of **0.416** and a standard deviation of **0.151**, indicating measurable variation in digital adoption friction across institutions.
 
+
 ## 4.2 Branch-Level Associations
 
 At the branch level, all four FRICTA dimensions showed positive association with AFS_theoretical. The strongest branch-level association was observed for **OLI** (Pearson r = **0.847**), followed by the remaining framework dimensions.
@@ -64,3 +65,13 @@ This suggests that device availability is the most informative infrastructure-re
 Across institutional factor ranking, profile analysis, hypothesis stress testing, threshold robustness, branch-removal robustness, and component-level decomposition, digital adoption friction appeared to be associated more strongly with institutional digital maturity indicators than with isolated human-capacity barriers.
 
 Specifically, infrastructure availability, digital record-keeping practices, operational digital integration, and previous implementation experience consistently distinguished high-friction institutions from low-friction institutions. Device availability emerged as the strongest individual institutional characteristic associated with friction, although the results should be interpreted as associative rather than causal.
+
+## 4.11 Institutional Friction Archetypes
+
+To examine whether high adoption friction appeared as a homogeneous phenomenon, institutions were classified into rule-based friction archetypes according to their dominant FRICTA branch.
+
+The most frequent archetype was Organizationally-Limited, representing 52 of 81 institutions (64.2%). Infrastructure-Limited institutions represented 13 cases (16.1%), Human-Capacity-Limited institutions represented 10 cases (12.4%), while Multi-Constraint and Operationally-Limited institutions each represented 3 cases (3.7%).
+
+This distribution suggests that digital adoption friction is not reducible to a single technological shortage. Instead, the dominant pattern in the sample was organizational limitation, indicating that internal processes, administrative structure, and resistance to system change may play a central role in shaping adoption friction.
+
+These rule-based archetypes provide a preliminary taxonomy of institutional friction profiles that can later be refined through unsupervised learning techniques in larger datasets.
