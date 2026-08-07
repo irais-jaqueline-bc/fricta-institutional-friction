@@ -1,0 +1,43 @@
+{
+  "status": "THEORY_ALIGNMENT_COMPLETE",
+  "empirical_model": "R1_PCA_85__HAC_WARD__K2",
+  "legacy_reference": "FRICTA v1 rule-based archetypes",
+  "archetype_column": "friction_archetype",
+  "metrics": {
+    "n_institutions": 81,
+    "n_empirical_clusters": 2,
+    "n_legacy_archetypes": 5,
+    "adjusted_rand_index": 0.45190542784721616,
+    "normalized_mutual_information": 0.4909689495377046,
+    "homogeneity": 0.3455574039558571,
+    "completeness": 0.847671578135512,
+    "v_measure": 0.49096894953770465,
+    "chi_square": 69.20100939784199,
+    "chi_square_p_value": 3.3469397393468765e-14,
+    "cramers_v": 0.9243016008620097,
+    "cluster_modal_archetype_concentration": 0.7901234567901234
+  },
+  "permutation_test": {
+    "permutations": 10000,
+    "random_seed": 42,
+    "ari_empirical_p_value": 9.999000099990002e-05,
+    "nmi_empirical_p_value": 9.999000099990002e-05,
+    "permuted_ari_mean": -0.000372655362293506,
+    "permuted_ari_p975": 0.1262345948780701,
+    "permuted_nmi_mean": 0.03679856270487831,
+    "permuted_nmi_p975": 0.08662967243272511
+  },
+  "interpretation_boundary": "These statistics describe association and structural concordance. They do not measure classification accuracy, external validity, or causal correctness.",
+  "legacy_profiles_used_for_model_selection": false,
+  "generated_files": [
+    "icdm/outputs/alignment/ari_nmi_summary.csv",
+    "icdm/outputs/alignment/cluster_archetype_contingency_counts.csv",
+    "icdm/outputs/alignment/cluster_archetype_row_proportions.csv",
+    "icdm/outputs/alignment/archetype_cluster_column_proportions.csv",
+    "icdm/outputs/alignment/cluster_modal_archetype_summary.csv",
+    "icdm/outputs/alignment/non_modal_archetype_cases.csv",
+    "icdm/outputs/alignment/cluster_archetype_assignments.csv",
+    "icdm/outputs/alignment/alignment_permutation_distribution.csv",
+    "icdm/outputs/alignment/theory_alignment_report.json"
+  ]
+}

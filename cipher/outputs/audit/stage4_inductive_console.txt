@@ -1,0 +1,51 @@
+
+=== CIPHER STAGE 4 — INDUCTIVE EXTENSION AUDIT ===
+
+Ward members recomputed: 500
+Maximum difference vs Stage 1 stored fidelity: 0.000000000000
+
+Ward fidelity distribution:
+  minimum: 0.9077
+  q025: 0.9385
+  median: 0.9846
+  q975: 1.0000
+  maximum: 1.0000
+
+Fidelity threshold: 0.95
+Ward retained: 484 of 500 (96.8000%)
+Ward excluded: 16
+
+Counterfactual ensemble members: 984
+Eligible family counts: {'R0_KMEANS': 250, 'R0_WARD': 244, 'R1_PCA85_KMEANS': 250, 'R1_PCA85_WARD': 240}
+
+=== EXCLUDED WARD MEMBERS ===
+
+           member_id        family   representation  recomputed_extension_fidelity
+      R0_WARD__M0111       R0_WARD RAW_STANDARDIZED                       0.907692
+      R0_WARD__M0224       R0_WARD RAW_STANDARDIZED                       0.907692
+R1_PCA85_WARD__M0220 R1_PCA85_WARD            PCA85                       0.907692
+R1_PCA85_WARD__M0160 R1_PCA85_WARD            PCA85                       0.907692
+R1_PCA85_WARD__M0231 R1_PCA85_WARD            PCA85                       0.923077
+R1_PCA85_WARD__M0176 R1_PCA85_WARD            PCA85                       0.923077
+R1_PCA85_WARD__M0041 R1_PCA85_WARD            PCA85                       0.923077
+      R0_WARD__M0041       R0_WARD RAW_STANDARDIZED                       0.938462
+R1_PCA85_WARD__M0012 R1_PCA85_WARD            PCA85                       0.938462
+      R0_WARD__M0145       R0_WARD RAW_STANDARDIZED                       0.938462
+      R0_WARD__M0058       R0_WARD RAW_STANDARDIZED                       0.938462
+      R0_WARD__M0100       R0_WARD RAW_STANDARDIZED                       0.938462
+R1_PCA85_WARD__M0158 R1_PCA85_WARD            PCA85                       0.938462
+R1_PCA85_WARD__M0124 R1_PCA85_WARD            PCA85                       0.938462
+R1_PCA85_WARD__M0059 R1_PCA85_WARD            PCA85                       0.938462
+R1_PCA85_WARD__M0208 R1_PCA85_WARD            PCA85                       0.938462
+
+=== GATE CHECKS ===
+
+[PASS] ward_members_recomputed_500
+[PASS] recomputed_fidelity_exactly_matches_stage1
+[PASS] ward_retained_fraction_at_least_frozen_minimum
+[PASS] counterfactual_ensemble_at_least_frozen_minimum
+[PASS] all_four_families_represented
+[PASS] all_kmeans_members_retained
+
+GATE STATUS: PASS_STAGE_4
+Counterfactual ensemble frozen for Stage 5.

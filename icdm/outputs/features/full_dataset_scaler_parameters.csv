@@ -1,0 +1,14 @@
+feature,mean_full_dataset,scale_full_dataset,variance_full_dataset,note
+willingness_constraint_score,0.345679012345679,0.3132069811104288,0.09809861301630847,Full-dataset descriptive scaler only; refit preprocessing inside every resampling run.
+digital_usage_constraint_score,0.22633744855967078,0.3091080157730687,0.09554776541516367,Full-dataset descriptive scaler only; refit preprocessing inside every resampling run.
+training_deficit_score,0.6141975308641975,0.299303158577794,0.0895823807346441,Full-dataset descriptive scaler only; refit preprocessing inside every resampling run.
+device_constraint,0.28395061728395055,0.3103655577771984,0.09632677945435145,Full-dataset descriptive scaler only; refit preprocessing inside every resampling run.
+digital_tool_variety_constraint,0.4469135802469135,0.2399004010171085,0.057552202408169474,Full-dataset descriptive scaler only; refit preprocessing inside every resampling run.
+internet_stability_constraint,0.2716049382716049,0.28381639339685555,0.08055174516079866,Full-dataset descriptive scaler only; refit preprocessing inside every resampling run.
+staffing_constraint_score,0.5339506172839507,0.2598464837018418,0.06752019509221155,Full-dataset descriptive scaler only; refit preprocessing inside every resampling run.
+time_constraint_score,0.5709876543209876,0.317286352491269,0.10067062947721382,Full-dataset descriptive scaler only; refit preprocessing inside every resampling run.
+administrative_disorganization_constraint,0.4845679012345679,0.3432454018384653,0.11781740588324953,Full-dataset descriptive scaler only; refit preprocessing inside every resampling run.
+recording_system_constraint,0.44032921810699593,0.36223343349243436,0.13121306033971789,Full-dataset descriptive scaler only; refit preprocessing inside every resampling run.
+system_change_resistance_constraint,0.5432098765432098,0.303757648526348,0.09226870903825637,Full-dataset descriptive scaler only; refit preprocessing inside every resampling run.
+admin_time_load_constraint,0.6296296296296297,0.32288140322523506,0.10425240054869682,Full-dataset descriptive scaler only; refit preprocessing inside every resampling run.
+resource_constraint_score,0.4537037037037037,0.35813110381136515,0.12825788751714678,Full-dataset descriptive scaler only; refit preprocessing inside every resampling run.

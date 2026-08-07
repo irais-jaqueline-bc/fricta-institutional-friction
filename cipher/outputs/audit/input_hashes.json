@@ -1,0 +1,34 @@
+{
+  "created_at_utc": "2026-08-06T23:09:46.190725+00:00",
+  "algorithm": "SHA-256",
+  "files": {
+    "icdm/design/experiment_config.json": {
+      "sha256": "ef96957316fdc7ff0dfc5b249c1a4638b56076e0b0bc339f94eaae06815d700f",
+      "size_bytes": 3081
+    },
+    "cipher/design/cipher_experiment_config.json": {
+      "sha256": "a3841af319380199ee3f79c11ec6ce0e0f80bb0d6079443a1f4b0affc0384da9",
+      "size_bytes": 2795
+    },
+    "icdm/outputs/features/X_primary_raw.csv": {
+      "sha256": "831b5d2ae9777f57a27cbfb0fcab74e34dc6a81c257ef41c2c1baccbe5036be1",
+      "size_bytes": 7970
+    },
+    "icdm/outputs/clustering/final_cluster_labels.csv": {
+      "sha256": "7efcf52df05d69f11d0b814fd54e11c28ad1e580737da2663b863492ff872bdd",
+      "size_bytes": 1104
+    },
+    "icdm/outputs/clustering/selected_model.json": {
+      "sha256": "eb7bcdd333d6620e8cbd2552aab61877ca32678639c8f2ee5bda2041e8ba0400",
+      "size_bytes": 1452
+    },
+    "cipher/design/actionability_manifest.csv": {
+      "sha256": "a7d6c669fe65c796d24b55d3e8d40529d8bf8a5ad3b42f5b035ea65f4da0dac8",
+      "size_bytes": 4762
+    },
+    "cipher/design/novelty_claim_log.md": {
+      "sha256": "4c262e4cedb6130b5fb7a688e1757ab405ad6fb94999981f7a7e6010314dd2e5",
+      "size_bytes": 1842
+    }
+  }
+}

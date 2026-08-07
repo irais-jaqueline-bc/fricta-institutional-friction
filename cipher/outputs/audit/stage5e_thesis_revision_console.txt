@@ -1,0 +1,31 @@
+
+=== CIPHER STAGE 5E — THESIS REVISION FREEZE ===
+
+Original broad-coverage counterfactual claim:
+  REJECTED BY FROZEN STAGE 5C GATE
+  observed coverage = 0.2346
+
+Revised empirical thesis:
+  Sparse plausible counterfactual reachability is heterogeneous rather
+  than broadly available: reachability is concentrated among institutions
+  with uncertain profile membership and differs by reference profile.
+
+Revised Stage 6:
+  Ensemble robustness audit conditional on the 19 Stage 5C-reachable institutions.
+  The >=70% global counterfactual coverage target is NOT reintroduced.
+
+Interpretation:
+  Stage 5D associations remain exploratory and structural, not causal.
+
+=== FREEZE CHECKS ===
+
+[PASS] stage5c_failed_original_coverage_gate
+[PASS] stage5d_audit_complete
+[PASS] observed_coverage_below_frozen_070
+[PASS] stage5c_19_of_81_solvable
+[PASS] boundary_6_of_6_reachable
+[PASS] profile1_10_of_68_reachable
+[PASS] profile2_9_of_13_reachable
+
+GATE STATUS: PASS_STAGE_5E_THESIS_REVISION
+Frozen thesis revision: cipher/design/cipher_thesis_revision_v2.json

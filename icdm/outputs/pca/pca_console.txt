@@ -1,0 +1,56 @@
+
+=== PCA SUMMARY ===
+
+Institutions: 81
+Primary features: 13
+Components retained at >=85%: 5
+Retained cumulative variance: 86.82%
+
+=== EXPLAINED VARIANCE ===
+
+component explained_variance_percent cumulative_variance_percent  retained_at_85_percent
+      PC1                      44.60                       44.60                    True
+      PC2                      21.94                       66.54                    True
+      PC3                      12.40                       78.94                    True
+      PC4                       4.01                       82.95                    True
+      PC5                       3.87                       86.82                    True
+      PC6                       3.26                       90.08                   False
+      PC7                       2.89                       92.98                   False
+      PC8                       2.39                       95.37                   False
+      PC9                       1.55                       96.92                   False
+     PC10                       1.07                       97.99                   False
+     PC11                       0.91                       98.90                   False
+     PC12                       0.61                       99.51                   False
+     PC13                       0.49                      100.00                   False
+
+=== TOP LOADINGS FOR RETAINED COMPONENTS ===
+
+component  rank_by_absolute_loading                                   feature loading
+      PC1                         1           digital_tool_variety_constraint  0.8724
+      PC1                         2               recording_system_constraint  0.8371
+      PC1                         3                         device_constraint  0.8293
+      PC1                         4             internet_stability_constraint  0.8159
+      PC1                         5            digital_usage_constraint_score  0.7847
+      PC2                         1                     time_constraint_score  0.6826
+      PC2                         2                admin_time_load_constraint  0.6433
+      PC2                         3                 staffing_constraint_score  0.6272
+      PC2                         4 administrative_disorganization_constraint  0.5390
+      PC2                         5              willingness_constraint_score  0.4735
+      PC3                         1                    training_deficit_score  0.5789
+      PC3                         2                     time_constraint_score -0.5380
+      PC3                         3                admin_time_load_constraint -0.4726
+      PC3                         4                 staffing_constraint_score -0.4667
+      PC3                         5              willingness_constraint_score  0.4322
+      PC4                         1                 staffing_constraint_score  0.4230
+      PC4                         2                    training_deficit_score  0.3316
+      PC4                         3                admin_time_load_constraint -0.2894
+      PC4                         4             internet_stability_constraint -0.2151
+      PC4                         5              willingness_constraint_score -0.1845
+      PC5                         1 administrative_disorganization_constraint  0.4536
+      PC5                         2                    training_deficit_score -0.3943
+      PC5                         3                 resource_constraint_score -0.2120
+      PC5                         4                admin_time_load_constraint -0.1854
+      PC5                         5             internet_stability_constraint -0.1347
+
+GATE STATUS: PCA COMPUTED. Review variance and loadings before clustering.
+

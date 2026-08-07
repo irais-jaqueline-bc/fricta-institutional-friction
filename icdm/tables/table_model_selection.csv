@@ -1,0 +1,2 @@
+Selected specification,Representation,Algorithm,k,Silhouette,Davies-Bouldin,Calinski-Harabasz,Median ARI,ARI 2.5%,ARI 97.5%,Weakest-cluster mean Jaccard,Cluster sizes
+R1_PCA_85__HAC_WARD__K2,R1_PCA_85,HAC_WARD,2,0.4108366444914675,0.7760107265875373,46.174845454458506,1.0,0.9053210792596784,1.0,0.9915738094173516,1:68; 2:13

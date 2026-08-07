@@ -1,0 +1,50 @@
+
+=== DATASET SUMMARY ===
+
+Rows: 81
+Columns: 75
+Candidate features: 17
+
+=== FEATURE AUDIT ===
+
+                                  feature     planned_role  n_missing  missing_rate  variance  unique_values audit_status                          flags
+                        device_constraint          PRIMARY          0        0.0000    0.0975              4         PASS                               
+            internet_stability_constraint          PRIMARY          0        0.0000    0.0816              5         PASS                               
+          digital_tool_variety_constraint          PRIMARY          0        0.0000    0.0583              5         PASS                               
+              recording_system_constraint          PRIMARY          0        0.0000    0.1329              4         PASS                               
+               admin_time_load_constraint          PRIMARY          0        0.0000    0.1056              4         PASS                               
+administrative_disorganization_constraint          PRIMARY          0        0.0000    0.1193              5         PASS                               
+      system_change_resistance_constraint          PRIMARY          0        0.0000    0.0934              5         PASS                               
+           digital_usage_constraint_score          PRIMARY          0        0.0000    0.0967              4         PASS                               
+                    time_constraint_score          PRIMARY          0        0.0000    0.1019              5         PASS                               
+                staffing_constraint_score          PRIMARY          0        0.0000    0.0684              5         PASS                               
+                   training_deficit_score          PRIMARY          0        0.0000    0.0907              5         PASS                               
+                resource_constraint_score          PRIMARY          0        0.0000    0.1299              5         PASS                               
+             willingness_constraint_score          PRIMARY          0        0.0000    0.0993              5         PASS                               
+     implementation_difficulty_constraint  VALIDATION_ONLY          4        0.0494    0.0800              5       REVIEW              CONCEPTUAL_REVIEW
+       previous_implementation_constraint SENSITIVITY_ONLY          0        0.0000    0.2059              2       REVIEW              CONCEPTUAL_REVIEW
+             perceived_utility_constraint SENSITIVITY_ONLY          0        0.0000    0.0089              2       REVIEW LOW_VARIANCE;CONCEPTUAL_REVIEW
+                pilot_openness_constraint SENSITIVITY_ONLY          0        0.0000    0.1424              3       REVIEW              CONCEPTUAL_REVIEW
+
+=== HIGH CORRELATIONS |r| >= 0.8 ===
+
+                          feature_a                       feature_b  correlation  absolute_correlation  same_conceptual_group          decision
+                  device_constraint digital_tool_variety_constraint       0.8712                0.8712                   True REVIEW_REDUNDANCY
+                  device_constraint     recording_system_constraint       0.8523                0.8523                  False REVIEW_REDUNDANCY
+                  device_constraint  digital_usage_constraint_score       0.8314                0.8314                  False REVIEW_REDUNDANCY
+    digital_tool_variety_constraint     recording_system_constraint       0.8420                0.8420                  False REVIEW_REDUNDANCY
+         admin_time_load_constraint           time_constraint_score       0.8090                0.8090                  False REVIEW_REDUNDANCY
+system_change_resistance_constraint    willingness_constraint_score       0.8243                0.8243                  False REVIEW_REDUNDANCY
+       willingness_constraint_score       pilot_openness_constraint       0.8283                0.8283                  False REVIEW_REDUNDANCY
+
+=== EXACT DUPLICATES ===
+
+No exact duplicate features detected.
+
+=== GENERATED FILES ===
+
+/Users/betycastillo/Documents/GitHub/fricta-institutional-friction/icdm/outputs/audit/icdm_feature_audit.csv
+/Users/betycastillo/Documents/GitHub/fricta-institutional-friction/icdm/outputs/audit/icdm_feature_correlation_matrix.csv
+/Users/betycastillo/Documents/GitHub/fricta-institutional-friction/icdm/outputs/audit/icdm_high_correlations.csv
+/Users/betycastillo/Documents/GitHub/fricta-institutional-friction/icdm/outputs/audit/icdm_exact_duplicate_features.csv
+/Users/betycastillo/Documents/GitHub/fricta-institutional-friction/icdm/design/feature_manifest_draft.csv

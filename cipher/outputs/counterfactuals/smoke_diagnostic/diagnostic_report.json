@@ -1,0 +1,11 @@
+{
+  "failure_modes": {
+    "VALID_PLAUSIBLE_EXISTS": 4,
+    "TRANSITIONS_EXIST_BUT_FAIL_PLAUSIBILITY": 2
+  },
+  "all_six_diagnosed": true,
+  "any_transition_within_4": true,
+  "any_valid_plausible_within_4": true,
+  "minimum_target_exemplar_l0_overall": 7,
+  "gate_status": "STAGE_5B_FAILURE_DIAGNOSED_REVIEW_REQUIRED"
+}

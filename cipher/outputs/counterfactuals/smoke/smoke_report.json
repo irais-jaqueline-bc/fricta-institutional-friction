@@ -1,0 +1,69 @@
+{
+  "smoke_institutions": [
+    {
+      "institution_id": "INST_023",
+      "reference_profile": 1,
+      "reference_profile_probability": 0.2397959183673469,
+      "family_consistency": 0.1304347826086956,
+      "certainty_class": "BOUNDARY"
+    },
+    {
+      "institution_id": "INST_007",
+      "reference_profile": 1,
+      "reference_profile_probability": 0.5743589743589743,
+      "family_consistency": 0.3863636363636363,
+      "certainty_class": "BOUNDARY"
+    },
+    {
+      "institution_id": "INST_043",
+      "reference_profile": 1,
+      "reference_profile_probability": 1.0,
+      "family_consistency": 1.0,
+      "certainty_class": "CORE"
+    },
+    {
+      "institution_id": "INST_046",
+      "reference_profile": 1,
+      "reference_profile_probability": 1.0,
+      "family_consistency": 1.0,
+      "certainty_class": "CORE"
+    },
+    {
+      "institution_id": "INST_071",
+      "reference_profile": 2,
+      "reference_profile_probability": 1.0,
+      "family_consistency": 1.0,
+      "certainty_class": "CORE"
+    },
+    {
+      "institution_id": "INST_065",
+      "reference_profile": 2,
+      "reference_profile_probability": 1.0,
+      "family_consistency": 1.0,
+      "certainty_class": "CORE"
+    }
+  ],
+  "exact_audit_ids": [
+    "INST_023",
+    "INST_007",
+    "INST_043",
+    "INST_046",
+    "INST_071",
+    "INST_065"
+  ],
+  "beam_coverage_descriptive": 0.6666666666666666,
+  "exact_coverage_descriptive": 0.6666666666666666,
+  "coverage_gate_note": "Smoke coverage is descriptive only. The frozen >=70% counterfactual coverage criterion is evaluated on the full 81-institution official run.",
+  "elapsed_seconds": 117.39732500399987,
+  "checks": {
+    "six_smoke_institutions": true,
+    "both_transition_directions_tested": true,
+    "plausibility_metric_is_frozen_euclidean": true,
+    "all_six_exact_audited": true,
+    "beam_exact_solution_existence_matches_all_six": true,
+    "every_beam_result_within_four_features": true,
+    "every_beam_result_plausible": true,
+    "beam_matches_exact_best_on_every_solvable_smoke_case": false
+  },
+  "gate_status": "FAIL_STAGE_5B_SMOKE"
+}

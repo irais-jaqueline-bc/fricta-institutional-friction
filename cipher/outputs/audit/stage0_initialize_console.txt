@@ -1,0 +1,31 @@
+
+NOTE: The 13 primary features are correct, but their order differs from the human-readable CIPHER list. The pipeline will preserve the frozen order from icdm/design/experiment_config.json.
+
+
+=== CIPHER STAGE 0 INITIALIZATION ===
+
+Institutions validated: 81
+Primary features validated: 13
+Primary feature range: [0.0, 1.0]
+Frozen cluster sizes: {'1': 68, '2': 13}
+Reference model: R1_PCA_85__HAC_WARD__K2
+Manifest rows pending review: 13
+
+=== ACTIONABILITY MANIFEST PREVIEW ===
+
+                                  feature                         domain     actionability_class realistic_improvement_direction diagnostic_counterfactual_direction   review_status
+             willingness_constraint_score       Organizational readiness   INDIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH REVIEW_REQUIRED
+           digital_usage_constraint_score            Digital integration   INDIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH REVIEW_REQUIRED
+                   training_deficit_score                 Human capacity     DIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH REVIEW_REQUIRED
+                        device_constraint                 Infrastructure     DIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH REVIEW_REQUIRED
+          digital_tool_variety_constraint Infrastructure and integration     DIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH REVIEW_REQUIRED
+            internet_stability_constraint                 Infrastructure     DIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH REVIEW_REQUIRED
+                staffing_constraint_score                 Human capacity CONTEXTUALLY_MODIFIABLE               DECREASE_FRICTION                                BOTH REVIEW_REQUIRED
+                    time_constraint_score           Operational capacity   INDIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH REVIEW_REQUIRED
+administrative_disorganization_constraint        Organizational capacity   INDIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH REVIEW_REQUIRED
+              recording_system_constraint Infrastructure and integration     DIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH REVIEW_REQUIRED
+      system_change_resistance_constraint        Organizational capacity   INDIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH REVIEW_REQUIRED
+               admin_time_load_constraint           Operational capacity   INDIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH REVIEW_REQUIRED
+                resource_constraint_score              Resource capacity CONTEXTUALLY_MODIFIABLE               DECREASE_FRICTION                                BOTH REVIEW_REQUIRED
+
+GATE STATUS: ACTIONABILITY REVIEW REQUIRED. Do not build the ensemble yet.

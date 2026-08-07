@@ -1,0 +1,50 @@
+
+=== CIPHER STAGE 5A — COUNTERFACTUAL METHOD PREPARATION ===
+
+Selected model: R1_PCA_85__HAC_WARD__K2
+Reconstructed Ward ARI vs frozen reference: 1.0000
+Exact frozen-label match: True
+PCA components retained: 5
+PCA variance explained: 0.8682
+Nearest-centroid extension fidelity to Ward: 1.0000
+Nearest-centroid extension fidelity to frozen reference: 1.0000
+
+=== FEATURE GRID SUMMARY ===
+
+                                  feature  grid_levels      iqr  cost_denominator     actionability_class
+             willingness_constraint_score            5 0.500000          0.500001   INDIRECTLY_MODIFIABLE
+           digital_usage_constraint_score            4 0.333333          0.333334   INDIRECTLY_MODIFIABLE
+                   training_deficit_score            5 0.750000          0.750001     DIRECTLY_MODIFIABLE
+                        device_constraint            4 0.333333          0.333334     DIRECTLY_MODIFIABLE
+          digital_tool_variety_constraint            5 0.400000          0.400001     DIRECTLY_MODIFIABLE
+            internet_stability_constraint            5 0.500000          0.500001 CONTEXTUALLY_MODIFIABLE
+                staffing_constraint_score            5 0.500000          0.500001 CONTEXTUALLY_MODIFIABLE
+                    time_constraint_score            5 0.500000          0.500001   INDIRECTLY_MODIFIABLE
+administrative_disorganization_constraint            5 0.500000          0.500001   INDIRECTLY_MODIFIABLE
+              recording_system_constraint            4 0.666667          0.666668     DIRECTLY_MODIFIABLE
+      system_change_resistance_constraint            5 0.500000          0.500001   INDIRECTLY_MODIFIABLE
+               admin_time_load_constraint            4 0.666667          0.666668   INDIRECTLY_MODIFIABLE
+                resource_constraint_score            5 0.500000          0.500001 CONTEXTUALLY_MODIFIABLE
+
+=== PLAUSIBILITY THRESHOLDS ===
+
+ profile  n_institutions                            metric  k_neighbors  threshold_percentile  mean_knn_distance_min  mean_knn_distance_median  mean_knn_distance_max  plausibility_threshold
+       1              68 EUCLIDEAN_ORIGINAL_NORMALIZED_13D            5                  0.95               0.265847                  0.649363               1.155417                0.960393
+       2              13 EUCLIDEAN_ORIGINAL_NORMALIZED_13D            5                  0.95               0.474502                  0.628167               0.826616                0.800631
+
+=== GATE CHECKS ===
+
+[PASS] stage4_passed
+[PASS] selected_model_matches_frozen_reference
+[PASS] 81_institutions
+[PASS] 13_features
+[PASS] all_actionability_confirmed
+[PASS] all_13_features_counterfactually_eligible
+[PASS] reconstructed_ward_ari_1
+[PASS] reconstructed_ward_exact_reference_match
+[PASS] selected_model_centroid_extension_fidelity_at_least_095
+[PASS] every_feature_has_at_least_2_observed_levels
+[PASS] plausibility_thresholds_finite
+
+GATE STATUS: PASS_STAGE_5A
+Counterfactual search geometry is frozen. Stage 5B smoke search may begin after review.

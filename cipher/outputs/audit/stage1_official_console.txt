@@ -1,0 +1,23 @@
+
+=== CIPHER STAGE 1 ENSEMBLE REPORT ===
+
+Mode: official
+Accepted members: 1000
+Attempts: 1000
+Overall acceptance rate: 1.0000
+Sample size per member: 65
+OOB size per member: 16
+OOB predictions per institution: min=172, median=197.0, max=229
+Minimum OOB pair count: 18
+Every family contains both profiles: True
+Elapsed seconds: 19.084
+
+Family summaries:
+- R0_WARD: accepted=250, attempts=250, acceptance_rate=1.0000
+- R1_PCA85_WARD: accepted=250, attempts=250, acceptance_rate=1.0000
+- R0_KMEANS: accepted=250, attempts=250, acceptance_rate=1.0000
+- R1_PCA85_KMEANS: accepted=250, attempts=250, acceptance_rate=1.0000
+
+Output directory: /Users/betycastillo/Documents/GitHub/fricta-institutional-friction/cipher/outputs/ensemble/official
+
+GATE STATUS: PASS_STAGE_1

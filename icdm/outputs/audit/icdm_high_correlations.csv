@@ -1,0 +1,8 @@
+feature_a,feature_b,correlation,absolute_correlation,same_conceptual_group,decision
+device_constraint,digital_tool_variety_constraint,0.8712,0.8712,True,REVIEW_REDUNDANCY
+device_constraint,recording_system_constraint,0.8523,0.8523,False,REVIEW_REDUNDANCY
+device_constraint,digital_usage_constraint_score,0.8314,0.8314,False,REVIEW_REDUNDANCY
+digital_tool_variety_constraint,recording_system_constraint,0.842,0.842,False,REVIEW_REDUNDANCY
+admin_time_load_constraint,time_constraint_score,0.809,0.809,False,REVIEW_REDUNDANCY
+system_change_resistance_constraint,willingness_constraint_score,0.8243,0.8243,False,REVIEW_REDUNDANCY
+willingness_constraint_score,pilot_openness_constraint,0.8283,0.8283,False,REVIEW_REDUNDANCY

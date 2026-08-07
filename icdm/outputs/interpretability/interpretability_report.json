@@ -1,0 +1,79 @@
+{
+  "status": "EMPIRICAL_INTERPRETATION_COMPLETE",
+  "clusters": {
+    "1": 68,
+    "2": 13
+  },
+  "feature_contrast_direction": "Positive values indicate higher friction in Cluster 2 than Cluster 1.",
+  "top_discriminating_features": [
+    {
+      "feature": "digital_tool_variety_constraint",
+      "mean_difference_cluster_2_minus_1": 0.4938914027149322,
+      "cliffs_delta_cluster_2_vs_1": 0.9660633484162896,
+      "mann_whitney_q_bh": 6.918744614199713e-08
+    },
+    {
+      "feature": "device_constraint",
+      "mean_difference_cluster_2_minus_1": 0.6391402714932125,
+      "cliffs_delta_cluster_2_vs_1": 0.9604072398190046,
+      "mann_whitney_q_bh": 6.655619984047878e-08
+    },
+    {
+      "feature": "recording_system_constraint",
+      "mean_difference_cluster_2_minus_1": 0.6666666666666667,
+      "cliffs_delta_cluster_2_vs_1": 0.9411764705882353,
+      "mann_whitney_q_bh": 7.00071159164456e-08
+    },
+    {
+      "feature": "internet_stability_constraint",
+      "mean_difference_cluster_2_minus_1": 0.5698529411764706,
+      "cliffs_delta_cluster_2_vs_1": 0.9389140271493213,
+      "mann_whitney_q_bh": 7.00071159164456e-08
+    },
+    {
+      "feature": "resource_constraint_score",
+      "mean_difference_cluster_2_minus_1": 0.6049208144796381,
+      "cliffs_delta_cluster_2_vs_1": 0.8925339366515838,
+      "mann_whitney_q_bh": 3.8983949034536964e-07
+    }
+  ],
+  "surrogate": {
+    "model": "RandomForestClassifier",
+    "purpose": "Descriptive reconstruction of cluster labels; not outcome prediction or external validation.",
+    "macro_f1_mean": 0.9755037851037851,
+    "balanced_accuracy_mean": 0.9912087912087912,
+    "shap_threshold": 0.75,
+    "shap_eligible": true,
+    "shap_run": false
+  },
+  "implementation_difficulty_validation": {
+    "validation_feature": "implementation_difficulty_constraint",
+    "cluster_1_complete_n": 64,
+    "cluster_2_complete_n": 13,
+    "cluster_1_mean": 0.59765625,
+    "cluster_2_mean": 0.34615384615384615,
+    "mean_difference_cluster_2_minus_1": -0.25150240384615385,
+    "cluster_1_median": 0.5,
+    "cluster_2_median": 0.25,
+    "mann_whitney_u": 188.0,
+    "mann_whitney_p": 0.0013560401052851946,
+    "cliffs_delta_cluster_2_vs_1": -0.5480769230769231,
+    "hedges_g_cluster_2_vs_1": -0.9283665030410456,
+    "imputation_used": false,
+    "interpretation": "External descriptive criterion only; not used to form clusters."
+  },
+  "cluster_names_assigned": false,
+  "generated_files": [
+    "icdm/outputs/interpretability/cluster_feature_profiles_long.csv",
+    "icdm/outputs/interpretability/cluster_feature_profiles_wide.csv",
+    "icdm/outputs/interpretability/feature_contrasts.csv",
+    "icdm/outputs/interpretability/cluster_top_indicators.csv",
+    "icdm/outputs/interpretability/implementation_difficulty_validation.csv",
+    "icdm/outputs/interpretability/surrogate_cv_fold_metrics.csv",
+    "icdm/outputs/interpretability/surrogate_cv_metrics.csv",
+    "icdm/outputs/interpretability/permutation_importance_by_split.csv",
+    "icdm/outputs/interpretability/permutation_importance.csv",
+    "icdm/outputs/interpretability/institution_assignments_enriched.csv",
+    "icdm/outputs/interpretability/interpretability_report.json"
+  ]
+}

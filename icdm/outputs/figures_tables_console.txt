@@ -1,0 +1,26 @@
+
+=== FIGURES GENERATED ===
+
+- icdm/figures/figure_pca_cluster_scatter.png
+- icdm/figures/figure_pca_cluster_scatter.pdf
+- icdm/figures/figure_stability_intervals.png
+- icdm/figures/figure_stability_intervals.pdf
+- icdm/figures/figure_feature_contrasts.png
+- icdm/figures/figure_feature_contrasts.pdf
+- icdm/figures/figure_fricta_alignment.png
+- icdm/figures/figure_fricta_alignment.pdf
+
+=== TABLES GENERATED ===
+
+- icdm/tables/table_model_selection.csv
+- icdm/tables/table_model_selection.md
+- icdm/tables/table_cluster_profiles.csv
+- icdm/tables/table_cluster_profiles.md
+- icdm/tables/table_fricta_alignment.csv
+- icdm/tables/table_fricta_alignment.md
+- icdm/tables/table_sensitivity.csv
+- icdm/tables/table_sensitivity.md
+- icdm/tables/figure_manifest.csv
+- icdm/tables/figure_manifest.md
+
+GATE STATUS: FIGURES AND PAPER-READY TABLES COMPLETE. Next step is drafting the five-page manuscript.

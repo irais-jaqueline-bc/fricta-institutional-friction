@@ -1,0 +1,23 @@
+{
+  "optimizer": "EXACT_EXHAUSTIVE_ENUMERATION",
+  "institutions": 81,
+  "coverage": 0.2345679012345679,
+  "solvable_institutions": 19,
+  "failure_counts": {
+    "TRANSITIONS_FAIL_PLAUSIBILITY": 54,
+    "SOLVABLE": 19,
+    "NO_TRANSITION_WITHIN_4_FEATURES": 8
+  },
+  "elapsed_seconds_current_session": 123.96396476699738,
+  "checks": {
+    "method_amendment_passed": true,
+    "81_institutions_completed": true,
+    "exact_candidate_count_matches_combinatorial_space": true,
+    "all_selected_counterfactuals_within_4_features": true,
+    "all_selected_counterfactuals_pass_frozen_plausibility": true,
+    "one_exact_global_minimum_per_solved_institution": true,
+    "official_single_model_coverage_at_least_70_percent": false
+  },
+  "gate_status": "FAIL_STAGE_5C",
+  "interpretation": "Counterfactuals are exact minimum-cost diagnostic profile-transition explanations within the frozen discrete search space. They are not causal interventions or treatment recommendations."
+}

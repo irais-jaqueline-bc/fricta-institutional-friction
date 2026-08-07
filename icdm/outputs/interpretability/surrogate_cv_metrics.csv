@@ -1,0 +1,2 @@
+cv_splits,cv_repeats,total_test_folds,accuracy_mean,accuracy_std,balanced_accuracy_mean,balanced_accuracy_std,macro_f1_mean,macro_f1_std,surrogate_interpretation_only
+5,10,50,0.9851470588235294,0.029542401953293742,0.9912087912087912,0.01738401459211153,0.9755037851037851,0.04904779071521165,True

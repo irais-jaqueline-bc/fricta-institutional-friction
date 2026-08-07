@@ -1,0 +1,5 @@
+analysis_id,adjusted_rand_index_vs_final,normalized_mutual_information_vs_final,silhouette,feature_count,representation_dimensions,minimum_cluster_size,maximum_cluster_size,cluster_sizes,notes,pca_threshold
+PCA_THRESHOLD_80,1.0,1.0,0.427558672717198,13,4,13,68,0:68;1:13,Exploratory PCA retention-threshold sensitivity.,0.8
+PCA_THRESHOLD_85,1.0,1.0,0.4108366444917744,13,5,13,68,0:68;1:13,Exploratory PCA retention-threshold sensitivity.,0.85
+PCA_THRESHOLD_90,1.0,1.0,0.39607449571292835,13,6,13,68,0:68;1:13,Exploratory PCA retention-threshold sensitivity.,0.9
+PCA_THRESHOLD_95,1.0,1.0,0.3765372511124303,13,8,13,68,0:68;1:13,Exploratory PCA retention-threshold sensitivity.,0.95

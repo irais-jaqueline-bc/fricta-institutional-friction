@@ -1,0 +1,6 @@
+| figure                     | recommended_use       | message                                                                 |
+|:---------------------------|:----------------------|:------------------------------------------------------------------------|
+| figure_pca_cluster_scatter | Main text             | Shows the selected two-profile partition in the dominant PCA space.     |
+| figure_stability_intervals | Main text or appendix | Shows why HAC-Ward k=2 was selected over less stable alternatives.      |
+| figure_feature_contrasts   | Main text             | Shows the substantive indicators separating the two empirical profiles. |
+| figure_fricta_alignment    | Main text or appendix | Shows structural concordance with the original FRICTA v1 archetypes.    |

@@ -1,0 +1,92 @@
+{
+  "project_name": "CIPHER",
+  "design_status": "FROZEN_BEFORE_CIPHER_RESULTS",
+  "random_seed": 42,
+  "reference_model": "R1_PCA_85__HAC_WARD__K2",
+  "reference_k": 2,
+  "ensemble": {
+    "total_members": 1000,
+    "families": {
+      "R0_WARD": 250,
+      "R1_PCA85_WARD": 250,
+      "R0_KMEANS": 250,
+      "R1_PCA85_KMEANS": 250
+    },
+    "institution_sample_fraction": 0.8,
+    "feature_sample_count": 11,
+    "sample_without_replacement": true,
+    "pca_variance_threshold": 0.85,
+    "kmeans_n_init": 25,
+    "minimum_sampled_cluster_size": 5,
+    "label_alignment": "Hungarian assignment on sampled overlap",
+    "retain_models_based_on_reference_agreement": false
+  },
+  "certainty": {
+    "core_probability_threshold": 0.9,
+    "core_family_consistency_threshold": 0.8,
+    "boundary_probability_threshold": 0.75,
+    "boundary_family_consistency_threshold": 0.6,
+    "continuous_scores_are_primary": true
+  },
+  "null_models": {
+    "severity_score": "unweighted mean of 13 primary indicators",
+    "severity_cv_splits": 5,
+    "severity_cv_repeats": 20,
+    "matched_severity_tolerance": 0.05,
+    "governance_permutations": 10000
+  },
+  "inductive_extension": {
+    "ward_method": "nearest centroid in fitted representation",
+    "minimum_fidelity": 0.95,
+    "minimum_retained_ward_fraction": 0.8,
+    "minimum_counterfactual_ensemble_members": 600
+  },
+  "counterfactuals": {
+    "interpretation": "diagnostic profile-transition explanation, not causal recourse",
+    "candidate_value_grid": "empirically observed normalized values",
+    "maximum_changed_features": 4,
+    "beam_width": 500,
+    "max_diverse_counterfactuals_per_institution": 5,
+    "iqr_epsilon": 1e-06,
+    "l0_penalty": 0.25,
+    "plausibility_neighbors": 5,
+    "plausibility_percentile": 0.95,
+    "robust_validity_primary": 0.9,
+    "robust_validity_sensitivity": [
+      0.8,
+      0.95
+    ]
+  },
+  "motifs": {
+    "signed_items": true,
+    "closed_itemsets": true,
+    "minimum_size": 2,
+    "maximum_size": 4,
+    "minimum_support_fraction": 0.25,
+    "minimum_support_count": 4,
+    "bootstrap_iterations": 1000,
+    "minimum_bootstrap_recurrence": 0.7,
+    "randomization_iterations": 10000,
+    "multiple_testing": "Benjamini-Hochberg",
+    "q_threshold": 0.05
+  },
+  "synthetic_validation": {
+    "n": 80,
+    "p": 13,
+    "replications_per_scenario": 100,
+    "scenarios": [
+      "configurational_two_mechanism",
+      "one_dimensional_severity",
+      "governance_confounded",
+      "no_cluster",
+      "ambiguous_boundary"
+    ]
+  },
+  "paper_scope": {
+    "method_scope": "small-sample unlabeled high-stakes institutional data",
+    "domain_scope": "institutions serving vulnerable populations",
+    "first_empirical_case": "81 residential care institutions across Mexico",
+    "page_limit": 5
+  },
+  "frozen_at_utc": "2026-08-06T23:09:46.191124+00:00"
+}

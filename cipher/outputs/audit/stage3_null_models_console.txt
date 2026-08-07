@@ -1,0 +1,37 @@
+
+=== CIPHER STAGE 3 — SIMPLER-EXPLANATION FALSIFICATION ===
+
+=== SEVERITY NULL ===
+
+Held-out balanced accuracy: q025=0.3827, median=0.6923, q975=0.8519
+Held-out macro-F1 median: 0.4921
+Held-out ROC-AUC median: 0.6923
+Held-out ARI median: -0.0500
+Held-out NMI median: 0.1261
+Opposite-profile pairs with severity gap <= 0.05 : 220
+
+10 closest opposite-profile severity pairs:
+
+institution_a  profile_a  severity_a institution_b  profile_b  severity_b  severity_gap  feature_l1_distance
+     INST_041          2    0.478205      INST_072          1    0.476923      0.001282             8.850000
+     INST_012          1    0.562821      INST_065          2    0.561538      0.001282             6.483333
+     INST_021          1    0.464103      INST_071          2    0.462821      0.001282             5.150000
+     INST_033          1    0.438462      INST_054          2    0.439744      0.001282             3.683333
+     INST_010          1    0.475641      INST_041          2    0.478205      0.002564             5.866667
+     INST_002          1    0.511538      INST_039          2    0.516667      0.005128             5.400000
+     INST_041          2    0.478205      INST_053          1    0.473077      0.005128             6.233333
+     INST_006          1    0.607692      INST_074          2    0.602564      0.005128             8.266667
+     INST_005          1    0.597436      INST_074          2    0.602564      0.005128             5.900000
+     INST_036          2    0.497436      INST_061          1    0.492308      0.005128             5.900000
+
+=== GOVERNANCE NULL ===
+
+Governance status: NOT_FOUND_IN_PRIMARY_MATRIX
+No governance column was found in X_primary_raw.csv. Severity results are valid, but governance testing is incomplete.
+
+=== INTERPRETIVE FLAGS ===
+
+severity_nearly_reconstructs_profiles: False
+matched_severity_opposite_profile_pairs_exist: True
+
+GATE STATUS: STAGE_3_PARTIAL_GOVERNANCE_INPUT_REQUIRED

@@ -1,0 +1,36 @@
+
+=== MODEL SELECTION SUMMARY ===
+
+Selected candidate: R1_PCA_85__HAC_WARD__K2
+Representation: R1_PCA_85
+Algorithm: HAC_WARD
+k: 2
+Silhouette: 0.4108
+Median ARI [2.5%, 97.5%]: 1.0000 [0.9053, 1.0000]
+Weakest-cluster mean Jaccard: 0.9916
+
+=== FINAL CLUSTER SIZES ===
+
+ cluster_id  size
+          1    68
+          2    13
+
+=== TOP-CANDIDATE PAIRWISE ARI ===
+
+                  candidate_a                   candidate_b adjusted_rand_index  partition_equivalent_at_0_95
+      R1_PCA_85__HAC_WARD__K2 R0_STANDARDIZED__HAC_WARD__K2              1.0000                          True
+      R1_PCA_85__HAC_WARD__K2         R1_PCA_85__KMEANS__K2              0.8275                         False
+      R1_PCA_85__HAC_WARD__K2   R0_STANDARDIZED__KMEANS__K2              0.8275                         False
+      R1_PCA_85__HAC_WARD__K2         R1_PCA_85__KMEANS__K5              0.1676                         False
+R0_STANDARDIZED__HAC_WARD__K2         R1_PCA_85__KMEANS__K2              0.8275                         False
+R0_STANDARDIZED__HAC_WARD__K2   R0_STANDARDIZED__KMEANS__K2              0.8275                         False
+R0_STANDARDIZED__HAC_WARD__K2         R1_PCA_85__KMEANS__K5              0.1676                         False
+        R1_PCA_85__KMEANS__K2   R0_STANDARDIZED__KMEANS__K2              1.0000                          True
+        R1_PCA_85__KMEANS__K2         R1_PCA_85__KMEANS__K5              0.1580                         False
+  R0_STANDARDIZED__KMEANS__K2         R1_PCA_85__KMEANS__K5              0.1580                         False
+
+=== DECISION RULE ===
+
+Top-stability candidates produced partition-equivalent labels (ARI >= 0.95). Selected the representation with stronger full-data internal separation; retained the alternative as robustness evidence.
+
+GATE STATUS: FINAL EMPIRICAL MODEL SELECTED. Next step is theory alignment and profile interpretation.

@@ -1,0 +1,123 @@
+{
+  "gate_checks": {
+    "report_mode_official": true,
+    "report_gate_pass": true,
+    "accepted_members_1000": true,
+    "manifest_rows_1000": true,
+    "metrics_rows_1000": true,
+    "member_ids_unique": true,
+    "family_counts_exact": true,
+    "sample_size_65": true,
+    "oob_size_16": true,
+    "feature_count_11": true,
+    "pca_components_present": true,
+    "pca_variance_at_least_085": true,
+    "raw_pca_fields_empty": true,
+    "all_metrics_finite": true,
+    "minimum_cluster_size_at_least_5": true,
+    "prediction_rows_81": true,
+    "oob_prediction_rows_81": true,
+    "prediction_columns_match": true,
+    "oob_prediction_columns_match": true,
+    "all_predictions_only_profiles_1_2": true,
+    "exactly_16_oob_per_member": true,
+    "minimum_oob_per_institution_at_least_150": true,
+    "family_consensus_rows_324": true,
+    "coassignment_shape_81x81": true,
+    "coassignment_symmetric": true,
+    "coassignment_diagonal_1": true,
+    "coassignment_range_0_1": true,
+    "oob_coassignment_shape_81x81": true,
+    "oob_coassignment_symmetric": true,
+    "oob_count_matrix_symmetric": true,
+    "minimum_oob_pair_count_at_least_10": true,
+    "acceptance_rate_at_least_090": true,
+    "every_family_has_both_profiles": true
+  },
+  "failed_checks": [],
+  "family_summary": [
+    {
+      "family": "R0_KMEANS",
+      "members": 250,
+      "silhouette_q025": 0.2732526823270411,
+      "silhouette_median": 0.3290115224671246,
+      "silhouette_q975": 0.39582208056280704,
+      "reference_ari_q025": 0.24191455338298673,
+      "reference_ari_median": 0.6813467905539279,
+      "reference_ari_q975": 1.0,
+      "extension_fidelity_min": 1.0,
+      "minimum_cluster_size_min": 7
+    },
+    {
+      "family": "R0_WARD",
+      "members": 250,
+      "silhouette_q025": 0.26383113840637423,
+      "silhouette_median": 0.3582366483328156,
+      "silhouette_q975": 0.408230612852839,
+      "reference_ari_q025": 0.213137859980428,
+      "reference_ari_median": 1.0,
+      "reference_ari_q975": 1.0,
+      "extension_fidelity_min": 0.9076923076923076,
+      "minimum_cluster_size_min": 6
+    },
+    {
+      "family": "R1_PCA85_KMEANS",
+      "members": 250,
+      "silhouette_q025": 0.30600876323263915,
+      "silhouette_median": 0.3812341601439556,
+      "silhouette_q975": 0.4556153606963358,
+      "reference_ari_q025": 0.25989867489006413,
+      "reference_ari_median": 0.6813467905539279,
+      "reference_ari_q975": 1.0,
+      "extension_fidelity_min": 1.0,
+      "minimum_cluster_size_min": 8
+    },
+    {
+      "family": "R1_PCA85_WARD",
+      "members": 250,
+      "silhouette_q025": 0.30566806166000876,
+      "silhouette_median": 0.40819777210433894,
+      "silhouette_q975": 0.4679632025034416,
+      "reference_ari_q025": 0.19294014050712383,
+      "reference_ari_median": 1.0,
+      "reference_ari_q975": 1.0,
+      "extension_fidelity_min": 0.9076923076923076,
+      "minimum_cluster_size_min": 6
+    }
+  ],
+  "global_reference_ari_quantiles": {
+    "0.025": 0.23070206200344526,
+    "0.25": 0.6249755525132017,
+    "0.5": 0.9228790582346534,
+    "0.75": 1.0,
+    "0.975": 1.0
+  },
+  "global_silhouette_quantiles": {
+    "0.025": 0.27535216147690933,
+    "0.25": 0.33511121156126533,
+    "0.5": 0.366542020953492,
+    "0.75": 0.4007525026620058,
+    "0.975": 0.4563590373025736
+  },
+  "ward_extension_fidelity_quantiles": {
+    "0.025": 0.9384615384615383,
+    "0.25": 0.9846153846153848,
+    "0.5": 0.9846153846153848,
+    "0.75": 1.0,
+    "0.975": 1.0
+  },
+  "ward_members_below_095_fidelity": 16,
+  "ward_members_below_090_fidelity": 0,
+  "oob_predictions_per_institution": {
+    "minimum": 172,
+    "median": 197.0,
+    "maximum": 229
+  },
+  "oob_pair_counts": {
+    "minimum": 18,
+    "median": 37.0,
+    "maximum": 63
+  },
+  "rejected_attempts": 0,
+  "gate_status": "PASS_STAGE_1_OFFICIAL_AUDIT"
+}

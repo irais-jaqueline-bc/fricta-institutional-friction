@@ -1,0 +1,12 @@
+{
+  "ward_ari_vs_frozen_reference": 1.0,
+  "exact_reference_match": true,
+  "centroid_extension_fidelity_to_ward": 1.0,
+  "centroid_extension_fidelity_to_reference": 1.0,
+  "pca_components": 5,
+  "pca_variance_explained": 0.868219709867243,
+  "label_mapping": {
+    "0": 1,
+    "1": 2
+  }
+}

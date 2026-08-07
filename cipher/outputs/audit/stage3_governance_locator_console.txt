@@ -1,0 +1,163 @@
+
+=== CIPHER STAGE 3 — GOVERNANCE LOCATOR ===
+
+[1] data/raw/Uso de herramientas digitales en casas hogar.csv
+    column: ¿Qué tipo de institución es?
+    rows: 81
+    mapped counts: {'NGO': 27, 'PUBLIC': 22, 'PRIVATE': 17, 'MIXED': 14, 'UNKNOWN': 1}
+    mapped_count: 81
+    target_distance: 0
+    exact_target_match: True
+    id_candidates: []
+    values: ['Asociación civil / ONG', 'Privada', 'Pública', 'Mixta', 'No estoy seguro']
+
+[2] data/processed/friction_archetypes.csv
+    column: institution_type
+    rows: 81
+    mapped counts: {'NGO': 27, 'PUBLIC': 22, 'PRIVATE': 17, 'MIXED': 14, 'UNKNOWN': 1}
+    mapped_count: 81
+    target_distance: 0
+    exact_target_match: True
+    id_candidates: ['institution_id']
+    values: ['Pública', 'Asociación civil / ONG', 'Privada', 'Mixta', 'No estoy seguro']
+
+[3] data/processed/sensitivity_scores.csv
+    column: institution_type
+    rows: 81
+    mapped counts: {'NGO': 27, 'PUBLIC': 22, 'PRIVATE': 17, 'MIXED': 14, 'UNKNOWN': 1}
+    mapped_count: 81
+    target_distance: 0
+    exact_target_match: True
+    id_candidates: ['institution_id']
+    values: ['Pública', 'Asociación civil / ONG', 'Privada', 'Mixta', 'No estoy seguro']
+
+[4] data/processed/clean_data.csv
+    column: institution_type
+    rows: 81
+    mapped counts: {'NGO': 27, 'PUBLIC': 22, 'PRIVATE': 17, 'MIXED': 14, 'UNKNOWN': 1}
+    mapped_count: 81
+    target_distance: 0
+    exact_target_match: True
+    id_candidates: ['institution_id']
+    values: ['Pública', 'Asociación civil / ONG', 'Privada', 'Mixta', 'No estoy seguro']
+
+[5] data/processed/fricta_scored.csv
+    column: institution_type
+    rows: 81
+    mapped counts: {'NGO': 27, 'PUBLIC': 22, 'PRIVATE': 17, 'MIXED': 14, 'UNKNOWN': 1}
+    mapped_count: 81
+    target_distance: 0
+    exact_target_match: True
+    id_candidates: ['institution_id']
+    values: ['Pública', 'Asociación civil / ONG', 'Privada', 'Mixta', 'No estoy seguro']
+
+[6] data/processed/hypothesis_stress_test_scores.csv
+    column: institution_type
+    rows: 81
+    mapped counts: {'NGO': 27, 'PUBLIC': 22, 'PRIVATE': 17, 'MIXED': 14, 'UNKNOWN': 1}
+    mapped_count: 81
+    target_distance: 0
+    exact_target_match: True
+    id_candidates: ['institution_id']
+    values: ['Pública', 'Asociación civil / ONG', 'Privada', 'Mixta', 'No estoy seguro']
+
+[7] icdm/outputs/features/institution_metadata.csv
+    column: institution_type
+    rows: 81
+    mapped counts: {'NGO': 27, 'PUBLIC': 22, 'PRIVATE': 17, 'MIXED': 14, 'UNKNOWN': 1}
+    mapped_count: 81
+    target_distance: 0
+    exact_target_match: True
+    id_candidates: ['institution_id']
+    values: ['Pública', 'Asociación civil / ONG', 'Privada', 'Mixta', 'No estoy seguro']
+
+[8] icdm/outputs/audit/feature_definitions_review.txt
+    column: data_dictionary.md-33-| `state` | categorical_nominal | Mexican state where the institution operates | metadata |
+    rows: 1256
+    mapped counts: {'NGO': 3, 'PUBLIC': 0, 'PRIVATE': 0, 'MIXED': 0, 'UNKNOWN': 0}
+    mapped_count: 3
+    target_distance: 78
+    exact_target_match: False
+    id_candidates: []
+    values: ['data_dictionary.md-34-| `institution_type` | categorical_nominal | Institutional classification | metadata |', 'data_dictionary.md-35-| `children_served` | ordinal | Approximate number of children served | metadata / derived-variable input |', 'data_dictionary.md-36-| `staff_size` | ordinal | Approximate institutional staff size | metadata / derived-variable input |', 'data_dictionary.md:37:| `pilot_openness` | binary | Indicates willingness to participate in pilot testing | metadata |', 'data_dictionary.md-38-', 'data_dictionary.md-39----', 'data_dictionary.md-40-', 'data_dictionary.md-41-# SECTION 2 — Infrastructure Variables', 'data_dictionary.md-42-', 'data_dictionary.md:43:## Q5 — available_devices', 'data_dictionary.md-44-', 'data_dictionary.md-45-| Field | Value |', 'data_dictionary.md-46-|---|---|', 'data_dictionary.md:47:| Raw Variable | `available_devices` |', 'data_dictionary.md-48-| Normalized Variable | `device_constraint` |', 'data_dictionary.md-49-| Branch | ICI |', 'data_dictionary.md-50-| Role | core |', 'data_dictionary.md-51-| Direction | More devices = lower friction |', 'data_dictionary.md-52-| Normalization | reverse min-max |', 'data_dictionary.md-53-| Formula | `device_constraint = (x_max - x) / (x_max - x_min)` |']
+
+[9] data/processed/friction_archetypes.csv
+    column: institution_id
+    rows: 81
+    mapped counts: {'NGO': 0, 'PUBLIC': 0, 'PRIVATE': 0, 'MIXED': 0, 'UNKNOWN': 0}
+    mapped_count: 0
+    target_distance: 81
+    exact_target_match: False
+    id_candidates: ['institution_id']
+    values: ['INST_001', 'INST_002', 'INST_003', 'INST_004', 'INST_005', 'INST_006', 'INST_007', 'INST_008', 'INST_009', 'INST_010', 'INST_011', 'INST_012', 'INST_013', 'INST_014', 'INST_015', 'INST_016', 'INST_017', 'INST_018', 'INST_019', 'INST_020']
+
+[10] data/processed/sensitivity_scores.csv
+    column: institution_id
+    rows: 81
+    mapped counts: {'NGO': 0, 'PUBLIC': 0, 'PRIVATE': 0, 'MIXED': 0, 'UNKNOWN': 0}
+    mapped_count: 0
+    target_distance: 81
+    exact_target_match: False
+    id_candidates: ['institution_id']
+    values: ['INST_001', 'INST_002', 'INST_003', 'INST_004', 'INST_005', 'INST_006', 'INST_007', 'INST_008', 'INST_009', 'INST_010', 'INST_011', 'INST_012', 'INST_013', 'INST_014', 'INST_015', 'INST_016', 'INST_017', 'INST_018', 'INST_019', 'INST_020']
+
+[11] data/processed/ici_decomposition_summary.csv
+    column: n_institutions
+    rows: 1
+    mapped counts: {'NGO': 0, 'PUBLIC': 0, 'PRIVATE': 0, 'MIXED': 0, 'UNKNOWN': 0}
+    mapped_count: 0
+    target_distance: 81
+    exact_target_match: False
+    id_candidates: []
+    values: ['81']
+
+[12] data/processed/institutional_analysis_summary.csv
+    column: n_institutions
+    rows: 1
+    mapped counts: {'NGO': 0, 'PUBLIC': 0, 'PRIVATE': 0, 'MIXED': 0, 'UNKNOWN': 0}
+    mapped_count: 0
+    target_distance: 81
+    exact_target_match: False
+    id_candidates: []
+    values: ['81']
+
+[13] data/processed/validation_summary.csv
+    column: n_institutions
+    rows: 1
+    mapped counts: {'NGO': 0, 'PUBLIC': 0, 'PRIVATE': 0, 'MIXED': 0, 'UNKNOWN': 0}
+    mapped_count: 0
+    target_distance: 81
+    exact_target_match: False
+    id_candidates: []
+    values: ['81']
+
+[14] data/processed/friction_archetype_summary.csv
+    column: institution_count
+    rows: 5
+    mapped counts: {'NGO': 0, 'PUBLIC': 0, 'PRIVATE': 0, 'MIXED': 0, 'UNKNOWN': 0}
+    mapped_count: 0
+    target_distance: 81
+    exact_target_match: False
+    id_candidates: []
+    values: ['52', '13', '10', '3']
+
+[15] data/processed/clean_data.csv
+    column: institution_id
+    rows: 81
+    mapped counts: {'NGO': 0, 'PUBLIC': 0, 'PRIVATE': 0, 'MIXED': 0, 'UNKNOWN': 0}
+    mapped_count: 0
+    target_distance: 81
+    exact_target_match: False
+    id_candidates: ['institution_id']
+    values: ['INST_001', 'INST_002', 'INST_003', 'INST_004', 'INST_005', 'INST_006', 'INST_007', 'INST_008', 'INST_009', 'INST_010', 'INST_011', 'INST_012', 'INST_013', 'INST_014', 'INST_015', 'INST_016', 'INST_017', 'INST_018', 'INST_019', 'INST_020']
+
+EXACT TARGET MATCHES: 7
+- data/raw/Uso de herramientas digitales en casas hogar.csv :: ¿Qué tipo de institución es? (ID candidates: [])
+- data/processed/friction_archetypes.csv :: institution_type (ID candidates: ['institution_id'])
+- data/processed/sensitivity_scores.csv :: institution_type (ID candidates: ['institution_id'])
+- data/processed/clean_data.csv :: institution_type (ID candidates: ['institution_id'])
+- data/processed/fricta_scored.csv :: institution_type (ID candidates: ['institution_id'])
+- data/processed/hypothesis_stress_test_scores.csv :: institution_type (ID candidates: ['institution_id'])
+- icdm/outputs/features/institution_metadata.csv :: institution_type (ID candidates: ['institution_id'])
+
+GATE STATUS: GOVERNANCE_SOURCE_FOUND

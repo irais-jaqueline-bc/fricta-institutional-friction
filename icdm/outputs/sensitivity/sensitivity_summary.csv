@@ -1,0 +1,6 @@
+analysis_id,adjusted_rand_index_vs_final,normalized_mutual_information_vs_final,silhouette,feature_count,representation_dimensions,minimum_cluster_size,maximum_cluster_size,cluster_sizes,notes
+BASELINE_RECOMPUTED_PCA85_HAC_K2,1.0,1.0,0.4108366444917744,13,5,13,68,0:68;1:13,Recomputed selected pipeline.
+NO_PCA_STANDARDIZED_HAC_K2,1.0,1.0,0.3602740036312942,13,13,13,68,0:68;1:13,Tests whether PCA changes assignments.
+RAW_0_1_NO_STANDARDIZATION_HAC_K2,1.0,1.0,0.35646028882517444,13,13,13,68,0:68;1:13,Tests sensitivity to StandardScaler.
+AUGMENTED_15_PCA85_HAC_K2,0.9365168935599916,0.8743528622172325,0.3934136117463369,15,6,12,69,0:69;1:12,Adds previous implementation and perceived utility; does not add validation-only or metadata variables.
+AUGMENTED_15_NO_PCA_HAC_K2,0.9365168935599916,0.8743528622172325,0.34857392745549404,15,15,12,69,0:69;1:12,Augmented sensitivity matrix without PCA.

@@ -1,0 +1,57 @@
+
+=== STABILITY SHORTLIST ===
+
+                 candidate_id silhouette davies_bouldin calinski_harabasz     bic                                          shortlist_reasons
+R0_STANDARDIZED__GMM_DIAG__K2     0.3495         0.9325             37.41 2592.75 BEST_CALINSKI_HARABASZ;BEST_DAVIES_BOULDIN;BEST_SILHOUETTE
+R0_STANDARDIZED__GMM_DIAG__K6     0.2192         1.5598             22.82  815.50                             BEST_BIC_WITHIN_REPRESENTATION
+R0_STANDARDIZED__HAC_WARD__K2     0.3603         0.8889             37.34     NaN BEST_CALINSKI_HARABASZ;BEST_DAVIES_BOULDIN;BEST_SILHOUETTE
+  R0_STANDARDIZED__KMEANS__K2     0.3352         1.0227             37.45     NaN BEST_CALINSKI_HARABASZ;BEST_DAVIES_BOULDIN;BEST_SILHOUETTE
+      R1_PCA_85__GMM_DIAG__K2     0.2293         0.8264             10.99 1329.06                                        BEST_DAVIES_BOULDIN
+      R1_PCA_85__GMM_DIAG__K4     0.2371         1.1596             22.20 1324.09                             BEST_BIC_WITHIN_REPRESENTATION
+      R1_PCA_85__GMM_DIAG__K5     0.3383         0.9303             41.74 1346.24                     BEST_CALINSKI_HARABASZ;BEST_SILHOUETTE
+      R1_PCA_85__HAC_WARD__K2     0.4108         0.7760             46.17     NaN                        BEST_DAVIES_BOULDIN;BEST_SILHOUETTE
+      R1_PCA_85__HAC_WARD__K3     0.3361         1.1789             46.30     NaN                                     BEST_CALINSKI_HARABASZ
+        R1_PCA_85__KMEANS__K2     0.3823         0.8966             46.34     NaN                        BEST_DAVIES_BOULDIN;BEST_SILHOUETTE
+        R1_PCA_85__KMEANS__K5     0.3507         1.0985             50.17     NaN                                     BEST_CALINSKI_HARABASZ
+
+Running 2 subsamples per candidate with sample size 65/81.
+
+[1/11] R0_STANDARDIZED__GMM_DIAG__K2
+  completed 2/2
+[2/11] R0_STANDARDIZED__GMM_DIAG__K6
+  completed 2/2
+[3/11] R0_STANDARDIZED__HAC_WARD__K2
+  completed 2/2
+[4/11] R0_STANDARDIZED__KMEANS__K2
+  completed 2/2
+[5/11] R1_PCA_85__GMM_DIAG__K2
+  completed 2/2
+[6/11] R1_PCA_85__GMM_DIAG__K4
+  completed 2/2
+[7/11] R1_PCA_85__GMM_DIAG__K5
+  completed 2/2
+[8/11] R1_PCA_85__HAC_WARD__K2
+  completed 2/2
+[9/11] R1_PCA_85__HAC_WARD__K3
+  completed 2/2
+[10/11] R1_PCA_85__KMEANS__K2
+  completed 2/2
+[11/11] R1_PCA_85__KMEANS__K5
+  completed 2/2
+
+=== STABILITY SUMMARY ===
+
+ stability_rank                  candidate_id ari_median ari_p025 ari_p975 mean_matched_jaccard_median clusterwise_jaccard_min_mean  minimum_resample_cluster_size_min
+              1       R1_PCA_85__HAC_WARD__K2     1.0000   1.0000   1.0000                      1.0000                       1.0000                                 10
+              2 R0_STANDARDIZED__HAC_WARD__K2     1.0000   1.0000   1.0000                      1.0000                       1.0000                                  8
+              3 R0_STANDARDIZED__GMM_DIAG__K2     1.0000   1.0000   1.0000                      1.0000                       1.0000                                 12
+              4   R0_STANDARDIZED__KMEANS__K2     1.0000   1.0000   1.0000                      1.0000                       1.0000                                 11
+              5         R1_PCA_85__KMEANS__K5     0.9583   0.9187   0.9979                      0.9725                       0.9412                                 10
+              6       R1_PCA_85__HAC_WARD__K3     0.9470   0.8967   0.9974                      0.9739                       0.9474                                  9
+              7         R1_PCA_85__KMEANS__K2     0.8013   0.7436   0.8590                      0.8735                       0.8036                                 12
+              8       R1_PCA_85__GMM_DIAG__K5     0.6438   0.6427   0.6450                      0.7162                       0.5000                                  4
+              9 R0_STANDARDIZED__GMM_DIAG__K6     0.4905   0.4220   0.5589                      0.5365                       0.1875                                  6
+             10       R1_PCA_85__GMM_DIAG__K4     0.1874   0.1082   0.2666                      0.5337                       0.3180                                  4
+             11       R1_PCA_85__GMM_DIAG__K2    -0.0492  -0.0547  -0.0437                      0.3269                       0.0000                                 15
+
+GATE STATUS: STABILITY COMPLETE. Do not select the final model until reviewing this summary.

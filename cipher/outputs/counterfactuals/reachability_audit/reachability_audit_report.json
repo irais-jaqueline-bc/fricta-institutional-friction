@@ -1,0 +1,86 @@
+{
+  "status": "EXPLORATORY_POST_FAILURE_AUDIT",
+  "stage5c_original_coverage_gate": {
+    "threshold": 0.7,
+    "observed": 0.2345679012345679,
+    "passed": false
+  },
+  "profile2_vs_profile1_reachability_fisher": {
+    "table": [
+      [
+        9,
+        4
+      ],
+      [
+        10,
+        58
+      ]
+    ],
+    "odds_ratio": 13.05,
+    "p_value": 0.0001469763638132754
+  },
+  "boundary_vs_nonboundary_reachability_fisher": {
+    "table": [
+      [
+        6,
+        0
+      ],
+      [
+        13,
+        62
+      ]
+    ],
+    "odds_ratio": "inf",
+    "p_value": 8.360134942413424e-05
+  },
+  "certainty_class_vs_reachability": {
+    "cramers_v": 0.5282569543181241,
+    "permutation_p": 3.999960000399996e-05,
+    "permutations": 100000
+  },
+  "profile_vs_failure_mode": {
+    "cramers_v": 0.47602686037954844,
+    "permutation_p": 0.0003999960000399996,
+    "permutations": 100000
+  },
+  "profile1_uncertainty_comparisons": {
+    "reference_profile_probability": {
+      "solved_n": 10,
+      "unsolved_n": 58,
+      "solved_median": 0.7281196559381302,
+      "unsolved_median": 1.0,
+      "mann_whitney_u": 14.0,
+      "p_value": 1.1836287620333243e-07,
+      "cliffs_delta_solved_minus_unsolved": -0.9517241379310345
+    },
+    "family_consistency": {
+      "solved_n": 10,
+      "unsolved_n": 58,
+      "solved_median": 0.5660694288913775,
+      "unsolved_median": 1.0,
+      "mann_whitney_u": 16.0,
+      "p_value": 1.459305245325604e-07,
+      "cliffs_delta_solved_minus_unsolved": -0.9448275862068966
+    },
+    "normalized_entropy": {
+      "solved_n": 10,
+      "unsolved_n": 58,
+      "solved_median": 0.7934864383159757,
+      "unsolved_median": 0.0,
+      "mann_whitney_u": 566.0,
+      "p_value": 1.1836287620333243e-07,
+      "cliffs_delta_solved_minus_unsolved": 0.9517241379310345
+    },
+    "membership_margin": {
+      "solved_n": 10,
+      "unsolved_n": 58,
+      "solved_median": 0.521862112720736,
+      "unsolved_median": 1.0,
+      "mann_whitney_u": 14.0,
+      "p_value": 1.1836287620333243e-07,
+      "cliffs_delta_solved_minus_unsolved": -0.9517241379310345
+    }
+  },
+  "interpretation_boundary": "These analyses characterize structured counterfactual reachability after the preregistered Stage 5C coverage gate failed. They are exploratory and must not be presented as if they were the original confirmatory counterfactual claim.",
+  "gate_status": "STAGE_5D_REACHABILITY_AUDIT_COMPLETE"
+}

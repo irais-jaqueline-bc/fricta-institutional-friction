@@ -1,0 +1,33 @@
+{
+  "fidelity_threshold": 0.95,
+  "minimum_retained_ward_fraction": 0.8,
+  "minimum_counterfactual_ensemble_members": 600,
+  "ward_members_total": 500,
+  "ward_members_retained": 484,
+  "ward_members_excluded": 16,
+  "ward_retained_fraction": 0.968,
+  "counterfactual_ensemble_members": 984,
+  "family_counts": {
+    "R0_KMEANS": 250,
+    "R0_WARD": 244,
+    "R1_PCA85_KMEANS": 250,
+    "R1_PCA85_WARD": 240
+  },
+  "maximum_fidelity_recompute_difference": 1.1102230246251565e-16,
+  "fidelity_distribution": {
+    "minimum": 0.9076923076923077,
+    "q025": 0.9384615384615385,
+    "median": 0.9846153846153847,
+    "q975": 1.0,
+    "maximum": 1.0
+  },
+  "checks": {
+    "ward_members_recomputed_500": true,
+    "recomputed_fidelity_exactly_matches_stage1": true,
+    "ward_retained_fraction_at_least_frozen_minimum": true,
+    "counterfactual_ensemble_at_least_frozen_minimum": true,
+    "all_four_families_represented": true,
+    "all_kmeans_members_retained": true
+  },
+  "gate_status": "PASS_STAGE_4"
+}

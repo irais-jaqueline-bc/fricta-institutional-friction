@@ -1,0 +1,14 @@
+{
+  "checks": {
+    "stage5c_failed_original_coverage_gate": true,
+    "stage5d_audit_complete": true,
+    "observed_coverage_below_frozen_070": true,
+    "stage5c_19_of_81_solvable": true,
+    "boundary_6_of_6_reachable": true,
+    "profile1_10_of_68_reachable": true,
+    "profile2_9_of_13_reachable": true
+  },
+  "thesis_revision_path": "cipher/design/cipher_thesis_revision_v2.json",
+  "thesis_revision_sha256": "8ecf61436e9dd4768393c8131b8453e05fad35c52d60585ba54a578c466ca027",
+  "gate_status": "PASS_STAGE_5E_THESIS_REVISION"
+}

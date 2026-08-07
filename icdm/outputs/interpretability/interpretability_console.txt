@@ -1,0 +1,63 @@
+
+=== EMPIRICAL PROFILE SUMMARY ===
+
+ cluster_id  size
+          1    68
+          2    13
+
+=== TOP FEATURE CONTRASTS (CLUSTER 2 MINUS CLUSTER 1) ===
+
+ rank                                   feature cluster_1_mean cluster_2_mean mean_difference_cluster_2_minus_1 cliffs_delta_cluster_2_vs_1 hedges_g_cluster_2_vs_1 mann_whitney_q_bh
+    1           digital_tool_variety_constraint          0.368          0.862                             0.494                       0.966                   3.075           0.00000
+    2                         device_constraint          0.181          0.821                             0.639                       0.960                   3.077           0.00000
+    3               recording_system_constraint          0.333          1.000                             0.667                       0.941                   2.442           0.00000
+    4             internet_stability_constraint          0.180          0.750                             0.570                       0.939                   2.906           0.00000
+    5                 resource_constraint_score          0.357          0.962                             0.605                       0.893                   2.106           0.00000
+    6       system_change_resistance_constraint          0.621          0.135                            -0.487                      -0.889                  -1.938           0.00000
+    7            digital_usage_constraint_score          0.132          0.718                             0.586                       0.874                   2.579           0.00000
+    8              willingness_constraint_score          0.404          0.038                            -0.366                      -0.725                  -1.265           0.00003
+    9 administrative_disorganization_constraint          0.551          0.135                            -0.417                      -0.701                  -1.327           0.00006
+   10                     time_constraint_score          0.625          0.288                            -0.337                      -0.606                  -1.126           0.00054
+   11                 staffing_constraint_score          0.570          0.346                            -0.224                      -0.491                  -0.888           0.00442
+   12                admin_time_load_constraint          0.672          0.410                            -0.261                      -0.472                  -0.829           0.00549
+   13                    training_deficit_score          0.654          0.404                            -0.251                      -0.455                  -0.861           0.00767
+
+=== TOP RELATIVE INDICATORS BY CLUSTER ===
+
+ cluster_id  rank                                   feature  mean cluster_mean_z_vs_sample
+          1     1       system_change_resistance_constraint 0.621                    0.257
+          1     2 administrative_disorganization_constraint 0.551                    0.195
+          1     3              willingness_constraint_score 0.404                    0.188
+          1     4                     time_constraint_score 0.625                    0.170
+          1     5                 staffing_constraint_score 0.570                    0.138
+          2     1                         device_constraint 0.821                    1.729
+          2     2           digital_tool_variety_constraint 0.862                    1.728
+          2     3             internet_stability_constraint 0.750                    1.686
+          2     4            digital_usage_constraint_score 0.718                    1.590
+          2     5               recording_system_constraint 1.000                    1.545
+
+=== IMPLEMENTATION DIFFICULTY VALIDATION ===
+
+                  validation_feature  cluster_1_complete_n  cluster_2_complete_n cluster_1_mean cluster_2_mean mean_difference_cluster_2_minus_1  cluster_1_median  cluster_2_median  mann_whitney_u mann_whitney_p cliffs_delta_cluster_2_vs_1 hedges_g_cluster_2_vs_1  imputation_used                                                  interpretation
+implementation_difficulty_constraint                    64                    13          0.598          0.346                            -0.252               0.5              0.25           188.0        0.00136                      -0.548                  -0.928            False External descriptive criterion only; not used to form clusters.
+
+=== SURROGATE MODEL SUMMARY ===
+
+ cv_splits  cv_repeats  total_test_folds accuracy_mean accuracy_std balanced_accuracy_mean balanced_accuracy_std macro_f1_mean macro_f1_std  surrogate_interpretation_only
+         5          10                50        0.9851       0.0295                 0.9912                0.0174        0.9755       0.0490                           True
+
+=== TOP PERMUTATION IMPORTANCE ===
+
+ rank                                   feature permutation_importance_mean permutation_importance_std positive_importance_fraction
+    1               recording_system_constraint                      0.0303                     0.0763                        0.220
+    2                         device_constraint                      0.0176                     0.0614                        0.160
+    3             internet_stability_constraint                      0.0091                     0.0335                        0.240
+    4       system_change_resistance_constraint                      0.0079                     0.0229                        0.280
+    5              willingness_constraint_score                      0.0023                     0.0073                        0.160
+    6 administrative_disorganization_constraint                      0.0023                     0.0053                        0.180
+    7                     time_constraint_score                      0.0022                     0.0058                        0.140
+    8                 staffing_constraint_score                      0.0008                     0.0037                        0.060
+    9                    training_deficit_score                      0.0007                     0.0043                        0.080
+   10                admin_time_load_constraint                      0.0002                     0.0014                        0.020
+
+GATE STATUS: EMPIRICAL INTERPRETATION COMPLETE. Review contrasts before assigning profile names.

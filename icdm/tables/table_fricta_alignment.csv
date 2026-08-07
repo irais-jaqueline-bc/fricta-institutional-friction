@@ -1,0 +1,11 @@
+Empirical cluster,Profile name,FRICTA v1 archetype,Count,Within-cluster proportion
+1,Organizational-Capacity Friction,Human-Capacity-Limited,10,0.14705882352941177
+1,Organizational-Capacity Friction,Infrastructure-Limited,1,0.014705882352941176
+1,Organizational-Capacity Friction,Multi-Constraint,2,0.029411764705882353
+1,Organizational-Capacity Friction,Operationally-Limited,3,0.04411764705882353
+1,Organizational-Capacity Friction,Organizationally-Limited,52,0.7647058823529411
+2,Infrastructure-Bottleneck,Human-Capacity-Limited,0,0.0
+2,Infrastructure-Bottleneck,Infrastructure-Limited,12,0.9230769230769231
+2,Infrastructure-Bottleneck,Multi-Constraint,1,0.07692307692307693
+2,Infrastructure-Bottleneck,Operationally-Limited,0,0.0
+2,Infrastructure-Bottleneck,Organizationally-Limited,0,0.0

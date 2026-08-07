@@ -1,0 +1,43 @@
+
+=== CORE SENSITIVITY SUMMARY ===
+
+                      analysis_id adjusted_rand_index_vs_final normalized_mutual_information_vs_final silhouette  representation_dimensions  minimum_cluster_size  maximum_cluster_size
+ BASELINE_RECOMPUTED_PCA85_HAC_K2                       1.0000                                 1.0000     0.4108                          5                    13                    68
+       NO_PCA_STANDARDIZED_HAC_K2                       1.0000                                 1.0000     0.3603                         13                    13                    68
+RAW_0_1_NO_STANDARDIZATION_HAC_K2                       1.0000                                 1.0000     0.3565                         13                    13                    68
+        AUGMENTED_15_PCA85_HAC_K2                       0.9365                                 0.8744     0.3934                          6                    12                    69
+       AUGMENTED_15_NO_PCA_HAC_K2                       0.9365                                 0.8744     0.3486                         15                    12                    69
+
+=== LEAVE-ONE-FEATURE-OUT SUMMARY ===
+
+                          removed_feature adjusted_rand_index_vs_final silhouette  representation_dimensions  minimum_cluster_size  maximum_cluster_size
+               admin_time_load_constraint                       0.9389     0.4113                          5                    14                    67
+             willingness_constraint_score                       1.0000     0.4191                          5                    13                    68
+                   training_deficit_score                       1.0000     0.4410                          4                    13                    68
+           digital_usage_constraint_score                       1.0000     0.3929                          5                    13                    68
+          digital_tool_variety_constraint                       1.0000     0.3878                          5                    13                    68
+            internet_stability_constraint                       1.0000     0.3872                          5                    13                    68
+                staffing_constraint_score                       1.0000     0.4212                          5                    13                    68
+                        device_constraint                       1.0000     0.3880                          5                    13                    68
+                    time_constraint_score                       1.0000     0.4225                          5                    13                    68
+administrative_disorganization_constraint                       1.0000     0.4258                          4                    13                    68
+              recording_system_constraint                       1.0000     0.4003                          5                    13                    68
+      system_change_resistance_constraint                       1.0000     0.4074                          5                    13                    68
+                resource_constraint_score                       1.0000     0.4017                          5                    13                    68
+
+=== PCA THRESHOLD SENSITIVITY ===
+
+pca_threshold  representation_dimensions adjusted_rand_index_vs_final silhouette  minimum_cluster_size  maximum_cluster_size
+         0.80                          4                       1.0000     0.4276                    13                    68
+         0.85                          5                       1.0000     0.4108                    13                    68
+         0.90                          6                       1.0000     0.3961                    13                    68
+         0.95                          8                       1.0000     0.3765                    13                    68
+
+=== ALGORITHMIC REFERENCE COMPARISON ===
+
+               candidate_id adjusted_rand_index_vs_final normalized_mutual_information_vs_final  minimum_cluster_size  maximum_cluster_size            cluster_sizes                                                  interpretation
+      R1_PCA_85__KMEANS__K2                       0.8275                                 0.7364                    16                    65                0:65;1:16 Algorithmic or granularity alternative; not the selected model.
+R0_STANDARDIZED__KMEANS__K2                       0.8275                                 0.7364                    16                    65                0:16;1:65 Algorithmic or granularity alternative; not the selected model.
+      R1_PCA_85__KMEANS__K5                       0.1676                                 0.4328                    13                    20 0:15;1:20;2:14;3:13;4:19 Algorithmic or granularity alternative; not the selected model.
+
+GATE STATUS: SENSITIVITY COMPLETE. Next step is figures and paper-ready tables.

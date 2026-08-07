@@ -1,0 +1,59 @@
+
+=== CIPHER STAGE 2 MEMBERSHIP CERTAINTY ===
+
+Institutions: 81
+Certainty classes: {'CORE': 66, 'HALO': 9, 'BOUNDARY': 6}
+Ensemble/reference disagreements: 1
+Reference-profile probability: min=0.2398, median=1.0000
+Family consistency: min=0.1304, median=1.0000
+Consensus gap: min=-0.4868, median=0.9279
+
+=== PROFILE SUMMARY ===
+
+ reference_profile  n  median_reference_probability  minimum_reference_probability  median_family_consistency  minimum_family_consistency  median_entropy  median_consensus_gap  core_count  halo_count  boundary_count  ensemble_reference_disagreements
+                 1 68                           1.0                       0.239796                        1.0                    0.130435            -0.0              0.927352          53           9               6                                 1
+                 2 13                           1.0                       0.994872                        1.0                    0.979167            -0.0              0.931636          13           0               0                                 0
+
+=== FAMILY PROFILE SUMMARY ===
+
+ reference_profile          family  institutions  median_reference_probability  minimum_reference_probability  median_oob_predictions
+                 1       R0_KMEANS            68                           1.0                       0.200000                    49.0
+                 1         R0_WARD            68                           1.0                       0.375000                    49.0
+                 1 R1_PCA85_KMEANS            68                           1.0                       0.130435                    49.0
+                 1   R1_PCA85_WARD            68                           1.0                       0.245614                    50.0
+                 2       R0_KMEANS            13                           1.0                       1.000000                    50.0
+                 2         R0_WARD            13                           1.0                       0.979167                    51.0
+                 2 R1_PCA85_KMEANS            13                           1.0                       1.000000                    48.0
+                 2   R1_PCA85_WARD            13                           1.0                       1.000000                    49.0
+
+=== 15 LOWEST-CERTAINTY INSTITUTIONS ===
+
+institution_id  reference_profile  reference_profile_probability  family_consistency  normalized_entropy  membership_margin  consensus_gap  family_disagreement_count certainty_class
+      INST_023                  1                       0.239796            0.130435            0.794701           0.520408      -0.486820                          0        BOUNDARY
+      INST_007                  1                       0.574359            0.386364            0.983987           0.148718       0.136953                          2        BOUNDARY
+      INST_064                  1                       0.590090            0.338983            0.976453           0.180180       0.170939                          2        BOUNDARY
+      INST_066                  1                       0.634921            0.428571            0.946819           0.269841       0.247844                          2        BOUNDARY
+      INST_019                  1                       0.694581            0.553191            0.887814           0.389163       0.362231                          0        BOUNDARY
+      INST_025                  1                       0.761658            0.578947            0.792272           0.523316       0.462481                          0        BOUNDARY
+      INST_073                  1                       0.796703            0.693878            0.728473           0.593407       0.577961                          0            HALO
+      INST_052                  1                       0.819095            0.673077            0.682052           0.638191       0.627244                          0            HALO
+      INST_033                  1                       0.849162            0.720930            0.611933           0.698324       0.658694                          0            HALO
+      INST_003                  1                       0.857143            0.711538            0.591673           0.714286       0.664052                          0            HALO
+      INST_077                  1                       0.862222            0.781818            0.578389           0.724444       0.712786                          0            HALO
+      INST_018                  1                       0.867403            0.795918            0.564517           0.734807       0.715598                          0            HALO
+      INST_042                  1                       0.868421            0.765957            0.561753           0.736842       0.722747                          0            HALO
+      INST_009                  1                       0.873096            0.760870            0.548885           0.746193       0.730206                          0            HALO
+      INST_015                  1                       0.876238            0.822222            0.540080           0.752475       0.731275                          0            HALO
+
+=== COMPUTATION CHECKS ===
+
+[PASS] 81_institutions
+[PASS] all_have_at_least_150_oob_predictions
+[PASS] all_probabilities_in_0_1
+[PASS] profile_probabilities_sum_to_1
+[PASS] certainty_class_complete
+[PASS] both_profiles_present
+[PASS] family_rows_complete
+
+GATE STATUS: PASS_STAGE_2_COMPUTATION
+Stage 2 results require interpretive review before core/halo/boundary claims are accepted.

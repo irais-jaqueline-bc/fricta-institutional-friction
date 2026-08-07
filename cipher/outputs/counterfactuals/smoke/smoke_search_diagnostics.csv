@@ -1,0 +1,7 @@
+institution_id,certainty_class,reference_profile_probability,current_profile,target_profile,beam_counterfactuals,beam_evaluated_candidates,beam_valid_plausible_candidates,beam_seconds,exact_audited,exact_counterfactuals,exact_evaluated_candidates,exact_valid_plausible_candidates,exact_seconds,beam_best_cost,exact_best_cost,optimality_gap,beam_solution_exists,exact_solution_exists,existence_matches_exact,beam_matches_exact_best
+INST_023,BOUNDARY,0.2397959183673469,1,2,4,24836,755,4.2575553150090855,True,4,147291,1244,14.546575540996855,1.499998000004,1.499998000004,0.0,True,True,True,True
+INST_007,BOUNDARY,0.5743589743589743,1,2,5,25099,180,4.149783484986983,True,5,147291,277,15.4682637629885,3.2499945000122503,3.2499945000122503,0.0,True,True,True,True
+INST_043,CORE,1.0,1,2,0,24007,0,4.351416479999898,True,0,147291,0,17.08482351800194,,,,False,False,True,True
+INST_046,CORE,1.0,1,2,0,25138,0,4.173716696008341,True,0,147291,0,15.069461551000131,,,,False,False,True,True
+INST_071,CORE,1.0,2,1,4,25174,539,4.147319095005514,True,5,147291,2675,15.07118290499784,3.74999450001025,3.74999450001025,0.0,True,True,True,True
+INST_065,CORE,1.0,2,1,5,24811,285,4.046542240990675,True,5,147291,465,15.01946970699646,4.99999150001825,4.999990250024375,1.2499938755183848e-06,True,True,True,False

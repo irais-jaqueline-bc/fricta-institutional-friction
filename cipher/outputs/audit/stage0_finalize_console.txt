@@ -1,0 +1,15 @@
+
+NOTE: The 13 primary features are correct, but their order differs from the human-readable CIPHER list. The pipeline will preserve the frozen order from icdm/design/experiment_config.json.
+
+
+=== CIPHER STAGE 0 FREEZE SUMMARY ===
+
+Institutions frozen: 81
+Primary features frozen: 13
+Reference model frozen: R1_PCA_85__HAC_WARD__K2
+Cluster sizes frozen: {'1': 68, '2': 13}
+Hashed source files: 7
+Governance used for fitting: False
+FRICTA scores/archetypes used for fitting: False
+
+GATE STATUS: CIPHER STAGE 0 FROZEN. Stage 1 may now begin.

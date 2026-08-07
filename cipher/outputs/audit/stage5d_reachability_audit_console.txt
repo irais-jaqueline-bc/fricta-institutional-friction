@@ -1,0 +1,45 @@
+
+=== CIPHER STAGE 5D — COUNTERFACTUAL REACHABILITY AUDIT ===
+
+NOTE: Stage 5C's >=70% coverage claim remains FAILED. This is an exploratory post-failure characterization.
+
+=== REACHABILITY SUMMARY ===
+
+        dimension    group  n  solvable  coverage  plausibility_failures  no_transition_failures
+REFERENCE_PROFILE        1 68        10  0.147059                     50                       8
+REFERENCE_PROFILE        2 13         9  0.692308                      4                       0
+  CERTAINTY_CLASS BOUNDARY  6         6  1.000000                      0                       0
+  CERTAINTY_CLASS     CORE 66        10  0.151515                     48                       8
+  CERTAINTY_CLASS     HALO  9         3  0.333333                      6                       0
+
+=== PROFILE 2 vs PROFILE 1 — REACHABILITY ===
+
+2x2 table [[P2 solved, P2 unsolved], [P1 solved, P1 unsolved]]: [[9, 4], [10, 58]]
+Fisher odds ratio: 13.05
+Fisher p: 0.00014698
+
+=== BOUNDARY vs NON-BOUNDARY — REACHABILITY ===
+
+2x2 table [[Boundary solved, Boundary unsolved], [Other solved, Other unsolved]]: [[6, 0], [13, 62]]
+Fisher odds ratio: inf
+Fisher p: 0.00008360
+
+=== CERTAINTY CLASS vs REACHABILITY ===
+
+Cramer's V: 0.5283
+Permutation p: 0.00004000
+
+=== PROFILE vs FAILURE MODE ===
+
+Cramer's V: 0.4760
+Permutation p: 0.00040000
+
+=== WITHIN PROFILE 1: SOLVABLE vs UNSOLVABLE UNCERTAINTY ===
+
+reference_profile_probability: solved median=0.7281, unsolved median=1.0000, Cliff delta=-0.9517, p=0.00000012
+family_consistency: solved median=0.5661, unsolved median=1.0000, Cliff delta=-0.9448, p=0.00000015
+normalized_entropy: solved median=0.7935, unsolved median=0.0000, Cliff delta=0.9517, p=0.00000012
+membership_margin: solved median=0.5219, unsolved median=1.0000, Cliff delta=-0.9517, p=0.00000012
+
+GATE STATUS: STAGE_5D_REACHABILITY_AUDIT_COMPLETE
+Do not resume the original Stage 6 path until the CIPHER thesis is explicitly revised.

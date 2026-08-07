@@ -1,0 +1,65 @@
+{
+  "status": "PREPROCESSING_COMPLETE",
+  "input": {
+    "path": "data/processed/fricta_scored.csv",
+    "sha256": "ee5a8584495a096e851c0039788410b5ad7f79912e66bf1b6097aa156d8a90b3",
+    "rows": 81,
+    "columns": 75,
+    "unique_institution_ids": 81
+  },
+  "design_files": {
+    "experiment_config_sha256": "ef96957316fdc7ff0dfc5b249c1a4638b56076e0b0bc339f94eaae06815d700f",
+    "feature_manifest_sha256": "150caaaac2e3e1551700694682395ecfb6ef06873d5c8ece7f955f93c4d9a67f"
+  },
+  "primary_matrix": {
+    "rows": 81,
+    "features": 13,
+    "feature_order": [
+      "willingness_constraint_score",
+      "digital_usage_constraint_score",
+      "training_deficit_score",
+      "device_constraint",
+      "digital_tool_variety_constraint",
+      "internet_stability_constraint",
+      "staffing_constraint_score",
+      "time_constraint_score",
+      "administrative_disorganization_constraint",
+      "recording_system_constraint",
+      "system_change_resistance_constraint",
+      "admin_time_load_constraint",
+      "resource_constraint_score"
+    ],
+    "missing_values": 0,
+    "raw_range_min": 0.0,
+    "raw_range_max": 1.0,
+    "standardized_max_absolute_mean": 3.015420560710302e-16,
+    "standardized_min_std_ddof0": 0.9999999999999999,
+    "standardized_max_std_ddof0": 1.0000000000000002
+  },
+  "sensitivity_matrix": {
+    "rows": 81,
+    "features": 15
+  },
+  "validation": {
+    "features": [
+      "implementation_difficulty_constraint"
+    ],
+    "all_rows": 81,
+    "complete_case_rows": 77,
+    "missing_rows": 4,
+    "imputation_used": false
+  },
+  "metadata": {
+    "rows": 81,
+    "columns": [
+      "institution_id",
+      "state",
+      "institution_type",
+      "children_served",
+      "staff_size",
+      "pilot_openness_constraint",
+      "friction_archetype"
+    ]
+  },
+  "important_note": "X_primary_standardized_full.csv is only for the full-data descriptive solution. StandardScaler and PCA must be refitted inside every subsampling/stability iteration."
+}

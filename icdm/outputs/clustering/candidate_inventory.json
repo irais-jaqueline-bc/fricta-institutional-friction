@@ -1,0 +1,50 @@
+{
+  "status": "FULL_DATA_CLUSTER_SEARCH_COMPLETE",
+  "candidate_count": 30,
+  "representations": {
+    "R0_STANDARDIZED": {
+      "dimensions": 13,
+      "features": [
+        "willingness_constraint_score",
+        "digital_usage_constraint_score",
+        "training_deficit_score",
+        "device_constraint",
+        "digital_tool_variety_constraint",
+        "internet_stability_constraint",
+        "staffing_constraint_score",
+        "time_constraint_score",
+        "administrative_disorganization_constraint",
+        "recording_system_constraint",
+        "system_change_resistance_constraint",
+        "admin_time_load_constraint",
+        "resource_constraint_score"
+      ]
+    },
+    "R1_PCA_85": {
+      "dimensions": 5,
+      "features": [
+        "PC1",
+        "PC2",
+        "PC3",
+        "PC4",
+        "PC5"
+      ]
+    }
+  },
+  "algorithms": [
+    "KMEANS",
+    "HAC_WARD",
+    "GMM_DIAG"
+  ],
+  "k_values": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "minimum_cluster_size_rule": 5,
+  "eligible_candidates": 30,
+  "ineligible_candidates": 0,
+  "important_note": "This stage does not select a winner. Candidate selection requires resampling stability."
+}

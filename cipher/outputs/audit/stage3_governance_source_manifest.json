@@ -1,0 +1,15 @@
+{
+  "source_path": "icdm/outputs/features/institution_metadata.csv",
+  "source_sha256": "7d3691474f6e8d82e0d6fcaf4da44d21e1935ec7ca74ddc263850d9736e1f7af",
+  "aligned_n": 81,
+  "governance_counts": {
+    "NGO": 27,
+    "PUBLIC": 22,
+    "PRIVATE": 17,
+    "MIXED": 14,
+    "UNKNOWN": 1
+  },
+  "used_in_clustering": false,
+  "used_for_model_selection": false,
+  "role": "post-hoc external metadata null test only"
+}

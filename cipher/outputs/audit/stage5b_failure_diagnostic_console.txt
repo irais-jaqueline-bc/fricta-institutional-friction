@@ -1,0 +1,52 @@
+
+=== CIPHER STAGE 5B — FAILURE DIAGNOSTIC ===
+
+=== FAILURE SUMMARY ===
+
+institution_id certainty_class  current_profile  target_profile  transition_candidates_upto_4  plausible_candidates_upto_4  valid_plausible_candidates_upto_4  best_target_margin_upto_4  best_plausible_target_margin_upto_4  minimum_target_exemplar_l0  minimum_target_exemplar_cost                            failure_mode
+      INST_023        BOUNDARY                1               2                         56082                         1245                               1244                   4.192250                             3.931938                           7                      6.583323                  VALID_PLAUSIBLE_EXISTS
+      INST_007        BOUNDARY                1               2                         41823                          277                                277                   4.266796                             3.559348                           8                      7.499988                  VALID_PLAUSIBLE_EXISTS
+      INST_043            CORE                1               2                             4                            0                                  0                   0.256123                                  NaN                          10                     18.499962 TRANSITIONS_EXIST_BUT_FAIL_PLAUSIBILITY
+      INST_046            CORE                1               2                            93                            0                                  0                   1.231636                                  NaN                           9                     14.749972 TRANSITIONS_EXIST_BUT_FAIL_PLAUSIBILITY
+      INST_071            CORE                2               1                         30048                         8133                               2675                   3.364807                             2.626732                           7                      6.749990                  VALID_PLAUSIBLE_EXISTS
+      INST_065            CORE                2               1                         11556                         4477                                465                   2.725246                             1.581689                           7                      6.583323                  VALID_PLAUSIBLE_EXISTS
+
+=== BY-DEPTH COUNTS ===
+
+institution_id  depth  evaluated  transition_count  plausible_count  valid_and_plausible_count  best_target_margin  best_plausible_target_margin  minimum_plausibility_distance_among_transitions
+      INST_023      1         48                22                0                          0            1.595105                           NaN                                         0.856551
+      INST_023      2       1062               422               10                         10            2.624301                      1.808908                                         0.764401
+      INST_023      3      14340              5685              139                        139            3.496412                      3.101392                                         0.676615
+      INST_023      4     131841             49953             1096                       1095            4.192250                      3.931938                                         0.589924
+      INST_007      1         48                 7                0                          0            0.876958                           NaN                                         0.954165
+      INST_007      2       1062               275                0                          0            1.999352                           NaN                                         0.844783
+      INST_007      3      14340              3848               18                         18            3.105719                      2.298024                                         0.764638
+      INST_007      4     131841             37693              259                        259            4.266796                      3.559348                                         0.687046
+      INST_043      1         48                 0                0                          0           -3.660738                           NaN                                              NaN
+      INST_043      2       1062                 0                0                          0           -2.232077                           NaN                                              NaN
+      INST_043      3      14340                 0                0                          0           -0.822196                           NaN                                              NaN
+      INST_043      4     131841                 4                0                          0            0.256123                           NaN                                         1.659624
+      INST_046      1         48                 0                0                          0           -3.777014                           NaN                                              NaN
+      INST_046      2       1062                 0                0                          0           -2.381158                           NaN                                              NaN
+      INST_046      3      14340                 0                0                          0           -0.535885                           NaN                                              NaN
+      INST_046      4     131841                93                0                          0            1.231636                           NaN                                         1.268193
+      INST_071      1         48                 0                3                          0           -0.893031                     -1.577854                                              NaN
+      INST_071      2       1062                25               59                          0            0.678164                     -0.231546                                         1.027890
+      INST_071      3      14340              1564              838                         96            2.368034                      1.634192                                         0.811635
+      INST_071      4     131841             28459             7233                       2579            3.364807                      2.626732                                         0.727995
+      INST_065      1         48                 0                0                          0           -1.932077                           NaN                                              NaN
+      INST_065      2       1062                 0               10                          0           -0.259317                     -1.046325                                              NaN
+      INST_065      3      14340               278              354                          4            1.398193                      0.088283                                         0.943158
+      INST_065      4     131841             11278             4113                        461            2.725246                      1.581689                                         0.810417
+
+=== TARGET EXEMPLAR MINIMUM L0 ===
+
+institution_id target_institution_id  l0  weighted_l1  total_cost
+      INST_023              INST_065   7     4.833323    6.583323
+      INST_007              INST_039   8     5.499988    7.499988
+      INST_043              INST_027  10    15.999962   18.499962
+      INST_046              INST_065   9    12.499972   14.749972
+      INST_071              INST_023   7     4.999990    6.749990
+      INST_065              INST_023   7     4.833323    6.583323
+
+GATE STATUS: STAGE_5B_FAILURE_DIAGNOSED_REVIEW_REQUIRED

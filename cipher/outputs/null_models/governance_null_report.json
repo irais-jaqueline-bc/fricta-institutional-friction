@@ -1,0 +1,20 @@
+{
+  "cramers_v_bias_corrected": 0.15661071577921537,
+  "permutation_p": 0.25507449255074494,
+  "permutations": 10000,
+  "cv_splits": 5,
+  "cv_repeats": 20,
+  "cv_folds": 100,
+  "balanced_accuracy": {
+    "q025": 0.5,
+    "median": 0.5,
+    "q975": 0.5
+  },
+  "macro_f1_median": 0.45161290322580644,
+  "ari_median": 0.0,
+  "nmi_median": 0.0,
+  "interpretive_flags": {
+    "strong_governance_association": false,
+    "governance_nearly_reconstructs_profiles": false
+  }
+}

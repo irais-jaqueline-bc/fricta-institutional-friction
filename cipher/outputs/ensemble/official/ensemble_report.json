@@ -1,0 +1,64 @@
+{
+  "mode": "official",
+  "created_at_utc": "2026-08-06T23:32:22.784600+00:00",
+  "random_seed": 42,
+  "n_institutions": 81,
+  "sample_fraction": 0.8,
+  "sample_size_rule": "ceil(fraction * n)",
+  "sample_size": 65,
+  "oob_size_per_member": 16,
+  "total_features": 13,
+  "sampled_features_per_member": 11,
+  "reference_profiles": [
+    1,
+    2
+  ],
+  "accepted_members": 1000,
+  "attempts": 1000,
+  "overall_acceptance_rate": 1.0,
+  "family_summaries": {
+    "R0_WARD": {
+      "target_accepted_members": 250,
+      "accepted_members": 250,
+      "attempts": 250,
+      "rejected_attempts": 0,
+      "acceptance_rate": 1.0
+    },
+    "R1_PCA85_WARD": {
+      "target_accepted_members": 250,
+      "accepted_members": 250,
+      "attempts": 250,
+      "rejected_attempts": 0,
+      "acceptance_rate": 1.0
+    },
+    "R0_KMEANS": {
+      "target_accepted_members": 250,
+      "accepted_members": 250,
+      "attempts": 250,
+      "rejected_attempts": 0,
+      "acceptance_rate": 1.0
+    },
+    "R1_PCA85_KMEANS": {
+      "target_accepted_members": 250,
+      "accepted_members": 250,
+      "attempts": 250,
+      "rejected_attempts": 0,
+      "acceptance_rate": 1.0
+    }
+  },
+  "oob_predictions_per_institution": {
+    "minimum": 172,
+    "median": 197.0,
+    "maximum": 229
+  },
+  "minimum_oob_pair_count": 18,
+  "every_family_has_both_profiles": true,
+  "elapsed_seconds": 19.08432022800116,
+  "gate_checks": {
+    "accepted_exact_frozen_target": true,
+    "overall_acceptance_rate_at_least_0_90": true,
+    "minimum_oob_predictions_at_least_150": true,
+    "every_family_has_both_profiles": true
+  },
+  "gate_status": "PASS_STAGE_1"
+}

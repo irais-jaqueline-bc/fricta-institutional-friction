@@ -1,0 +1,14 @@
+analysis_id,adjusted_rand_index_vs_final,normalized_mutual_information_vs_final,silhouette,feature_count,representation_dimensions,minimum_cluster_size,maximum_cluster_size,cluster_sizes,notes,removed_feature
+LEAVE_OUT__admin_time_load_constraint,0.9389384333562,0.879200524230045,0.4113172241287466,12,5,14,67,0:67;1:14,Leave-one-primary-feature-out PCA85 HAC-Ward k=2.,admin_time_load_constraint
+LEAVE_OUT__willingness_constraint_score,1.0,1.0,0.41913987440014994,12,5,13,68,0:68;1:13,Leave-one-primary-feature-out PCA85 HAC-Ward k=2.,willingness_constraint_score
+LEAVE_OUT__training_deficit_score,1.0,1.0,0.44100121836307554,12,4,13,68,0:68;1:13,Leave-one-primary-feature-out PCA85 HAC-Ward k=2.,training_deficit_score
+LEAVE_OUT__digital_usage_constraint_score,1.0,1.0,0.39291509009875697,12,5,13,68,0:68;1:13,Leave-one-primary-feature-out PCA85 HAC-Ward k=2.,digital_usage_constraint_score
+LEAVE_OUT__digital_tool_variety_constraint,1.0,1.0,0.3878155130390156,12,5,13,68,0:68;1:13,Leave-one-primary-feature-out PCA85 HAC-Ward k=2.,digital_tool_variety_constraint
+LEAVE_OUT__internet_stability_constraint,1.0,1.0,0.38719989902234564,12,5,13,68,0:68;1:13,Leave-one-primary-feature-out PCA85 HAC-Ward k=2.,internet_stability_constraint
+LEAVE_OUT__staffing_constraint_score,1.0,1.0,0.421202175756259,12,5,13,68,0:68;1:13,Leave-one-primary-feature-out PCA85 HAC-Ward k=2.,staffing_constraint_score
+LEAVE_OUT__device_constraint,1.0,1.0,0.38797922550498043,12,5,13,68,0:68;1:13,Leave-one-primary-feature-out PCA85 HAC-Ward k=2.,device_constraint
+LEAVE_OUT__time_constraint_score,1.0,1.0,0.4225307734960536,12,5,13,68,0:68;1:13,Leave-one-primary-feature-out PCA85 HAC-Ward k=2.,time_constraint_score
+LEAVE_OUT__administrative_disorganization_constraint,1.0,1.0,0.42584453479938345,12,4,13,68,0:68;1:13,Leave-one-primary-feature-out PCA85 HAC-Ward k=2.,administrative_disorganization_constraint
+LEAVE_OUT__recording_system_constraint,1.0,1.0,0.40032685215502783,12,5,13,68,0:68;1:13,Leave-one-primary-feature-out PCA85 HAC-Ward k=2.,recording_system_constraint
+LEAVE_OUT__system_change_resistance_constraint,1.0,1.0,0.4073907486536059,12,5,13,68,0:68;1:13,Leave-one-primary-feature-out PCA85 HAC-Ward k=2.,system_change_resistance_constraint
+LEAVE_OUT__resource_constraint_score,1.0,1.0,0.4016837406365343,12,5,13,68,0:68;1:13,Leave-one-primary-feature-out PCA85 HAC-Ward k=2.,resource_constraint_score

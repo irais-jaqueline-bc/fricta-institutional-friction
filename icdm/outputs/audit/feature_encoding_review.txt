@@ -1,0 +1,21 @@
+235-    )
+236-    df["uses_no_tool"] = tools.str.contains("Ninguna", case=False, regex=False).astype(
+237-        int
+238-    )
+239-
+240:    df["digital_tool_variety"] = (
+241-        df["uses_excel"]
+242-        + df["uses_whatsapp"]
+243-        + df["uses_google_workspace"]
+244-        + df["uses_specialized_software"]
+245-        + df["uses_other_tool"]
+246-    )
+247-
+248-    return df
+249-
+250-
+251-def create_anonymous_ids(df):
+252-    """Shuffle rows and create anonymous institution IDs."""
+253-    df = df.sample(frac=1, random_state=42).reset_index(drop=True)
+254-    df.insert(0, "institution_id", [f"INST_{i+1:03d}" for i in range(len(df))])
+255-    return df

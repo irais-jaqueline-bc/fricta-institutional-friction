@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("processed/data/fricta_scored.csv")
+df = pd.read_csv("data/processed/fricta_scored.csv")
 
 
 def cronbach_alpha(data):

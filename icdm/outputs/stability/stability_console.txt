@@ -1,0 +1,156 @@
+
+=== STABILITY SHORTLIST ===
+
+                 candidate_id silhouette davies_bouldin calinski_harabasz     bic                                          shortlist_reasons
+R0_STANDARDIZED__GMM_DIAG__K2     0.3495         0.9325             37.41 2592.75 BEST_CALINSKI_HARABASZ;BEST_DAVIES_BOULDIN;BEST_SILHOUETTE
+R0_STANDARDIZED__GMM_DIAG__K6     0.2192         1.5598             22.82  815.50                             BEST_BIC_WITHIN_REPRESENTATION
+R0_STANDARDIZED__HAC_WARD__K2     0.3603         0.8889             37.34     NaN BEST_CALINSKI_HARABASZ;BEST_DAVIES_BOULDIN;BEST_SILHOUETTE
+  R0_STANDARDIZED__KMEANS__K2     0.3352         1.0227             37.45     NaN BEST_CALINSKI_HARABASZ;BEST_DAVIES_BOULDIN;BEST_SILHOUETTE
+      R1_PCA_85__GMM_DIAG__K2     0.2293         0.8264             10.99 1329.06                                        BEST_DAVIES_BOULDIN
+      R1_PCA_85__GMM_DIAG__K4     0.2371         1.1596             22.20 1324.09                             BEST_BIC_WITHIN_REPRESENTATION
+      R1_PCA_85__GMM_DIAG__K5     0.3383         0.9303             41.74 1346.24                     BEST_CALINSKI_HARABASZ;BEST_SILHOUETTE
+      R1_PCA_85__HAC_WARD__K2     0.4108         0.7760             46.17     NaN                        BEST_DAVIES_BOULDIN;BEST_SILHOUETTE
+      R1_PCA_85__HAC_WARD__K3     0.3361         1.1789             46.30     NaN                                     BEST_CALINSKI_HARABASZ
+        R1_PCA_85__KMEANS__K2     0.3823         0.8966             46.34     NaN                        BEST_DAVIES_BOULDIN;BEST_SILHOUETTE
+        R1_PCA_85__KMEANS__K5     0.3507         1.0985             50.17     NaN                                     BEST_CALINSKI_HARABASZ
+
+Running 1000 subsamples per candidate with sample size 65/81.
+
+[1/11] R0_STANDARDIZED__GMM_DIAG__K2
+  completed 100/1000
+  completed 200/1000
+  completed 300/1000
+  completed 400/1000
+  completed 500/1000
+  completed 600/1000
+  completed 700/1000
+  completed 800/1000
+  completed 900/1000
+  completed 1000/1000
+[2/11] R0_STANDARDIZED__GMM_DIAG__K6
+  completed 100/1000
+  completed 200/1000
+  completed 300/1000
+  completed 400/1000
+  completed 500/1000
+  completed 600/1000
+  completed 700/1000
+  completed 800/1000
+  completed 900/1000
+  completed 1000/1000
+[3/11] R0_STANDARDIZED__HAC_WARD__K2
+  completed 100/1000
+  completed 200/1000
+  completed 300/1000
+  completed 400/1000
+  completed 500/1000
+  completed 600/1000
+  completed 700/1000
+  completed 800/1000
+  completed 900/1000
+  completed 1000/1000
+[4/11] R0_STANDARDIZED__KMEANS__K2
+  completed 100/1000
+  completed 200/1000
+  completed 300/1000
+  completed 400/1000
+  completed 500/1000
+  completed 600/1000
+  completed 700/1000
+  completed 800/1000
+  completed 900/1000
+  completed 1000/1000
+[5/11] R1_PCA_85__GMM_DIAG__K2
+  completed 100/1000
+  completed 200/1000
+  completed 300/1000
+  completed 400/1000
+  completed 500/1000
+  completed 600/1000
+  completed 700/1000
+  completed 800/1000
+  completed 900/1000
+  completed 1000/1000
+[6/11] R1_PCA_85__GMM_DIAG__K4
+  completed 100/1000
+  completed 200/1000
+  completed 300/1000
+  completed 400/1000
+  completed 500/1000
+  completed 600/1000
+  completed 700/1000
+  completed 800/1000
+  completed 900/1000
+  completed 1000/1000
+[7/11] R1_PCA_85__GMM_DIAG__K5
+  completed 100/1000
+  completed 200/1000
+  completed 300/1000
+  completed 400/1000
+  completed 500/1000
+  completed 600/1000
+  completed 700/1000
+  completed 800/1000
+  completed 900/1000
+  completed 1000/1000
+[8/11] R1_PCA_85__HAC_WARD__K2
+  completed 100/1000
+  completed 200/1000
+  completed 300/1000
+  completed 400/1000
+  completed 500/1000
+  completed 600/1000
+  completed 700/1000
+  completed 800/1000
+  completed 900/1000
+  completed 1000/1000
+[9/11] R1_PCA_85__HAC_WARD__K3
+  completed 100/1000
+  completed 200/1000
+  completed 300/1000
+  completed 400/1000
+  completed 500/1000
+  completed 600/1000
+  completed 700/1000
+  completed 800/1000
+  completed 900/1000
+  completed 1000/1000
+[10/11] R1_PCA_85__KMEANS__K2
+  completed 100/1000
+  completed 200/1000
+  completed 300/1000
+  completed 400/1000
+  completed 500/1000
+  completed 600/1000
+  completed 700/1000
+  completed 800/1000
+  completed 900/1000
+  completed 1000/1000
+[11/11] R1_PCA_85__KMEANS__K5
+  completed 100/1000
+  completed 200/1000
+  completed 300/1000
+  completed 400/1000
+  completed 500/1000
+  completed 600/1000
+  completed 700/1000
+  completed 800/1000
+  completed 900/1000
+  completed 1000/1000
+
+=== STABILITY SUMMARY ===
+
+ stability_rank                  candidate_id ari_median ari_p025 ari_p975 mean_matched_jaccard_median clusterwise_jaccard_min_mean  minimum_resample_cluster_size_min
+              1       R1_PCA_85__HAC_WARD__K2     1.0000   0.9053   1.0000                      1.0000                       0.9916                                  7
+              2 R0_STANDARDIZED__HAC_WARD__K2     1.0000   0.9262   1.0000                      1.0000                       0.9955                                  6
+              3         R1_PCA_85__KMEANS__K2     0.8620   0.7247   1.0000                      0.9097                       0.8619                                  7
+              4   R0_STANDARDIZED__KMEANS__K2     0.8574   0.6963   1.0000                      0.9046                       0.8499                                  7
+              5         R1_PCA_85__KMEANS__K5     0.8395   0.6538   1.0000                      0.9037                       0.8001                                  6
+              6 R0_STANDARDIZED__GMM_DIAG__K2     0.7858  -0.1064   1.0000                      0.8573                       0.6569                                  8
+              7       R1_PCA_85__HAC_WARD__K3     0.7559   0.3644   1.0000                      0.8613                       0.7140                                  4
+              8       R1_PCA_85__GMM_DIAG__K5     0.6148   0.2848   0.9513                      0.6187                       0.3309                                  1
+              9 R0_STANDARDIZED__GMM_DIAG__K6     0.4591   0.2964   0.6372                      0.5459                       0.2654                                  1
+             10       R1_PCA_85__GMM_DIAG__K4     0.3256   0.0701   0.7265                      0.5443                       0.4192                                  1
+             11       R1_PCA_85__GMM_DIAG__K2    -0.0438  -0.0937   1.0000                      0.3692                       0.1894                                  4
+
+GATE STATUS: STABILITY COMPLETE. Do not select the final model until reviewing this summary.

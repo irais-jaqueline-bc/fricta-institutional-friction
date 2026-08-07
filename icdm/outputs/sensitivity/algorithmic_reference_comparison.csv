@@ -1,0 +1,4 @@
+candidate_id,adjusted_rand_index_vs_final,normalized_mutual_information_vs_final,minimum_cluster_size,maximum_cluster_size,cluster_sizes,interpretation
+R1_PCA_85__KMEANS__K2,0.8274964505442499,0.7363903034251521,16,65,0:65;1:16,Algorithmic or granularity alternative; not the selected model.
+R0_STANDARDIZED__KMEANS__K2,0.8274964505442499,0.7363903034251521,16,65,0:16;1:65,Algorithmic or granularity alternative; not the selected model.
+R1_PCA_85__KMEANS__K5,0.16759619748250412,0.432848832965368,13,20,0:15;1:20;2:14;3:13;4:19,Algorithmic or granularity alternative; not the selected model.

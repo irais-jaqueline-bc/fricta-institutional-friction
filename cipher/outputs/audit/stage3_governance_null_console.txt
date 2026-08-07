@@ -1,0 +1,35 @@
+
+=== CIPHER STAGE 3B — GOVERNANCE NULL ===
+
+Source:
+  icdm/outputs/features/institution_metadata.csv
+SHA-256: 7d3691474f6e8d82e0d6fcaf4da44d21e1935ec7ca74ddc263850d9736e1f7af
+
+Verified governance counts:
+{'NGO': 27, 'PUBLIC': 22, 'PRIVATE': 17, 'MIXED': 14, 'UNKNOWN': 1}
+
+=== CONTINGENCY TABLE ===
+
+governance  NGO  PUBLIC  PRIVATE  MIXED  UNKNOWN
+cluster_id                                      
+1            25      15       15     12        1
+2             2       7        2      2        0
+
+=== ASSOCIATION TEST ===
+
+Bias-corrected Cramer's V: 0.1566
+Permutation p: 0.255074
+
+=== GOVERNANCE-ONLY HELD-OUT BASELINE ===
+
+Balanced accuracy: q025=0.5000, median=0.5000, q975=0.5000
+Macro-F1 median: 0.4516
+ARI median: 0.0000
+NMI median: 0.0000
+
+=== INTERPRETIVE FLAGS ===
+
+strong_governance_association: False
+governance_nearly_reconstructs_profiles: False
+
+GATE STATUS: STAGE_3B_GOVERNANCE_COMPUTED_REVIEW_REQUIRED

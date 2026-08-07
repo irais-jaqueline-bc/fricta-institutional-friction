@@ -1,0 +1,118 @@
+{
+  "status": "COUNTERFACTUAL_METHOD_V2_FROZEN_AFTER_SMOKE_VALIDATION_FAILURE",
+  "selected_reference_model": "R1_PCA_85__HAC_WARD__K2",
+  "selected_model_reconstruction": {
+    "scaler": "StandardScaler fit on all 81 institutions",
+    "pca": {
+      "variance_threshold": 0.85,
+      "svd_solver": "full",
+      "components_retained": 5,
+      "variance_explained": 0.868219709867243
+    },
+    "clustering": "AgglomerativeClustering(n_clusters=2, linkage='ward')",
+    "label_alignment": "Hungarian overlap alignment to frozen profile IDs",
+    "ward_ari_vs_frozen_reference": 1.0,
+    "exact_reference_match": true
+  },
+  "inductive_extension": {
+    "method": "nearest centroid in selected PCA representation",
+    "training_fidelity_to_reconstructed_ward": 1.0,
+    "training_fidelity_to_frozen_reference": 1.0,
+    "interpretation": "diagnostic inductive extension of a transductive Ward partition; not claimed to be native Ward prediction"
+  },
+  "search_space": {
+    "features": [
+      "willingness_constraint_score",
+      "digital_usage_constraint_score",
+      "training_deficit_score",
+      "device_constraint",
+      "digital_tool_variety_constraint",
+      "internet_stability_constraint",
+      "staffing_constraint_score",
+      "time_constraint_score",
+      "administrative_disorganization_constraint",
+      "recording_system_constraint",
+      "system_change_resistance_constraint",
+      "admin_time_load_constraint",
+      "resource_constraint_score"
+    ],
+    "candidate_values": "empirically observed normalized levels per feature",
+    "maximum_changed_features": 4,
+    "beam_width": 500,
+    "max_diverse_counterfactuals_per_institution": 5,
+    "official_search_optimizer": "EXACT_EXHAUSTIVE_ENUMERATION",
+    "beam_role_after_amendment": "efficiency baseline / ablation only"
+  },
+  "cost": {
+    "primary": "sum_j |x_j-x'_j|/(IQR_j+epsilon) + l0_penalty * number_changed_features",
+    "iqr_epsilon": 1e-06,
+    "l0_penalty": 0.25
+  },
+  "plausibility": {
+    "metric": "Euclidean distance in original normalized 13-D feature space",
+    "k_neighbors": 5,
+    "target_profile_threshold": "95th percentile of within-profile mean 5-NN distance",
+    "percentile": 0.95
+  },
+  "interpretation": "Counterfactuals are diagnostic profile-transition explanations, not causal intervention or treatment recommendations.",
+  "source_hashes": {
+    "primary_matrix": "831b5d2ae9777f57a27cbfb0fcab74e34dc6a81c257ef41c2c1baccbe5036be1",
+    "final_labels": "7efcf52df05d69f11d0b814fd54e11c28ad1e580737da2663b863492ff872bdd",
+    "actionability_manifest": "a7d6c669fe65c796d24b55d3e8d40529d8bf8a5ad3b42f5b035ea65f4da0dac8",
+    "stage4_report": "86b31144aaaf7d054be70167d0a2a667adf5068435ad4f4e57eb9e8a6f91e0ed"
+  },
+  "checks": {
+    "stage4_passed": true,
+    "selected_model_matches_frozen_reference": true,
+    "81_institutions": true,
+    "13_features": true,
+    "all_actionability_confirmed": true,
+    "all_13_features_counterfactually_eligible": true,
+    "reconstructed_ward_ari_1": true,
+    "reconstructed_ward_exact_reference_match": true,
+    "selected_model_centroid_extension_fidelity_at_least_095": true,
+    "every_feature_has_at_least_2_observed_levels": true,
+    "plausibility_thresholds_finite": true
+  },
+  "gate_status": "PASS_STAGE_5B_METHOD_AMENDMENT",
+  "parent_freeze": {
+    "path": "cipher/design/counterfactual_method_freeze.json",
+    "sha256": "7d6b915eeb0374586b4bf57b4e6a9e60188cc0c8beccdfcf64d35d57d667aca6"
+  },
+  "method_amendment": {
+    "stage": "5B",
+    "reason": "Beam width 500 agreed with exact exhaustive search on solution existence for all six smoke cases but missed the exact minimum-cost solution in at least one solvable case. Rather than relax the optimality audit post hoc, the official single-model counterfactual optimizer is changed to exact exhaustive enumeration of the already-frozen finite search space.",
+    "official_optimizer": "EXACT_EXHAUSTIVE_ENUMERATION",
+    "beam_role": "efficiency baseline / ablation only",
+    "unchanged_constraints": [
+      "13 frozen features",
+      "observed normalized feature levels only",
+      "maximum 4 changed features",
+      "IQR-weighted L1 cost",
+      "L0 penalty",
+      "Euclidean 13D plausibility",
+      "5-NN plausibility rule",
+      "target-profile 95th-percentile plausibility thresholds",
+      "selected reference geometry",
+      "diagnostic non-causal interpretation"
+    ],
+    "smoke_validation": {
+      "cases": 6,
+      "solvable_cases": 4,
+      "unsolvable_cases": 2,
+      "existence_matches": 6,
+      "exact_cost_matches_among_solvable": 3,
+      "exact_cost_mismatches_among_solvable": 1,
+      "maximum_absolute_cost_gap": 1.2499938755183848e-06,
+      "mismatch_institutions": [
+        "INST_065"
+      ],
+      "exact_candidates_per_case": 147291
+    },
+    "anti_p_hacking_note": "No feasibility, sparsity, plausibility, cost, or validity threshold is relaxed."
+  },
+  "amendment_source_hashes": {
+    "smoke_report": "3f59ca3aeaa5d5b4399fccae062c44ec03d1df9760d9e7e575ff5914908771cf",
+    "smoke_diagnostics": "9c55bb9bf7175a06a576ca230bc327991aff3834b7649debef34304c9aa0c31e"
+  }
+}

@@ -1,0 +1,61 @@
+
+=== CIPHER STAGE 1 SMOKE AUDIT ===
+
+[PASS] report_mode_smoke
+[PASS] accepted_members_8
+[PASS] manifest_rows_8
+[PASS] metrics_rows_8
+[PASS] member_ids_unique
+[PASS] manifest_metrics_member_ids_match
+[PASS] family_counts_exact
+[PASS] sample_size_65
+[PASS] oob_size_16
+[PASS] feature_count_11
+[PASS] pca_components_present
+[PASS] pca_variance_at_least_085
+[PASS] raw_pca_fields_empty
+[PASS] all_metrics_finite
+[PASS] minimum_cluster_size_at_least_5
+[PASS] ward_extension_fidelity_at_least_095
+[PASS] kmeans_native_fidelity_exact_1
+[PASS] all_prediction_columns_match
+[PASS] oob_prediction_columns_match
+[PASS] prediction_rows_81
+[PASS] oob_prediction_rows_81
+[PASS] all_predictions_only_profiles_1_2
+[PASS] exactly_16_oob_predictions_per_member
+[PASS] family_consensus_rows_324
+[PASS] coassignment_shape_81x81
+[PASS] coassignment_symmetric
+[PASS] coassignment_diagonal_1
+[PASS] coassignment_range_0_1
+[PASS] oob_coassignment_shape_81x81
+[PASS] oob_count_matrix_symmetric
+[PASS] oob_coassignment_symmetric
+
+=== METRIC SUMMARY ===
+
+         family  silhouette  davies_bouldin  calinski_harabasz  reference_ari_on_sample  ward_or_native_extension_fidelity_on_sample  minimum_sampled_cluster_size
+        R0_WARD    0.304745        0.996670          22.514493                 1.000000                                     0.969231                            10
+        R0_WARD    0.340725        1.002068          31.694163                 0.785838                                     0.984615                            13
+  R1_PCA85_WARD    0.372407        0.844357          29.526249                 1.000000                                     1.000000                            10
+  R1_PCA85_WARD    0.407332        0.804199          38.210945                 1.000000                                     1.000000                            11
+      R0_KMEANS    0.343079        1.060613          32.205481                 0.724730                                     1.000000                            14
+      R0_KMEANS    0.257239        1.422184          22.675118                 0.391220                                     1.000000                            17
+R1_PCA85_KMEANS    0.455261        0.723338          52.283286                 0.928778                                     1.000000                            13
+R1_PCA85_KMEANS    0.407193        0.889383          45.268351                 0.733518                                     1.000000                            15
+
+=== FAMILY SUMMARY ===
+
+         family  members  silhouette_median  reference_ari_median  extension_fidelity_min  minimum_cluster_size
+      R0_KMEANS        2           0.300159              0.557975                1.000000                    14
+        R0_WARD        2           0.322735              0.892919                0.969231                    10
+R1_PCA85_KMEANS        2           0.431227              0.831148                1.000000                    13
+  R1_PCA85_WARD        2           0.389870              1.000000                1.000000                    10
+
+Rejected attempts: 0
+OOB predictions per institution: min=0, median=2.0, max=4
+Ward extension fidelity minimum: 0.9692
+
+GATE STATUS: PASS_SMOKE_AUDIT
+The official 1,000-member run may be authorized after reviewing these metrics.

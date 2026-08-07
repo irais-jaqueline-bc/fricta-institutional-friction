@@ -1,0 +1,35 @@
+
+=== THEORY ALIGNMENT SUMMARY ===
+
+Institutions: 81
+Empirical clusters: 2
+FRICTA v1 archetypes: 5
+Adjusted Rand Index: 0.4519
+Normalized Mutual Information: 0.4910
+Cramer's V: 0.9243
+Permutation p-value (ARI): 0.00010
+Permutation p-value (NMI): 0.00010
+
+=== CONTINGENCY COUNTS ===
+
+friction_archetype  Human-Capacity-Limited  Infrastructure-Limited  Multi-Constraint  Operationally-Limited  Organizationally-Limited
+cluster_id                                                                                                                           
+1                                       10                       1                 2                      3                        52
+2                                        0                      12                 1                      0                         0
+
+=== ROW PROPORTIONS BY EMPIRICAL CLUSTER ===
+
+friction_archetype  Human-Capacity-Limited  Infrastructure-Limited  Multi-Constraint  Operationally-Limited  Organizationally-Limited
+cluster_id                                                                                                                           
+1                                    0.147                   0.015             0.029                  0.044                     0.765
+2                                    0.000                   0.923             0.077                  0.000                     0.000
+
+=== MODAL ARCHETYPE BY CLUSTER ===
+
+ cluster_id  cluster_size modal_fricta_v1_archetype  modal_count modal_proportion  number_of_archetypes_present
+          1            68  Organizationally-Limited           52            0.765                             5
+          2            13    Infrastructure-Limited           12            0.923                             2
+
+Non-modal cases: 17
+
+GATE STATUS: THEORY ALIGNMENT COMPLETE. Next step is empirical profile interpretation.

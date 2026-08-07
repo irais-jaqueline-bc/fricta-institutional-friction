@@ -1,0 +1,23 @@
+
+=== CIPHER STAGE 1 ENSEMBLE REPORT ===
+
+Mode: smoke
+Accepted members: 8
+Attempts: 8
+Overall acceptance rate: 1.0000
+Sample size per member: 65
+OOB size per member: 16
+OOB predictions per institution: min=0, median=2.0, max=4
+Minimum OOB pair count: 0
+Every family contains both profiles: True
+Elapsed seconds: 0.564
+
+Family summaries:
+- R0_WARD: accepted=2, attempts=2, acceptance_rate=1.0000
+- R1_PCA85_WARD: accepted=2, attempts=2, acceptance_rate=1.0000
+- R0_KMEANS: accepted=2, attempts=2, acceptance_rate=1.0000
+- R1_PCA85_KMEANS: accepted=2, attempts=2, acceptance_rate=1.0000
+
+Output directory: /Users/betycastillo/Documents/GitHub/fricta-institutional-friction/cipher/outputs/ensemble/smoke
+
+GATE STATUS: SMOKE_COMPLETE_REVIEW_REQUIRED

@@ -1,0 +1,12 @@
+{
+  "status": "STABILITY_COMPLETE",
+  "iterations_per_candidate": 1000,
+  "frozen_iterations": 1000,
+  "used_frozen_iteration_count": true,
+  "sample_fraction": 0.8,
+  "sample_size": 65,
+  "candidate_count": 11,
+  "shortlist_rule": "Within each representation-algorithm group, take the union of best Silhouette, best Davies-Bouldin, best Calinski-Harabasz, and for GMM best BIC.",
+  "pca_rule_inside_resampling": "Refit StandardScaler and PCA in each subsample; retain the minimum number of PCs reaching at least 85% cumulative variance.",
+  "selection_warning": "Stability ranking is not yet the final model-selection decision."
+}

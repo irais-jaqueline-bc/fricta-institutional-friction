@@ -1,0 +1,23 @@
+
+=== CIPHER ACTIONABILITY REVIEW ===
+
+                                  feature     actionability_class realistic_improvement_direction diagnostic_counterfactual_direction review_status
+             willingness_constraint_score   INDIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH     CONFIRMED
+           digital_usage_constraint_score   INDIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH     CONFIRMED
+                   training_deficit_score     DIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH     CONFIRMED
+                        device_constraint     DIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH     CONFIRMED
+          digital_tool_variety_constraint     DIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH     CONFIRMED
+            internet_stability_constraint CONTEXTUALLY_MODIFIABLE               DECREASE_FRICTION                                BOTH     CONFIRMED
+                staffing_constraint_score CONTEXTUALLY_MODIFIABLE               DECREASE_FRICTION                                BOTH     CONFIRMED
+                    time_constraint_score   INDIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH     CONFIRMED
+administrative_disorganization_constraint   INDIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH     CONFIRMED
+              recording_system_constraint     DIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH     CONFIRMED
+      system_change_resistance_constraint   INDIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH     CONFIRMED
+               admin_time_load_constraint   INDIRECTLY_MODIFIABLE               DECREASE_FRICTION                                BOTH     CONFIRMED
+                resource_constraint_score CONTEXTUALLY_MODIFIABLE               DECREASE_FRICTION                                BOTH     CONFIRMED
+
+Rows confirmed: 13
+Backup: /Users/betycastillo/Documents/GitHub/fricta-institutional-friction/cipher/design/actionability_manifest_before_review.csv
+Updated manifest: /Users/betycastillo/Documents/GitHub/fricta-institutional-friction/cipher/design/actionability_manifest.csv
+
+GATE STATUS: MANIFEST CONFIRMED. Stage 0 may be finalized.

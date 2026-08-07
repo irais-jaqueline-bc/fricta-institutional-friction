@@ -1,0 +1,30 @@
+{
+  "gate_checks": {
+    "81_institutions": true,
+    "all_have_at_least_150_oob_predictions": true,
+    "all_probabilities_in_0_1": true,
+    "profile_probabilities_sum_to_1": true,
+    "certainty_class_complete": true,
+    "both_profiles_present": true,
+    "family_rows_complete": true
+  },
+  "gate_status": "PASS_STAGE_2_COMPUTATION",
+  "thresholds": {
+    "core_reference_probability": 0.9,
+    "core_family_consistency": 0.8,
+    "boundary_reference_probability": 0.75,
+    "boundary_family_consistency": 0.6
+  },
+  "class_counts": {
+    "CORE": 66,
+    "HALO": 9,
+    "BOUNDARY": 6
+  },
+  "ensemble_reference_disagreements": 1,
+  "minimum_reference_profile_probability": 0.23979591836734693,
+  "median_reference_profile_probability": 1.0,
+  "minimum_family_consistency": 0.13043478260869565,
+  "median_family_consistency": 1.0,
+  "minimum_consensus_gap": -0.48682027899397845,
+  "median_consensus_gap": 0.9279220353409238
+}

@@ -1,0 +1,110 @@
+{
+  "project": "FRICTA ICDM Teen Research Track",
+  "design_status": "FROZEN_BEFORE_CLUSTERING",
+  "random_seed": 42,
+  "input_dataset": "data/processed/fricta_scored.csv",
+  "id_column": "institution_id",
+  "primary_features": [
+    "willingness_constraint_score",
+    "digital_usage_constraint_score",
+    "training_deficit_score",
+    "device_constraint",
+    "digital_tool_variety_constraint",
+    "internet_stability_constraint",
+    "staffing_constraint_score",
+    "time_constraint_score",
+    "administrative_disorganization_constraint",
+    "recording_system_constraint",
+    "system_change_resistance_constraint",
+    "admin_time_load_constraint",
+    "resource_constraint_score"
+  ],
+  "validation_only_features": [
+    "implementation_difficulty_constraint"
+  ],
+  "sensitivity_only_features": [
+    "perceived_utility_constraint",
+    "previous_implementation_constraint"
+  ],
+  "metadata_only_features": [
+    "pilot_openness_constraint"
+  ],
+  "excluded_features": [],
+  "never_model_columns": [
+    "institution_id",
+    "state",
+    "ICI",
+    "OCI",
+    "OLI",
+    "HCARI",
+    "AFS_baseline",
+    "AFS_theoretical",
+    "friction_archetype"
+  ],
+  "missing_data": {
+    "primary_analysis": "Median imputation fitted inside each resampling/training partition; current primary matrix has no missing values.",
+    "validation_implementation_difficulty": "Complete-case analysis only; do not impute missing implementation difficulty."
+  },
+  "scaling": {
+    "primary": "StandardScaler fitted within each resampling/training partition",
+    "sensitivity": "Original [0,1] scale without standardization"
+  },
+  "representations": {
+    "R0": "Standardized primary features",
+    "R1": "PCA fitted on standardized primary features; retain cumulative variance >= 0.85"
+  },
+  "clustering": {
+    "k_values": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "kmeans": {
+      "n_init": 50,
+      "random_state": 42
+    },
+    "hac_ward": {
+      "linkage": "ward",
+      "metric": "euclidean"
+    },
+    "gmm": {
+      "covariance_type": "diag",
+      "n_init": 50,
+      "reg_covar": 1e-06,
+      "random_state": 42
+    }
+  },
+  "internal_metrics": [
+    "silhouette",
+    "davies_bouldin",
+    "calinski_harabasz",
+    "bic_for_gmm",
+    "minimum_cluster_size"
+  ],
+  "minimum_cluster_size": 5,
+  "stability": {
+    "method": "subsampling_without_replacement",
+    "iterations": 1000,
+    "sample_fraction": 0.8,
+    "metrics": [
+      "adjusted_rand_index",
+      "clusterwise_jaccard",
+      "consensus_matrix"
+    ]
+  },
+  "correlation_handling": {
+    "rule": "Do not automatically remove features solely because |r| >= 0.80 when their survey meanings are conceptually distinct.",
+    "pre_registered_sensitivity": "Run leave-one-feature-out checks for every feature participating in a high-correlation pair."
+  },
+  "theory_alignment": {
+    "reference": "data/processed/friction_archetypes.csv",
+    "interpretation": "structural concordance, not ground-truth validation",
+    "metrics": [
+      "ARI",
+      "NMI",
+      "contingency_matrix"
+    ]
+  }
+}

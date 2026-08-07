@@ -1,0 +1,82 @@
+institution_id,state,institution_type,children_served,staff_size,pilot_openness_constraint,friction_archetype
+INST_001,Jalisco,Pública,1-10,1-5,0.0,Infrastructure-Limited
+INST_002,Baja California,Asociación civil / ONG,31-60,16-30,0.0,Organizationally-Limited
+INST_003,Chihuahua,Privada,11-30,1-5,0.5,Multi-Constraint
+INST_004,Guanajuato,Asociación civil / ONG,60+,16-30,0.5,Organizationally-Limited
+INST_005,Puebla,Pública,60+,30+,0.0,Operationally-Limited
+INST_006,Estado de México,Asociación civil / ONG,31-60,16-30,1.0,Organizationally-Limited
+INST_007,Ciudad de México,Pública,31-60,16-30,0.0,Operationally-Limited
+INST_008,Tlaxcala,Privada,11-30,6-15,0.0,Organizationally-Limited
+INST_009,Ciudad de México,Pública,31-60,6-15,0.0,Organizationally-Limited
+INST_010,Ciudad de México,Asociación civil / ONG,60+,30+,0.0,Organizationally-Limited
+INST_011,Querétaro,Privada,11-30,6-15,1.0,Organizationally-Limited
+INST_012,Puebla,Mixta,31-60,6-15,1.0,Organizationally-Limited
+INST_013,San Luis Potosí,Mixta,11-30,16-30,0.5,Human-Capacity-Limited
+INST_014,Sonora,Pública,60+,30+,0.5,Organizationally-Limited
+INST_015,Colima,Asociación civil / ONG,1-10,1-5,0.5,Human-Capacity-Limited
+INST_016,Jalisco,Asociación civil / ONG,60+,30+,0.5,Organizationally-Limited
+INST_017,Estado de México,Pública,11-30,6-15,0.5,Organizationally-Limited
+INST_018,Durango,Asociación civil / ONG,1-10,1-5,0.0,Human-Capacity-Limited
+INST_019,Sinaloa,Mixta,11-30,6-15,0.5,Organizationally-Limited
+INST_020,Nayarit,Privada,1-10,1-5,0.0,Organizationally-Limited
+INST_021,Morelos,Asociación civil / ONG,60+,30+,0.0,Organizationally-Limited
+INST_022,Campeche,Asociación civil / ONG,11-30,1-5,0.0,Infrastructure-Limited
+INST_023,Ciudad de México,Pública,1-10,1-5,0.5,Operationally-Limited
+INST_024,Baja California,Mixta,31-60,16-30,1.0,Organizationally-Limited
+INST_025,Nuevo León,Asociación civil / ONG,11-30,1-5,0.5,Multi-Constraint
+INST_026,Tamaulipas,Pública,31-60,16-30,0.5,Organizationally-Limited
+INST_027,Sonora,Pública,11-30,6-15,0.0,Multi-Constraint
+INST_028,Michoacán,Asociación civil / ONG,31-60,16-30,0.5,Organizationally-Limited
+INST_029,Jalisco,Asociación civil / ONG,31-60,6-15,0.5,Organizationally-Limited
+INST_030,Baja California,Mixta,31-60,6-15,1.0,Organizationally-Limited
+INST_031,Hidalgo,Pública,31-60,6-15,0.0,Human-Capacity-Limited
+INST_032,Estado de México,Asociación civil / ONG,31-60,16-30,0.5,Organizationally-Limited
+INST_033,Ciudad de México,Privada,31-60,30+,0.0,Organizationally-Limited
+INST_034,Veracruz,Pública,11-30,6-15,0.0,Infrastructure-Limited
+INST_035,Yucatán,Pública,11-30,16-30,1.0,Organizationally-Limited
+INST_036,Nuevo León,Mixta,11-30,6-15,0.0,Infrastructure-Limited
+INST_037,Guerrero,Pública,31-60,6-15,0.0,Infrastructure-Limited
+INST_038,Puebla,No estoy seguro,1-10,1-5,0.0,Organizationally-Limited
+INST_039,Chihuahua,Privada,11-30,1-5,0.0,Infrastructure-Limited
+INST_040,Baja California,Asociación civil / ONG,11-30,16-30,0.0,Organizationally-Limited
+INST_041,Sonora,Pública,31-60,16-30,0.0,Infrastructure-Limited
+INST_042,Ciudad de México,Privada,31-60,30+,0.0,Organizationally-Limited
+INST_043,Baja California,Privada,11-30,16-30,1.0,Organizationally-Limited
+INST_044,Guanajuato,Pública,11-30,6-15,0.0,Human-Capacity-Limited
+INST_045,Ciudad de México,Pública,1-10,1-5,0.5,Human-Capacity-Limited
+INST_046,Aguascalientes,Privada,31-60,6-15,0.0,Organizationally-Limited
+INST_047,Jalisco,Asociación civil / ONG,11-30,6-15,0.0,Organizationally-Limited
+INST_048,Estado de México,Privada,31-60,16-30,1.0,Organizationally-Limited
+INST_049,Jalisco,Mixta,31-60,16-30,1.0,Organizationally-Limited
+INST_050,Tabasco,Privada,11-30,1-5,0.0,Organizationally-Limited
+INST_051,Guanajuato,Pública,11-30,6-15,0.0,Infrastructure-Limited
+INST_052,Jalisco,Privada,11-30,1-5,0.0,Human-Capacity-Limited
+INST_053,Ciudad de México,Privada,11-30,6-15,0.0,Organizationally-Limited
+INST_054,Sonora,Privada,31-60,6-15,0.0,Infrastructure-Limited
+INST_055,Nuevo León,Asociación civil / ONG,31-60,30+,0.5,Organizationally-Limited
+INST_056,Nuevo León,Pública,60+,30+,0.5,Organizationally-Limited
+INST_057,Ciudad de México,Asociación civil / ONG,31-60,16-30,0.5,Organizationally-Limited
+INST_058,Baja California,Asociación civil / ONG,11-30,6-15,0.5,Organizationally-Limited
+INST_059,Estado de México,Mixta,31-60,16-30,1.0,Organizationally-Limited
+INST_060,Puebla,Asociación civil / ONG,31-60,16-30,0.5,Organizationally-Limited
+INST_061,Coahuila,Asociación civil / ONG,60+,16-30,0.5,Organizationally-Limited
+INST_062,Ciudad de México,Privada,60+,16-30,1.0,Organizationally-Limited
+INST_063,Baja California,Privada,11-30,6-15,0.0,Organizationally-Limited
+INST_064,Chihuahua,Mixta,11-30,6-15,0.5,Organizationally-Limited
+INST_065,Morelos,Pública,11-30,6-15,0.0,Infrastructure-Limited
+INST_066,Zacatecas,Mixta,11-30,6-15,0.5,Organizationally-Limited
+INST_067,Nayarit,Pública,31-60,16-30,0.5,Organizationally-Limited
+INST_068,Jalisco,Asociación civil / ONG,60+,16-30,0.5,Organizationally-Limited
+INST_069,Chihuahua,Mixta,11-30,6-15,0.5,Human-Capacity-Limited
+INST_070,Ciudad de México,Asociación civil / ONG,11-30,6-15,0.5,Human-Capacity-Limited
+INST_071,Chiapas,Asociación civil / ONG,31-60,6-15,0.0,Infrastructure-Limited
+INST_072,Estado de México,Pública,60+,6-15,1.0,Human-Capacity-Limited
+INST_073,Estado de México,Asociación civil / ONG,1-10,1-5,0.0,Organizationally-Limited
+INST_074,Guanajuato,Mixta,31-60,16-30,0.0,Infrastructure-Limited
+INST_075,Baja California,Privada,31-60,16-30,1.0,Organizationally-Limited
+INST_076,Nuevo León,Asociación civil / ONG,60+,30+,0.5,Organizationally-Limited
+INST_077,Sonora,Asociación civil / ONG,31-60,16-30,0.0,Infrastructure-Limited
+INST_078,Quintana Roo,Mixta,31-60,16-30,0.5,Organizationally-Limited
+INST_079,Baja California Sur,Asociación civil / ONG,31-60,16-30,1.0,Organizationally-Limited
+INST_080,Jalisco,Pública,11-30,6-15,1.0,Organizationally-Limited
+INST_081,Oaxaca,Mixta,31-60,16-30,0.5,Organizationally-Limited

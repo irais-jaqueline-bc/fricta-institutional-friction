@@ -1,0 +1,38 @@
+{
+  "status": "CIPHER_STAGE_0_FROZEN",
+  "frozen_at_utc": "2026-08-06T23:09:46.191476+00:00",
+  "n_institutions": 81,
+  "feature_count": 13,
+  "primary_features_in_order": [
+    "willingness_constraint_score",
+    "digital_usage_constraint_score",
+    "training_deficit_score",
+    "device_constraint",
+    "digital_tool_variety_constraint",
+    "internet_stability_constraint",
+    "staffing_constraint_score",
+    "time_constraint_score",
+    "administrative_disorganization_constraint",
+    "recording_system_constraint",
+    "system_change_resistance_constraint",
+    "admin_time_load_constraint",
+    "resource_constraint_score"
+  ],
+  "feature_range": [
+    0.0,
+    1.0
+  ],
+  "reference_model": "R1_PCA_85__HAC_WARD__K2",
+  "reference_k": 2,
+  "reference_cluster_sizes": {
+    "1": 68,
+    "2": 13
+  },
+  "governance_used_for_model_fitting": false,
+  "fricta_scores_used_for_model_fitting": false,
+  "fricta_archetypes_used_for_model_fitting": false,
+  "actionability_manifest_confirmed": true,
+  "hash_manifest": "cipher/outputs/audit/input_hashes.json",
+  "frozen_config_snapshot": "cipher/design/cipher_experiment_config_frozen.json",
+  "next_stage": "Stage 1 — heterogeneous stability ensemble"
+}

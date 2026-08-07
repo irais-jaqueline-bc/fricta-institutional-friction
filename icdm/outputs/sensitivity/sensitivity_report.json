@@ -1,0 +1,17 @@
+{
+  "status": "SENSITIVITY_COMPLETE",
+  "selected_model": "R1_PCA_85__HAC_WARD__K2",
+  "core_sensitivity_min_ari": 0.9365168935599916,
+  "leave_one_feature_out_min_ari": 0.9389384333562,
+  "leave_one_feature_out_median_ari": 1.0,
+  "pca_threshold_min_ari": 1.0,
+  "any_sensitivity_cluster_below_5": false,
+  "interpretation_rule": "ARI and cluster-size changes are descriptive robustness checks. Sensitivity analyses do not replace the frozen model-selection rule.",
+  "generated_files": [
+    "icdm/outputs/sensitivity/sensitivity_summary.csv",
+    "icdm/outputs/sensitivity/leave_one_feature_out.csv",
+    "icdm/outputs/sensitivity/pca_threshold_sensitivity.csv",
+    "icdm/outputs/sensitivity/algorithmic_reference_comparison.csv",
+    "icdm/outputs/sensitivity/sensitivity_report.json"
+  ]
+}

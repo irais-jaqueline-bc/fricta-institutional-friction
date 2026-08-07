@@ -1,0 +1,10 @@
+{
+  "status": "PCA_COMPLETE",
+  "institutions": 81,
+  "primary_features": 13,
+  "retention_rule": "Smallest number of PCs reaching at least 85% cumulative variance.",
+  "retained_components": 5,
+  "retained_cumulative_variance_percent": 86.8219709867243,
+  "important_note": "StandardScaler and PCA must be refitted inside every stability subsample. Full-data PCA scores are descriptive only.",
+  "component_names_not_assigned": true
+}

@@ -1,0 +1,65 @@
+
+=== CIPHER STAGE 1 OFFICIAL AUDIT ===
+
+[PASS] report_mode_official
+[PASS] report_gate_pass
+[PASS] accepted_members_1000
+[PASS] manifest_rows_1000
+[PASS] metrics_rows_1000
+[PASS] member_ids_unique
+[PASS] family_counts_exact
+[PASS] sample_size_65
+[PASS] oob_size_16
+[PASS] feature_count_11
+[PASS] pca_components_present
+[PASS] pca_variance_at_least_085
+[PASS] raw_pca_fields_empty
+[PASS] all_metrics_finite
+[PASS] minimum_cluster_size_at_least_5
+[PASS] prediction_rows_81
+[PASS] oob_prediction_rows_81
+[PASS] prediction_columns_match
+[PASS] oob_prediction_columns_match
+[PASS] all_predictions_only_profiles_1_2
+[PASS] exactly_16_oob_per_member
+[PASS] minimum_oob_per_institution_at_least_150
+[PASS] family_consensus_rows_324
+[PASS] coassignment_shape_81x81
+[PASS] coassignment_symmetric
+[PASS] coassignment_diagonal_1
+[PASS] coassignment_range_0_1
+[PASS] oob_coassignment_shape_81x81
+[PASS] oob_coassignment_symmetric
+[PASS] oob_count_matrix_symmetric
+[PASS] minimum_oob_pair_count_at_least_10
+[PASS] acceptance_rate_at_least_090
+[PASS] every_family_has_both_profiles
+
+=== FAMILY METRIC DISTRIBUTIONS ===
+
+         family  members  silhouette_q025  silhouette_median  silhouette_q975  reference_ari_q025  reference_ari_median  reference_ari_q975  extension_fidelity_min  minimum_cluster_size_min
+      R0_KMEANS      250         0.273253           0.329012         0.395822            0.241915              0.681347                 1.0                1.000000                         7
+        R0_WARD      250         0.263831           0.358237         0.408231            0.213138              1.000000                 1.0                0.907692                         6
+R1_PCA85_KMEANS      250         0.306009           0.381234         0.455615            0.259899              0.681347                 1.0                1.000000                         8
+  R1_PCA85_WARD      250         0.305668           0.408198         0.467963            0.192940              1.000000                 1.0                0.907692                         6
+
+=== GLOBAL DISTRIBUTIONS ===
+
+Reference ARI quantiles: {'0.025': 0.23070206200344526, '0.25': 0.6249755525132017, '0.5': 0.9228790582346534, '0.75': 1.0, '0.975': 1.0}
+Silhouette quantiles: {'0.025': 0.27535216147690933, '0.25': 0.33511121156126533, '0.5': 0.366542020953492, '0.75': 0.4007525026620058, '0.975': 0.4563590373025736}
+Ward extension fidelity quantiles: {'0.025': 0.9384615384615383, '0.25': 0.9846153846153848, '0.5': 0.9846153846153848, '0.75': 1.0, '0.975': 1.0}
+Ward members below 0.95 fidelity: 16 of 500
+Ward members below 0.90 fidelity: 0 of 500
+Minimum sampled cluster size: 6
+
+=== OOB COVERAGE ===
+
+Per institution: min=172, median=197.0, max=229
+Pairwise OOB counts: min=18, median=37.0, max=63
+Rejected attempts: 0
+
+NOTE: Ward extension fidelity is informational at Stage 1; Stage 4 will decide which Ward members enter counterfactual prediction.
+NOTE: Reference ARI is descriptive only; members were not accepted/rejected based on agreement with the frozen partition.
+
+GATE STATUS: PASS_STAGE_1_OFFICIAL_AUDIT
+Stage 1 is complete. Stage 2 may begin after metric review.

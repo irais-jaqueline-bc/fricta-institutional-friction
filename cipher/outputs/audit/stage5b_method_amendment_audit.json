@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "stage5a_freeze_passed": true,
+    "smoke_failed_as_recorded": true,
+    "six_cases": true,
+    "all_six_exact_audited": true,
+    "existence_agreement_6_of_6": true,
+    "at_least_one_solvable_case": true,
+    "at_least_one_beam_exact_cost_mismatch": true,
+    "finite_exact_search_space_confirmed": true
+  },
+  "solvable_cases": 4,
+  "unsolvable_cases": 2,
+  "exact_cost_matches": 3,
+  "exact_cost_mismatches": 1,
+  "maximum_absolute_cost_gap": 1.2499938755183848e-06,
+  "mismatch_institutions": [
+    "INST_065"
+  ],
+  "freeze_v2_sha256": "2f50c6a1b4902b1a99a2d01b476c62efdc0a786f9e3006a44c1ac76f27db29be",
+  "gate_status": "PASS_STAGE_5B_METHOD_AMENDMENT"
+}

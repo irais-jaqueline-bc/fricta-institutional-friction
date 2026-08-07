@@ -1,0 +1,2 @@
+validation_feature,cluster_1_complete_n,cluster_2_complete_n,cluster_1_mean,cluster_2_mean,mean_difference_cluster_2_minus_1,cluster_1_median,cluster_2_median,mann_whitney_u,mann_whitney_p,cliffs_delta_cluster_2_vs_1,hedges_g_cluster_2_vs_1,imputation_used,interpretation
+implementation_difficulty_constraint,64,13,0.59765625,0.34615384615384615,-0.25150240384615385,0.5,0.25,188.0,0.0013560401052851946,-0.5480769230769231,-0.9283665030410456,False,External descriptive criterion only; not used to form clusters.

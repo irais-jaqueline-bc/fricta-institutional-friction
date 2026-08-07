@@ -1,0 +1,37 @@
+
+=== FROZEN FEATURE ROLES ===
+
+                                  feature                               concept       final_role  n_missing  variance
+             willingness_constraint_score                  Adoption willingness          PRIMARY          0    0.0993
+           digital_usage_constraint_score               Digital usage frequency          PRIMARY          0    0.0967
+                   training_deficit_score                      Training deficit          PRIMARY          0    0.0907
+                        device_constraint                   Device availability          PRIMARY          0    0.0975
+          digital_tool_variety_constraint                Digital tool diversity          PRIMARY          0    0.0583
+            internet_stability_constraint                    Internet stability          PRIMARY          0    0.0816
+                staffing_constraint_score                     Staffing scarcity          PRIMARY          0    0.0684
+                    time_constraint_score               Perceived time scarcity          PRIMARY          0    0.1019
+administrative_disorganization_constraint           Administrative organization          PRIMARY          0    0.1193
+              recording_system_constraint Administrative recording digitization          PRIMARY          0    0.1329
+      system_change_resistance_constraint          System transition resistance          PRIMARY          0    0.0934
+               admin_time_load_constraint         Daily administrative workload          PRIMARY          0    0.1056
+                resource_constraint_score             General resource scarcity          PRIMARY          0    0.1299
+     implementation_difficulty_constraint Experienced implementation difficulty  VALIDATION_ONLY          4    0.0800
+             perceived_utility_constraint             Perceived digital utility SENSITIVITY_ONLY          0    0.0089
+       previous_implementation_constraint Prior digital implementation exposure SENSITIVITY_ONLY          0    0.2059
+                pilot_openness_constraint          Pilot participation openness    METADATA_ONLY          0    0.1424
+
+=== ROLE COUNTS ===
+
+final_role
+PRIMARY             13
+SENSITIVITY_ONLY     2
+VALIDATION_ONLY      1
+METADATA_ONLY        1
+
+=== GENERATED DESIGN FILES ===
+
+/Users/betycastillo/Documents/GitHub/fricta-institutional-friction/icdm/design/feature_manifest.csv
+/Users/betycastillo/Documents/GitHub/fricta-institutional-friction/icdm/design/experiment_config.json
+/Users/betycastillo/Documents/GitHub/fricta-institutional-friction/icdm/design/model_selection_protocol.md
+
+GATE STATUS: DESIGN FROZEN. Next step is src/icdm_prepare_features.py.

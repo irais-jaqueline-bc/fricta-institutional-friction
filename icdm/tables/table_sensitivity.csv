@@ -1,0 +1,23 @@
+Sensitivity family,Analysis,ARI vs final,Silhouette,Minimum cluster size,Maximum cluster size
+Core specification,BASELINE_RECOMPUTED_PCA85_HAC_K2,1.0,0.4108366444917744,13,68
+Core specification,NO_PCA_STANDARDIZED_HAC_K2,1.0,0.3602740036312942,13,68
+Core specification,RAW_0_1_NO_STANDARDIZATION_HAC_K2,1.0,0.3564602888251744,13,68
+Core specification,AUGMENTED_15_PCA85_HAC_K2,0.9365168935599916,0.3934136117463369,12,69
+Core specification,AUGMENTED_15_NO_PCA_HAC_K2,0.9365168935599916,0.348573927455494,12,69
+Leave-one-feature-out,Remove admin_time_load_constraint,0.9389384333562,0.4113172241287466,14,67
+Leave-one-feature-out,Remove willingness_constraint_score,1.0,0.4191398744001499,13,68
+Leave-one-feature-out,Remove training_deficit_score,1.0,0.4410012183630755,13,68
+Leave-one-feature-out,Remove digital_usage_constraint_score,1.0,0.3929150900987569,13,68
+Leave-one-feature-out,Remove digital_tool_variety_constraint,1.0,0.3878155130390156,13,68
+Leave-one-feature-out,Remove internet_stability_constraint,1.0,0.3871998990223456,13,68
+Leave-one-feature-out,Remove staffing_constraint_score,1.0,0.421202175756259,13,68
+Leave-one-feature-out,Remove device_constraint,1.0,0.3879792255049804,13,68
+Leave-one-feature-out,Remove time_constraint_score,1.0,0.4225307734960536,13,68
+Leave-one-feature-out,Remove administrative_disorganization_constraint,1.0,0.4258445347993834,13,68
+Leave-one-feature-out,Remove recording_system_constraint,1.0,0.4003268521550278,13,68
+Leave-one-feature-out,Remove system_change_resistance_constraint,1.0,0.4073907486536059,13,68
+Leave-one-feature-out,Remove resource_constraint_score,1.0,0.4016837406365343,13,68
+PCA threshold,80% retained variance,1.0,0.427558672717198,13,68
+PCA threshold,85% retained variance,1.0,0.4108366444917744,13,68
+PCA threshold,90% retained variance,1.0,0.3960744957129283,13,68
+PCA threshold,95% retained variance,1.0,0.3765372511124303,13,68

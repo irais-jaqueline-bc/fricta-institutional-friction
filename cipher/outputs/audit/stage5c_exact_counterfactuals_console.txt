@@ -1,0 +1,159 @@
+[01/81] INST_001 2->1 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=2.07
+[02/81] INST_002 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.39
+[03/81] INST_003 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.39
+[04/81] INST_004 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.36
+[05/81] INST_005 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.35
+[06/81] INST_006 1->2 NO_TRANSITION_WITHIN_4_FEATURES valid=0 best_cost=nan seconds=1.37
+[07/81] INST_007 1->2 SOLVABLE valid=277 best_cost=3.2499945000122503 seconds=1.39
+[08/81] INST_008 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.35
+[09/81] INST_009 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.32
+[10/81] INST_010 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.45
+[11/81] INST_011 1->2 NO_TRANSITION_WITHIN_4_FEATURES valid=0 best_cost=nan seconds=1.34
+[12/81] INST_012 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.42
+[13/81] INST_013 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.39
+[14/81] INST_014 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.41
+[15/81] INST_015 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.38
+[16/81] INST_016 1->2 NO_TRANSITION_WITHIN_4_FEATURES valid=0 best_cost=nan seconds=1.36
+[17/81] INST_017 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.36
+[18/81] INST_018 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.33
+[19/81] INST_019 1->2 SOLVABLE valid=488 best_cost=3.249995250009125 seconds=1.45
+[20/81] INST_020 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.33
+[21/81] INST_021 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.34
+[22/81] INST_022 2->1 SOLVABLE valid=18 best_cost=6.4999870000325 seconds=2.01
+[23/81] INST_023 1->2 SOLVABLE valid=1244 best_cost=1.499998000004 seconds=1.40
+[24/81] INST_024 1->2 NO_TRANSITION_WITHIN_4_FEATURES valid=0 best_cost=nan seconds=1.34
+[25/81] INST_025 1->2 SOLVABLE valid=42 best_cost=4.499993000013999 seconds=1.33
+[26/81] INST_026 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.36
+[27/81] INST_027 2->1 SOLVABLE valid=91 best_cost=6.999984000043501 seconds=1.97
+[28/81] INST_028 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.41
+[29/81] INST_029 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.36
+[30/81] INST_030 1->2 SOLVABLE valid=3 best_cost=6.999988000024 seconds=1.35
+[31/81] INST_031 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.48
+[32/81] INST_032 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.35
+[33/81] INST_033 1->2 SOLVABLE valid=88 best_cost=4.4999910000242505 seconds=1.53
+[34/81] INST_034 2->1 SOLVABLE valid=264 best_cost=5.499989750024626 seconds=2.07
+[35/81] INST_035 1->2 NO_TRANSITION_WITHIN_4_FEATURES valid=0 best_cost=nan seconds=1.46
+[36/81] INST_036 2->1 SOLVABLE valid=61 best_cost=6.499986250035376 seconds=2.17
+[37/81] INST_037 2->1 SOLVABLE valid=4 best_cost=8.499980000054501 seconds=2.04
+[38/81] INST_038 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.47
+[39/81] INST_039 2->1 SOLVABLE valid=801 best_cost=3.999992750018375 seconds=2.14
+[40/81] INST_040 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.39
+[41/81] INST_041 2->1 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=2.07
+[42/81] INST_042 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.41
+[43/81] INST_043 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.42
+[44/81] INST_044 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.48
+[45/81] INST_045 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.36
+[46/81] INST_046 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.42
+[47/81] INST_047 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.36
+[48/81] INST_048 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.39
+[49/81] INST_049 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.38
+[50/81] INST_050 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.35
+[51/81] INST_051 2->1 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=2.05
+[52/81] INST_052 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.44
+[53/81] INST_053 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.32
+[54/81] INST_054 2->1 SOLVABLE valid=288 best_cost=4.9999905000235 seconds=2.26
+[55/81] INST_055 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.38
+[56/81] INST_056 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.41
+[57/81] INST_057 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.46
+[58/81] INST_058 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.58
+[59/81] INST_059 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.36
+[60/81] INST_060 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.45
+[61/81] INST_061 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.36
+[62/81] INST_062 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.43
+[63/81] INST_063 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.34
+[64/81] INST_064 1->2 SOLVABLE valid=1186 best_cost=2.3333298888954817 seconds=1.48
+[65/81] INST_065 2->1 SOLVABLE valid=465 best_cost=4.999990250024375 seconds=2.07
+[66/81] INST_066 1->2 SOLVABLE valid=1186 best_cost=2.3333298888954817 seconds=1.46
+[67/81] INST_067 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.38
+[68/81] INST_068 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.42
+[69/81] INST_069 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.44
+[70/81] INST_070 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.33
+[71/81] INST_071 2->1 SOLVABLE valid=2675 best_cost=3.74999450001025 seconds=2.59
+[72/81] INST_072 1->2 NO_TRANSITION_WITHIN_4_FEATURES valid=0 best_cost=nan seconds=1.41
+[73/81] INST_073 1->2 SOLVABLE valid=31 best_cost=3.999992750018375 seconds=1.55
+[74/81] INST_074 2->1 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=2.11
+[75/81] INST_075 1->2 NO_TRANSITION_WITHIN_4_FEATURES valid=0 best_cost=nan seconds=1.52
+[76/81] INST_076 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.39
+[77/81] INST_077 1->2 SOLVABLE valid=91 best_cost=3.74999350001525 seconds=1.59
+[78/81] INST_078 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.40
+[79/81] INST_079 1->2 NO_TRANSITION_WITHIN_4_FEATURES valid=0 best_cost=nan seconds=1.46
+[80/81] INST_080 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.53
+[81/81] INST_081 1->2 TRANSITIONS_FAIL_PLAUSIBILITY valid=0 best_cost=nan seconds=1.40
+
+=== CIPHER STAGE 5C — OFFICIAL EXACT COUNTERFACTUALS ===
+
+Institutions completed: 81
+Solvable institutions: 19
+Official single-model coverage: 0.2346
+Failure modes: {'TRANSITIONS_FAIL_PLAUSIBILITY': 54, 'SOLVABLE': 19, 'NO_TRANSITION_WITHIN_4_FEATURES': 8}
+
+=== COVERAGE SUMMARY ===
+
+       group_type group_value  n  solvable  coverage
+          OVERALL         ALL 81        19  0.234568
+REFERENCE_PROFILE           1 68        10  0.147059
+REFERENCE_PROFILE           2 13         9  0.692308
+  CERTAINTY_CLASS    BOUNDARY  6         6  1.000000
+  CERTAINTY_CLASS        CORE 66        10  0.151515
+  CERTAINTY_CLASS        HALO  9         3  0.333333
+
+=== EXACT MINIMUM-COST SUMMARY ===
+
+       group_type group_value  n_solved  median_exact_min_cost  q025_exact_min_cost  q975_exact_min_cost  median_changed_features
+          OVERALL         ALL        19               4.499991             1.874997             7.824984                      4.0
+REFERENCE_PROFILE           1        10               3.499994             1.687498             6.437489                      3.0
+REFERENCE_PROFILE           2         9               5.499990             3.799994             8.199981                      4.0
+  CERTAINTY_CLASS    BOUNDARY         6               2.791662             1.604164             4.343743                      2.5
+  CERTAINTY_CLASS        CORE        10               5.999988             3.806244             8.162482                      4.0
+  CERTAINTY_CLASS        HALO         3               3.999993             3.762493             4.474991                      4.0
+
+=== 15 LOWEST EXACT MINIMUM COSTS ===
+
+institution_id  reference_profile  target_profile certainty_class  total_cost  l0  plausibility_distance                                                                                                                          signed_items_json
+      INST_023                  1               2        BOUNDARY    1.499998   2               0.792676                                                               ["administrative_disorganization_constraint↓", "resource_constraint_score↑"]
+      INST_064                  1               2        BOUNDARY    2.333330   2               0.796250                                                                  ["training_deficit_score↑", "administrative_disorganization_constraint↓"]
+      INST_066                  1               2        BOUNDARY    2.333330   2               0.796250                                                                  ["training_deficit_score↑", "administrative_disorganization_constraint↓"]
+      INST_007                  1               2        BOUNDARY    3.249995   3               0.791136                 ["digital_tool_variety_constraint↑", "administrative_disorganization_constraint↓", "system_change_resistance_constraint↓"]
+      INST_019                  1               2        BOUNDARY    3.249995   3               0.754794                           ["internet_stability_constraint↑", "administrative_disorganization_constraint↓", "recording_system_constraint↑"]
+      INST_077                  1               2            HALO    3.749994   3               0.789913                                          ["digital_usage_constraint_score↑", "recording_system_constraint↑", "resource_constraint_score↑"]
+      INST_071                  2               1            CORE    3.749995   3               0.952439                                     ["recording_system_constraint↓", "system_change_resistance_constraint↑", "resource_constraint_score↓"]
+      INST_039                  2               1            CORE    3.999993   4               0.931685  ["digital_usage_constraint_score↓", "digital_tool_variety_constraint↓", "internet_stability_constraint↓", "recording_system_constraint↓"]
+      INST_073                  1               2            HALO    3.999993   4               0.798336           ["digital_usage_constraint_score↑", "digital_tool_variety_constraint↑", "time_constraint_score↓", "admin_time_load_constraint↓"]
+      INST_033                  1               2            HALO    4.499991   4               0.798277          ["device_constraint↑", "digital_tool_variety_constraint↑", "system_change_resistance_constraint↓", "admin_time_load_constraint↓"]
+      INST_025                  1               2        BOUNDARY    4.499993   4               0.765075          ["willingness_constraint_score↓", "staffing_constraint_score↓", "time_constraint_score↓", "system_change_resistance_constraint↓"]
+      INST_065                  2               1            CORE    4.999990   4               0.926317 ["device_constraint↓", "digital_tool_variety_constraint↓", "internet_stability_constraint↓", "administrative_disorganization_constraint↑"]
+      INST_054                  2               1            CORE    4.999991   4               0.954256               ["device_constraint↓", "digital_tool_variety_constraint↓", "internet_stability_constraint↓", "recording_system_constraint↓"]
+      INST_034                  2               1            CORE    5.499990   4               0.941834   ["device_constraint↓", "digital_tool_variety_constraint↓", "administrative_disorganization_constraint↑", "recording_system_constraint↓"]
+      INST_036                  2               1            CORE    6.499986   4               0.896450 ["device_constraint↓", "digital_tool_variety_constraint↓", "internet_stability_constraint↓", "administrative_disorganization_constraint↑"]
+
+=== 15 HIGHEST EXACT MINIMUM COSTS AMONG SOLVABLE ===
+
+institution_id  reference_profile  target_profile certainty_class  total_cost  l0  plausibility_distance                                                                                                                                 signed_items_json
+      INST_037                  2               1            CORE    8.499980   4               0.929313                   ["digital_usage_constraint_score↓", "device_constraint↓", "digital_tool_variety_constraint↓", "internet_stability_constraint↓"]
+      INST_030                  1               2            CORE    6.999988   4               0.795581 ["willingness_constraint_score↓", "time_constraint_score↓", "administrative_disorganization_constraint↓", "system_change_resistance_constraint↓"]
+      INST_027                  2               1            CORE    6.999984   4               0.952056                   ["digital_usage_constraint_score↓", "device_constraint↓", "digital_tool_variety_constraint↓", "internet_stability_constraint↓"]
+      INST_022                  2               1            CORE    6.499987   4               0.943198             ["digital_usage_constraint_score↓", "digital_tool_variety_constraint↓", "recording_system_constraint↓", "resource_constraint_score↓"]
+      INST_036                  2               1            CORE    6.499986   4               0.896450        ["device_constraint↓", "digital_tool_variety_constraint↓", "internet_stability_constraint↓", "administrative_disorganization_constraint↑"]
+      INST_034                  2               1            CORE    5.499990   4               0.941834          ["device_constraint↓", "digital_tool_variety_constraint↓", "administrative_disorganization_constraint↑", "recording_system_constraint↓"]
+      INST_054                  2               1            CORE    4.999991   4               0.954256                      ["device_constraint↓", "digital_tool_variety_constraint↓", "internet_stability_constraint↓", "recording_system_constraint↓"]
+      INST_065                  2               1            CORE    4.999990   4               0.926317        ["device_constraint↓", "digital_tool_variety_constraint↓", "internet_stability_constraint↓", "administrative_disorganization_constraint↑"]
+      INST_025                  1               2        BOUNDARY    4.499993   4               0.765075                 ["willingness_constraint_score↓", "staffing_constraint_score↓", "time_constraint_score↓", "system_change_resistance_constraint↓"]
+      INST_033                  1               2            HALO    4.499991   4               0.798277                 ["device_constraint↑", "digital_tool_variety_constraint↑", "system_change_resistance_constraint↓", "admin_time_load_constraint↓"]
+      INST_039                  2               1            CORE    3.999993   4               0.931685         ["digital_usage_constraint_score↓", "digital_tool_variety_constraint↓", "internet_stability_constraint↓", "recording_system_constraint↓"]
+      INST_073                  1               2            HALO    3.999993   4               0.798336                  ["digital_usage_constraint_score↑", "digital_tool_variety_constraint↑", "time_constraint_score↓", "admin_time_load_constraint↓"]
+      INST_071                  2               1            CORE    3.749995   3               0.952439                                            ["recording_system_constraint↓", "system_change_resistance_constraint↑", "resource_constraint_score↓"]
+      INST_077                  1               2            HALO    3.749994   3               0.789913                                                 ["digital_usage_constraint_score↑", "recording_system_constraint↑", "resource_constraint_score↑"]
+      INST_019                  1               2        BOUNDARY    3.249995   3               0.754794                                  ["internet_stability_constraint↑", "administrative_disorganization_constraint↓", "recording_system_constraint↑"]
+
+=== GATE CHECKS ===
+
+[PASS] method_amendment_passed
+[PASS] 81_institutions_completed
+[PASS] exact_candidate_count_matches_combinatorial_space
+[PASS] all_selected_counterfactuals_within_4_features
+[PASS] all_selected_counterfactuals_pass_frozen_plausibility
+[PASS] one_exact_global_minimum_per_solved_institution
+[FAIL] official_single_model_coverage_at_least_70_percent
+
+GATE STATUS: FAIL_STAGE_5C
+Do not proceed to Stage 6 until the failed Stage 5C gate is reviewed.

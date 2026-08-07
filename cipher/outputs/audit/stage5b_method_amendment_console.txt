@@ -1,0 +1,29 @@
+
+=== CIPHER STAGE 5B — METHOD AMENDMENT ===
+
+Exact-audited smoke cases: 6
+Solvable cases: 4
+Unsolvable cases: 2
+Beam/exact existence agreement: 6/6
+Exact minimum-cost matches among solvable: 3/4
+Maximum observed absolute cost gap: 0.000001249994
+Mismatch institutions: ['INST_065']
+
+Method decision:
+  Official Stage 5 optimizer -> EXACT_EXHAUSTIVE_ENUMERATION
+  Beam width 500 -> efficiency baseline / ablation only
+  No scientific threshold was relaxed.
+
+=== AMENDMENT CHECKS ===
+
+[PASS] stage5a_freeze_passed
+[PASS] smoke_failed_as_recorded
+[PASS] six_cases
+[PASS] all_six_exact_audited
+[PASS] existence_agreement_6_of_6
+[PASS] at_least_one_solvable_case
+[PASS] at_least_one_beam_exact_cost_mismatch
+[PASS] finite_exact_search_space_confirmed
+
+GATE STATUS: PASS_STAGE_5B_METHOD_AMENDMENT
+Versioned method freeze: cipher/design/counterfactual_method_freeze_v2.json

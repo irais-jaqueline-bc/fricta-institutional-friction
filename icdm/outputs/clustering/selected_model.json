@@ -1,0 +1,50 @@
+{
+  "status": "FINAL_MODEL_SELECTED",
+  "candidate_id": "R1_PCA_85__HAC_WARD__K2",
+  "representation": "R1_PCA_85",
+  "algorithm": "HAC_WARD",
+  "k": 2,
+  "full_data_metrics": {
+    "silhouette": 0.4108366444914675,
+    "davies_bouldin": 0.7760107265875373,
+    "calinski_harabasz": 46.174845454458506,
+    "minimum_cluster_size": 13,
+    "maximum_cluster_size": 68
+  },
+  "stability": {
+    "ari_median": 1.0,
+    "ari_p025": 0.9053210792596784,
+    "ari_p975": 1.0,
+    "clusterwise_jaccard_min_mean": 0.9915738094173516,
+    "minimum_resample_cluster_size_min": 7
+  },
+  "cluster_sizes": [
+    {
+      "cluster_id": 1,
+      "size": 68
+    },
+    {
+      "cluster_id": 2,
+      "size": 13
+    }
+  ],
+  "decision": {
+    "maximum_ari_median": 1.0,
+    "median_tied_candidates": [
+      "R1_PCA_85__HAC_WARD__K2",
+      "R0_STANDARDIZED__HAC_WARD__K2"
+    ],
+    "partition_equivalence_threshold": 0.95,
+    "tied_pairwise_ari": [
+      {
+        "candidate_a": "R1_PCA_85__HAC_WARD__K2",
+        "candidate_b": "R0_STANDARDIZED__HAC_WARD__K2",
+        "adjusted_rand_index": 1.0,
+        "partition_equivalent_at_0_95": true
+      }
+    ],
+    "tied_partitions_equivalent": true,
+    "rule_used": "Top-stability candidates produced partition-equivalent labels (ARI >= 0.95). Selected the representation with stronger full-data internal separation; retained the alternative as robustness evidence."
+  },
+  "legacy_profiles_used_for_selection": false
+}

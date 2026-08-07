@@ -1,0 +1,56 @@
+
+=== CLUSTER SEARCH SUMMARY ===
+
+Candidate solutions: 30
+Eligible by minimum cluster size: 30
+Ineligible by minimum cluster size: 0
+
+=== ALL CANDIDATES ===
+
+                 candidate_id silhouette davies_bouldin calinski_harabasz     bic  minimum_cluster_size  maximum_cluster_size  converged  eligible_min_cluster_size
+  R0_STANDARDIZED__KMEANS__K2     0.3352         1.0227             37.45     NaN                    16                    65       True                       True
+R0_STANDARDIZED__HAC_WARD__K2     0.3603         0.8889             37.34     NaN                    13                    68       True                       True
+R0_STANDARDIZED__GMM_DIAG__K2     0.3495         0.9325             37.41 2592.75                    14                    67       True                       True
+  R0_STANDARDIZED__KMEANS__K3     0.2999         1.2136             36.68     NaN                    17                    46       True                       True
+R0_STANDARDIZED__HAC_WARD__K3     0.2769         1.3603             34.23     NaN                    13                    48       True                       True
+R0_STANDARDIZED__GMM_DIAG__K3     0.1664         1.6546             26.88 2132.12                    15                    47       True                       True
+  R0_STANDARDIZED__KMEANS__K4     0.2858         1.2294             35.05     NaN                    13                    37       True                       True
+R0_STANDARDIZED__HAC_WARD__K4     0.2728         1.2962             33.11     NaN                    13                    34       True                       True
+R0_STANDARDIZED__GMM_DIAG__K4     0.2152         1.7737             28.66 1721.49                    13                    32       True                       True
+  R0_STANDARDIZED__KMEANS__K5     0.2835         1.3684             33.27     NaN                    13                    20       True                       True
+R0_STANDARDIZED__HAC_WARD__K5     0.2620         1.3963             30.07     NaN                     9                    34       True                       True
+R0_STANDARDIZED__GMM_DIAG__K5     0.2486         1.4814             29.36 1423.20                    12                    32       True                       True
+  R0_STANDARDIZED__KMEANS__K6     0.2745         1.3425             30.71     NaN                     7                    19       True                       True
+R0_STANDARDIZED__HAC_WARD__K6     0.2597         1.3843             29.02     NaN                     9                    25       True                       True
+R0_STANDARDIZED__GMM_DIAG__K6     0.2192         1.5598             22.82  815.50                     6                    23       True                       True
+        R1_PCA_85__KMEANS__K2     0.3823         0.8966             46.34     NaN                    16                    65       True                       True
+      R1_PCA_85__HAC_WARD__K2     0.4108         0.7760             46.17     NaN                    13                    68       True                       True
+      R1_PCA_85__GMM_DIAG__K2     0.2293         0.8264             10.99 1329.06                     6                    75       True                       True
+        R1_PCA_85__KMEANS__K3     0.3565         1.0356             48.77     NaN                    17                    46       True                       True
+      R1_PCA_85__HAC_WARD__K3     0.3361         1.1789             46.30     NaN                    13                    46       True                       True
+      R1_PCA_85__GMM_DIAG__K3     0.2922         1.0285             32.23 1328.62                     6                    47       True                       True
+        R1_PCA_85__KMEANS__K4     0.3511         1.0111             49.91     NaN                    13                    37       True                       True
+      R1_PCA_85__HAC_WARD__K4     0.3186         1.0766             43.95     NaN                    11                    35       True                       True
+      R1_PCA_85__GMM_DIAG__K4     0.2371         1.1596             22.20 1324.09                     6                    39       True                       True
+        R1_PCA_85__KMEANS__K5     0.3507         1.0985             50.17     NaN                    13                    20       True                       True
+      R1_PCA_85__HAC_WARD__K5     0.3133         1.1224             42.56     NaN                     9                    35       True                       True
+      R1_PCA_85__GMM_DIAG__K5     0.3383         0.9303             41.74 1346.24                     7                    39       True                       True
+        R1_PCA_85__KMEANS__K6     0.3380         1.0715             47.80     NaN                     7                    18       True                       True
+      R1_PCA_85__HAC_WARD__K6     0.3318         1.0999             44.82     NaN                     9                    20       True                       True
+      R1_PCA_85__GMM_DIAG__K6     0.2908         0.9901             34.23 1331.99                     6                    32       True                       True
+
+=== TOP ELIGIBLE BY SILHOUETTE ===
+
+                 candidate_id silhouette davies_bouldin calinski_harabasz  minimum_cluster_size
+      R1_PCA_85__HAC_WARD__K2     0.4108         0.7760             46.17                    13
+        R1_PCA_85__KMEANS__K2     0.3823         0.8966             46.34                    16
+R0_STANDARDIZED__HAC_WARD__K2     0.3603         0.8889             37.34                    13
+        R1_PCA_85__KMEANS__K3     0.3565         1.0356             48.77                    17
+        R1_PCA_85__KMEANS__K4     0.3511         1.0111             49.91                    13
+        R1_PCA_85__KMEANS__K5     0.3507         1.0985             50.17                    13
+R0_STANDARDIZED__GMM_DIAG__K2     0.3495         0.9325             37.41                    14
+      R1_PCA_85__GMM_DIAG__K5     0.3383         0.9303             41.74                     7
+        R1_PCA_85__KMEANS__K6     0.3380         1.0715             47.80                     7
+      R1_PCA_85__HAC_WARD__K3     0.3361         1.1789             46.30                    13
+
+GATE STATUS: FULL-DATA CANDIDATE SEARCH COMPLETE. Do not select a winner before stability analysis.

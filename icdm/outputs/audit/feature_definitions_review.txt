@@ -1,0 +1,1257 @@
+data_dictionary.md-33-| `state` | categorical_nominal | Mexican state where the institution operates | metadata |
+data_dictionary.md-34-| `institution_type` | categorical_nominal | Institutional classification | metadata |
+data_dictionary.md-35-| `children_served` | ordinal | Approximate number of children served | metadata / derived-variable input |
+data_dictionary.md-36-| `staff_size` | ordinal | Approximate institutional staff size | metadata / derived-variable input |
+data_dictionary.md:37:| `pilot_openness` | binary | Indicates willingness to participate in pilot testing | metadata |
+data_dictionary.md-38-
+data_dictionary.md-39----
+data_dictionary.md-40-
+data_dictionary.md-41-# SECTION 2 — Infrastructure Variables
+data_dictionary.md-42-
+data_dictionary.md:43:## Q5 — available_devices
+data_dictionary.md-44-
+data_dictionary.md-45-| Field | Value |
+data_dictionary.md-46-|---|---|
+data_dictionary.md:47:| Raw Variable | `available_devices` |
+data_dictionary.md-48-| Normalized Variable | `device_constraint` |
+data_dictionary.md-49-| Branch | ICI |
+data_dictionary.md-50-| Role | core |
+data_dictionary.md-51-| Direction | More devices = lower friction |
+data_dictionary.md-52-| Normalization | reverse min-max |
+data_dictionary.md-53-| Formula | `device_constraint = (x_max - x) / (x_max - x_min)` |
+data_dictionary.md-54-
+data_dictionary.md-55-### Encoding
+data_dictionary.md-56-
+data_dictionary.md-57-| Raw Value | Meaning | Normalized |
+data_dictionary.md-58-|---|---|---|
+data_dictionary.md-59-| 0 | No devices | 1.00 |
+--
+data_dictionary.md-62-| 3 | Sufficient devices | 0.00 |
+data_dictionary.md-63-
+data_dictionary.md-64----
+data_dictionary.md-65-
+data_dictionary.md:66:## Q6 — internet_stability
+data_dictionary.md-67-
+data_dictionary.md-68-| Field | Value |
+data_dictionary.md-69-|---|---|
+data_dictionary.md:70:| Raw Variable | `internet_stability` |
+data_dictionary.md-71-| Normalized Variable | `internet_constraint` |
+data_dictionary.md-72-| Branch | ICI |
+data_dictionary.md-73-| Role | core |
+data_dictionary.md-74-| Direction | More stability = lower friction |
+data_dictionary.md-75-| Normalization | reverse min-max |
+data_dictionary.md-76-| Formula | `internet_constraint = (x_max - x) / (x_max - x_min)` |
+data_dictionary.md-77-
+data_dictionary.md-78-### Encoding
+data_dictionary.md-79-
+data_dictionary.md-80-| Raw Value | Meaning | Normalized |
+data_dictionary.md-81-|---|---|---|
+data_dictionary.md-82-| 1 | Very unstable / no access | 1.00 |
+--
+data_dictionary.md-86-| 5 | Very stable | 0.00 |
+data_dictionary.md-87-
+data_dictionary.md-88----
+data_dictionary.md-89-
+data_dictionary.md:90:## Q7 — digital_tool_variety
+data_dictionary.md-91-
+data_dictionary.md-92-| Field | Value |
+data_dictionary.md-93-|---|---|
+data_dictionary.md:94:| Derived Variable | `digital_tool_variety` |
+data_dictionary.md-95-| Normalized Variable | `digital_tool_constraint` |
+data_dictionary.md-96-| Branch | ICI |
+data_dictionary.md-97-| Role | core |
+data_dictionary.md-98-| Direction | More tools = lower friction |
+data_dictionary.md:99:| Formula | `digital_tool_variety = sum(Tool_i)` |
+data_dictionary.md-100-
+data_dictionary.md-101-### Tool Indicators
+data_dictionary.md-102-
+data_dictionary.md-103-- `uses_excel`
+data_dictionary.md-104-- `uses_whatsapp`
+data_dictionary.md-105-- `uses_google_workspace`
+data_dictionary.md-106-- `uses_specialized_software`
+data_dictionary.md-107-- `other_tool`
+data_dictionary.md-108-
+data_dictionary.md-109-### Constraint Normalization
+data_dictionary.md-110-
+data_dictionary.md-111-| Tool Count | Normalized |
+--
+data_dictionary.md-117-| 4+ | 0.00 |
+data_dictionary.md-118-
+data_dictionary.md-119----
+data_dictionary.md-120-
+data_dictionary.md:121:## Q14D — resource_constraint
+data_dictionary.md-122-
+data_dictionary.md-123-| Field | Value |
+data_dictionary.md-124-|---|---|
+data_dictionary.md:125:| Raw Variable | `resource_constraint` |
+data_dictionary.md:126:| Normalized Variable | `resource_constraint_norm` |
+data_dictionary.md-127-| Branch | ICI |
+data_dictionary.md-128-| Role | core |
+data_dictionary.md-129-| Direction | More scarcity = more friction |
+data_dictionary.md-130-| Normalization | direct min-max |
+data_dictionary.md:131:| Formula | `resource_constraint_norm = (x - x_min) / (x_max - x_min)` |
+data_dictionary.md-132-
+data_dictionary.md-133-### Encoding
+data_dictionary.md-134-
+data_dictionary.md-135-| Raw Value | Meaning | Normalized |
+data_dictionary.md-136-|---|---|---|
+data_dictionary.md-137-| 1 | Very low scarcity | 0.00 |
+data_dictionary.md-138-| 2 | Low scarcity | 0.25 |
+data_dictionary.md-139-| 3 | Moderate scarcity | 0.50 |
+data_dictionary.md-140-| 4 | High scarcity | 0.75 |
+data_dictionary.md-141-| 5 | Severe scarcity | 1.00 |
+data_dictionary.md-142-
+data_dictionary.md-143----
+data_dictionary.md-144-
+data_dictionary.md-145-# SECTION 3 — Organizational Variables
+data_dictionary.md-146-
+data_dictionary.md:147:## Q8 — registration_system_type
+data_dictionary.md-148-
+data_dictionary.md-149-| Field | Value |
+data_dictionary.md-150-|---|---|
+data_dictionary.md:151:| Raw Variable | `registration_system_type` |
+data_dictionary.md-152-| Normalized Variable | `administrative_digitization_constraint` |
+data_dictionary.md-153-| Branch | auxiliary |
+data_dictionary.md-154-| Role | auxiliary |
+data_dictionary.md-155-| Direction | More digital registration = lower friction |
+data_dictionary.md-156-| Normalization | reverse min-max |
+data_dictionary.md-157-| Formula | `administrative_digitization_constraint = (x_max - x) / (x_max - x_min)` |
+data_dictionary.md-158-
+data_dictionary.md-159-### Encoding
+data_dictionary.md-160-
+data_dictionary.md-161-| Raw Value | Meaning | Normalized |
+data_dictionary.md-162-|---|---|---|
+data_dictionary.md-163-| 1 | Fully manual | 1.00 |
+--
+data_dictionary.md-166-| 4 | Mostly digital / software | 0.00 |
+data_dictionary.md-167-
+data_dictionary.md-168----
+data_dictionary.md-169-
+data_dictionary.md:170:## Q9 — admin_time_load
+data_dictionary.md-171-
+data_dictionary.md-172-| Field | Value |
+data_dictionary.md-173-|---|---|
+data_dictionary.md:174:| Raw Variable | `admin_time_load` |
+data_dictionary.md:175:| Normalized Variable | `admin_time_load_norm` |
+data_dictionary.md-176-| Branch | OLI |
+data_dictionary.md-177-| Role | core |
+data_dictionary.md-178-| Direction | More administrative time = more friction |
+data_dictionary.md-179-| Normalization | direct min-max |
+data_dictionary.md:180:| Formula | `admin_time_load_norm = (x - x_min) / (x_max - x_min)` |
+data_dictionary.md-181-
+data_dictionary.md-182-### Encoding
+data_dictionary.md-183-
+data_dictionary.md-184-| Raw Value | Meaning | Normalized |
+data_dictionary.md-185-|---|---|---|
+data_dictionary.md-186-| 1 | Less administrative time | 0.00 |
+data_dictionary.md-187-| 2 | Low-moderate administrative time | 0.33 |
+data_dictionary.md-188-| 3 | Moderate-high administrative time | 0.67 |
+data_dictionary.md-189-| 4 | Highest administrative time | 1.00 |
+data_dictionary.md-190-
+data_dictionary.md-191----
+data_dictionary.md-192-
+data_dictionary.md:193:## Q10 — administrative_organization
+data_dictionary.md-194-
+data_dictionary.md-195-| Field | Value |
+data_dictionary.md-196-|---|---|
+data_dictionary.md:197:| Raw Variable | `administrative_organization` |
+data_dictionary.md-198-| Normalized Variable | `admin_disorganization` |
+data_dictionary.md-199-| Branch | OCI |
+data_dictionary.md-200-| Role | core |
+data_dictionary.md-201-| Direction | Better organization = lower friction |
+data_dictionary.md-202-| Normalization | reverse min-max |
+data_dictionary.md-203-| Formula | `admin_disorganization = (x_max - x) / (x_max - x_min)` |
+data_dictionary.md-204-
+data_dictionary.md-205-### Encoding
+data_dictionary.md-206-
+data_dictionary.md-207-| Raw Value | Meaning | Normalized |
+data_dictionary.md-208-|---|---|---|
+data_dictionary.md-209-| 1 | Very low organization | 1.00 |
+--
+data_dictionary.md-215----
+data_dictionary.md-216-
+data_dictionary.md-217-# SECTION 4 — Digital Adoption Variables
+data_dictionary.md-218-
+data_dictionary.md:219:## Q11 — digital_usage_frequency
+data_dictionary.md-220-
+data_dictionary.md-221-| Field | Value |
+data_dictionary.md-222-|---|---|
+data_dictionary.md:223:| Raw Variable | `digital_usage_frequency` |
+data_dictionary.md-224-| Normalized Variable | `digital_usage_constraint` |
+data_dictionary.md-225-| Branch | HCARI |
+data_dictionary.md-226-| Role | core |
+data_dictionary.md-227-| Direction | More frequent digital usage = lower friction |
+data_dictionary.md-228-| Normalization | reverse min-max |
+data_dictionary.md-229-| Formula | `digital_usage_constraint = (x_max - x) / (x_max - x_min)` |
+data_dictionary.md-230-
+data_dictionary.md-231-### Encoding
+data_dictionary.md-232-
+data_dictionary.md-233-| Raw Value | Meaning | Normalized |
+data_dictionary.md-234-|---|---|---|
+data_dictionary.md-235-| 1 | Never | 1.00 |
+--
+data_dictionary.md-238-| 4 | Daily | 0.00 |
+data_dictionary.md-239-
+data_dictionary.md-240----
+data_dictionary.md-241-
+data_dictionary.md:242:## Q12 — previous_digital_implementation
+data_dictionary.md-243-
+data_dictionary.md-244-| Field | Value |
+data_dictionary.md-245-|---|---|
+data_dictionary.md:246:| Raw Variable | `previous_digital_implementation` |
+data_dictionary.md:247:| Normalized Variable | `previous_digital_implementation` |
+data_dictionary.md-248-| Branch | auxiliary |
+data_dictionary.md-249-| Role | auxiliary contextual proxy |
+data_dictionary.md-250-| Direction | Previous implementation = lower uncertainty/friction |
+data_dictionary.md-251-| Normalization | binary contextual encoding |
+data_dictionary.md-252-
+data_dictionary.md-253-### Encoding
+data_dictionary.md-254-
+data_dictionary.md-255-| Raw Value | Meaning | Normalized |
+data_dictionary.md-256-|---|---|---|
+data_dictionary.md-257-| 0 | No previous implementation | 0.50 |
+data_dictionary.md-258-| 1 | Previous implementation exists | 0.00 |
+data_dictionary.md-259-
+data_dictionary.md-260----
+data_dictionary.md-261-
+data_dictionary.md:262:## Q13 — implementation_difficulty
+data_dictionary.md-263-
+data_dictionary.md-264-| Field | Value |
+data_dictionary.md-265-|---|---|
+data_dictionary.md:266:| Raw Variable | `implementation_difficulty` |
+data_dictionary.md:267:| Normalized Variable | `implementation_difficulty_norm` |
+data_dictionary.md-268-| Branch | OCI |
+data_dictionary.md-269-| Role | core |
+data_dictionary.md-270-| Direction | More implementation difficulty = more friction |
+data_dictionary.md-271-| Normalization | direct min-max |
+data_dictionary.md:272:| Formula | `implementation_difficulty_norm = (x - x_min) / (x_max - x_min)` |
+data_dictionary.md-273-
+data_dictionary.md-274-### Encoding
+data_dictionary.md-275-
+data_dictionary.md-276-| Raw Value | Meaning | Normalized |
+data_dictionary.md-277-|---|---|---|
+data_dictionary.md-278-| 1 | Very easy | 0.00 |
+data_dictionary.md-279-| 2 | Easy | 0.25 |
+data_dictionary.md-280-| 3 | Moderate | 0.50 |
+data_dictionary.md-281-| 4 | Difficult | 0.75 |
+data_dictionary.md-282-| 5 | Very difficult | 1.00 |
+data_dictionary.md-283-
+data_dictionary.md-284----
+data_dictionary.md-285-
+data_dictionary.md-286-# SECTION 5 — Friction Variables
+data_dictionary.md-287-
+data_dictionary.md:288:## Q14A — time_constraint
+data_dictionary.md-289-
+data_dictionary.md-290-| Field | Value |
+data_dictionary.md-291-|---|---|
+data_dictionary.md:292:| Raw Variable | `time_constraint` |
+data_dictionary.md:293:| Normalized Variable | `time_constraint_norm` |
+data_dictionary.md-294-| Branch | OLI |
+data_dictionary.md-295-| Role | core |
+data_dictionary.md-296-| Direction | More time scarcity = more friction |
+data_dictionary.md-297-| Normalization | direct min-max |
+data_dictionary.md-298-
+data_dictionary.md-299----
+data_dictionary.md-300-
+data_dictionary.md:301:## Q14B — staffing_constraint
+data_dictionary.md-302-
+data_dictionary.md-303-| Field | Value |
+data_dictionary.md-304-|---|---|
+data_dictionary.md:305:| Raw Variable | `staffing_constraint` |
+data_dictionary.md:306:| Normalized Variable | `staffing_constraint_norm` |
+data_dictionary.md-307-| Branch | OLI |
+data_dictionary.md-308-| Role | core |
+data_dictionary.md-309-| Direction | More staffing scarcity = more friction |
+data_dictionary.md-310-| Normalization | direct min-max |
+data_dictionary.md-311-
+data_dictionary.md-312----
+data_dictionary.md-313-
+data_dictionary.md:314:## Q14C — training_deficit
+data_dictionary.md-315-
+data_dictionary.md-316-| Field | Value |
+data_dictionary.md-317-|---|---|
+data_dictionary.md:318:| Raw Variable | `training_deficit` |
+data_dictionary.md:319:| Normalized Variable | `training_deficit_norm` |
+data_dictionary.md-320-| Branch | HCARI |
+data_dictionary.md-321-| Role | core |
+data_dictionary.md-322-| Direction | More training deficit = more friction |
+data_dictionary.md-323-| Normalization | direct min-max |
+data_dictionary.md-324-
+data_dictionary.md-325----
+data_dictionary.md-326-
+data_dictionary.md-327-## Shared Encoding for Q14 Variables
+data_dictionary.md-328-
+data_dictionary.md-329-| Raw Value | Meaning | Normalized |
+data_dictionary.md-330-|---|---|---|
+data_dictionary.md-331-| 1 | None | 0.00 |
+--
+data_dictionary.md-335-| 5 | Very high | 1.00 |
+data_dictionary.md-336-
+data_dictionary.md-337----
+data_dictionary.md-338-
+data_dictionary.md:339:## Q15 — system_change_resistance
+data_dictionary.md-340-
+data_dictionary.md-341-| Field | Value |
+data_dictionary.md-342-|---|---|
+data_dictionary.md:343:| Raw Variable | `system_change_resistance` |
+data_dictionary.md:344:| Normalized Variable | `system_change_resistance_norm` |
+data_dictionary.md-345-| Branch | OCI |
+data_dictionary.md-346-| Role | core |
+data_dictionary.md-347-| Direction | More resistance = more friction |
+data_dictionary.md-348-| Normalization | direct min-max |
+data_dictionary.md:349:| Formula | `system_change_resistance_norm = (x - x_min) / (x_max - x_min)` |
+data_dictionary.md-350-
+data_dictionary.md-351-### Encoding
+data_dictionary.md-352-
+data_dictionary.md-353-| Raw Value | Meaning | Normalized |
+data_dictionary.md-354-|---|---|---|
+data_dictionary.md-355-| 1 | Very easy to change | 0.00 |
+data_dictionary.md-356-| 2 | Easy to change | 0.25 |
+data_dictionary.md-357-| 3 | Neutral | 0.50 |
+data_dictionary.md-358-| 4 | Difficult to change | 0.75 |
+data_dictionary.md-359-| 5 | Very difficult to change | 1.00 |
+data_dictionary.md-360-
+data_dictionary.md-361----
+data_dictionary.md-362-
+data_dictionary.md:363:## Q16 — perceived_digital_utility
+data_dictionary.md-364-
+data_dictionary.md-365-| Field | Value |
+data_dictionary.md-366-|---|---|
+data_dictionary.md:367:| Raw Variable | `perceived_digital_utility` |
+data_dictionary.md:368:| Normalized Variable | `perceived_digital_utility_norm` |
+data_dictionary.md-369-| Branch | auxiliary |
+data_dictionary.md-370-| Role | auxiliary perception indicator |
+data_dictionary.md-371-| Direction | Higher perceived utility = lower friction |
+data_dictionary.md-372-| Normalization | reverse min-max |
+data_dictionary.md:373:| Formula | `perceived_digital_utility_norm = (x_max - x) / (x_max - x_min)` |
+data_dictionary.md-374-
+data_dictionary.md-375-### Encoding
+data_dictionary.md-376-
+data_dictionary.md-377-| Raw Value | Meaning | Normalized |
+data_dictionary.md-378-|---|---|---|
+data_dictionary.md-379-| 1 | No perceived utility | 1.00 |
+data_dictionary.md-380-| 2 | Low perceived utility | 0.67 |
+data_dictionary.md-381-| 3 | Some perceived utility | 0.33 |
+data_dictionary.md-382-| 4 | High perceived utility | 0.00 |
+data_dictionary.md-383-
+data_dictionary.md-384----
+data_dictionary.md-385-
+data_dictionary.md:386:## Q17 — tool_adoption_willingness
+data_dictionary.md-387-
+data_dictionary.md-388-| Field | Value |
+data_dictionary.md-389-|---|---|
+data_dictionary.md:390:| Raw Variable | `tool_adoption_willingness` |
+data_dictionary.md-391-| Normalized Variable | `willingness_constraint` |
+data_dictionary.md-392-| Branch | HCARI |
+data_dictionary.md-393-| Role | core |
+data_dictionary.md-394-| Direction | More willingness = lower friction |
+data_dictionary.md-395-| Normalization | reverse min-max |
+data_dictionary.md-396-| Formula | `willingness_constraint = (x_max - x) / (x_max - x_min)` |
+data_dictionary.md-397-
+data_dictionary.md-398-### Encoding
+data_dictionary.md-399-
+data_dictionary.md-400-| Raw Value | Meaning | Normalized |
+data_dictionary.md-401-|---|---|---|
+data_dictionary.md-402-| 1 | Not willing | 1.00 |
+--
+data_dictionary.md-410-# SECTION 6 — Derived Variables
+data_dictionary.md-411-
+data_dictionary.md-412-| Variable | Formula | Role |
+data_dictionary.md-413-|---|---|---|
+data_dictionary.md:414:| `digital_tool_variety` | `sum(Tool_i)` | derived/core |
+data_dictionary.md-415-| `digital_tool_constraint` | reverse normalized tool variety | derived/core |
+data_dictionary.md:416:| `staff_per_device_ratio` | `staff_size / (available_devices + 1)` | auxiliary |
+data_dictionary.md-417-| `children_per_staff_ratio` | `children_served / staff_size` | auxiliary |
+data_dictionary.md:418:| `administrative_digital_burden` | `average(admin_time_load_norm, digital_usage_constraint, administrative_digitization_constraint)` | auxiliary |
+data_dictionary.md:419:| `adoption_readiness_gap` | `abs(perceived_digital_utility_norm - willingness_constraint)` | auxiliary |
+data_dictionary.md:420:| `operational_capacity_constraint` | `average(time_constraint_norm, staffing_constraint_norm)` | auxiliary |
+data_dictionary.md:421:| `digital_exposure_constraint` | `average(previous_digital_implementation, digital_usage_constraint)` | auxiliary |
+data_dictionary.md:422:| `training_dependency_pressure` | `average(training_deficit_norm, digital_usage_constraint)` | auxiliary |
+data_dictionary.md:423:| `implementation_friction_signal` | `average(implementation_difficulty_norm, system_change_resistance_norm)` | auxiliary |
+data_dictionary.md-424-
+data_dictionary.md-425----
+data_dictionary.md-426-
+data_dictionary.md-427-# SECTION 7 — Branch Assignment Summary
+data_dictionary.md-428-
+data_dictionary.md-429-| Branch | Variables |
+data_dictionary.md-430-|---|---|
+data_dictionary.md:431:| ICI | `device_constraint`, `internet_constraint`, `digital_tool_constraint`, `resource_constraint_norm` |
+data_dictionary.md:432:| OCI | `admin_disorganization`, `implementation_difficulty_norm`, `system_change_resistance_norm` |
+data_dictionary.md:433:| OLI | `admin_time_load_norm`, `time_constraint_norm`, `staffing_constraint_norm` |
+data_dictionary.md:434:| HCARI | `training_deficit_norm`, `digital_usage_constraint`, `willingness_constraint` |
+data_dictionary.md-435-
+data_dictionary.md-436----
+data_dictionary.md-437-
+data_dictionary.md-438-# SECTION 8 — Variable Role Summary
+data_dictionary.md-439-
+data_dictionary.md-440-| Role | Meaning |
+data_dictionary.md-441-|---|---|
+data_dictionary.md-442-| core | Included directly in branch aggregation |
+data_dictionary.md-443-| auxiliary | Used for diagnostics, interpretation, recommendations, or modeling |
+data_dictionary.md-444-| metadata | Contextual or descriptive variable |
+--
+variables/raw_variables.md-140-Q5 — Computadoras disponibles
+variables/raw_variables.md-141-
+variables/raw_variables.md-142-VARIABLE
+variables/raw_variables.md-143-
+variables/raw_variables.md:144:available_devices
+variables/raw_variables.md-145-
+variables/raw_variables.md-146-⸻
+variables/raw_variables.md-147-
+variables/raw_variables.md-148-TYPE
+variables/raw_variables.md-149-
+variables/raw_variables.md-150-ordinal
+variables/raw_variables.md-151-
+variables/raw_variables.md-152-⸻
+variables/raw_variables.md-153-
+variables/raw_variables.md-154-ENCODING
+variables/raw_variables.md-155-
+variables/raw_variables.md-156-respuesta valor 0 0 1-2 1 3-5 2 6+ 3
+--
+variables/raw_variables.md-166-Q6 — Estabilidad de internet
+variables/raw_variables.md-167-
+variables/raw_variables.md-168-VARIABLE
+variables/raw_variables.md-169-
+variables/raw_variables.md:170:internet_stability
+variables/raw_variables.md-171-
+variables/raw_variables.md-172-⸻
+variables/raw_variables.md-173-
+variables/raw_variables.md-174-TYPE
+variables/raw_variables.md-175-
+variables/raw_variables.md-176-ordinal
+variables/raw_variables.md-177-
+variables/raw_variables.md-178-⸻
+variables/raw_variables.md-179-
+variables/raw_variables.md-180-ENCODING
+variables/raw_variables.md-181-
+variables/raw_variables.md-182-respuesta valor Muy estable 5 Estable 4 Inestable 3 Muy inestable 2 No hay acceso 1
+--
+variables/raw_variables.md-212-⸻
+variables/raw_variables.md-213-
+variables/raw_variables.md-214-DERIVED VARIABLE
+variables/raw_variables.md-215-
+variables/raw_variables.md:216:digital_tool_variety
+variables/raw_variables.md-217-
+variables/raw_variables.md-218-⸻
+variables/raw_variables.md-219-
+variables/raw_variables.md-220-FORMULA
+variables/raw_variables.md-221-
+variables/raw_variables.md-222-DigitalToolVariety = \sum Tool_i
+variables/raw_variables.md-223-
+variables/raw_variables.md-224-⸻
+variables/raw_variables.md-225-
+variables/raw_variables.md-226-BRANCH
+variables/raw_variables.md-227-
+variables/raw_variables.md-228-Existing Digital Integration
+--
+variables/raw_variables.md-236-Q8 — Registro de información
+variables/raw_variables.md-237-
+variables/raw_variables.md-238-VARIABLE
+variables/raw_variables.md-239-
+variables/raw_variables.md:240:registration_system_type
+variables/raw_variables.md-241-
+variables/raw_variables.md-242-⸻
+variables/raw_variables.md-243-
+variables/raw_variables.md-244-TYPE
+variables/raw_variables.md-245-
+variables/raw_variables.md-246-ordinal
+variables/raw_variables.md-247-
+variables/raw_variables.md-248-⸻
+variables/raw_variables.md-249-
+variables/raw_variables.md-250-ENCODING
+variables/raw_variables.md-251-
+variables/raw_variables.md-252-respuesta valor Papel 1 Excel 2 Mixto 3 Software 4
+--
+variables/raw_variables.md-262-Q9 — Tiempo administrativo diario
+variables/raw_variables.md-263-
+variables/raw_variables.md-264-VARIABLE
+variables/raw_variables.md-265-
+variables/raw_variables.md:266:admin_time_load
+variables/raw_variables.md-267-
+variables/raw_variables.md-268-⸻
+variables/raw_variables.md-269-
+variables/raw_variables.md-270-TYPE
+variables/raw_variables.md-271-
+variables/raw_variables.md-272-ordinal
+variables/raw_variables.md-273-
+variables/raw_variables.md-274-⸻
+variables/raw_variables.md-275-
+variables/raw_variables.md-276-ENCODING
+variables/raw_variables.md-277-
+variables/raw_variables.md-278-respuesta valor Menos de 1 hora 1 1-3 horas 2 3-5 horas 3 5+ horas 4
+--
+variables/raw_variables.md-288-Q10 — Organización administrativa percibida
+variables/raw_variables.md-289-
+variables/raw_variables.md-290-VARIABLE
+variables/raw_variables.md-291-
+variables/raw_variables.md:292:administrative_organization
+variables/raw_variables.md-293-
+variables/raw_variables.md-294-⸻
+variables/raw_variables.md-295-
+variables/raw_variables.md-296-TYPE
+variables/raw_variables.md-297-
+variables/raw_variables.md-298-ordinal
+variables/raw_variables.md-299-
+variables/raw_variables.md-300-⸻
+variables/raw_variables.md-301-
+variables/raw_variables.md-302-ENCODING
+variables/raw_variables.md-303-
+variables/raw_variables.md-304-respuesta valor Muy alto 5 Alto 4 Medio 3 Bajo 2 Muy bajo 1
+--
+variables/raw_variables.md-318-Q11 — Frecuencia de uso digital
+variables/raw_variables.md-319-
+variables/raw_variables.md-320-VARIABLE
+variables/raw_variables.md-321-
+variables/raw_variables.md:322:digital_usage_frequency
+variables/raw_variables.md-323-
+variables/raw_variables.md-324-⸻
+variables/raw_variables.md-325-
+variables/raw_variables.md-326-TYPE
+variables/raw_variables.md-327-
+variables/raw_variables.md-328-ordinal
+variables/raw_variables.md-329-
+variables/raw_variables.md-330-⸻
+variables/raw_variables.md-331-
+variables/raw_variables.md-332-ENCODING
+variables/raw_variables.md-333-
+variables/raw_variables.md-334-respuesta valor Diario 4 Semanal 3 Rara vez 2 Nunca 1
+--
+variables/raw_variables.md-344-Q12 — Intentos previos de implementación
+variables/raw_variables.md-345-
+variables/raw_variables.md-346-VARIABLE
+variables/raw_variables.md-347-
+variables/raw_variables.md:348:previous_digital_implementation
+variables/raw_variables.md-349-
+variables/raw_variables.md-350-⸻
+variables/raw_variables.md-351-
+variables/raw_variables.md-352-TYPE
+variables/raw_variables.md-353-
+variables/raw_variables.md-354-binary
+variables/raw_variables.md-355-
+variables/raw_variables.md-356-⸻
+variables/raw_variables.md-357-
+variables/raw_variables.md-358-ENCODING
+variables/raw_variables.md-359-
+variables/raw_variables.md-360-respuesta valor Sí 1 No 0
+--
+variables/raw_variables.md-370-Q13 — Dificultad de implementación
+variables/raw_variables.md-371-
+variables/raw_variables.md-372-VARIABLE
+variables/raw_variables.md-373-
+variables/raw_variables.md:374:implementation_difficulty
+variables/raw_variables.md-375-
+variables/raw_variables.md-376-⸻
+variables/raw_variables.md-377-
+variables/raw_variables.md-378-TYPE
+variables/raw_variables.md-379-
+variables/raw_variables.md-380-ordinal
+variables/raw_variables.md-381-
+variables/raw_variables.md-382-⸻
+variables/raw_variables.md-383-
+variables/raw_variables.md-384-ENCODING
+variables/raw_variables.md-385-
+variables/raw_variables.md-386-respuesta valor Muy fácil 1 Fácil 2 Moderado 3 Difícil 4 Muy difícil 5
+--
+variables/raw_variables.md-400-Q14A — Falta de tiempo
+variables/raw_variables.md-401-
+variables/raw_variables.md-402-VARIABLE
+variables/raw_variables.md-403-
+variables/raw_variables.md:404:time_constraint
+variables/raw_variables.md-405-
+variables/raw_variables.md-406-⸻
+variables/raw_variables.md-407-
+variables/raw_variables.md-408-TYPE
+variables/raw_variables.md-409-
+variables/raw_variables.md-410-ordinal
+variables/raw_variables.md-411-
+variables/raw_variables.md-412-⸻
+variables/raw_variables.md-413-
+variables/raw_variables.md-414-ENCODING
+variables/raw_variables.md-415-
+variables/raw_variables.md-416-respuesta valor Nada 1 Poco 2 Medio 3 Alto 4 Muy alto 5
+--
+variables/raw_variables.md-426-Q14B — Falta de personal
+variables/raw_variables.md-427-
+variables/raw_variables.md-428-VARIABLE
+variables/raw_variables.md-429-
+variables/raw_variables.md:430:staffing_constraint
+variables/raw_variables.md-431-
+variables/raw_variables.md-432-⸻
+variables/raw_variables.md-433-
+variables/raw_variables.md-434-BRANCH
+variables/raw_variables.md-435-
+variables/raw_variables.md-436-Operational Load
+variables/raw_variables.md-437-
+variables/raw_variables.md-438-⸻
+variables/raw_variables.md-439-
+variables/raw_variables.md-440-Q14C — Falta de capacitación
+variables/raw_variables.md-441-
+variables/raw_variables.md-442-VARIABLE
+variables/raw_variables.md-443-
+variables/raw_variables.md:444:training_deficit
+variables/raw_variables.md-445-
+variables/raw_variables.md-446-⸻
+variables/raw_variables.md-447-
+variables/raw_variables.md-448-BRANCH
+variables/raw_variables.md-449-
+variables/raw_variables.md-450-Human Capacity & Training
+variables/raw_variables.md-451-
+variables/raw_variables.md-452-⸻
+variables/raw_variables.md-453-
+variables/raw_variables.md-454-Q14D — Falta de recursos
+variables/raw_variables.md-455-
+variables/raw_variables.md-456-VARIABLE
+variables/raw_variables.md-457-
+variables/raw_variables.md:458:resource_constraint
+variables/raw_variables.md-459-
+variables/raw_variables.md-460-⸻
+variables/raw_variables.md-461-
+variables/raw_variables.md-462-BRANCH
+variables/raw_variables.md-463-
+variables/raw_variables.md-464-Infrastructure Constraints
+variables/raw_variables.md-465-
+variables/raw_variables.md-466-⸻
+variables/raw_variables.md-467-
+variables/raw_variables.md-468-ENCODING FOR ALL Q14
+variables/raw_variables.md-469-
+variables/raw_variables.md-470-respuesta valor Nada 1 Poco 2 Medio 3 Alto 4 Muy alto 5
+--
+variables/raw_variables.md-474-Q15 — Dificultad de cambiar sistema
+variables/raw_variables.md-475-
+variables/raw_variables.md-476-VARIABLE
+variables/raw_variables.md-477-
+variables/raw_variables.md:478:system_change_resistance
+variables/raw_variables.md-479-
+variables/raw_variables.md-480-⸻
+variables/raw_variables.md-481-
+variables/raw_variables.md-482-TYPE
+variables/raw_variables.md-483-
+variables/raw_variables.md-484-ordinal
+variables/raw_variables.md-485-
+variables/raw_variables.md-486-⸻
+variables/raw_variables.md-487-
+variables/raw_variables.md-488-ENCODING
+variables/raw_variables.md-489-
+variables/raw_variables.md-490-respuesta valor Muy fácil 1 Fácil 2 Neutral 3 Difícil 4 Muy difícil 5
+--
+variables/raw_variables.md-500-Q16 — Utilidad percibida
+variables/raw_variables.md-501-
+variables/raw_variables.md-502-VARIABLE
+variables/raw_variables.md-503-
+variables/raw_variables.md:504:perceived_digital_utility
+variables/raw_variables.md-505-
+variables/raw_variables.md-506-⸻
+variables/raw_variables.md-507-
+variables/raw_variables.md-508-TYPE
+variables/raw_variables.md-509-
+variables/raw_variables.md-510-ordinal
+variables/raw_variables.md-511-
+variables/raw_variables.md-512-⸻
+variables/raw_variables.md-513-
+variables/raw_variables.md-514-ENCODING
+variables/raw_variables.md-515-
+variables/raw_variables.md-516-respuesta valor Mucho 4 Algo 3 Poco 2 Nada 1
+--
+variables/raw_variables.md-526-Q17 — Disposición a probar herramienta
+variables/raw_variables.md-527-
+variables/raw_variables.md-528-VARIABLE
+variables/raw_variables.md-529-
+variables/raw_variables.md:530:tool_adoption_willingness
+variables/raw_variables.md-531-
+variables/raw_variables.md-532-⸻
+variables/raw_variables.md-533-
+variables/raw_variables.md-534-TYPE
+variables/raw_variables.md-535-
+variables/raw_variables.md-536-ordinal
+variables/raw_variables.md-537-
+variables/raw_variables.md-538-⸻
+variables/raw_variables.md-539-
+variables/raw_variables.md-540-ENCODING
+variables/raw_variables.md-541-
+variables/raw_variables.md-542-respuesta valor Muy dispuestos 5 Dispuestos 4 Neutrales 3 Poco dispuestos 2 Nada dispuestos 1
+--
+variables/raw_variables.md-552-Q18 — Apertura a piloto
+variables/raw_variables.md-553-
+variables/raw_variables.md-554-VARIABLE
+variables/raw_variables.md-555-
+variables/raw_variables.md:556:pilot_openness
+variables/raw_variables.md-557-
+variables/raw_variables.md-558-⸻
+variables/raw_variables.md-559-
+variables/raw_variables.md-560-TYPE
+variables/raw_variables.md-561-
+variables/raw_variables.md-562-ordinal
+variables/raw_variables.md-563-
+variables/raw_variables.md-564-⸻
+variables/raw_variables.md-565-
+variables/raw_variables.md-566-ENCODING
+variables/raw_variables.md-567-
+variables/raw_variables.md-568-respuesta valor Sí 3 Tal vez 2 No 1
+--
+variables/normalized_variables.md-12----
+variables/normalized_variables.md-13-
+variables/normalized_variables.md-14-# SECTION 2 — DIGITAL INFRASTRUCTURE
+variables/normalized_variables.md-15-
+variables/normalized_variables.md:16:## Q5 — available_devices
+variables/normalized_variables.md-17-
+variables/normalized_variables.md-18-### Direction
+variables/normalized_variables.md-19-
+variables/normalized_variables.md-20-More devices = LESS friction
+variables/normalized_variables.md-21-
+variables/normalized_variables.md-22-### Normalization
+variables/normalized_variables.md-23-
+variables/normalized_variables.md-24-\[
+variables/normalized_variables.md-25-device\_constraint = \frac{x_{max}-x}{x_{max}-x_{min}}
+variables/normalized_variables.md-26-\]
+variables/normalized_variables.md-27-
+variables/normalized_variables.md-28-| Raw Value | Normalized |
+--
+variables/normalized_variables.md-33-| 3 | 0.00 |
+variables/normalized_variables.md-34-
+variables/normalized_variables.md-35----
+variables/normalized_variables.md-36-
+variables/normalized_variables.md:37:## Q6 — internet_stability
+variables/normalized_variables.md-38-
+variables/normalized_variables.md-39-### Direction
+variables/normalized_variables.md-40-
+variables/normalized_variables.md-41-More stability = LESS friction
+variables/normalized_variables.md-42-
+variables/normalized_variables.md-43-### Normalization
+variables/normalized_variables.md-44-
+variables/normalized_variables.md-45-\[
+variables/normalized_variables.md-46-internet\_constraint = \frac{x_{max}-x}{x_{max}-x_{min}}
+variables/normalized_variables.md-47-\]
+variables/normalized_variables.md-48-
+variables/normalized_variables.md-49-| Raw Value | Normalized |
+--
+variables/normalized_variables.md-55-| 1 | 1.00 |
+variables/normalized_variables.md-56-
+variables/normalized_variables.md-57----
+variables/normalized_variables.md-58-
+variables/normalized_variables.md:59:## Q7 — digital_tool_variety
+variables/normalized_variables.md-60-
+variables/normalized_variables.md-61-### Direction
+variables/normalized_variables.md-62-
+variables/normalized_variables.md-63-More digital tools = LESS friction
+variables/normalized_variables.md-64-
+variables/normalized_variables.md-65-### Formula
+variables/normalized_variables.md-66-
+variables/normalized_variables.md-67-\[
+variables/normalized_variables.md-68-DigitalToolVariety = \sum Tool_i
+variables/normalized_variables.md-69-\]
+variables/normalized_variables.md-70-
+variables/normalized_variables.md-71-### Normalization
+--
+variables/normalized_variables.md-83-| 4+ | 0.00 |
+variables/normalized_variables.md-84-
+variables/normalized_variables.md-85----
+variables/normalized_variables.md-86-
+variables/normalized_variables.md:87:## Q14D — resource_constraint
+variables/normalized_variables.md-88-
+variables/normalized_variables.md-89-### Direction
+variables/normalized_variables.md-90-
+variables/normalized_variables.md-91-More resource scarcity = MORE friction
+variables/normalized_variables.md-92-
+variables/normalized_variables.md-93-### Methodological Note
+variables/normalized_variables.md-94-
+variables/normalized_variables.md-95-This variable represents perceived infrastructural and operational resource scarcity.
+variables/normalized_variables.md-96-
+variables/normalized_variables.md-97-### Normalization
+variables/normalized_variables.md-98-
+variables/normalized_variables.md-99-\[
+--
+variables/normalized_variables.md-111----
+variables/normalized_variables.md-112-
+variables/normalized_variables.md-113-# SECTION 3 — ADMINISTRATIVE PROCESSES
+variables/normalized_variables.md-114-
+variables/normalized_variables.md:115:## Q8 — registration_system_type
+variables/normalized_variables.md-116-
+variables/normalized_variables.md-117-### Direction
+variables/normalized_variables.md-118-
+variables/normalized_variables.md-119-More digital registration = LESS friction
+variables/normalized_variables.md-120-
+variables/normalized_variables.md-121-### Normalization
+variables/normalized_variables.md-122-
+variables/normalized_variables.md-123-\[
+variables/normalized_variables.md-124-administrative\_digitization\_constraint = \frac{x_{max}-x}{x_{max}-x_{min}}
+variables/normalized_variables.md-125-\]
+variables/normalized_variables.md-126-
+variables/normalized_variables.md-127-| Raw Value | Normalized |
+--
+variables/normalized_variables.md-132-| 4 | 0.00 |
+variables/normalized_variables.md-133-
+variables/normalized_variables.md-134----
+variables/normalized_variables.md-135-
+variables/normalized_variables.md:136:## Q9 — admin_time_load
+variables/normalized_variables.md-137-
+variables/normalized_variables.md-138-### Direction
+variables/normalized_variables.md-139-
+variables/normalized_variables.md-140-More administrative time = MORE friction
+variables/normalized_variables.md-141-
+variables/normalized_variables.md-142-### Normalization
+variables/normalized_variables.md-143-
+variables/normalized_variables.md-144-\[
+variables/normalized_variables.md-145-admin\_time\_load\_norm = \frac{x-x_{min}}{x_{max}-x_{min}}
+variables/normalized_variables.md-146-\]
+variables/normalized_variables.md-147-
+variables/normalized_variables.md-148-| Raw Value | Normalized |
+--
+variables/normalized_variables.md-153-| 4 | 1.00 |
+variables/normalized_variables.md-154-
+variables/normalized_variables.md-155----
+variables/normalized_variables.md-156-
+variables/normalized_variables.md:157:## Q10 — administrative_organization
+variables/normalized_variables.md-158-
+variables/normalized_variables.md-159-### Direction
+variables/normalized_variables.md-160-
+variables/normalized_variables.md-161-Better organization = LESS friction
+variables/normalized_variables.md-162-
+variables/normalized_variables.md-163-### Normalization
+variables/normalized_variables.md-164-
+variables/normalized_variables.md-165-\[
+variables/normalized_variables.md-166-admin\_disorganization = \frac{x_{max}-x}{x_{max}-x_{min}}
+variables/normalized_variables.md-167-\]
+variables/normalized_variables.md-168-
+variables/normalized_variables.md-169-| Raw Value | Normalized |
+--
+variables/normalized_variables.md-177----
+variables/normalized_variables.md-178-
+variables/normalized_variables.md-179-# SECTION 4 — DIGITAL ADOPTION
+variables/normalized_variables.md-180-
+variables/normalized_variables.md:181:## Q11 — digital_usage_frequency
+variables/normalized_variables.md-182-
+variables/normalized_variables.md-183-### Direction
+variables/normalized_variables.md-184-
+variables/normalized_variables.md-185-More digital usage = LESS friction
+variables/normalized_variables.md-186-
+variables/normalized_variables.md-187-### Normalization
+variables/normalized_variables.md-188-
+variables/normalized_variables.md-189-\[
+variables/normalized_variables.md-190-digital\_usage\_constraint = \frac{x_{max}-x}{x_{max}-x_{min}}
+variables/normalized_variables.md-191-\]
+variables/normalized_variables.md-192-
+variables/normalized_variables.md-193-| Raw Value | Normalized |
+--
+variables/normalized_variables.md-198-| 1 | 1.00 |
+variables/normalized_variables.md-199-
+variables/normalized_variables.md-200----
+variables/normalized_variables.md-201-
+variables/normalized_variables.md:202:## Q12 — previous_digital_implementation
+variables/normalized_variables.md-203-
+variables/normalized_variables.md-204-### Direction
+variables/normalized_variables.md-205-
+variables/normalized_variables.md-206-Previous implementation = LESS uncertainty/friction
+variables/normalized_variables.md-207-
+variables/normalized_variables.md-208-### Methodological Note
+variables/normalized_variables.md-209-
+variables/normalized_variables.md-210-This variable is treated as a proxy indicator of prior institutional digital exposure rather than direct organizational resistance.
+variables/normalized_variables.md-211-
+variables/normalized_variables.md-212-### Binary Encoding
+variables/normalized_variables.md-213-
+variables/normalized_variables.md-214-| Raw Value | Normalized |
+--
+variables/normalized_variables.md-217-| 0 | 0.50 |
+variables/normalized_variables.md-218-
+variables/normalized_variables.md-219----
+variables/normalized_variables.md-220-
+variables/normalized_variables.md:221:## Q13 — implementation_difficulty
+variables/normalized_variables.md-222-
+variables/normalized_variables.md-223-### Direction
+variables/normalized_variables.md-224-
+variables/normalized_variables.md-225-More implementation difficulty = MORE friction
+variables/normalized_variables.md-226-
+variables/normalized_variables.md-227-### Normalization
+variables/normalized_variables.md-228-
+variables/normalized_variables.md-229-\[
+variables/normalized_variables.md-230-implementation\_difficulty\_norm = \frac{x-x_{min}}{x_{max}-x_{min}}
+variables/normalized_variables.md-231-\]
+variables/normalized_variables.md-232-
+variables/normalized_variables.md-233-| Raw Value | Normalized |
+--
+variables/normalized_variables.md-241----
+variables/normalized_variables.md-242-
+variables/normalized_variables.md-243-# SECTION 5 — FRICTION
+variables/normalized_variables.md-244-
+variables/normalized_variables.md:245:## Q14A — time_constraint
+variables/normalized_variables.md-246-
+variables/normalized_variables.md-247-### Direction
+variables/normalized_variables.md-248-
+variables/normalized_variables.md-249-More time scarcity = MORE friction
+variables/normalized_variables.md-250-
+variables/normalized_variables.md-251-### Normalization
+variables/normalized_variables.md-252-
+variables/normalized_variables.md-253-\[
+variables/normalized_variables.md-254-time\_constraint\_norm = \frac{x-x_{min}}{x_{max}-x_{min}}
+variables/normalized_variables.md-255-\]
+variables/normalized_variables.md-256-
+variables/normalized_variables.md-257----
+variables/normalized_variables.md-258-
+variables/normalized_variables.md:259:## Q14B — staffing_constraint
+variables/normalized_variables.md-260-
+variables/normalized_variables.md-261-### Direction
+variables/normalized_variables.md-262-
+variables/normalized_variables.md-263-More staffing scarcity = MORE friction
+variables/normalized_variables.md-264-
+variables/normalized_variables.md-265-### Normalization
+variables/normalized_variables.md-266-
+variables/normalized_variables.md-267-\[
+variables/normalized_variables.md-268-staffing\_constraint\_norm = \frac{x-x_{min}}{x_{max}-x_{min}}
+variables/normalized_variables.md-269-\]
+variables/normalized_variables.md-270-
+variables/normalized_variables.md-271----
+variables/normalized_variables.md-272-
+variables/normalized_variables.md:273:## Q14C — training_deficit
+variables/normalized_variables.md-274-
+variables/normalized_variables.md-275-### Direction
+variables/normalized_variables.md-276-
+variables/normalized_variables.md-277-More training deficit = MORE friction
+variables/normalized_variables.md-278-
+variables/normalized_variables.md-279-### Normalization
+variables/normalized_variables.md-280-
+variables/normalized_variables.md-281-\[
+variables/normalized_variables.md-282-training\_deficit\_norm = \frac{x-x_{min}}{x_{max}-x_{min}}
+variables/normalized_variables.md-283-\]
+variables/normalized_variables.md-284-
+variables/normalized_variables.md-285----
+--
+variables/normalized_variables.md-295-| 5 | 1.00 |
+variables/normalized_variables.md-296-
+variables/normalized_variables.md-297----
+variables/normalized_variables.md-298-
+variables/normalized_variables.md:299:## Q15 — system_change_resistance
+variables/normalized_variables.md-300-
+variables/normalized_variables.md-301-### Direction
+variables/normalized_variables.md-302-
+variables/normalized_variables.md-303-More resistance = MORE friction
+variables/normalized_variables.md-304-
+variables/normalized_variables.md-305-### Normalization
+variables/normalized_variables.md-306-
+variables/normalized_variables.md-307-\[
+variables/normalized_variables.md-308-system\_change\_resistance\_norm = \frac{x-x_{min}}{x_{max}-x_{min}}
+variables/normalized_variables.md-309-\]
+variables/normalized_variables.md-310-
+variables/normalized_variables.md-311-| Raw Value | Normalized |
+--
+variables/normalized_variables.md-317-| 5 | 1.00 |
+variables/normalized_variables.md-318-
+variables/normalized_variables.md-319----
+variables/normalized_variables.md-320-
+variables/normalized_variables.md:321:## Q16 — perceived_digital_utility
+variables/normalized_variables.md-322-
+variables/normalized_variables.md-323-### Direction
+variables/normalized_variables.md-324-
+variables/normalized_variables.md-325-Higher perceived utility = LESS friction
+variables/normalized_variables.md-326-
+variables/normalized_variables.md-327-### Methodological Note
+variables/normalized_variables.md-328-
+variables/normalized_variables.md-329-This variable is treated as an auxiliary perception indicator rather than a direct structural friction variable.
+variables/normalized_variables.md-330-
+variables/normalized_variables.md-331-### Normalization
+variables/normalized_variables.md-332-
+variables/normalized_variables.md-333-\[
+--
+variables/normalized_variables.md-342-| 1 | 1.00 |
+variables/normalized_variables.md-343-
+variables/normalized_variables.md-344----
+variables/normalized_variables.md-345-
+variables/normalized_variables.md:346:## Q17 — tool_adoption_willingness
+variables/normalized_variables.md-347-
+variables/normalized_variables.md-348-### Direction
+variables/normalized_variables.md-349-
+variables/normalized_variables.md-350-More willingness = LESS friction
+variables/normalized_variables.md-351-
+variables/normalized_variables.md-352-### Normalization
+variables/normalized_variables.md-353-
+variables/normalized_variables.md-354-\[
+variables/normalized_variables.md-355-willingness\_constraint = \frac{x_{max}-x}{x_{max}-x_{min}}
+variables/normalized_variables.md-356-\]
+variables/normalized_variables.md-357-
+variables/normalized_variables.md-358-| Raw Value | Normalized |
+--
+variables/normalized_variables.md-364-| 1 | 1.00 |
+variables/normalized_variables.md-365-
+variables/normalized_variables.md-366----
+variables/normalized_variables.md-367-
+variables/normalized_variables.md:368:## Q18 — pilot_openness
+variables/normalized_variables.md-369-
+variables/normalized_variables.md-370-| Variable | Normalization |
+variables/normalized_variables.md-371-|---|---|
+variables/normalized_variables.md:372:| pilot_openness | none |
+variables/normalized_variables.md-373-
+variables/normalized_variables.md-374-Metadata only.
+--
+variables/derived_variables.md-7-At this stage, derived variables are exploratory and will be used for descriptive analysis, correlation analysis, segmentation, and later modeling.
+variables/derived_variables.md-8-
+variables/derived_variables.md-9----
+variables/derived_variables.md-10-
+variables/derived_variables.md:11:# 1. digital_tool_variety
+variables/derived_variables.md-12-
+variables/derived_variables.md-13-## Definition
+variables/derived_variables.md-14-
+variables/derived_variables.md-15-Measures the number of digital tools currently used by the institution.
+variables/derived_variables.md-16-
+variables/derived_variables.md-17-## Source Variables
+variables/derived_variables.md-18-
+variables/derived_variables.md-19-- uses_excel
+variables/derived_variables.md-20-- uses_whatsapp
+variables/derived_variables.md-21-- uses_google_workspace
+variables/derived_variables.md-22-- uses_specialized_software
+variables/derived_variables.md-23-- other_tool
+--
+variables/derived_variables.md-41-Friction-oriented version of digital tool variety.
+variables/derived_variables.md-42-
+variables/derived_variables.md-43-## Source Variable
+variables/derived_variables.md-44-
+variables/derived_variables.md:45:- digital_tool_variety
+variables/derived_variables.md-46-
+variables/derived_variables.md-47-## Formula
+variables/derived_variables.md-48-
+variables/derived_variables.md-49-\[
+variables/derived_variables.md-50-digital\_tool\_constraint = \frac{x_{max}-x}{x_{max}-x_{min}}
+variables/derived_variables.md-51-\]
+variables/derived_variables.md-52-
+variables/derived_variables.md-53-## Interpretation
+variables/derived_variables.md-54-
+variables/derived_variables.md-55-Higher values indicate lower digital tool diversity and higher digital integration constraint.
+variables/derived_variables.md-56-
+variables/derived_variables.md-57----
+--
+variables/derived_variables.md-64-
+variables/derived_variables.md-65-## Source Variables
+variables/derived_variables.md-66-
+variables/derived_variables.md-67-- staff_size
+variables/derived_variables.md:68:- available_devices
+variables/derived_variables.md-69-
+variables/derived_variables.md-70-## Formula
+variables/derived_variables.md-71-
+variables/derived_variables.md-72-\[
+variables/derived_variables.md-73-staff\_per\_device\_ratio = \frac{staff\_size}{available\_devices + 1}
+variables/derived_variables.md-74-\]
+variables/derived_variables.md-75-
+variables/derived_variables.md-76-## Methodological Note
+variables/derived_variables.md-77-
+variables/derived_variables.md-78-The +1 prevents division by zero when institutions report zero available devices.
+variables/derived_variables.md-79-
+variables/derived_variables.md-80-## Interpretation
+--
+variables/derived_variables.md-117-Captures administrative burden under low digital support conditions.
+variables/derived_variables.md-118-
+variables/derived_variables.md-119-## Source Variables
+variables/derived_variables.md-120-
+variables/derived_variables.md:121:- admin_time_load_norm
+variables/derived_variables.md-122-- digital_usage_constraint
+variables/derived_variables.md-123-- administrative_digitization_constraint
+variables/derived_variables.md-124-
+variables/derived_variables.md-125-## Formula
+variables/derived_variables.md-126-
+variables/derived_variables.md-127-\[
+variables/derived_variables.md-128-administrative\_digital\_burden =
+variables/derived_variables.md-129-\frac{admin\_time\_load\_norm + digital\_usage\_constraint + administrative\_digitization\_constraint}{3}
+variables/derived_variables.md-130-\]
+variables/derived_variables.md-131-
+variables/derived_variables.md-132-## Interpretation
+variables/derived_variables.md-133-
+--
+variables/derived_variables.md-142-Captures the gap between perceived usefulness and actual willingness to adopt a digital tool.
+variables/derived_variables.md-143-
+variables/derived_variables.md-144-## Source Variables
+variables/derived_variables.md-145-
+variables/derived_variables.md:146:- perceived_digital_utility_norm
+variables/derived_variables.md-147-- willingness_constraint
+variables/derived_variables.md-148-
+variables/derived_variables.md-149-## Formula
+variables/derived_variables.md-150-
+variables/derived_variables.md-151-\[
+variables/derived_variables.md-152-adoption\_readiness\_gap =
+variables/derived_variables.md-153-|perceived\_digital\_utility\_norm - willingness\_constraint|
+variables/derived_variables.md-154-\]
+variables/derived_variables.md-155-
+variables/derived_variables.md-156-## Interpretation
+variables/derived_variables.md-157-
+variables/derived_variables.md-158-Higher values indicate a mismatch between perceived utility and institutional willingness.
+--
+variables/derived_variables.md-166-Captures combined operational pressure from time scarcity and staffing scarcity.
+variables/derived_variables.md-167-
+variables/derived_variables.md-168-## Source Variables
+variables/derived_variables.md-169-
+variables/derived_variables.md:170:- time_constraint_norm
+variables/derived_variables.md:171:- staffing_constraint_norm
+variables/derived_variables.md-172-
+variables/derived_variables.md-173-## Formula
+variables/derived_variables.md-174-
+variables/derived_variables.md-175-\[
+variables/derived_variables.md-176-operational\_capacity\_constraint =
+variables/derived_variables.md-177-\frac{time\_constraint\_norm + staffing\_constraint\_norm}{2}
+variables/derived_variables.md-178-\]
+variables/derived_variables.md-179-
+variables/derived_variables.md-180-## Interpretation
+variables/derived_variables.md-181-
+variables/derived_variables.md-182-Higher values indicate stronger operational capacity limitations.
+variables/derived_variables.md-183-
+--
+variables/derived_variables.md-190-Captures low digital exposure based on prior implementation and current digital usage frequency.
+variables/derived_variables.md-191-
+variables/derived_variables.md-192-## Source Variables
+variables/derived_variables.md-193-
+variables/derived_variables.md:194:- previous_digital_implementation
+variables/derived_variables.md-195-- digital_usage_constraint
+variables/derived_variables.md-196-
+variables/derived_variables.md-197-## Formula
+variables/derived_variables.md-198-
+variables/derived_variables.md-199-\[
+variables/derived_variables.md-200-digital\_exposure\_constraint =
+variables/derived_variables.md-201-\frac{previous\_digital\_implementation + digital\_usage\_constraint}{2}
+variables/derived_variables.md-202-\]
+variables/derived_variables.md-203-
+variables/derived_variables.md-204-## Methodological Note
+variables/derived_variables.md-205-
+variables/derived_variables.md-206-The previous implementation variable is treated as a proxy for prior digital exposure, not as a direct measure of resistance.
+--
+variables/derived_variables.md-218-Captures adoption pressure associated with limited training and low digital usage.
+variables/derived_variables.md-219-
+variables/derived_variables.md-220-## Source Variables
+variables/derived_variables.md-221-
+variables/derived_variables.md:222:- training_deficit_norm
+variables/derived_variables.md-223-- digital_usage_constraint
+variables/derived_variables.md-224-
+variables/derived_variables.md-225-## Formula
+variables/derived_variables.md-226-
+variables/derived_variables.md-227-\[
+variables/derived_variables.md-228-training\_dependency\_pressure =
+variables/derived_variables.md-229-\frac{training\_deficit\_norm + digital\_usage\_constraint}{2}
+variables/derived_variables.md-230-\]
+variables/derived_variables.md-231-
+variables/derived_variables.md-232-## Interpretation
+variables/derived_variables.md-233-
+variables/derived_variables.md-234-Higher values indicate stronger training-related adoption pressure.
+--
+variables/derived_variables.md-242-Captures direct implementation-related friction.
+variables/derived_variables.md-243-
+variables/derived_variables.md-244-## Source Variables
+variables/derived_variables.md-245-
+variables/derived_variables.md:246:- implementation_difficulty_norm
+variables/derived_variables.md:247:- system_change_resistance_norm
+variables/derived_variables.md-248-
+variables/derived_variables.md-249-## Formula
+variables/derived_variables.md-250-
+variables/derived_variables.md-251-\[
+variables/derived_variables.md-252-implementation\_friction\_signal =
+variables/derived_variables.md-253-\frac{implementation\_difficulty\_norm + system\_change\_resistance\_norm}{2}
+variables/derived_variables.md-254-\]
+variables/derived_variables.md-255-
+variables/derived_variables.md-256-## Interpretation
+variables/derived_variables.md-257-
+variables/derived_variables.md-258-Higher values indicate stronger perceived difficulty in implementation and system transition.
+--
+measurement_framework.md-27-|---|---|
+measurement_framework.md-28-| device_constraint | limited device availability |
+measurement_framework.md-29-| internet_constraint | unstable internet connectivity |
+measurement_framework.md-30-| digital_tool_constraint | low diversity of digital operational tools |
+measurement_framework.md:31:| resource_constraint_norm | perceived infrastructural and operational scarcity |
+measurement_framework.md-32-
+measurement_framework.md-33----
+measurement_framework.md-34-
+measurement_framework.md-35-## Auxiliary Computational Variables
+measurement_framework.md-36-
+measurement_framework.md-37-| Variable | Purpose |
+measurement_framework.md-38-|---|---|
+measurement_framework.md-39-| staff_per_device_ratio | technological pressure approximation |
+measurement_framework.md-40-
+measurement_framework.md-41----
+measurement_framework.md-42-
+measurement_framework.md-43-## Interpretation
+--
+measurement_framework.md-69-
+measurement_framework.md-70-| Variable | Description |
+measurement_framework.md-71-|---|---|
+measurement_framework.md-72-| admin_disorganization | low administrative organization |
+measurement_framework.md:73:| implementation_difficulty_norm | perceived implementation complexity |
+measurement_framework.md:74:| system_change_resistance_norm | resistance to operational transition |
+measurement_framework.md:75:| previous_digital_implementation | proxy indicator of prior institutional digital exposure |
+measurement_framework.md-76-
+measurement_framework.md-77----
+measurement_framework.md-78-
+measurement_framework.md-79-## Core Derived Variables
+measurement_framework.md-80-
+measurement_framework.md-81-| Variable | Description |
+measurement_framework.md-82-|---|---|
+measurement_framework.md-83-| implementation_friction_signal | combined implementation-related friction signal |
+measurement_framework.md-84-| administrative_digital_burden | combined administrative burden under low digital support |
+measurement_framework.md-85-
+measurement_framework.md-86----
+measurement_framework.md-87-
+--
+measurement_framework.md-106----
+measurement_framework.md-107-
+measurement_framework.md-108-## Methodological Note
+measurement_framework.md-109-
+measurement_framework.md:110:The variable `previous_digital_implementation` is treated as a proxy indicator of institutional digital exposure rather than a direct measure of organizational resistance.
+measurement_framework.md-111-
+measurement_framework.md-112----
+measurement_framework.md-113-
+measurement_framework.md-114-## Conceptual Scope
+measurement_framework.md-115-
+measurement_framework.md-116-This branch captures structural organizational barriers associated with digital transition processes.
+measurement_framework.md-117-
+measurement_framework.md-118----
+measurement_framework.md-119-
+measurement_framework.md-120-# 3. Operational Load
+measurement_framework.md-121-
+measurement_framework.md-122-## Construct Definition
+--
+measurement_framework.md-128-## Core Variables
+measurement_framework.md-129-
+measurement_framework.md-130-| Variable | Description |
+measurement_framework.md-131-|---|---|
+measurement_framework.md:132:| admin_time_load_norm | administrative workload |
+measurement_framework.md:133:| time_constraint_norm | perceived lack of time |
+measurement_framework.md:134:| staffing_constraint_norm | personnel scarcity |
+measurement_framework.md-135-
+measurement_framework.md-136----
+measurement_framework.md-137-
+measurement_framework.md-138-## Core Derived Variables
+measurement_framework.md-139-
+measurement_framework.md-140-| Variable | Description |
+measurement_framework.md-141-|---|---|
+measurement_framework.md-142-| operational_capacity_constraint | combined operational saturation signal |
+measurement_framework.md-143-
+measurement_framework.md-144----
+measurement_framework.md-145-
+measurement_framework.md-146-## Auxiliary Computational Variables
+--
+measurement_framework.md-178-## Core Variables
+measurement_framework.md-179-
+measurement_framework.md-180-| Variable | Description |
+measurement_framework.md-181-|---|---|
+measurement_framework.md:182:| training_deficit_norm | insufficient digital training |
+measurement_framework.md-183-| digital_usage_constraint | low digital usage frequency |
+measurement_framework.md-184-| willingness_constraint | low willingness toward digital adoption |
+measurement_framework.md-185-
+measurement_framework.md-186----
+measurement_framework.md-187-
+measurement_framework.md-188-## Core Derived Variables
+measurement_framework.md-189-
+measurement_framework.md-190-| Variable | Description |
+measurement_framework.md-191-|---|---|
+measurement_framework.md-192-| training_dependency_pressure | training-related adoption pressure signal |
+measurement_framework.md-193-
+measurement_framework.md-194----
+--
+measurement_framework.md-214-The following variables are treated as contextual or exploratory indicators and are not currently considered primary structural dimensions.
+measurement_framework.md-215-
+measurement_framework.md-216-| Variable | Purpose |
+measurement_framework.md-217-|---|---|
+measurement_framework.md:218:| perceived_digital_utility_norm | auxiliary perception indicator |
+measurement_framework.md:219:| pilot_openness | pilot participation metadata |
+measurement_framework.md-220-| institution_type | institutional classification |
+measurement_framework.md-221-| state | geographic metadata |
+measurement_framework.md-222-| children_served | contextual demographic metadata |
+measurement_framework.md-223-| staff_size | contextual staffing metadata |
+measurement_framework.md-224-
+measurement_framework.md-225----
+measurement_framework.md-226-
+measurement_framework.md-227-# Framework Structure Summary
+measurement_framework.md-228-
+measurement_framework.md-229-| Branch | Core Variables | Core Derived Variables |
+measurement_framework.md-230-|---|---|---|
+measurement_framework.md-231-| Infrastructure Constraints | 4 | 1 |
