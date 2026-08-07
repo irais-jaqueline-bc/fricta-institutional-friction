@@ -1,0 +1,69 @@
+{
+  "prototype_A": [
+    0.74,
+    0.74,
+    0.74,
+    0.74,
+    0.74,
+    0.74,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.5
+  ],
+  "prototype_B": [
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.26,
+    0.74,
+    0.74,
+    0.74,
+    0.74,
+    0.74,
+    0.74,
+    0.5
+  ],
+  "accessible_source_latent": "A",
+  "target_latent": "B",
+  "gate_feature_indices": [
+    1,
+    6,
+    9
+  ],
+  "gate_feature_names": [
+    "digital_usage_constraint_score",
+    "staffing_constraint_score",
+    "recording_system_constraint"
+  ],
+  "reverse_lock_feature_indices": [
+    0,
+    3,
+    4,
+    7,
+    8,
+    11
+  ],
+  "reverse_lock_feature_names": [
+    "willingness_constraint_score",
+    "device_constraint",
+    "digital_tool_variety_constraint",
+    "time_constraint_score",
+    "administrative_disorganization_constraint",
+    "admin_time_load_constraint"
+  ],
+  "bridge_target_weight": 0.45,
+  "scenario_id": "S3_DIRECTIONAL_REACHABILITY",
+  "replicate": 0,
+  "n": 80,
+  "numeric_label_swap": false,
+  "latent_to_numeric_mapping": {
+    "A": 1,
+    "B": 2
+  }
+}

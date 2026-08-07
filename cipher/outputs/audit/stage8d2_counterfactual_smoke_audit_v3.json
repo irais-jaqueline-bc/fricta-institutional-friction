@@ -1,0 +1,81 @@
+{
+  "status": "PASS_STAGE_8D2_V3_COUNTERFACTUAL_SMOKE",
+  "scientific_interpretation_allowed": false,
+  "scenario_results": [
+    {
+      "scenario": "S1_CONFIG_TWO_PROFILE",
+      "status": "COMPLETED",
+      "selected_k": 2,
+      "stable_claim": true,
+      "eligible_ensemble_members": 200,
+      "single_model_reachable_n": 0,
+      "robust_tau_080_n": 0,
+      "robust_tau_090_n": 0,
+      "robust_tau_095_n": 0
+    },
+    {
+      "scenario": "S2_CORE_BOUNDARY",
+      "status": "NOT_APPLICABLE_SELECTED_K_NOT_2",
+      "selected_k": 3,
+      "stable_claim": true
+    },
+    {
+      "scenario": "S3_DIRECTIONAL_REACHABILITY",
+      "status": "COMPLETED",
+      "selected_k": 2,
+      "stable_claim": true,
+      "eligible_ensemble_members": 200,
+      "single_model_reachable_n": 5,
+      "robust_tau_080_n": 1,
+      "robust_tau_090_n": 0,
+      "robust_tau_095_n": 0,
+      "s3_oracle_positive_queries_smoke_only": 5,
+      "s3_single_model_f1_smoke_only": 1.0,
+      "s3_robust_precision_smoke_only": 0.0,
+      "s3_robust_f1_smoke_only": 0.0,
+      "s3_direction_recovered_smoke_only": false,
+      "s3_label_swap_invariant_smoke_only": true
+    },
+    {
+      "scenario": "S4_SEVERITY_CONTINUUM",
+      "status": "NOT_APPLICABLE_SCENARIO_POLICY",
+      "selected_k": 3,
+      "stable_claim": true
+    },
+    {
+      "scenario": "S5_GOVERNANCE_CONFOUNDED",
+      "status": "NOT_APPLICABLE_SCENARIO_POLICY",
+      "selected_k": 4,
+      "stable_claim": true
+    },
+    {
+      "scenario": "S6_NO_CLUSTER_NULL",
+      "status": "ROBUST_LAYER_NOT_EVALUABLE_INSUFFICIENT_ELIGIBLE_ENSEMBLE",
+      "selected_k": 2,
+      "stable_claim": true,
+      "eligible_ensemble_members": 108,
+      "single_model_reachable_n": 19,
+      "robust_tau_080_n": null,
+      "robust_tau_090_n": null,
+      "robust_tau_095_n": null,
+      "s6_false_robust_cf_claim_smoke_only": null
+    }
+  ],
+  "technical_checks": {
+    "prechecks_pass": true,
+    "s1_s3_robust_layers_complete": true,
+    "s6_gracefully_marked_robust_not_evaluable": true,
+    "s2_abstains_due_selected_k3": true,
+    "s4_s5_abstain_by_policy": true,
+    "all_cf_processed_have_20_queries": true,
+    "all_cf_processed_reference_partitions_reproduced": true,
+    "all_ward_reference_fidelities_pass": true,
+    "robust_completed_ensembles_meet_minimum": true,
+    "non_evaluable_ensembles_are_below_minimum": true,
+    "saved_candidates_at_most_5": true,
+    "all_saved_candidates_respect_max_l0": true,
+    "all_saved_candidates_pass_plausibility": true,
+    "s3_truth_eval_present": true,
+    "official_outputs_untouched": true
+  }
+}

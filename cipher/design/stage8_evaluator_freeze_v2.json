@@ -1,0 +1,298 @@
+{
+  "version": "STAGE8_EVALUATOR_FREEZE_V2",
+  "status": "FROZEN_BEFORE_SYNTHETIC_MODEL_PERFORMANCE",
+  "purpose": "Operationalize every evaluator decision before the first synthetic model-performance result is observed.",
+  "parent_artifacts": {
+    "stage8a_design": {
+      "path": "cipher/design/stage8_synthetic_validation_freeze_v1.json",
+      "sha256": "d69ef2382c847668ac9e6a6db068ea847d37761587732c14a3c185db11a64160"
+    },
+    "stage8b_generator_implementation": {
+      "path": "cipher/design/stage8_generator_implementation_freeze_v1.json",
+      "sha256": "4bec8647fd3afb7e971ee53ab83f7cf9dcd31d20ef4eeb0bd0ad4ded8a24ffe8"
+    },
+    "stage8b_smoke_audit": {
+      "path": "cipher/outputs/audit/stage8b_generator_smoke_audit.json",
+      "sha256": "9522629145c2c6181fc0aa05ffe05617f928ba45b74c2079f3bcfbd0113b2c82"
+    }
+  },
+  "source_semantics": {
+    "model_selection": {
+      "source": "src/icdm_select_model.py",
+      "sha256": "648e5fe3796f293492537fcdb19151d5c24e6e451bcf3341345b9a560f786024"
+    },
+    "severity_null": {
+      "source": "src/cipher_03_null_models.py",
+      "sha256": "3a7443f34560b21329e6bade73eb84b32d8ba3283751641779e5ca3580d0575c"
+    },
+    "governance_null": {
+      "source": "src/cipher_03b_governance_null.py",
+      "sha256": "678138792be3ac8aea6b2f959809ad6810cedf4bdcfc6f6d8133fefce1b502e7"
+    },
+    "uncertainty": {
+      "source": "src/cipher_02_membership_certainty.py",
+      "sha256": "ee09b0dd870b5ae8156087e44855c8bba2d29e089a8d31f110ea72b2fdd8adf0"
+    }
+  },
+  "candidate_set": {
+    "representations": [
+      "R0_STANDARDIZED",
+      "R1_PCA85"
+    ],
+    "algorithms": [
+      "HAC_WARD",
+      "KMEANS"
+    ],
+    "k_values": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "note": "Stage 8A froze the synthetic candidate set to Ward and KMeans. The real ICDM selection semantics are reused on that frozen set; GMM is not reintroduced."
+  },
+  "model_selection": {
+    "eligibility": {
+      "full_data_minimum_cluster_size": 5,
+      "resampling_minimum_cluster_size": 5,
+      "rule": "A candidate is eligible only if both its full-data minimum cluster size and the minimum cluster size observed across resampling are at least five."
+    },
+    "primary_rule": "Among eligible candidates, maximize median resampling ARI.",
+    "median_ari_tie_tolerance": 1e-12,
+    "partition_equivalence_ari_threshold": 0.95,
+    "equivalent_partition_tiebreak": [
+      "silhouette descending",
+      "davies_bouldin ascending",
+      "calinski_harabasz descending",
+      "k ascending"
+    ],
+    "non_equivalent_partition_tiebreak": [
+      "ari_p025 descending",
+      "clusterwise_jaccard_min_mean descending",
+      "silhouette descending",
+      "k ascending"
+    ],
+    "ground_truth_blinding": "Synthetic truth labels, true boundary flags, oracle reachability labels, and governance truth are forbidden from model selection."
+  },
+  "stability_claim_gate": {
+    "status": "PROSPECTIVELY_OPERATIONALIZED_FOR_SYNTHETIC_NULL_CONTROL",
+    "reason": "The real pipeline selected by stability and described the observed solution as a stable empirical partition, but it did not encode a numeric pass/fail stability threshold. Stage 8 therefore needs a per-replicate claim gate before null-scenario evaluation.",
+    "selected_candidate_median_ari_min": 0.7,
+    "minimum_cluster_eligibility_required": true,
+    "justification": "0.70 is not tuned from synthetic outcomes: it reuses the already frozen Stage-8A S1 profile-recovery ARI threshold as the minimum per-replicate stability level required to make a stable-partition claim.",
+    "formula": "stable_partition_claim = selection_eligible AND selected_candidate_ari_median >= 0.70"
+  },
+  "severity_null": {
+    "severity_score": "unweighted mean of the 13 synthetic features",
+    "cv": {
+      "splits": 5,
+      "repeats": 20,
+      "threshold_fitted_on_training_fold_only": true,
+      "direction_selected_on_training_fold_only": true
+    },
+    "severity_nearly_reconstructs_profiles": {
+      "balanced_accuracy_median_min": 0.9,
+      "ari_median_min": 0.8,
+      "formula": "balanced_accuracy_median >= 0.90 AND ari_median >= 0.80"
+    },
+    "matched_severity_pairs": {
+      "tolerance": 0.05,
+      "flag": "at least one opposite-profile pair within tolerance",
+      "role": "Descriptive falsification evidence only. This flag does not independently suppress or authorize a configurational-profile claim."
+    },
+    "multiclass_extension": {
+      "k_equals_2": "Use the inherited exact training-fold threshold-and-direction search without modification.",
+      "k_greater_than_2": {
+        "model": "DecisionTreeClassifier on the single scalar severity score",
+        "features": [
+          "unweighted_mean_of_13_features"
+        ],
+        "max_leaf_nodes": "selected_k",
+        "class_weight": "balanced",
+        "min_samples_leaf": 2,
+        "random_state": "replicate-derived deterministic seed",
+        "cv": "same repeated stratified train/test folds as the severity null",
+        "role": "A one-dimensional non-linear severity baseline that generalizes the binary threshold idea to k>2 discovered partitions."
+      },
+      "flag_thresholds_unchanged": {
+        "balanced_accuracy_median_min": 0.9,
+        "ari_median_min": 0.8
+      },
+      "matched_severity_pairs_multiclass": "A matched pair is any pair assigned to different discovered clusters with absolute mean-severity gap <=0.05. This remains descriptive only."
+    }
+  },
+  "governance_null": {
+    "synthetic_permutations": 2000,
+    "cv": {
+      "splits": 5,
+      "repeats": 20
+    },
+    "strong_governance_association": {
+      "bias_corrected_cramers_v_min": 0.5,
+      "permutation_p_max_exclusive": 0.05,
+      "formula": "V >= 0.50 AND p < 0.05"
+    },
+    "governance_nearly_reconstructs_profiles": {
+      "balanced_accuracy_median_min": 0.9,
+      "ari_median_min": 0.8,
+      "formula": "balanced_accuracy_median >= 0.90 AND ari_median >= 0.80"
+    },
+    "multiclass_extension": {
+      "association": "Bias-corrected Cramer's V and permutation testing already support R x C contingency tables and are used unchanged.",
+      "prediction_baseline": "The training-fold governance-category -> majority discovered-cluster mapping already supports arbitrary selected k and is used unchanged.",
+      "flag_thresholds_unchanged": true
+    }
+  },
+  "configurational_profile_claim": {
+    "formula": "stable_partition_claim AND NOT severity_nearly_reconstructs_profiles AND NOT strong_governance_association AND NOT governance_nearly_reconstructs_profiles",
+    "scenario_application": {
+      "S1_CONFIG_TWO_PROFILE": "Should usually be allowed if recovery is stable and severity does not reconstruct the partition.",
+      "S2_CORE_BOUNDARY": "Should usually be allowed if recovery is stable; uncertainty is evaluated separately against the planted boundary.",
+      "S3_DIRECTIONAL_REACHABILITY": "Must be established before reachability/directionality metrics are interpreted.",
+      "S4_SEVERITY_CONTINUUM": "A configurational claim is false positive unless the severity simpler explanation suppresses it.",
+      "S5_GOVERNANCE_CONFOUNDED": "A configurational claim is false positive unless governance association/reconstruction suppresses it.",
+      "S6_NO_CLUSTER_NULL": "Any stable_partition_claim is a false stable-profile claim; there is no planted simpler categorical explanation."
+    },
+    "multiclass_policy": {
+      "stable_partition_claim": "May be evaluated for any selected k in 2..6 using the frozen stability gate.",
+      "severity_falsification": "For k=2 use the inherited exact threshold baseline; for k>2 use the prospectively frozen one-dimensional decision-tree severity baseline.",
+      "governance_falsification": "Applies unchanged for any selected k.",
+      "uncertainty_or_reachability_required": false,
+      "note": "The configurational-profile claim is a clustering/falsification claim. The binary CIPHER uncertainty/reachability contribution is evaluated only on replicates selecting k=2."
+    }
+  },
+  "membership_uncertainty": {
+    "existing_real_pipeline_primary_score": null,
+    "prospective_primary_for_stage8": "normalized_entropy",
+    "selection_status": "PROSPECTIVELY_FROZEN_BEFORE_SYNTHETIC_PERFORMANCE",
+    "rationale": "The real pipeline computed several continuous certainty quantities but did not designate one as primary. Normalized binary entropy is chosen prospectively because it is continuous, bounded, symmetric under profile-label swapping, and directly quantifies dispersion of ensemble membership votes.",
+    "formula": "H = -sum(p_k * ln p_k) / ln(2), k in {1,2}, ignoring zero terms",
+    "direction": "higher = more uncertain",
+    "primary_boundary_metric": {
+      "scenario": "S2_CORE_BOUNDARY",
+      "target": "true_boundary = 1",
+      "score": "normalized_entropy",
+      "metric": "ROC-AUC"
+    },
+    "secondary_scores": {
+      "reference_profile_probability": "lower = more uncertain",
+      "family_consistency": "lower = more uncertain",
+      "membership_margin": "lower = more uncertain",
+      "consensus_gap": "lower = more uncertain"
+    },
+    "certainty_classes": {
+      "CORE": "reference_profile_probability >= 0.90 AND family_consistency >= 0.80",
+      "BOUNDARY": "reference_profile_probability < 0.75 OR family_consistency < 0.60",
+      "HALO": "otherwise"
+    },
+    "selected_k_policy": {
+      "k_equals_2": "Run the frozen heterogeneous k=2 ensemble, binary normalized entropy, CORE/HALO/BOUNDARY classification, and reachability layer.",
+      "k_greater_than_2": "Do not run or claim the binary CIPHER membership-uncertainty or counterfactual-reachability layer for that replicate. Record the layer as NOT_APPLICABLE_SELECTED_K_NOT_2.",
+      "reason": "Stage 8A explicitly froze the heterogeneous synthetic ensemble at k=2. Retrofitting a k>2 uncertainty ensemble after seeing synthetic outcomes would violate the freeze."
+    }
+  },
+  "reachability_evaluation": {
+    "only_after": [
+      "reference model selected without truth labels",
+      "stable/configurational claim state computed",
+      "membership uncertainty computed"
+    ],
+    "single_model_reachable": "At least one exact <=4-feature candidate transitions the frozen reference model and passes the frozen target-manifold 5-NN plausibility rule.",
+    "robust_reachable_tau_090": "At least one saved single-model reachable candidate receives target-profile support >=0.90 across the eligible heterogeneous ensemble.",
+    "sensitivity_taus": [
+      0.8,
+      0.95
+    ],
+    "diagnostic_not_causal": true,
+    "selected_k_required": 2,
+    "k_not_2_policy": "NOT_APPLICABLE_SELECTED_K_NOT_2; no robust-reachability claim is made."
+  },
+  "synthetic_truth_usage_policy": {
+    "truth_is_hidden_during": [
+      "representation fitting",
+      "clustering",
+      "candidate selection",
+      "stability evaluation",
+      "ensemble alignment except alignment to the selected synthetic reference partition",
+      "severity/governance prediction of discovered cluster IDs",
+      "counterfactual search",
+      "ensemble robustness evaluation"
+    ],
+    "truth_is_used_only_after_pipeline_outputs_are_frozen_for_replicate": [
+      "ARI/NMI versus planted profiles",
+      "boundary AUROC",
+      "oracle reachability precision/recall/F1",
+      "direction recovery",
+      "label-swap invariance",
+      "false-claim accounting"
+    ]
+  },
+  "stage8a_success_criteria_reaffirmed_without_change": {
+    "S1_CONFIG_TWO_PROFILE": {
+      "median_ARI_min": 0.7,
+      "selected_k_equals_2_rate_min": 0.8
+    },
+    "S2_CORE_BOUNDARY": {
+      "median_ARI_min": 0.6,
+      "boundary_uncertainty_AUROC_min": 0.8,
+      "median_boundary_uncertainty_gt_core": true
+    },
+    "S3_DIRECTIONAL_REACHABILITY": {
+      "median_profile_ARI_min": 0.6,
+      "oracle_reachability_F1_min": 0.7,
+      "robust_reachability_precision_min": 0.8,
+      "accessible_direction_recovery_rate_min": 0.8,
+      "label_swap_invariance_rate_min": 0.95
+    },
+    "S4_SEVERITY_CONTINUUM": {
+      "false_configurational_profile_claim_rate_max": 0.1,
+      "require_severity_falsification_to_flag_simpler_explanation": true
+    },
+    "S5_GOVERNANCE_CONFOUNDED": {
+      "false_configurational_profile_claim_rate_max": 0.1,
+      "require_governance_falsification_to_flag_simpler_explanation": true
+    },
+    "S6_NO_CLUSTER_NULL": {
+      "false_stable_profile_claim_rate_max": 0.1,
+      "false_robust_reachability_claim_rate_max": 0.05
+    }
+  },
+  "no_post_result_changes": [
+    "no threshold relaxation",
+    "no alternative primary uncertainty score after seeing S2",
+    "no alternate stable-claim threshold after seeing S4-S6",
+    "no relabeling of S3 accessible direction to favor numeric Profile 1 or Profile 2",
+    "no restoration of empirical motif claim",
+    "no replacing the k>2 one-dimensional severity baseline after smoke results",
+    "no running a k>2 uncertainty ensemble unless declared later as a separate post-hoc analysis",
+    "no treating NOT_APPLICABLE reachability as a successful negative prediction"
+  ],
+  "next_stage": {
+    "id": "STAGE_8D1",
+    "name": "One-replicate discovery, stability, falsification, and uncertainty smoke",
+    "rule": "Run one non-official performance smoke replicate per scenario. First validate selection/stability/null/uncertainty mechanics. Do not run official replicates and do not interpret smoke values scientifically."
+  },
+  "gate_status": "PASS_STAGE_8C1_MULTICLASS_AMENDMENT",
+  "parent_evaluator": {
+    "path": "cipher/design/stage8_evaluator_freeze_v1.json",
+    "sha256": "2814bebc30d27766c65f2d8bd61afca27aa02eb5657402ca33c807ad2745fb29"
+  },
+  "prospective_multiclass_amendment": {
+    "reason": "Stage 8A froze model selection over k=2..6, while the inherited real-case severity thresholding and CIPHER uncertainty/reachability layer were binary. This mismatch was identified before any synthetic model-performance result. The amendment defines how k>2 selected solutions are evaluated without changing any previously frozen thresholds.",
+    "timing": "BEFORE_ANY_SYNTHETIC_MODEL_PERFORMANCE",
+    "candidate_k_values": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "frozen_uncertainty_ensemble_k": 2
+  },
+  "null_scenario_accounting": {
+    "S4_SEVERITY_CONTINUUM": "Any configurational_profile_claim=True is a false configurational claim, regardless of selected k.",
+    "S5_GOVERNANCE_CONFOUNDED": "Any configurational_profile_claim=True is a false configurational claim, regardless of selected k.",
+    "S6_NO_CLUSTER_NULL": "Any stable_partition_claim=True is a false stable-profile claim. A false robust-reachability claim can occur only when selected_k=2 and the binary reachability layer makes such a claim."
+  }
+}

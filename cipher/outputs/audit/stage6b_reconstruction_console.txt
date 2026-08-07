@@ -1,0 +1,55 @@
+
+=== CIPHER STAGE 6B — ENSEMBLE RECONSTRUCTION AUDIT ===
+
+Static artifact checks:
+[PASS] official_manifest_has_1000_members
+[PASS] counterfactual_manifest_has_1000_members
+[PASS] manifest_member_definitions_match_exactly
+[PASS] exactly_984_counterfactual_eligible_members
+[PASS] exactly_16_excluded_members
+[PASS] all_16_excluded_members_are_ward
+[PASS] eligible_family_counts_match_stage4
+[PASS] stored_prediction_matrix_has_81_institutions
+[PASS] stored_prediction_matrix_has_1000_members
+[PASS] stored_prediction_member_ids_match_manifest
+[PASS] ward_fidelity_file_has_500_members
+[PASS] excluded_ward_file_has_16_members
+Reconstructed 0100/1000 members...
+Reconstructed 0200/1000 members...
+Reconstructed 0300/1000 members...
+Reconstructed 0400/1000 members...
+Reconstructed 0500/1000 members...
+Reconstructed 0600/1000 members...
+Reconstructed 0700/1000 members...
+Reconstructed 0800/1000 members...
+Reconstructed 0900/1000 members...
+Reconstructed 1000/1000 members...
+
+=== ELIGIBLE FAMILY RECONSTRUCTION SUMMARY ===
+
+         family  eligible_members  exact_prediction_members  total_prediction_mismatches  pca_component_mismatches  pca_variance_mismatches  fidelity_mismatches
+      R0_KMEANS               250                       250                            0                         0                        0                    0
+        R0_WARD               244                       118                          192                         0                        0                    0
+R1_PCA85_KMEANS               250                       250                            0                         0                        0                    0
+  R1_PCA85_WARD               240                       112                          182                         0                        0                    0
+
+=== DYNAMIC RECONSTRUCTION CHECKS ===
+
+[PASS] all_1000_members_reconstructed
+[FAIL] all_1000_member_predictions_match_stored_81x1000_matrix
+[PASS] all_pca_component_counts_reproduce
+[PASS] all_pca_explained_variance_values_reproduce
+[PASS] all_extension_fidelity_values_reproduce
+[PASS] eligible_member_set_is_exactly_984
+[PASS] excluded_member_set_matches_stage4_excluded_file
+[FAIL] all_984_eligible_members_have_exact_prediction_reconstruction
+[PASS] all_984_eligible_members_have_exact_fidelity_reconstruction
+
+Prediction mismatch cells: 449
+PCA component mismatches: 0
+PCA variance mismatches: 0
+Extension fidelity mismatches: 0
+Elapsed seconds: 17.95
+
+GATE STATUS: FAIL_STAGE_6B_RECONSTRUCTION_AUDIT
+Do not evaluate counterfactuals. Review reconstruction mismatches first.

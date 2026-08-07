@@ -1,0 +1,7 @@
+scenario,replicate,selected_candidate,selected_k,stability_ari_median,stable_partition_claim,configurational_profile_claim,uncertainty_applicable,uncertainty_spearman_200_vs_1000,uncertainty_pass_0_95,cf_applicable,robust_eligible_200,robust_eligible_1000,robust_agreement_evaluable,robust_tau090_agreement,robust_pass_0_95
+S1_CONFIG_TWO_PROFILE,2,R1_PCA85__HAC_WARD__K2,2,1.0,True,True,True,,False,True,200.0,1000.0,True,1.0,True
+S2_CORE_BOUNDARY,2,R1_PCA85__HAC_WARD__K3,3,1.0,True,True,False,,,False,,,,,
+S3_DIRECTIONAL_REACHABILITY,2,R1_PCA85__HAC_WARD__K2,2,1.0,True,True,True,,False,True,200.0,1000.0,True,1.0,True
+S4_SEVERITY_CONTINUUM,2,R1_PCA85__KMEANS__K4,4,1.0,True,False,False,,,False,,,,,
+S5_GOVERNANCE_CONFOUNDED,2,R1_PCA85__HAC_WARD__K4,4,1.0,True,False,False,,,False,,,,,
+S6_NO_CLUSTER_NULL,2,R1_PCA85__KMEANS__K2,2,0.8769714132164782,True,True,True,0.915845026132499,False,True,113.0,573.0,False,,False

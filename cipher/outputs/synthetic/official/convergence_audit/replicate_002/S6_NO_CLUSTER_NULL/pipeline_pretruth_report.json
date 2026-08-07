@@ -1,0 +1,41 @@
+{
+  "scenario": "S6_NO_CLUSTER_NULL",
+  "replicate": 2,
+  "selected_candidate": "R1_PCA85__KMEANS__K2",
+  "selected_representation": "R1_PCA85",
+  "selected_algorithm": "KMEANS",
+  "selected_k": 2,
+  "selected_ari_median": 0.8769714132164782,
+  "selected_ari_p025": 0.5078332281265754,
+  "selected_silhouette": 0.17241325719186268,
+  "selected_minimum_cluster_size": 39,
+  "selected_minimum_resample_cluster_size": 18,
+  "selection_decision": {
+    "maximum_ari_median": 0.8769714132164782,
+    "median_tied_candidates": [
+      "R1_PCA85__KMEANS__K2"
+    ],
+    "tied_partitions_equivalent": true,
+    "tied_pairwise_ari": [],
+    "rule_used": "Unique highest median ARI."
+  },
+  "stable_partition_claim": true,
+  "severity": {
+    "method": "INHERITED_BINARY_THRESHOLD",
+    "balanced_accuracy_median": 0.875,
+    "macro_f1_median": 0.875,
+    "roc_auc_median": 1.0,
+    "ari_median": 0.5333333333333333,
+    "nmi_median": 0.5615896365639194,
+    "matched_severity_opposite_cluster_pairs": 210,
+    "severity_nearly_reconstructs_profiles": false
+  },
+  "governance": {
+    "status": "NOT_APPLICABLE_NO_GOVERNANCE_VARIABLE",
+    "strong_governance_association": false,
+    "governance_nearly_reconstructs_profiles": false
+  },
+  "configurational_profile_claim": true,
+  "uncertainty_applicable": true,
+  "cf_applicable": true
+}

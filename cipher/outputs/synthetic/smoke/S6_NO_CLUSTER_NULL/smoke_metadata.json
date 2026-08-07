@@ -1,0 +1,10 @@
+{
+  "gaussian_copula_rho": 0.2,
+  "beta_alpha": 2.5,
+  "beta_beta": 2.5,
+  "scenario_id": "S6_NO_CLUSTER_NULL",
+  "replicate": 0,
+  "n": 80,
+  "numeric_label_swap": null,
+  "latent_to_numeric_mapping": null
+}

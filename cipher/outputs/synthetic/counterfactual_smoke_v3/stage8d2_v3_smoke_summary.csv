@@ -1,0 +1,7 @@
+scenario,status,selected_k,stable_claim,eligible_ensemble_members,single_model_reachable_n,robust_tau_080_n,robust_tau_090_n,robust_tau_095_n,s3_oracle_positive_queries_smoke_only,s3_single_model_f1_smoke_only,s3_robust_precision_smoke_only,s3_robust_f1_smoke_only,s3_direction_recovered_smoke_only,s3_label_swap_invariant_smoke_only,s6_false_robust_cf_claim_smoke_only
+S1_CONFIG_TWO_PROFILE,COMPLETED,2,True,200.0,0.0,0.0,0.0,0.0,,,,,,,
+S2_CORE_BOUNDARY,NOT_APPLICABLE_SELECTED_K_NOT_2,3,True,,,,,,,,,,,,
+S3_DIRECTIONAL_REACHABILITY,COMPLETED,2,True,200.0,5.0,1.0,0.0,0.0,5.0,1.0,0.0,0.0,False,True,
+S4_SEVERITY_CONTINUUM,NOT_APPLICABLE_SCENARIO_POLICY,3,True,,,,,,,,,,,,
+S5_GOVERNANCE_CONFOUNDED,NOT_APPLICABLE_SCENARIO_POLICY,4,True,,,,,,,,,,,,
+S6_NO_CLUSTER_NULL,ROBUST_LAYER_NOT_EVALUABLE_INSUFFICIENT_ELIGIBLE_ENSEMBLE,2,True,108.0,19.0,,,,,,,,,,

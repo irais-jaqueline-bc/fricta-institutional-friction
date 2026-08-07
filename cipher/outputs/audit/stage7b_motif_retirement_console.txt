@@ -1,0 +1,37 @@
+
+=== CIPHER STAGE 7B — EMPIRICAL MOTIF CLAIM RETIREMENT ===
+
+Empirical multi-feature motif claim:
+  RETIRED BY FROZEN STAGE-7 SUPPORT RULE
+  raw frequent itemsets = 0
+  raw closed itemsets = 0
+  minimum support = 4/10
+
+Single signed items:
+  May remain descriptive only; they are not called motifs.
+
+Retained CIPHER core:
+  stable profiles
+  membership uncertainty
+  exact sparse plausible reachability
+  ensemble-robust reachability
+  counterfactual support gain / source-to-target flips
+
+Method name:
+  CIPHER: Counterfactual Institutional Profiling under Heterogeneous Ensemble Robustness
+
+Next required stage:
+  Stage 8 — synthetic validation of the retained reachability thesis
+
+=== FREEZE CHECKS ===
+
+[PASS] stage7a_stop_rule_triggered
+[PASS] policy_matches_stage7a_stop
+[PASS] zero_raw_frequent_itemsets
+[PASS] empty_itemset_artifact_is_consistent_with_stop_rule
+[PASS] zero_raw_closed_itemsets
+[PASS] effective_support_count_was_four
+[PASS] thesis_v2_had_passed
+
+GATE STATUS: PASS_STAGE_7B_MOTIF_RETIREMENT
+Frozen revision: cipher/design/cipher_thesis_revision_v3.json

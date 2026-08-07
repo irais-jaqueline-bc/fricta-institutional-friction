@@ -1,0 +1,31 @@
+{
+  "scenario": "S6_NO_CLUSTER_NULL",
+  "status": "ROBUST_LAYER_NOT_EVALUABLE_INSUFFICIENT_ELIGIBLE_ENSEMBLE",
+  "ensemble_report": {
+    "eligible_members": 108,
+    "minimum_required": 120,
+    "family_counts": {
+      "R0_WARD": {
+        "accepted": 2,
+        "excluded_fidelity": 48
+      },
+      "R1_PCA85_WARD": {
+        "accepted": 6,
+        "excluded_fidelity": 44
+      },
+      "R0_KMEANS": {
+        "accepted": 50,
+        "excluded_fidelity": 0
+      },
+      "R1_PCA85_KMEANS": {
+        "accepted": 50,
+        "excluded_fidelity": 0
+      }
+    }
+  },
+  "single_model_reachable_count": 19,
+  "robust_reachable_tau_080_count": null,
+  "robust_reachable_tau_090_count": null,
+  "robust_reachable_tau_095_count": null,
+  "robust_support_computed": false
+}

@@ -1,0 +1,387 @@
+
+=== CIPHER STAGE 8C0 — REAL PIPELINE SEMANTICS EXTRACTION ===
+
+This stage is read-only. It does not fit a synthetic model.
+
+=== TOP JSON / REPORT CANDIDATES ===
+
+[01] score=26 cipher/outputs/audit/stage3_governance_source_manifest.json
+     governance_counts.NGO = 27
+     governance_counts.PUBLIC = 22
+     governance_counts.PRIVATE = 17
+     governance_counts.MIXED = 14
+     governance_counts.UNKNOWN = 1
+     used_for_model_selection = False
+[02] score=25 cipher/outputs/audit/stage6b0_ensemble_artifact_report.json
+     top_candidates[0].candidate_score = 67
+     top_candidates[1].candidate_score = 55
+     top_candidates[2].candidate_score = 55
+     top_candidates[3].candidate_score = 50
+     top_candidates[4].candidate_score = 44
+     top_candidates[5].candidate_score = 38
+     top_candidates[6].candidate_score = 38
+     top_candidates[7].candidate_score = 23
+     top_candidates[8].candidate_score = 23
+     top_candidates[9].candidate_score = 23
+     top_candidates[10].candidate_score = 19
+     top_candidates[11].candidate_score = 19
+     top_candidates[12].candidate_score = 18
+     top_candidates[13].candidate_score = 18
+     top_candidates[14].candidate_score = 18
+     top_candidates[15].candidate_score = 18
+     top_candidates[16].candidate_score = 15
+     top_candidates[17].candidate_score = 15
+     top_candidates[18].candidate_score = 15
+     top_candidates[19].candidate_score = 15
+[03] score=22 cipher/design/cipher_thesis_revision_v2.json
+     evidence_triggering_revision.coverage.boundary = 1.0
+     evidence_triggering_revision.coverage.halo = 0.3333333333333333
+     evidence_triggering_revision.coverage.core = 0.1515151515151515
+     evidence_triggering_revision.exploratory_stage5d.boundary_vs_nonboundary_reachability_fisher.table = [[6, 0], [13, 62]]
+     evidence_triggering_revision.exploratory_stage5d.boundary_vs_nonboundary_reachability_fisher.odds_ratio = inf
+     evidence_triggering_revision.exploratory_stage5d.boundary_vs_nonboundary_reachability_fisher.p_value = 8.360134942413424e-05
+     evidence_triggering_revision.exploratory_stage5d.certainty_class_vs_reachability.cramers_v = 0.5282569543181241
+     evidence_triggering_revision.exploratory_stage5d.certainty_class_vs_reachability.permutation_p = 3.999960000399996e-05
+     evidence_triggering_revision.exploratory_stage5d.certainty_class_vs_reachability.permutations = 100000
+     evidence_triggering_revision.exploratory_stage5d.profile_vs_failure_mode.cramers_v = 0.47602686037954844
+     evidence_triggering_revision.exploratory_stage5d.profile_vs_failure_mode.permutation_p = 0.0003999960000399996
+     evidence_triggering_revision.exploratory_stage5d.profile_vs_failure_mode.permutations = 100000
+     evidence_triggering_revision.exploratory_stage5d.profile1_uncertainty_comparisons.reference_profile_probability.solved_n = 10
+     evidence_triggering_revision.exploratory_stage5d.profile1_uncertainty_comparisons.reference_profile_probability.unsolved_n = 58
+     evidence_triggering_revision.exploratory_stage5d.profile1_uncertainty_comparisons.reference_profile_probability.solved_median = 0.7281196559381302
+     evidence_triggering_revision.exploratory_stage5d.profile1_uncertainty_comparisons.reference_profile_probability.unsolved_median = 1.0
+     evidence_triggering_revision.exploratory_stage5d.profile1_uncertainty_comparisons.reference_profile_probability.mann_whitney_u = 14.0
+     evidence_triggering_revision.exploratory_stage5d.profile1_uncertainty_comparisons.reference_profile_probability.p_value = 1.1836287620333243e-07
+     evidence_triggering_revision.exploratory_stage5d.profile1_uncertainty_comparisons.reference_profile_probability.cliffs_delta_solved_minus_unsolved = -0.9517241379310345
+     evidence_triggering_revision.exploratory_stage5d.profile1_uncertainty_comparisons.family_consistency.solved_n = 10
+[04] score=22 cipher/design/stage8_generator_implementation_freeze_v1.json
+     implementation_spec.common.core_noise_sd = 0.06
+     implementation_spec.common.boundary_noise_sd = 0.04
+     implementation_spec.S2_CORE_BOUNDARY.core_counts.A = 28
+     implementation_spec.S2_CORE_BOUNDARY.core_counts.B = 28
+     implementation_spec.S2_CORE_BOUNDARY.boundary_counts.A_side = 12
+     implementation_spec.S2_CORE_BOUNDARY.boundary_counts.B_side = 12
+     implementation_spec.S2_CORE_BOUNDARY.A_side_target_weight_interval = [0.35, 0.5]
+     implementation_spec.S2_CORE_BOUNDARY.B_side_target_weight_interval = [0.5, 0.65]
+     implementation_spec.S2_CORE_BOUNDARY.boundary_noise_sd = 0.04
+     implementation_spec.S3_DIRECTIONAL_REACHABILITY.accessible_source_core_count = 24
+     implementation_spec.S5_GOVERNANCE_CONFOUNDED.exact_counts.NGO = 26
+     implementation_spec.S5_GOVERNANCE_CONFOUNDED.exact_counts.PUBLIC = 22
+     implementation_spec.S5_GOVERNANCE_CONFOUNDED.exact_counts.PRIVATE = 17
+     implementation_spec.S5_GOVERNANCE_CONFOUNDED.exact_counts.MIXED = 15
+     implementation_spec.S5_GOVERNANCE_CONFOUNDED.feature_blocks.NGO = [0, 1, 2]
+     implementation_spec.S5_GOVERNANCE_CONFOUNDED.feature_blocks.PUBLIC = [3, 4, 5]
+     implementation_spec.S5_GOVERNANCE_CONFOUNDED.feature_blocks.PRIVATE = [6, 7, 8, 9]
+     implementation_spec.S5_GOVERNANCE_CONFOUNDED.feature_blocks.MIXED = [10, 11, 12]
+     implementation_spec.S5_GOVERNANCE_CONFOUNDED.positive_block_offset = 0.18
+     implementation_spec.S5_GOVERNANCE_CONFOUNDED.compensation_rule = all non-block features receive -0.18*m/(13-m), so each governance offset vector sums to zero
+[05] score=22 cipher/design/stage8_synthetic_validation_freeze_v1.json
+     base_generator.core_noise_sd = 0.06
+     base_generator.boundary_noise_sd = 0.04
+     scenarios[0].true_boundary = False
+     scenarios[1].true_boundary = True
+     scenarios[1].boundary_fraction = 0.3
+     scenarios[2].true_boundary = False
+     scenarios[3].true_boundary = False
+     scenarios[4].true_boundary = False
+     scenarios[4].governance_categories = 4
+     scenarios[5].true_boundary = False
+     pipeline_under_test.discovery.minimum_cluster_size = 5
+     pipeline_under_test.uncertainty.same_core_halo_boundary_logic_as_real_case = True
+     pipeline_under_test.uncertainty.core_thresholds.reference_probability_min = 0.9
+     pipeline_under_test.uncertainty.core_thresholds.family_consistency_min = 0.8
+     pipeline_under_test.uncertainty.boundary_thresholds.reference_probability_below = 0.75
+     pipeline_under_test.uncertainty.boundary_thresholds.family_consistency_below = 0.6
+     pipeline_under_test.falsification.governance_null = same permutation/CV logic as Stage 3
+     pipeline_under_test.falsification.governance_permutations = 2000
+     predeclared_success_criteria.S2_CORE_BOUNDARY.median_ARI_min = 0.6
+     predeclared_success_criteria.S2_CORE_BOUNDARY.boundary_uncertainty_AUROC_min = 0.8
+[06] score=22 cipher/outputs/audit/stage1_official_audit.json
+     gate_checks.minimum_cluster_size_at_least_5 = True
+     family_summary[0].silhouette_q025 = 0.2732526823270411
+     family_summary[0].silhouette_median = 0.3290115224671246
+     family_summary[0].silhouette_q975 = 0.39582208056280704
+     family_summary[0].minimum_cluster_size_min = 7
+     family_summary[1].silhouette_q025 = 0.26383113840637423
+     family_summary[1].silhouette_median = 0.3582366483328156
+     family_summary[1].silhouette_q975 = 0.408230612852839
+     family_summary[1].minimum_cluster_size_min = 6
+     family_summary[2].silhouette_q025 = 0.30600876323263915
+     family_summary[2].silhouette_median = 0.3812341601439556
+     family_summary[2].silhouette_q975 = 0.4556153606963358
+     family_summary[2].minimum_cluster_size_min = 8
+     family_summary[3].silhouette_q025 = 0.30566806166000876
+     family_summary[3].silhouette_median = 0.40819777210433894
+     family_summary[3].silhouette_q975 = 0.4679632025034416
+     family_summary[3].minimum_cluster_size_min = 6
+     global_silhouette_quantiles.0.025 = 0.27535216147690933
+     global_silhouette_quantiles.0.25 = 0.33511121156126533
+     global_silhouette_quantiles.0.5 = 0.366542020953492
+[07] score=22 cipher/outputs/counterfactuals/reachability_audit/reachability_audit_report.json
+     boundary_vs_nonboundary_reachability_fisher.table = [[6, 0], [13, 62]]
+     boundary_vs_nonboundary_reachability_fisher.odds_ratio = inf
+     boundary_vs_nonboundary_reachability_fisher.p_value = 8.360134942413424e-05
+     certainty_class_vs_reachability.cramers_v = 0.5282569543181241
+     certainty_class_vs_reachability.permutation_p = 3.999960000399996e-05
+     certainty_class_vs_reachability.permutations = 100000
+     profile_vs_failure_mode.cramers_v = 0.47602686037954844
+     profile_vs_failure_mode.permutation_p = 0.0003999960000399996
+     profile_vs_failure_mode.permutations = 100000
+     profile1_uncertainty_comparisons.reference_profile_probability.solved_n = 10
+     profile1_uncertainty_comparisons.reference_profile_probability.unsolved_n = 58
+     profile1_uncertainty_comparisons.reference_profile_probability.solved_median = 0.7281196559381302
+     profile1_uncertainty_comparisons.reference_profile_probability.unsolved_median = 1.0
+     profile1_uncertainty_comparisons.reference_profile_probability.mann_whitney_u = 14.0
+     profile1_uncertainty_comparisons.reference_profile_probability.p_value = 1.1836287620333243e-07
+     profile1_uncertainty_comparisons.reference_profile_probability.cliffs_delta_solved_minus_unsolved = -0.9517241379310345
+     profile1_uncertainty_comparisons.family_consistency.solved_n = 10
+     profile1_uncertainty_comparisons.family_consistency.unsolved_n = 58
+     profile1_uncertainty_comparisons.family_consistency.solved_median = 0.5660694288913775
+     profile1_uncertainty_comparisons.family_consistency.unsolved_median = 1.0
+[08] score=16 cipher/outputs/certainty/certainty_report.json
+     thresholds.core_reference_probability = 0.9
+     thresholds.core_family_consistency = 0.8
+     thresholds.boundary_reference_probability = 0.75
+     thresholds.boundary_family_consistency = 0.6
+     class_counts.CORE = 66
+     class_counts.HALO = 9
+     class_counts.BOUNDARY = 6
+     minimum_reference_profile_probability = 0.23979591836734693
+     median_reference_profile_probability = 1.0
+     minimum_family_consistency = 0.13043478260869565
+     median_family_consistency = 1.0
+[09] score=16 cipher/outputs/null_models/governance_null_report.json
+     cramers_v_bias_corrected = 0.15661071577921537
+     permutation_p = 0.25507449255074494
+     permutations = 10000
+     balanced_accuracy.q025 = 0.5
+     balanced_accuracy.median = 0.5
+     balanced_accuracy.q975 = 0.5
+     interpretive_flags.strong_governance_association = False
+     interpretive_flags.governance_nearly_reconstructs_profiles = False
+[10] score=16 cipher/outputs/synthetic/smoke/S5_GOVERNANCE_CONFOUNDED/smoke_metadata.json
+     governance_counts.NGO = 26
+     governance_counts.PUBLIC = 22
+     governance_counts.PRIVATE = 17
+     governance_counts.MIXED = 15
+     governance_offset_vectors.NGO = [0.18, 0.18, 0.18, -0.054000000000000006, -0.054000000000000006, -0.054000000000000006, -0.054000000000000006, -0.054000000000000006, -0.054000000000000006, -0.054000000000000006, -0.054000000000000006, -0.054000000000000006, -0.054000000000000006]
+     governance_offset_vectors.PUBLIC = [-0.054000000000000006, -0.054000000000000006, -0.054000000000000006, 0.18, 0.18, 0.18, -0.054000000000000006, -0.054000000000000006, -0.054000000000000006, -0.054000000000000006, -0.054000000000000006, -0.054000000000000006, -0.054000000000000006]
+     governance_offset_vectors.PRIVATE = [-0.08, -0.08, -0.08, -0.08, -0.08, -0.08, 0.18, 0.18, 0.18, 0.18, -0.08, -0.08, -0.08]
+     governance_offset_vectors.MIXED = [-0.054000000000000006, -0.054000000000000006, -0.054000000000000006, -0.054000000000000006, -0.054000000000000006, -0.054000000000000006, -0.054000000000000006, -0.054000000000000006, -0.054000000000000006, -0.054000000000000006, 0.18, 0.18, 0.18]
+[11] score=14 icdm/outputs/clustering/selected_model.json
+     full_data_metrics.silhouette = 0.4108366444914675
+     full_data_metrics.davies_bouldin = 0.7760107265875373
+     full_data_metrics.calinski_harabasz = 46.174845454458506
+     full_data_metrics.minimum_cluster_size = 13
+     stability.ari_median = 1.0
+     stability.ari_p025 = 0.9053210792596784
+     stability.ari_p975 = 1.0
+     stability.clusterwise_jaccard_min_mean = 0.9915738094173516
+     stability.minimum_resample_cluster_size_min = 7
+[12] score=13 cipher/design/counterfactual_method_freeze.json
+     selected_model_reconstruction.scaler = StandardScaler fit on all 81 institutions
+     selected_model_reconstruction.pca.variance_threshold = 0.85
+     selected_model_reconstruction.pca.svd_solver = full
+     selected_model_reconstruction.pca.components_retained = 5
+     selected_model_reconstruction.pca.variance_explained = 0.868219709867243
+     selected_model_reconstruction.clustering = AgglomerativeClustering(n_clusters=2, linkage='ward')
+     selected_model_reconstruction.label_alignment = Hungarian overlap alignment to frozen profile IDs
+     selected_model_reconstruction.ward_ari_vs_frozen_reference = 1.0
+     selected_model_reconstruction.exact_reference_match = True
+     checks.selected_model_matches_frozen_reference = True
+     checks.selected_model_centroid_extension_fidelity_at_least_095 = True
+
+=== TOP SOURCE / TEXT CANDIDATES ===
+
+[01] score=40 cipher/outputs/audit/stage3_governance_locator.json
+     L6: "column_name_score": 7,
+     L29: "column_name_score": 4,
+     L51: "file": "data/processed/sensitivity_scores.csv",
+     L54: "column_name_score": 4,
+     L79: "column_name_score": 4,
+     L101: "file": "data/processed/fricta_scored.csv",
+     L104: "column_name_score": 4,
+     L126: "file": "data/processed/hypothesis_stress_test_scores.csv",
+     L129: "column_name_score": 4,
+     L154: "column_name_score": 4,
+     L179: "column_name_score": 1,
+     L207: "data_dictionary.md-50-| Role | core |",
+     L217: "column_name_score": 1,
+     L254: "file": "data/processed/sensitivity_scores.csv",
+     L257: "column_name_score": 1,
+[02] score=32 src/cipher_03b_governance_null.py
+     L11: adjusted_rand_score,
+     L12: balanced_accuracy_score,
+     L13: f1_score,
+     L14: normalized_mutual_info_score,
+     L16: from sklearn.model_selection import RepeatedStratifiedKFold
+     L20: GOVERNANCE_PATH = ROOT / "icdm" / "outputs" / "features" / "institution_metadata.csv"
+     L52: def canonical_governance(value: object) -> str:
+     L78: raise ValueError(f"Unrecognized governance value: {value!r}")
+     L81: def cramers_v_bias_corrected(table: np.ndarray) -> float:
+     L106: def permutation_test(
+     L107: governance: np.ndarray,
+     L109: permutations: int,
+     L114: pd.Series(governance, name="governance"),
+     L117: observed_v = cramers_v_bias_corrected(observed_table)
+     L120: null_values = np.empty(permutations, dtype=float)
+[03] score=30 cipher/outputs/audit/stage3_governance_locator_console.txt
+     L2: === CIPHER STAGE 3 — GOVERNANCE LOCATOR ===
+     L24: [3] data/processed/sensitivity_scores.csv
+     L44: [5] data/processed/fricta_scored.csv
+     L54: [6] data/processed/hypothesis_stress_test_scores.csv
+     L82: values: ['data_dictionary.md-34-| `institution_type` | categorical_nominal | Institutional classification | metadata |', 'data_dictionary.md-35-| `children_served` | ordinal | Approximate number of children served | metadata / derived-variable input |', 'data_dictionary.md-36-| `staff_size` | ordinal | Approximate institutional staff size | metadata / derived-variable input |', 'data_dictionary.md:37:| `pilot_openness` | binary | Indicates willingness to participate in pilot testing | metadata | ...
+     L94: [10] data/processed/sensitivity_scores.csv
+     L157: - data/processed/sensitivity_scores.csv :: institution_type (ID candidates: ['institution_id'])
+     L159: - data/processed/fricta_scored.csv :: institution_type (ID candidates: ['institution_id'])
+     L160: - data/processed/hypothesis_stress_test_scores.csv :: institution_type (ID candidates: ['institution_id'])
+     L163: GATE STATUS: GOVERNANCE_SOURCE_FOUND
+[04] score=30 src/cipher_03_find_governance.py
+     L21: "governance",
+     L170: def column_name_score(column: str) -> int:
+     L172: score = 0
+     L176: score += 3
+     L179: score += 1
+     L181: return score
+     L214: "column_name_score": column_name_score(str(column)),
+     L260: name_score = column_name_score(str(column))
+     L262: # Inspect obvious governance columns, and any low-cardinality string column
+     L267: if name_score > 0 or (len(df) == 81 and low_cardinality):
+     L270: if result["mapped_count"] > 0 or result["column_name_score"] > 0:
+     L278: -row["column_name_score"],
+     L282: json_path = OUT / "stage3_governance_locator.json"
+     L288: print("\n=== CIPHER STAGE 3 — GOVERNANCE LOCATOR ===\n")
+     L291: print("No plausible governance columns were found.")
+[05] score=29 cipher/outputs/audit/stage3_governance_null_console.txt
+     L2: === CIPHER STAGE 3B — GOVERNANCE NULL ===
+     L8: Verified governance counts:
+     L13: governance NGO PUBLIC PRIVATE MIXED UNKNOWN
+     L20: Bias-corrected Cramer's V: 0.1566
+     L21: Permutation p: 0.255074
+     L23: === GOVERNANCE-ONLY HELD-OUT BASELINE ===
+     L32: strong_governance_association: False
+     L33: governance_nearly_reconstructs_profiles: False
+     L35: GATE STATUS: STAGE_3B_GOVERNANCE_COMPUTED_REVIEW_REQUIRED
+[06] score=28 cipher/outputs/synthetic/smoke/S5_GOVERNANCE_CONFOUNDED/smoke_data.csv
+     L1: institution_id,willingness_constraint_score,digital_usage_constraint_score,training_deficit_score,device_constraint,digital_tool_variety_constraint,internet_stability_constraint,staffing_constraint_score,time_constraint_score,administrative_disorganization_constraint,recording_system_constraint,system_change_resistance_constraint,admin_time_load_constraint,resource_constraint_score
+     L2: SYN_S5_GOVERNANCE_CONFOUNDED_R000_049,0.8259573457567457,0.6450710153752671,0.6062129388482599,0.423343423824658,0.36567030843890735,0.4984705043086714,0.5970432518578543,0.5956533089590095,0.5232330713289148,0.44856858326844773,0.4598073925779512,0.4146257253864432,0.32563139520761697
+     L3: SYN_S5_GOVERNANCE_CONFOUNDED_R000_079,0.717273493587461,0.4642880703193689,0.5945345427579676,0.5229702556345096,0.4740308164155976,0.4202316540763003,0.35944673188628684,0.45050356747401893,0.4041118120083679,0.6101918001861101,0.5975515291816215,0.3496632397500723,0.5538941018037845
+     L4: SYN_S5_GOVERNANCE_CONFOUNDED_R000_011,0.757111882520097,0.6412757687454511,0.6189395171750492,0.4166929270998957,0.5642650416280044,0.5153948522604047,0.45434701245416537,0.528257378689866,0.4534640087511507,0.31271385174718136,0.3909019286311608,0.5272153406097589,0.40353446099583873
+     L5: SYN_S5_GOVERNANCE_CONFOUNDED_R000_002,0.37043075986579077,0.40487410550408975,0.5046575200239719,0.6124137392156318,0.6550707126563222,0.7538214502416423,0.4165573601163919,0.6280187534502183,0.3821902373685795,0.48983038373844184,0.38172232427262137,0.5998686428882352,0.4110452839331265
+     L6: SYN_S5_GOVERNANCE_CONFOUNDED_R000_037,0.25501984464085314,0.4131529814769241,0.5035621609226283,0.3358837460204787,0.4785206140441793,0.5253488910975195,0.7450528300647425,0.595937408897634,0.7127878769929181,0.7187743214190161,0.25454443267888915,0.48847666289709024,0.41832622018204224
+     L7: SYN_S5_GOVERNANCE_CONFOUNDED_R000_028,0.4076622358899576,0.41278708663289987,0.4877717720744539,0.6482518923042255,0.6663027661154484,0.6767237544214084,0.4325281770972867,0.5048203063225782,0.5289752486782741,0.45293037732873215,0.42457487109177183,0.3802000862728106,0.4143897534666677
+     L8: SYN_S5_GOVERNANCE_CONFOUNDED_R000_050,0.31532489056419233,0.3363087121264913,0.35843175928309284,0.4740562549588186,0.41851379260114396,0.5565360844867717,0.4727843143847577,0.5024874714757471,0.5982688954692816,0.7421394622672731,0.34516312436772856,0.43098277015317116,0.4794177921151233
+     L9: SYN_S5_GOVERNANCE_CONFOUNDED_R000_034,0.6183399109786543,0.6925778036581689,0.5773697922440293,0.3712378826608743,0.5241551562174338,0.30330779287797116,0.6043192296807594,0.4787735230382435,0.37916673415375574,0.5682822759662387,0.5269867709573097,0.1910172862353946,0.4488277095496694
+     L10: SYN_S5_GOVERNANCE_CONFOUNDED_R000_070,0.482796512955779,0.4273085125986304,0.4566145598949749,0.3510275269134067,0.4645736754046412,0.40102068641797356,0.4688306678073993,0.37204804759461896,0.4631336924180664,0.42490613645841724,0.5791014026901604,0.8036825944668028,0.5719915351425007
+     L11: SYN_S5_GOVERNANCE_CONFOUNDED_R000_071,0.28769874537137313,0.3320157094405882,0.42255238044168475,0.5137694767022657,0.3117365390480151,0.49624241737410485,0.6782041485287422,0.6102231944606957,0.6829382709339579,0.6221348730715436,0.40907124420742175,0.30161556072130663,0.32047063490849853
+     L12: SYN_S5_GOVERNANCE_CONFOUNDED_R000_025,0.7350816370200456,0.7399281359353573,0.6245251424591595,0.473866231390214,0.4536884718667659,0.5238921872542759,0.4859443596821286,0.43319940573315685,0.40617076766929955,0.5338458071643944,0.5310790484429389,0.457294157421891,0.3601660987705595
+     L13: SYN_S5_GOVERNANCE_CONFOUNDED_R000_029,0.48681743763817553,0.47977853426793327,0.464058377340942,0.6998952608170187,0.6598307003008257,0.6645776763413295,0.43756784076675104,0.6956785126918279,0.6792174401143312,0.46589354194647126,0.5996164372156771,0.39454758907624027,0.44264390696421724
+     L14: SYN_S5_GOVERNANCE_CONFOUNDED_R000_021,0.5036484015599003,0.516430391864751,0.34534497573344014,0.742672881980677,0.7109564243394164,0.6523793363035543,0.3510770603856918,0.4133487643271828,0.5029329263693767,0.5803105747693248,0.4594069153166816,0.39431793310249724,0.6024313913878947
+     L15: SYN_S5_GOVERNANCE_CONFOUNDED_R000_013,0.36666702374930027,0.4800667706038965,0.487530095212435,0.4965672756597392,0.5539927441189832,0.4102272118711012,0.44497103631678575,0.4343174310220569,0.39837296408176404,0.4975334480464067,0.6355164023530018,0.6535363131352927,0.5979481147745294
+[07] score=28 cipher/outputs/synthetic/smoke/S5_GOVERNANCE_CONFOUNDED/smoke_truth.csv
+     L1: institution_id,latent_profile,true_profile,true_boundary,oracle_reachable,governance_type
+     L2: SYN_S5_GOVERNANCE_CONFOUNDED_R000_049,,,False,False,NGO
+     L3: SYN_S5_GOVERNANCE_CONFOUNDED_R000_079,,,False,False,NGO
+     L4: SYN_S5_GOVERNANCE_CONFOUNDED_R000_011,,,False,False,NGO
+     L5: SYN_S5_GOVERNANCE_CONFOUNDED_R000_002,,,False,False,PUBLIC
+     L6: SYN_S5_GOVERNANCE_CONFOUNDED_R000_037,,,False,False,PRIVATE
+     L7: SYN_S5_GOVERNANCE_CONFOUNDED_R000_028,,,False,False,PUBLIC
+     L8: SYN_S5_GOVERNANCE_CONFOUNDED_R000_050,,,False,False,PRIVATE
+     L9: SYN_S5_GOVERNANCE_CONFOUNDED_R000_034,,,False,False,NGO
+     L10: SYN_S5_GOVERNANCE_CONFOUNDED_R000_070,,,False,False,MIXED
+     L11: SYN_S5_GOVERNANCE_CONFOUNDED_R000_071,,,False,False,PRIVATE
+     L12: SYN_S5_GOVERNANCE_CONFOUNDED_R000_025,,,False,False,NGO
+     L13: SYN_S5_GOVERNANCE_CONFOUNDED_R000_029,,,False,False,PUBLIC
+     L14: SYN_S5_GOVERNANCE_CONFOUNDED_R000_021,,,False,False,PUBLIC
+     L15: SYN_S5_GOVERNANCE_CONFOUNDED_R000_013,,,False,False,MIXED
+[08] score=26 cipher/outputs/audit/stage2_certainty_console.txt
+     L5: Certainty classes: {'CORE': 66, 'HALO': 9, 'BOUNDARY': 6}
+     L13: reference_profile n median_reference_probability minimum_reference_probability median_family_consistency minimum_family_consistency median_entropy median_consensus_gap core_count halo_count boundary_count ensemble_reference_disagreements
+     L31: institution_id reference_profile reference_profile_probability family_consistency normalized_entropy membership_margin consensus_gap family_disagreement_count certainty_class
+     L32: INST_023 1 0.239796 0.130435 0.794701 0.520408 -0.486820 0 BOUNDARY
+     L33: INST_007 1 0.574359 0.386364 0.983987 0.148718 0.136953 2 BOUNDARY
+     L34: INST_064 1 0.590090 0.338983 0.976453 0.180180 0.170939 2 BOUNDARY
+     L35: INST_066 1 0.634921 0.428571 0.946819 0.269841 0.247844 2 BOUNDARY
+     L36: INST_019 1 0.694581 0.553191 0.887814 0.389163 0.362231 0 BOUNDARY
+     L37: INST_025 1 0.761658 0.578947 0.792272 0.523316 0.462481 0 BOUNDARY
+     L38: INST_073 1 0.796703 0.693878 0.728473 0.593407 0.577961 0 HALO
+     L39: INST_052 1 0.819095 0.673077 0.682052 0.638191 0.627244 0 HALO
+     L40: INST_033 1 0.849162 0.720930 0.611933 0.698324 0.658694 0 HALO
+     L41: INST_003 1 0.857143 0.711538 0.591673 0.714286 0.664052 0 HALO
+     L42: INST_077 1 0.862222 0.781818 0.578389 0.724444 0.712786 0 HALO
+     L43: INST_018 1 0.867403 0.795918 0.564517 0.734807 0.715598 0 HALO
+[09] score=25 cipher/outputs/audit/stage6b0_ensemble_artifact_report.json
+     L32: "candidate_score": 67
+     L59: "candidate_score": 55
+     L86: "candidate_score": 55
+     L107: "candidate_score": 50
+     L128: "candidate_score": 44
+     L139: "silhouette",
+     L140: "davies_bouldin",
+     L141: "calinski_harabasz",
+     L148: "candidate_score": 38
+     L159: "silhouette",
+     L160: "davies_bouldin",
+     L161: "calinski_harabasz",
+     L168: "candidate_score": 38
+     L171: "relative_path": "cipher/outputs/counterfactuals/preparation/selected_model_inductive_audit.json",
+     L185: "candidate_score": 23
+[10] score=25 cipher/outputs/audit/stage6c_official_ensemble_robustness_console.txt
+     L37: CERTAINTY_CLASS BOUNDARY 6 6 1.000000 6 1.000000 6 1.000000
+     L38: CERTAINTY_CLASS CORE 10 1 0.100000 1 0.100000 1 0.100000
+     L39: CERTAINTY_CLASS HALO 3 3 1.000000 3 1.000000 3 1.000000
+     L44: INST_007 1 BOUNDARY 5 0.998984 True 5 INST_007__CF01 3.249995 0.998984 0.995902
+     L45: INST_019 1 BOUNDARY 4 0.998984 True 4 INST_019__CF01 3.249995 0.979675 0.971311
+     L46: INST_023 1 BOUNDARY 4 0.998984 True 4 INST_023__CF01 1.499998 0.952236 0.913934
+     L47: INST_033 1 HALO 3 0.998984 True 3 INST_033__CF01 4.499991 0.988821 0.983333
+     L48: INST_064 1 BOUNDARY 5 0.998984 True 4 INST_064__CF02 2.499996 0.994919 0.987705
+     L49: INST_066 1 BOUNDARY 5 0.998984 True 4 INST_066__CF02 2.499996 0.994919 0.987705
+     L50: INST_025 1 BOUNDARY 1 0.997967 True 1 INST_025__CF01 4.499993 0.997967 0.995833
+     L51: INST_073 1 HALO 2 0.993902 True 2 INST_073__CF01 3.999993 0.993902 0.987500
+     L52: INST_030 1 CORE 2 0.991870 True 2 INST_030__CF01 6.999988 0.979675 0.963115
+     L53: INST_077 1 HALO 5 0.963415 True 3 INST_077__CF03 4.499992 0.963415 0.925000
+     L54: INST_022 2 CORE 2 0.477642 False 0 NaN NaN NaN
+     L55: INST_034 2 CORE 5 0.457317 False 0 NaN NaN NaN
+[11] score=25 cipher/outputs/certainty/institution_certainty.csv
+     L1: institution_id,reference_profile,n_oob_predictions,ensemble_dominant_profile,ensemble_dominant_probability,reference_profile_probability,profile_1_probability,profile_2_probability,normalized_entropy,membership_margin,within_reference_profile_consensus,cross_profile_leakage,consensus_gap,family_consistency,minimum_family_dominant_probability,family_disagreement_count,ensemble_agrees_with_reference,certainty_class
+     L2: INST_001,2,205,2,0.9951219512195122,0.9951219512195122,0.004878048780487805,0.9951219512195122,0.044481222616738245,0.9902439024390244,1.0,0.08368767722858887,0.9163123227714112,0.9827586206896551,0.9827586206896551,0,1,CORE
+     L3: INST_002,1,213,1,1.0,1.0,1.0,0.0,-0.0,1.0,0.9279220353409238,0.0,0.9279220353409238,1.0,1.0,0,1,CORE
+     L4: INST_003,1,210,1,0.8571428571428571,0.8571428571428571,0.8571428571428571,0.14285714285714285,0.5916727785823274,0.7142857142857142,0.8126118176417508,0.14855961530474285,0.664052202337008,0.7115384615384616,0.7115384615384616,0,1,HALO
+     L5: INST_004,1,187,1,0.9946524064171123,0.9946524064171123,0.9946524064171123,0.0053475935828877,0.048052006058257886,0.9893048128342246,0.9327845330972737,0.025432019313717837,0.9073525137835559,0.9743589743589743,0.9743589743589743,0,1,CORE
+     L6: INST_005,1,201,1,0.9950248756218906,0.9950248756218906,0.9950248756218906,0.004975124378109453,0.04522463667671496,0.9900497512437811,0.9276832906542655,0.007622388216237624,0.9200609024380279,0.9791666666666666,0.9791666666666666,0,1,CORE
+     L7: INST_006,1,178,1,1.0,1.0,1.0,0.0,-0.0,1.0,0.9319051070389683,0.0,0.9319051070389683,1.0,1.0,0,1,CORE
+     L8: INST_007,1,195,1,0.5743589743589743,0.5743589743589743,0.5743589743589743,0.4256410256410256,0.9839866005586037,0.14871794871794863,0.5901438535641511,0.4531908032603334,0.1369530503038177,0.38636363636363635,0.5925925925925926,2,1,BOUNDARY
+     L9: INST_008,1,229,1,0.9563318777292577,0.9563318777292577,0.9563318777292577,0.043668122270742356,0.25886471822126444,0.9126637554585153,0.9076653941452582,0.06045550307422506,0.8472098910710331,0.9253731343283582,0.9253731343283582,0,1,CORE
+     L10: INST_009,1,197,1,0.8730964467005076,0.8730964467005076,0.8730964467005076,0.12690355329949238,0.5488845983745034,0.7461928934010151,0.85630210194783,0.12609583766540447,0.7302062642824255,0.7608695652173914,0.7608695652173914,0,1,HALO
+     L11: INST_010,1,194,1,1.0,1.0,1.0,0.0,-0.0,1.0,0.9302745688824337,0.0,0.9302745688824337,1.0,1.0,0,1,CORE
+     L12: INST_011,1,213,1,1.0,1.0,1.0,0.0,-0.0,1.0,0.9447512929843104,0.011137931958219431,0.9336133610260909,1.0,1.0,0,1,CORE
+     L13: INST_012,1,195,1,1.0,1.0,1.0,0.0,-0.0,1.0,0.9427986818961311,0.012796704388833163,0.930001977507298,1.0,1.0,0,1,CORE
+     L14: INST_013,1,185,1,1.0,1.0,1.0,0.0,-0.0,1.0,0.9340298082426918,0.0,0.9340298082426918,1.0,1.0,0,1,CORE
+     L15: INST_014,1,215,1,1.0,1.0,1.0,0.0,-0.0,1.0,0.9459061827996064,0.010256931873473216,0.9356492509261332,1.0,1.0,0,1,CORE
+[12] score=25 cipher/outputs/counterfactuals/ensemble_lift_audit/candidate_ensemble_lift.csv
+     L2: INST_007__CF01,INST_007,1,2,BOUNDARY,1,3.2499945000122503,0.9989837398373984,0.4105691056910569,0.5894308943089431,0.5884146341463414,579,404,0,1,0.9982758620689656,1.0,0.0,579,0.608,1.0,0.392,1.0,0.1885245901639344,0.9959016393442623,0.8073770491803279,0.9949494949494949,0.62,1.0,0.38,1.0,0.2125,1.0,0.7875,1.0
+     L3: INST_007__CF02,INST_007,1,2,BOUNDARY,2,3.24999500001,0.9878048780487804,0.4105691056910569,0.5894308943089431,0.5772357723577235,568,404,0,12,0.9793103448275862,1.0,0.0,568,0.608,0.996,0.388,0.9897959183673469,0.1885245901639344,0.9754098360655737,0.7868852459016393,0.9696969696969697,0.62,1.0,0.38,1.0,0.2125,0.9791666666666666,0.7666666666666666,0.9735449735449735
+     L4: INST_007__CF03,INST_007,1,2,BOUNDARY,3,3.3333286388986063,0.9969512195121952,0.4105691056910569,0.5894308943089431,0.5863821138211383,577,404,0,3,0.9948275862068966,1.0,0.0,577,0.608,1.0,0.392,1.0,0.1885245901639344,0.9918032786885246,0.8032786885245902,0.98989898989899,0.62,1.0,0.38,1.0,0.2125,0.9958333333333333,0.7833333333333333,0.9947089947089947
+     L5: INST_007__CF04,INST_007,1,2,BOUNDARY,4,3.333328888897481,0.9867886178861788,0.4105691056910569,0.5894308943089431,0.5762195121951219,567,404,0,13,0.9775862068965517,1.0,0.0,567,0.608,0.992,0.384,0.9795918367346939,0.1885245901639344,0.9754098360655737,0.7868852459016393,0.9696969696969697,0.62,1.0,0.38,1.0,0.2125,0.9791666666666666,0.7666666666666666,0.9735449735449735
+     L6: INST_007__CF05,INST_007,1,2,BOUNDARY,5,3.333329138896606,0.9928861788617886,0.4105691056910569,0.5894308943089431,0.5823170731707317,573,404,0,7,0.9879310344827587,1.0,0.0,573,0.608,0.992,0.384,0.9795918367346939,0.1885245901639344,0.9877049180327869,0.7991803278688525,0.9848484848484849,0.62,1.0,0.38,1.0,0.2125,0.9916666666666667,0.7791666666666667,0.9894179894179894
+     L7: INST_019__CF01,INST_019,1,2,BOUNDARY,1,3.249995250009125,0.9796747967479674,0.3851626016260163,0.6148373983739838,0.5945121951219512,585,379,0,20,0.9669421487603306,1.0,0.0,585,0.608,0.972,0.364,0.9285714285714286,0.1762295081967213,0.9713114754098361,0.7950819672131147,0.9651741293532339,0.564,0.996,0.43200000000000005,0.9908256880733946,0.17916666666666667,0.9791666666666666,0.7999999999999999,0.9746192893401016
+     L8: INST_019__CF02,INST_019,1,2,BOUNDARY,2,3.8333281388986062,0.9532520325203252,0.3851626016260163,0.6148373983739838,0.568089430894309,559,379,0,46,0.9239669421487603,1.0,0.0,559,0.608,0.944,0.33599999999999997,0.8571428571428571,0.1762295081967213,0.9344262295081968,0.7581967213114754,0.9203980099502488,0.564,0.988,0.42400000000000004,0.9724770642201835,0.17916666666666667,0.9458333333333333,0.7666666666666666,0.934010152284264
+     L9: INST_019__CF03,INST_019,1,2,BOUNDARY,3,3.99999400001225,0.9989837398373984,0.3851626016260163,0.6148373983739838,0.6138211382113821,604,379,0,1,0.9983471074380166,1.0,0.0,604,0.608,1.0,0.392,1.0,0.1762295081967213,0.9959016393442623,0.819672131147541,0.9950248756218906,0.564,1.0,0.43600000000000005,1.0,0.17916666666666667,1.0,0.8208333333333333,1.0
+     L10: INST_019__CF04,INST_019,1,2,BOUNDARY,4,3.999994250011125,0.9979674796747968,0.3851626016260163,0.6148373983739838,0.6128048780487805,603,379,0,2,0.996694214876033,1.0,0.0,603,0.608,1.0,0.392,1.0,0.1762295081967213,0.9959016393442623,0.819672131147541,0.9950248756218906,0.564,1.0,0.43600000000000005,1.0,0.17916666666666667,0.9958333333333333,0.8166666666666667,0.9949238578680203
+     L11: INST_022__CF01,INST_022,2,1,CORE,1,6.4999870000325,0.4563008130081301,0.0010162601626016261,0.9989837398373984,0.45528455284552843,449,0,1,534,0.45676500508647,0.0,1.0,448,0.0,0.32,0.32,0.32,0.004098360655737705,0.5655737704918032,0.5614754098360656,0.5679012345679012,0.0,0.348,0.348,0.348,0.0,0.6,0.6,0.6
+     L12: INST_022__CF02,INST_022,2,1,CORE,2,6.99998550003725,0.4776422764227642,0.0010162601626016261,0.9989837398373984,0.4766260162601626,470,0,1,513,0.47812817904374366,0.0,1.0,469,0.0,0.348,0.348,0.348,0.004098360655737705,0.6024590163934426,0.5983606557377049,0.6049382716049383,0.0,0.36,0.36,0.36,0.0,0.6083333333333333,0.6083333333333333,0.6083333333333333
+     L13: INST_023__CF01,INST_023,1,2,BOUNDARY,1,1.499998000004,0.9522357723577236,0.7378048780487805,0.2621951219512195,0.21443089430894313,211,726,0,47,0.8178294573643411,1.0,0.0,211,0.852,0.956,0.10399999999999998,0.7027027027027027,0.569672131147541,0.9139344262295082,0.34426229508196715,0.8,0.908,0.992,0.08399999999999996,0.9130434782608695,0.6125,0.9458333333333333,0.33333333333333326,0.8602150537634409
+     L14: INST_023__CF02,INST_023,1,2,BOUNDARY,2,1.999997000006,0.9969512195121952,0.7378048780487805,0.2621951219512195,0.25914634146341464,255,726,0,3,0.9883720930232558,1.0,0.0,255,0.852,1.0,0.14800000000000002,1.0,0.569672131147541,0.9959016393442623,0.42622950819672134,0.9904761904761905,0.908,1.0,0.09199999999999997,1.0,0.6125,0.9916666666666667,0.37916666666666665,0.978494623655914
+     L15: INST_023__CF03,INST_023,1,2,BOUNDARY,3,2.249997000006,0.9969512195121952,0.7378048780487805,0.2621951219512195,0.25914634146341464,255,726,0,3,0.9883720930232558,1.0,0.0,255,0.852,1.0,0.14800000000000002,1.0,0.569672131147541,0.9959016393442623,0.42622950819672134,0.9904761904761905,0.908,1.0,0.09199999999999997,1.0,0.6125,0.9916666666666667,0.37916666666666665,0.978494623655914
+     L16: INST_023__CF04,INST_023,1,2,BOUNDARY,4,2.999996000008,0.9989837398373984,0.7378048780487805,0.2621951219512195,0.26117886178861793,257,726,0,1,0.9961240310077519,1.0,0.0,257,0.852,1.0,0.14800000000000002,1.0,0.569672131147541,0.9959016393442623,0.42622950819672134,0.9904761904761905,0.908,1.0,0.09199999999999997,1.0,0.6125,1.0,0.38749999999999996,1.0
+
+=== WHAT WE NEED BEFORE STAGE 8C ===
+
+  1) exact real-pipeline model-selection rule / gates;
+  2) exact severity-null flag rule;
+  3) exact governance-null flag rule;
+  4) exact primary uncertainty quantity used for synthetic AUROC;
+  5) exact conditions under which the synthetic pipeline is allowed to make a 'stable configurational profile' claim.
+
+GATE STATUS: STAGE_8C0_REAL_PIPELINE_SEMANTICS_EXTRACTED
+Do not run synthetic model-performance experiments yet.

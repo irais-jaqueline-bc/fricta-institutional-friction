@@ -1,0 +1,46 @@
+
+=== CIPHER STAGE 8A — SYNTHETIC VALIDATION DESIGN FREEZE ===
+
+Official scenarios: 6
+Official structural replicates: 100/scenario = 600 total
+Synthetic primary ensemble: 200 members (50/family)
+1000-member convergence audit: 10 replicates/scenario
+Exact-CF query budget: 20 institutions/replicate in S1-S3
+
+Scenarios:
+  S1_CONFIG_TWO_PROFILE: two stable configurational profiles
+  S2_CORE_BOUNDARY: stable cores plus ambiguous boundary
+  S3_DIRECTIONAL_REACHABILITY: stable profiles with planted asymmetric sparse accessibility
+  S4_SEVERITY_CONTINUUM: one-dimensional severity continuum; no categorical profiles
+  S5_GOVERNANCE_CONFOUNDED: governance-driven feature offsets; no latent friction profile beyond governance
+  S6_NO_CLUSTER_NULL: single unimodal population with mild correlation; no profiles
+
+Primary scientific safeguards:
+  - numeric profile labels randomly swapped
+  - asymmetric reachable direction randomly assigned
+  - severity-only null
+  - governance-confounded null
+  - no-cluster null
+  - no post-result threshold relaxation
+
+Predeclared success criteria:
+  S1 median ARI >= 0.70; k=2 recovery >= 0.80
+  S2 boundary-uncertainty AUROC >= 0.80
+  S3 reachability F1 >= 0.70; robust precision >= 0.80
+     direction recovery >= 0.80; label-swap invariance >= 0.95
+  S4/S5 false configurational claim rate <= 0.10
+  S6 false stable-profile rate <= 0.10; false robust-CF rate <= 0.05
+
+Next step:
+  Stage 8B = implement generators + one smoke/audit replicate per scenario
+  Do NOT start the 600 official synthetic replicates yet.
+
+=== FREEZE CHECKS ===
+
+[PASS] thesis_v3_is_frozen_after_motif_stop
+[PASS] stage7b_audit_passed
+[PASS] empirical_motif_claim_is_retired
+[PASS] stage8_is_required_next
+
+GATE STATUS: PASS_STAGE_8A_SYNTHETIC_DESIGN_FREEZE
+Frozen design: cipher/design/stage8_synthetic_validation_freeze_v1.json

@@ -1,0 +1,105 @@
+{
+  "implementation_freeze_path": "cipher/design/stage8_generator_implementation_freeze_v1.json",
+  "implementation_freeze_sha256": "4bec8647fd3afb7e971ee53ab83f7cf9dcd31d20ef4eeb0bd0ad4ded8a24ffe8",
+  "scenario_summary": [
+    {
+      "scenario": "S1_CONFIG_TWO_PROFILE",
+      "n": 80,
+      "feature_min": 0.08840364048714566,
+      "feature_max": 0.9184336199079688,
+      "feature_mean": 0.49963461612615406,
+      "numeric_label_swap": false,
+      "deterministic_repeat": true,
+      "common_integrity": true
+    },
+    {
+      "scenario": "S2_CORE_BOUNDARY",
+      "n": 80,
+      "feature_min": 0.07449596885545365,
+      "feature_max": 0.904687345983855,
+      "feature_mean": 0.5009937886313826,
+      "numeric_label_swap": true,
+      "deterministic_repeat": true,
+      "common_integrity": true
+    },
+    {
+      "scenario": "S3_DIRECTIONAL_REACHABILITY",
+      "n": 80,
+      "feature_min": 0.0,
+      "feature_max": 1.0,
+      "feature_mean": 0.4915553843957731,
+      "numeric_label_swap": false,
+      "deterministic_repeat": true,
+      "common_integrity": true
+    },
+    {
+      "scenario": "S4_SEVERITY_CONTINUUM",
+      "n": 80,
+      "feature_min": 0.0,
+      "feature_max": 1.0,
+      "feature_mean": 0.5631533093429112,
+      "numeric_label_swap": null,
+      "deterministic_repeat": true,
+      "common_integrity": true
+    },
+    {
+      "scenario": "S5_GOVERNANCE_CONFOUNDED",
+      "n": 80,
+      "feature_min": 0.1722216785833549,
+      "feature_max": 0.8570278522810357,
+      "feature_mean": 0.5012612998892146,
+      "numeric_label_swap": null,
+      "deterministic_repeat": true,
+      "common_integrity": true
+    },
+    {
+      "scenario": "S6_NO_CLUSTER_NULL",
+      "n": 80,
+      "feature_min": 0.03583214635446201,
+      "feature_max": 0.9869138189797404,
+      "feature_mean": 0.507140969564963,
+      "numeric_label_swap": null,
+      "deterministic_repeat": true,
+      "common_integrity": true
+    }
+  ],
+  "S3_plausibility_audit": {
+    "forward_oracle_plausibility_rate": 1.0,
+    "mirrored_reverse_three_gate_plausibility_rate": 0.0,
+    "target_5nn_threshold": 0.9585263865811735,
+    "source_5nn_threshold": 0.3009539365656809
+  },
+  "S4_median_spearman_with_latent_severity": 0.9376465072667605,
+  "S5_min_pairwise_governance_centroid_distance": 0.5291533209702926,
+  "S6_mean_offdiagonal_spearman": 0.2556919951434719,
+  "checks": {
+    "stage8a_design_passed": true,
+    "implementation_freeze_written_and_matches_code": true,
+    "all_scenarios_deterministic": true,
+    "all_scenarios_common_integrity": true,
+    "S1_balanced_40_40": true,
+    "S1_prototype_mean_severity_equal": true,
+    "S1_prototype_euclidean_separation_gt_1": true,
+    "S2_balanced_40_40": true,
+    "S2_exactly_24_true_boundary": true,
+    "S2_boundary_median_closer_to_midpoint_than_core": true,
+    "S3_balanced_40_40": true,
+    "S3_exactly_16_oracle_reachable": true,
+    "S3_all_oracle_positive_are_bridges": true,
+    "S3_exactly_3_gate_features": true,
+    "S3_exactly_6_reverse_lock_features": true,
+    "S3_oracle_candidate_rows_16": true,
+    "S3_forward_oracle_plausibility_rate_meets_frozen_smoke_min": true,
+    "S3_mirrored_reverse_three_gate_plausibility_below_frozen_smoke_max": true,
+    "S4_no_true_profiles": true,
+    "S4_all_feature_severity_spearman_positive": true,
+    "S4_median_spearman_meets_frozen_smoke_min": true,
+    "S5_no_true_profiles": true,
+    "S5_governance_counts_exact": true,
+    "S5_minimum_governance_centroid_distance_meets_smoke_min": true,
+    "S6_no_true_profiles": true,
+    "S6_feature_means_are_interior": true,
+    "S6_empirical_mean_positive_dependence": true
+  },
+  "gate_status": "PASS_STAGE_8B_GENERATOR_SMOKE_AUDIT"
+}

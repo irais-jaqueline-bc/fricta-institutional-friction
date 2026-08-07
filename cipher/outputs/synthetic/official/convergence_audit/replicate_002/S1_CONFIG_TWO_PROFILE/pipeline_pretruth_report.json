@@ -1,0 +1,81 @@
+{
+  "scenario": "S1_CONFIG_TWO_PROFILE",
+  "replicate": 2,
+  "selected_candidate": "R1_PCA85__HAC_WARD__K2",
+  "selected_representation": "R1_PCA85",
+  "selected_algorithm": "HAC_WARD",
+  "selected_k": 2,
+  "selected_ari_median": 1.0,
+  "selected_ari_p025": 1.0,
+  "selected_silhouette": 0.9549433786330026,
+  "selected_minimum_cluster_size": 40,
+  "selected_minimum_resample_cluster_size": 26,
+  "selection_decision": {
+    "maximum_ari_median": 1.0,
+    "median_tied_candidates": [
+      "R0_STANDARDIZED__HAC_WARD__K2",
+      "R0_STANDARDIZED__KMEANS__K2",
+      "R1_PCA85__HAC_WARD__K2",
+      "R1_PCA85__KMEANS__K2"
+    ],
+    "tied_partitions_equivalent": true,
+    "tied_pairwise_ari": [
+      {
+        "candidate_a": "R0_STANDARDIZED__HAC_WARD__K2",
+        "candidate_b": "R0_STANDARDIZED__KMEANS__K2",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__HAC_WARD__K2",
+        "candidate_b": "R1_PCA85__HAC_WARD__K2",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__HAC_WARD__K2",
+        "candidate_b": "R1_PCA85__KMEANS__K2",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__KMEANS__K2",
+        "candidate_b": "R1_PCA85__HAC_WARD__K2",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__KMEANS__K2",
+        "candidate_b": "R1_PCA85__KMEANS__K2",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      },
+      {
+        "candidate_a": "R1_PCA85__HAC_WARD__K2",
+        "candidate_b": "R1_PCA85__KMEANS__K2",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      }
+    ],
+    "rule_used": "Median-ARI tie with partition-equivalent solutions; internal-separation tiebreak."
+  },
+  "stable_partition_claim": true,
+  "severity": {
+    "method": "INHERITED_BINARY_THRESHOLD",
+    "balanced_accuracy_median": 0.5,
+    "macro_f1_median": 0.45893719806763283,
+    "roc_auc_median": 0.40625,
+    "ari_median": -0.030042918454935622,
+    "nmi_median": 0.011547654490324901,
+    "matched_severity_opposite_cluster_pairs": 1558,
+    "severity_nearly_reconstructs_profiles": false
+  },
+  "governance": {
+    "status": "NOT_APPLICABLE_NO_GOVERNANCE_VARIABLE",
+    "strong_governance_association": false,
+    "governance_nearly_reconstructs_profiles": false
+  },
+  "configurational_profile_claim": true,
+  "uncertainty_applicable": true,
+  "cf_applicable": true
+}

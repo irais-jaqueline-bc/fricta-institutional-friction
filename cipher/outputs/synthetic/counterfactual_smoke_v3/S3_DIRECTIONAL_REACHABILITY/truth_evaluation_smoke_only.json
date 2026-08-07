@@ -1,0 +1,27 @@
+{
+  "queried_oracle_positive_count": 5,
+  "queried_oracle_negative_count": 15,
+  "single_model": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "robust_tau_090": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0
+  },
+  "reference_profile_to_latent_mapping": {
+    "1": "A",
+    "2": "B"
+  },
+  "robust_reachable_rate_by_reference_profile": {
+    "1": 0.0,
+    "2": 0.0
+  },
+  "predicted_accessible_source_profile": null,
+  "predicted_accessible_source_latent": null,
+  "planted_accessible_source_latent": "A",
+  "direction_recovered": false,
+  "numeric_true_profile_label_swap_invariant": true
+}

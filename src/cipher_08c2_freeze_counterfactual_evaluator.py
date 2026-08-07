@@ -1,0 +1,416 @@
+from __future__ import annotations
+
+import hashlib
+import json
+from pathlib import Path
+from typing import Any
+
+ROOT = Path(__file__).resolve().parents[1]
+
+EVALUATOR_V2_PATH = ROOT / "cipher" / "design" / "stage8_evaluator_freeze_v2.json"
+STAGE8A_PATH = ROOT / "cipher" / "design" / "stage8_synthetic_validation_freeze_v1.json"
+STAGE8D1_V2_AUDIT_PATH = (
+    ROOT / "cipher" / "outputs" / "audit" / "stage8d1_core_pipeline_smoke_audit_v2.json"
+)
+OFFICIAL_DIR = ROOT / "cipher" / "outputs" / "synthetic" / "official"
+
+FREEZE_PATH = (
+    ROOT / "cipher" / "design" / "stage8_counterfactual_evaluator_freeze_v1.json"
+)
+AUDIT_PATH = (
+    ROOT
+    / "cipher"
+    / "outputs"
+    / "audit"
+    / "stage8c2_counterfactual_evaluator_freeze_audit.json"
+)
+
+
+def load_json(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        raise FileNotFoundError(path)
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def sha256_file(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def official_results_absent() -> bool:
+    if not OFFICIAL_DIR.exists():
+        return True
+    return not any(path.is_file() for path in OFFICIAL_DIR.rglob("*"))
+
+
+def main() -> None:
+    if FREEZE_PATH.exists():
+        raise FileExistsError(
+            f"Counterfactual evaluator freeze already exists: {FREEZE_PATH}"
+        )
+
+    evaluator_v2 = load_json(EVALUATOR_V2_PATH)
+    stage8a = load_json(STAGE8A_PATH)
+    stage8d1_v2 = load_json(STAGE8D1_V2_AUDIT_PATH)
+
+    checks = {
+        "stage8c1_evaluator_v2_passed": (
+            evaluator_v2.get("gate_status") == "PASS_STAGE_8C1_MULTICLASS_AMENDMENT"
+        ),
+        "stage8d1_v2_core_smoke_passed": (
+            stage8d1_v2.get("status") == "PASS_STAGE_8D1_V2_CORE_PIPELINE_SMOKE"
+        ),
+        "no_official_synthetic_results_exist": official_results_absent(),
+        "stage8a_design_still_present": (
+            stage8a.get("gate_status") == "PASS_STAGE_8A_SYNTHETIC_DESIGN_FREEZE"
+        ),
+    }
+
+    if not all(checks.values()):
+        print("\n=== CIPHER STAGE 8C2 — COUNTERFACTUAL EVALUATOR FREEZE ===\n")
+        for name, passed in checks.items():
+            print(f"[{'PASS' if passed else 'FAIL'}] {name}")
+        print("\nGATE STATUS: FAIL_STAGE_8C2_COUNTERFACTUAL_EVALUATOR_FREEZE")
+        raise SystemExit(1)
+
+    freeze = {
+        "version": "STAGE8_COUNTERFACTUAL_EVALUATOR_FREEZE_V1",
+        "status": "FROZEN_BEFORE_ANY_SYNTHETIC_COUNTERFACTUAL_PERFORMANCE",
+        "purpose": (
+            "Resolve counterfactual-specific operational details and internal "
+            "Stage-8 inconsistencies before the first synthetic CF/reachability result."
+        ),
+        "parents": {
+            "stage8a": {
+                "path": str(STAGE8A_PATH.relative_to(ROOT)),
+                "sha256": sha256_file(STAGE8A_PATH),
+            },
+            "evaluator_v2": {
+                "path": str(EVALUATOR_V2_PATH.relative_to(ROOT)),
+                "sha256": sha256_file(EVALUATOR_V2_PATH),
+            },
+            "stage8d1_v2_audit": {
+                "path": str(STAGE8D1_V2_AUDIT_PATH.relative_to(ROOT)),
+                "sha256": sha256_file(STAGE8D1_V2_AUDIT_PATH),
+            },
+        },
+        "resolved_pre_cf_inconsistencies": {
+            "truth_stratification_conflict": {
+                "problem": (
+                    "Stage 8A said the 20 CF queries were stratified by truth, "
+                    "while the later frozen leakage policy forbids truth use during CF search."
+                ),
+                "resolution": (
+                    "Query selection is stratified by the discovered reference profiles, "
+                    "never by planted truth. Truth is used only after all CF outputs for "
+                    "the replicate are frozen."
+                ),
+            },
+            "s6_false_robust_cf_metric_without_query_budget": {
+                "problem": (
+                    "Stage 8A specified an S6 false robust-reachability criterion but "
+                    "its original query-budget line named only S1-S3."
+                ),
+                "resolution": (
+                    "S6 receives the same 20-query budget only when a stable k=2 "
+                    "partition is claimed. This makes the already-frozen S6 false-CF "
+                    "criterion measurable; it does not change that criterion."
+                ),
+            },
+            "continuous_synthetic_values_vs_exact_observed_level_search": {
+                "problem": (
+                    "Synthetic features are continuous, so enumerating every observed "
+                    "value of every edited feature would be computationally intractable."
+                ),
+                "resolution": (
+                    "For each queried institution, candidate levels for every feature "
+                    "are frozen to the current value plus the observed values carried "
+                    "by the three nearest observations in the discovered target profile. "
+                    "The official search is exact over this frozen local observed-level grid."
+                ),
+            },
+            "oracle_scoring_scope": {
+                "problem": (
+                    "Only S3 contains planted institution-level sparse-reachability truth."
+                ),
+                "resolution": (
+                    "Oracle precision/recall/F1 and direction recovery are primary only "
+                    "for S3. S1/S2 CF outputs are mechanics/descriptive diagnostics, not "
+                    "oracle-scored reachability claims."
+                ),
+            },
+        },
+        "applicability": {
+            "binary_selected_k_required": 2,
+            "stable_partition_claim_required": True,
+            "selected_k_not_2": "NOT_APPLICABLE_SELECTED_K_NOT_2",
+            "ward_reference_extension_fidelity_min": 0.95,
+            "ward_reference_extension_failure": (
+                "NOT_APPLICABLE_WARD_REFERENCE_EXTENSION_FIDELITY_FAIL"
+            ),
+            "target_profile_minimum_size_for_5nn": 6,
+            "too_small_target_status": "NOT_APPLICABLE_TARGET_PROFILE_TOO_SMALL_FOR_5NN",
+        },
+        "query_selection": {
+            "query_count_per_applicable_replicate": 20,
+            "truth_blind": True,
+            "primary_stratification": "discovered_reference_profile",
+            "binary_allocation": (
+                "Select 10 deterministic institutions from each discovered profile "
+                "when both profiles contain at least 10. Otherwise select all available "
+                "from the smaller profile up to 10 and fill the remaining slots from "
+                "the larger profile. Selection uses a replicate-derived deterministic RNG."
+            ),
+            "scenarios": {
+                "S1_CONFIG_TWO_PROFILE": "query if stable selected k=2",
+                "S2_CORE_BOUNDARY": "query if stable selected k=2",
+                "S3_DIRECTIONAL_REACHABILITY": "query if stable selected k=2",
+                "S4_SEVERITY_CONTINUUM": "no CF query",
+                "S5_GOVERNANCE_CONFOUNDED": "no CF query",
+                "S6_NO_CLUSTER_NULL": (
+                    "query only if a stable selected k=2 partition is claimed; "
+                    "used solely for false robust-CF accounting"
+                ),
+            },
+        },
+        "reference_counterfactual_model": {
+            "representation": "the selected replicate representation",
+            "algorithm": "the selected replicate algorithm",
+            "k": 2,
+            "kmeans_inductive_rule": "native predict() in the fitted representation",
+            "ward_inductive_rule": "nearest centroid in the fitted representation",
+            "ward_training_fidelity_requirement": 0.95,
+        },
+        "local_observed_level_grid": {
+            "distance_space": "original 13D normalized [0,1] feature space",
+            "target_anchor_count": 3,
+            "target_anchor_rule": (
+                "three nearest observations belonging to the discovered target profile"
+            ),
+            "feature_candidate_values": (
+                "current institution value union the values of that feature among "
+                "the three target anchors; duplicate values removed"
+            ),
+            "truth_or_oracle_values_forbidden": True,
+            "exactness_statement": (
+                "Every combination of up to four changed features and every alternative "
+                "value on this frozen per-institution local observed-level grid is enumerated."
+            ),
+        },
+        "counterfactual_constraints": {
+            "max_changed_features": 4,
+            "bounds": [0.0, 1.0],
+            "diagnostic_not_causal": True,
+            "transition_required": True,
+            "target_profile_plausibility_required": True,
+            "plausibility_rule": {
+                "distance": "Euclidean in original normalized 13D space",
+                "candidate_score": "distance to the fifth nearest target-profile observation",
+                "threshold": (
+                    "95th percentile of within-target-profile fifth-nearest-neighbor distances"
+                ),
+            },
+            "cost": {
+                "formula": "weighted_L1 + 0.25 * L0",
+                "weighted_L1": (
+                    "sum_j abs(x'_j-x_j) / max(IQR_j, 1e-6) over changed features"
+                ),
+                "iqr_scope": "full synthetic replicate before truth evaluation",
+                "l0_penalty": 0.25,
+            },
+        },
+        "single_model_candidate_selection": {
+            "valid_candidate": (
+                "reference-model target transition AND target-manifold plausibility"
+            ),
+            "single_model_reachable": "at least one valid candidate exists",
+            "pareto_dimensions": [
+                "total_cost ascending",
+                "L0 ascending",
+                "plausibility_distance ascending",
+            ],
+            "pareto_definition": (
+                "Candidate is retained on the Pareto front if no other valid candidate "
+                "is <= on all three dimensions and strictly < on at least one."
+            ),
+            "max_saved_candidates_per_institution": 5,
+            "diversity_rule": (
+                "Sort Pareto candidates by total_cost, L0, plausibility_distance, "
+                "then deterministic lexical edit signature. Greedily prefer unique "
+                "signed changed-feature sets; if fewer than five unique sets exist, "
+                "fill remaining slots in deterministic sorted order."
+            ),
+        },
+        "robust_ensemble": {
+            "primary_members": 200,
+            "family_members": {
+                "R0_WARD": 50,
+                "R1_PCA85_WARD": 50,
+                "R0_KMEANS": 50,
+                "R1_PCA85_KMEANS": 50,
+            },
+            "row_sample_fraction": 0.80,
+            "feature_count": 11,
+            "pca_variance_threshold": 0.85,
+            "k": 2,
+            "kmeans_n_init": 25,
+            "alignment": (
+                "Hungarian alignment to the discovered reference partition on sampled overlap"
+            ),
+            "ward_inductive_rule": "nearest centroid",
+            "ward_member_fidelity_min": 0.95,
+            "ward_members_below_fidelity": "excluded before CF support evaluation",
+            "minimum_eligible_members": 120,
+            "primary_tau": 0.90,
+            "sensitivity_taus": [0.80, 0.95],
+            "robust_candidate": "target-profile support >= tau",
+            "robust_reachable_institution": (
+                "at least one of the saved single-model candidates is robust"
+            ),
+        },
+        "s3_oracle_evaluation": {
+            "truth_used_only_after_cf_outputs_frozen": True,
+            "query_level_truth": "oracle_reachable",
+            "single_model_metrics": ["precision", "recall", "F1"],
+            "robust_metrics": ["precision", "recall", "F1"],
+            "primary_success_metrics": {
+                "oracle_reachability_F1_min": 0.70,
+                "robust_precision_min": 0.80,
+            },
+            "direction_recovery": {
+                "prediction": (
+                    "Among queried institutions, compute robust-reachable fraction "
+                    "within each discovered reference profile. The profile with the "
+                    "higher fraction is the predicted accessible source direction; "
+                    "a tie is scored incorrect."
+                ),
+                "truth_mapping": (
+                    "After CF outputs are frozen, map the two discovered reference "
+                    "profiles to latent A/B using maximum-overlap assignment, then "
+                    "compare the predicted accessible source with the planted "
+                    "accessible_source_latent."
+                ),
+                "official_success_rate_min": 0.80,
+            },
+            "numeric_label_swap_invariance": {
+                "per_replicate_test": (
+                    "Swap only the synthetic numeric true_profile labels 1<->2 in the "
+                    "post-hoc evaluator. Pipeline outputs and latent-A/B direction "
+                    "evaluation must remain unchanged."
+                ),
+                "official_mean_invariance_min": 0.95,
+            },
+        },
+        "s6_false_robust_cf_accounting": {
+            "replicate_level_false_claim": (
+                "True iff the replicate makes a stable k=2 partition claim and at "
+                "least one of its 20 queried institutions is robustly reachable at tau=.90."
+            ),
+            "abstention": (
+                "If no stable k=2 claim is made, false_robust_cf_claim=False and "
+                "CF_applicable=False are both recorded. Abstention is not reported as "
+                "a successful institution-level negative prediction."
+            ),
+            "official_false_claim_rate_max": 0.05,
+            "report_applicability_rate_separately": True,
+        },
+        "s1_s2_policy": {
+            "oracle_reachability_metrics": "NOT_DEFINED",
+            "allowed_outputs": [
+                "single-model reachable fraction",
+                "robust reachable fraction",
+                "cost/L0/plausibility summaries",
+                "technical integrity checks",
+            ],
+            "scientific_use": (
+                "S1/S2 CF outputs are secondary diagnostics only unless a separate "
+                "truth construct was frozen before results; no such construct is added here."
+            ),
+        },
+        "no_post_result_changes": [
+            "no changing target-anchor count after smoke results",
+            "no adding oracle target values to the candidate grid",
+            "no increasing max changed features after smoke results",
+            "no relaxing 5NN plausibility threshold after smoke results",
+            "no changing tau=.90 after smoke results",
+            "no changing the 20-query budget after smoke results",
+            "no truth-based query selection",
+            "no scoring S1/S2 as oracle reachability positives or negatives",
+        ],
+        "next_stage": {
+            "id": "STAGE_8D2",
+            "name": "Counterfactual and robust-reachability smoke",
+            "scope": (
+                "Use the already-generated Stage 8D1 v2 replicate=1 selected models. "
+                "Run CF smoke only on applicable scenarios. Do not rerun discovery "
+                "or count these smoke outputs as official results."
+            ),
+        },
+        "gate_status": "PASS_STAGE_8C2_COUNTERFACTUAL_EVALUATOR_FREEZE",
+    }
+
+    FREEZE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    FREEZE_PATH.write_text(
+        json.dumps(freeze, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+    AUDIT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    AUDIT_PATH.write_text(
+        json.dumps(
+            {
+                "checks": checks,
+                "freeze_path": str(FREEZE_PATH.relative_to(ROOT)),
+                "freeze_sha256": sha256_file(FREEZE_PATH),
+                "gate_status": "PASS_STAGE_8C2_COUNTERFACTUAL_EVALUATOR_FREEZE",
+            },
+            indent=2,
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+
+    print("\n=== CIPHER STAGE 8C2 — COUNTERFACTUAL EVALUATOR FREEZE ===\n")
+
+    print("Resolved before any synthetic CF performance:")
+    print("  truth-stratified query conflict -> discovered-profile stratification")
+    print("  S6 false-CF criterion had no query budget -> 20 queries when stable k=2")
+    print("  continuous observed levels -> exact local 3-anchor observed-level grid")
+    print("  only S3 has oracle institution-level reachability truth")
+
+    print("\nCF search:")
+    print("  20 queries / applicable replicate")
+    print("  max 4 changed features")
+    print("  exact enumeration over current + 3 nearest-target-anchor feature values")
+    print("  5NN target plausibility, 95th-percentile target threshold")
+    print("  cost = weighted L1/IQR + .25*L0")
+    print("  save up to 5 diverse Pareto candidates")
+
+    print("\nRobust ensemble:")
+    print("  200 members = 50/family")
+    print("  80% row sampling, 11/13 features, PCA85 where applicable")
+    print("  Ward members require inductive fidelity >=.95")
+    print("  minimum eligible ensemble = 120")
+    print("  primary tau=.90; sensitivities .80/.95")
+
+    print("\nPrimary truth scoring:")
+    print(
+        "  S3 only: oracle F1, robust precision, direction recovery, label-swap invariance"
+    )
+    print("  S6: replicate-level false robust-CF claim rate")
+    print("  S1/S2: diagnostic CF summaries only")
+
+    print("\n=== FREEZE CHECKS ===\n")
+    for name, passed in checks.items():
+        print(f"[{'PASS' if passed else 'FAIL'}] {name}")
+
+    print("\nGATE STATUS: PASS_STAGE_8C2_COUNTERFACTUAL_EVALUATOR_FREEZE")
+    print("Frozen CF evaluator:", FREEZE_PATH.relative_to(ROOT))
+    print("Next: Stage 8D2 CF/reachability smoke. Do NOT run official replicates.")
+
+
+if __name__ == "__main__":
+    main()

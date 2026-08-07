@@ -1,0 +1,16 @@
+
+=== CIPHER STAGE 8F2 — OFFICIAL CONVERGENCE-AUDIT REPLICATE ===
+
+Official replicate: 5
+This run is OFFICIAL. Its scientific outcomes must not be used to retune thresholds, generators, query budgets, or scenario geometry.
+
+=== PRECHECKS ===
+
+[PASS] stage8e1_plan_passed
+[PASS] replicate_is_frozen_convergence_index
+[PASS] replicate_is_official
+[PASS] replicate_zero_one_excluded
+[PASS] final_output_absent
+[PASS] working_output_absent
+
+--- S1_CONFIG_TWO_PROFILE / official replicate 5 ---

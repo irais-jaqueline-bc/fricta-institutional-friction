@@ -1,0 +1,9 @@
+{
+  "scenario": "S2_CORE_BOUNDARY",
+  "selected_k": 3,
+  "ari_vs_true_profile": 0.481266898416377,
+  "nmi_vs_true_profile": 0.5423642877357389,
+  "boundary_uncertainty_auc": null,
+  "false_configurational_profile_claim": null,
+  "false_stable_profile_claim": null
+}

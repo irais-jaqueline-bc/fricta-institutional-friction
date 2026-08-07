@@ -1,0 +1,35 @@
+
+=== CIPHER STAGE 8E2 — OPTIONAL GOVERNANCE INTERFACE FREEZE ===
+
+8F2 v1 failure:
+  technical interface bug only
+  governance_type exists only in S5
+  no official replicate 003..011 was finalized
+
+Frozen governance interface:
+  all scenarios: institution_id
+  S5 only: institution_id + governance_type
+  other scenarios: governance audit -> NOT_APPLICABLE_NO_GOVERNANCE_VARIABLE
+  full latent truth table is never passed pretruth
+
+Failed-attempt recovery:
+  archive existing __WORKING directories; never delete/overwrite
+  rerun SAME official indices with SAME deterministic seeds
+  failed attempts do not enter official inference
+
+Shell execution:
+  future loop MUST use: set -o pipefail
+  this makes Python | tee propagate Python failures
+
+Detected failed working attempts: [3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+=== FREEZE CHECKS ===
+
+[PASS] stage8e1_plan_v2_passed
+[PASS] official_replicate_002_still_finalized
+[PASS] no_003_011_finalized_after_failed_runner
+[PASS] failed_working_attempts_detected
+
+GATE STATUS: PASS_STAGE_8E2_OPTIONAL_GOVERNANCE_INTERFACE
+Frozen plan v3: cipher/design/stage8_official_run_plan_freeze_v3.json
+Next: Stage 8F2 v2 recovery + rerun. Do not run official 012..101.

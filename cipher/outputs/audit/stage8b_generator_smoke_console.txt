@@ -1,0 +1,78 @@
+
+=== CIPHER STAGE 8B — SYNTHETIC GENERATOR SMOKE/AUDIT ===
+
+Implementation freeze: cipher/design/stage8_generator_implementation_freeze_v1.json
+No clustering/model-selection performance is evaluated in this stage.
+
+=== SCENARIO SMOKE SUMMARY ===
+
+                   scenario  n  feature_min  feature_max  feature_mean numeric_label_swap  deterministic_repeat  common_integrity
+      S1_CONFIG_TWO_PROFILE 80     0.088404     0.918434      0.499635              False                  True              True
+           S2_CORE_BOUNDARY 80     0.074496     0.904687      0.500994               True                  True              True
+S3_DIRECTIONAL_REACHABILITY 80     0.000000     1.000000      0.491555              False                  True              True
+      S4_SEVERITY_CONTINUUM 80     0.000000     1.000000      0.563153               None                  True              True
+   S5_GOVERNANCE_CONFOUNDED 80     0.172222     0.857028      0.501261               None                  True              True
+         S6_NO_CLUSTER_NULL 80     0.035832     0.986914      0.507141               None                  True              True
+
+=== S2 BOUNDARY GEOMETRY ===
+
+True boundary observations: 24
+Median distance to midpoint — boundary: 0.177566
+Median distance to midpoint — core: 0.847969
+
+=== S3 DIRECTIONAL REACHABILITY PLANT ===
+
+Accessible latent source: A
+Target latent profile: B
+Gate features: ['digital_usage_constraint_score', 'staffing_constraint_score', 'recording_system_constraint']
+Reverse-lock features: ['willingness_constraint_score', 'device_constraint', 'digital_tool_variety_constraint', 'time_constraint_score', 'administrative_disorganization_constraint', 'admin_time_load_constraint']
+Oracle reachable: 16/80
+Forward 3-feature oracle plausibility rate: 1.0000
+Mirrored reverse 3-gate plausibility rate: 0.0000
+
+=== S4 SEVERITY CONTINUUM ===
+
+Median feature-vs-z Spearman: 0.9376
+Feature Spearman range: 0.8957 to 0.9633
+
+=== S5 GOVERNANCE CONFOUNDING ===
+
+Counts: {'NGO': 26, 'PUBLIC': 22, 'PRIVATE': 17, 'MIXED': 15}
+Minimum pairwise governance-centroid distance: 0.5292
+
+=== S6 NO-CLUSTER NULL ===
+
+Mean off-diagonal feature Spearman: 0.2557
+
+=== SMOKE/AUDIT CHECKS ===
+
+[PASS] stage8a_design_passed
+[PASS] implementation_freeze_written_and_matches_code
+[PASS] all_scenarios_deterministic
+[PASS] all_scenarios_common_integrity
+[PASS] S1_balanced_40_40
+[PASS] S1_prototype_mean_severity_equal
+[PASS] S1_prototype_euclidean_separation_gt_1
+[PASS] S2_balanced_40_40
+[PASS] S2_exactly_24_true_boundary
+[PASS] S2_boundary_median_closer_to_midpoint_than_core
+[PASS] S3_balanced_40_40
+[PASS] S3_exactly_16_oracle_reachable
+[PASS] S3_all_oracle_positive_are_bridges
+[PASS] S3_exactly_3_gate_features
+[PASS] S3_exactly_6_reverse_lock_features
+[PASS] S3_oracle_candidate_rows_16
+[PASS] S3_forward_oracle_plausibility_rate_meets_frozen_smoke_min
+[PASS] S3_mirrored_reverse_three_gate_plausibility_below_frozen_smoke_max
+[PASS] S4_no_true_profiles
+[PASS] S4_all_feature_severity_spearman_positive
+[PASS] S4_median_spearman_meets_frozen_smoke_min
+[PASS] S5_no_true_profiles
+[PASS] S5_governance_counts_exact
+[PASS] S5_minimum_governance_centroid_distance_meets_smoke_min
+[PASS] S6_no_true_profiles
+[PASS] S6_feature_means_are_interior
+[PASS] S6_empirical_mean_positive_dependence
+
+GATE STATUS: PASS_STAGE_8B_GENERATOR_SMOKE_AUDIT
+Generator truth is implemented and audited. Do not run the 600 official replicates yet; review before Stage 8C.

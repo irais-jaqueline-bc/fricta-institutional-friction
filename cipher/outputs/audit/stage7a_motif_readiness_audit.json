@@ -1,0 +1,24 @@
+{
+  "transactions": 10,
+  "source_profiles": [
+    1
+  ],
+  "target_profiles": [
+    2
+  ],
+  "effective_min_support_count": 4,
+  "unique_signed_items": 12,
+  "raw_frequent_itemsets": 0,
+  "raw_closed_itemsets": 0,
+  "checks": {
+    "stage6d_passed": true,
+    "exactly_10_primary_robust_institutions": true,
+    "exactly_one_transaction_per_institution": true,
+    "equal_institution_weighting_preserved": true,
+    "all_transaction_sizes_between_2_and_4": true,
+    "all_robust_transactions_same_direction": true,
+    "effective_min_support_is_4": true,
+    "at_least_one_raw_closed_itemset_meets_support": false
+  },
+  "gate_status": "STOP_STAGE_7_NO_MOTIF_READINESS"
+}

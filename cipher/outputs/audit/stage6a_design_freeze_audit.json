@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "stage5e_revision_passed": true,
+    "19_stage5c_reachable_institutions": true,
+    "one_rank1_candidate_per_reachable_institution": true,
+    "all_reachable_have_at_least_one_saved_candidate": true
+  },
+  "reachable_institutions": 19,
+  "saved_candidate_rows": 69,
+  "primary_tau": 0.9,
+  "sensitivity_taus": [
+    0.8,
+    0.95
+  ],
+  "freeze_sha256": "fe7b11de23066c42f5148418522245ce443fa43527cd68f17ddeff3792a82cc1",
+  "gate_status": "PASS_STAGE_6A_DESIGN_FREEZE"
+}

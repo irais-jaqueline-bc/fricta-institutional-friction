@@ -1,0 +1,23 @@
+{
+  "members_audited": 1000,
+  "eligible_members": 984,
+  "ward_members": 500,
+  "kmeans_members": 500,
+  "total_hybrid_all_mismatches": 0,
+  "total_oob_inductive_mismatches": 0,
+  "total_sample_extension_disagreements": 449,
+  "eligible_sample_extension_disagreements": 374,
+  "elapsed_seconds": 18.979995751999923,
+  "checks": {
+    "all_1000_members_audited": true,
+    "stored_all_matrix_reconstructed_with_hybrid_semantics": true,
+    "all_declared_oob_predictions_match_inductive_rule": true,
+    "oob_matrix_blank_on_sampled_rows": true,
+    "ward_previous_mismatches_localize_exactly_to_sample_extension_disagreements": true,
+    "kmeans_native_and_inductive_rules_agree": true,
+    "all_extension_fidelities_reproduce": true,
+    "all_984_eligible_members_have_exact_oob_inductive_reconstruction": true
+  },
+  "interpretation": "The Stage-1 member_predictions_all matrix uses native training labels for sampled Ward institutions and inductive nearest-centroid predictions for OOB institutions. New counterfactual candidates are out-of-sample, so Stage 6 must use the audited inductive rule. Exact OOB reproduction therefore validates the Stage-6 prediction engine.",
+  "gate_status": "PASS_STAGE_6B_RECONSTRUCTION_AUDIT_V2"
+}

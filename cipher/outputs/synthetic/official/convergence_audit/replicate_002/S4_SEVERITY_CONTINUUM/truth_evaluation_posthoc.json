@@ -1,0 +1,8 @@
+{
+  "scenario": "S4_SEVERITY_CONTINUUM",
+  "replicate": 2,
+  "ari_vs_true_profile": null,
+  "nmi_vs_true_profile": null,
+  "false_configurational_claim": false,
+  "severity_falsification": true
+}

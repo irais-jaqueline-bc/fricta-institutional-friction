@@ -1,0 +1,5 @@
+family,eligible_members,exact_prediction_members,total_prediction_mismatches,pca_component_mismatches,pca_variance_mismatches,fidelity_mismatches
+R0_KMEANS,250,250,0,0,0,0
+R0_WARD,244,118,192,0,0,0
+R1_PCA85_KMEANS,250,250,0,0,0,0
+R1_PCA85_WARD,240,112,182,0,0,0

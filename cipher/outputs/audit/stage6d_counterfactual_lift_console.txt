@@ -1,0 +1,79 @@
+
+=== CIPHER STAGE 6D — COUNTERFACTUAL ENSEMBLE-LIFT AUDIT ===
+
+Purpose:
+  Contextualize Stage 6C support by asking how much each counterfactual actually changes ensemble predictions relative to the institution's original point under the same audited inductive rules.
+
+Prechecks:
+[PASS] support_matrix_is_69_by_984
+[PASS] support_matrix_member_set_matches_eligible_manifest
+[PASS] exactly_19_frozen_institutions
+[PASS] candidate_summary_has_69_rows
+[PASS] institution_summary_has_19_rows
+Reconstructed original inductive predictions 100/984...
+Reconstructed original inductive predictions 200/984...
+Reconstructed original inductive predictions 300/984...
+Reconstructed original inductive predictions 400/984...
+Reconstructed original inductive predictions 500/984...
+Reconstructed original inductive predictions 600/984...
+Reconstructed original inductive predictions 700/984...
+Reconstructed original inductive predictions 800/984...
+Reconstructed original inductive predictions 900/984...
+
+=== SELECTED CANDIDATE LIFT — ALL 19 INSTITUTIONS ===
+
+institution_id  reference_profile certainty_class  robustly_reachable_tau_0.90   candidate_id  baseline_target_support_inductive  ensemble_support  ensemble_support_gain  conditional_flip_rate_among_baseline_source  target_retention_rate_among_baseline_target
+      INST_030                  1            CORE                         True INST_030__CF01                           0.049797          0.979675               0.929878                                     0.978610                                      1.00000
+      INST_077                  1            HALO                         True INST_077__CF03                           0.125000          0.963415               0.838415                                     0.959350                                      0.99187
+      INST_033                  1            HALO                         True INST_033__CF01                           0.180894          0.988821               0.807927                                     0.986352                                      1.00000
+      INST_073                  1            HALO                         True INST_073__CF01                           0.200203          0.993902               0.793699                                     0.992376                                      1.00000
+      INST_025                  1        BOUNDARY                         True INST_025__CF01                           0.259146          0.997967               0.738821                                     0.997257                                      1.00000
+      INST_019                  1        BOUNDARY                         True INST_019__CF01                           0.385163          0.979675               0.594512                                     0.966942                                      1.00000
+      INST_007                  1        BOUNDARY                         True INST_007__CF01                           0.410569          0.998984               0.588415                                     0.998276                                      1.00000
+      INST_064                  1        BOUNDARY                         True INST_064__CF02                           0.469512          0.994919               0.525407                                     0.990421                                      1.00000
+      INST_066                  1        BOUNDARY                         True INST_066__CF02                           0.469512          0.994919               0.525407                                     0.990421                                      1.00000
+      INST_023                  1        BOUNDARY                         True INST_023__CF01                           0.737805          0.952236               0.214431                                     0.817829                                      1.00000
+      INST_022                  2            CORE                        False INST_022__CF02                           0.001016          0.477642               0.476626                                     0.478128                                      0.00000
+      INST_034                  2            CORE                        False INST_034__CF01                           0.001016          0.457317               0.456301                                     0.456765                                      1.00000
+      INST_054                  2            CORE                        False INST_054__CF01                           0.001016          0.427846               0.426829                                     0.428281                                      0.00000
+      INST_071                  2            CORE                        False INST_071__CF02                           0.001016          0.424797               0.423780                                     0.424212                                      1.00000
+      INST_036                  2            CORE                        False INST_036__CF01                           0.001016          0.418699               0.417683                                     0.418108                                      1.00000
+      INST_039                  2            CORE                        False INST_039__CF03                           0.001016          0.410569               0.409553                                     0.409969                                      1.00000
+      INST_037                  2            CORE                        False INST_037__CF01                           0.001016          0.392276               0.391260                                     0.391658                                      1.00000
+      INST_027                  2            CORE                        False INST_027__CF03                           0.001016          0.360772               0.359756                                     0.360122                                      1.00000
+      INST_065                  2            CORE                        False INST_065__CF03                           0.001016          0.355691               0.354675                                     0.355036                                      1.00000
+
+=== SELECTED CANDIDATE LIFT BY REFERENCE PROFILE ===
+
+ reference_profile  n_institutions  robust_n_tau_0.90  median_baseline_target_support  median_selected_candidate_support  median_support_gain  median_conditional_flip_rate
+                 1              10                 10                        0.322154                           0.991362             0.666667                      0.988387
+                 2               9                  0                        0.001016                           0.418699             0.417683                      0.418108
+
+=== ROBUST TAU=0.90 CASES ONLY ===
+
+institution_id certainty_class   candidate_id  baseline_target_support_inductive  ensemble_support  ensemble_support_gain  desired_flip_members  conditional_flip_rate_among_baseline_source
+      INST_030            CORE INST_030__CF01                           0.049797          0.979675               0.929878                   915                                     0.978610
+      INST_077            HALO INST_077__CF03                           0.125000          0.963415               0.838415                   826                                     0.959350
+      INST_033            HALO INST_033__CF01                           0.180894          0.988821               0.807927                   795                                     0.986352
+      INST_073            HALO INST_073__CF01                           0.200203          0.993902               0.793699                   781                                     0.992376
+      INST_025        BOUNDARY INST_025__CF01                           0.259146          0.997967               0.738821                   727                                     0.997257
+      INST_019        BOUNDARY INST_019__CF01                           0.385163          0.979675               0.594512                   585                                     0.966942
+      INST_007        BOUNDARY INST_007__CF01                           0.410569          0.998984               0.588415                   579                                     0.998276
+      INST_066        BOUNDARY INST_066__CF02                           0.469512          0.994919               0.525407                   517                                     0.990421
+      INST_064        BOUNDARY INST_064__CF02                           0.469512          0.994919               0.525407                   517                                     0.990421
+      INST_023        BOUNDARY INST_023__CF01                           0.737805          0.952236               0.214431                   211                                     0.817829
+
+=== TECHNICAL CHECKS ===
+
+[PASS] all_69_candidates_have_lift_metrics
+[PASS] all_19_institutions_have_selected_candidate_context
+[PASS] exactly_10_primary_robust_institutions
+[PASS] exactly_9_primary_nonrobust_institutions
+[PASS] all_supports_and_flip_rates_in_valid_ranges
+[PASS] stage6c_support_recomputed_from_matrix_matches_summary
+
+All primary-robust selected candidates have positive support gain: True
+Elapsed seconds: 16.70
+
+GATE STATUS: PASS_STAGE_6D_LIFT_AUDIT
+This is a contextual audit, not a new robustness threshold. Review before Stage 7 motif mining.

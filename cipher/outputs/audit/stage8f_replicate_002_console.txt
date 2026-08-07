@@ -1,0 +1,77 @@
+
+=== CIPHER STAGE 8F1 — ONE OFFICIAL CONVERGENCE-AUDIT REPLICATE ===
+
+Official replicate: 2
+This run is OFFICIAL. Its scientific outcomes must not be used to retune thresholds, generators, query budgets, or scenario geometry.
+
+=== PRECHECKS ===
+
+[PASS] stage8e_plan_passed
+[PASS] replicate_is_frozen_convergence_index
+[PASS] replicate_is_official
+[PASS] replicate_zero_one_excluded
+[PASS] final_output_absent
+[PASS] working_output_absent
+
+--- S1_CONFIG_TWO_PROFILE / official replicate 2 ---
+  selected: R1_PCA85__HAC_WARD__K2
+  k: 2 | stability ARI median: 1.0000 | stable claim: True
+  uncertainty convergence Spearman: nan | pass .95: False
+  robust ensemble eligible 200/1000: 200/1000
+  robust agreement evaluable: True
+  tau=.90 decision agreement: 1.0000 | pass .95: True
+
+--- S2_CORE_BOUNDARY / official replicate 2 ---
+  selected: R1_PCA85__HAC_WARD__K3
+  k: 3 | stability ARI median: 1.0000 | stable claim: True
+  uncertainty convergence: NOT_APPLICABLE_SELECTED_K_NOT_2_OR_UNSTABLE
+  CF convergence: NOT_APPLICABLE_SCENARIO_OR_SELECTED_K
+
+--- S3_DIRECTIONAL_REACHABILITY / official replicate 2 ---
+  selected: R1_PCA85__HAC_WARD__K2
+  k: 2 | stability ARI median: 1.0000 | stable claim: True
+  uncertainty convergence Spearman: nan | pass .95: False
+  robust ensemble eligible 200/1000: 200/1000
+  robust agreement evaluable: True
+  tau=.90 decision agreement: 1.0000 | pass .95: True
+
+--- S4_SEVERITY_CONTINUUM / official replicate 2 ---
+  selected: R1_PCA85__KMEANS__K4
+  k: 4 | stability ARI median: 1.0000 | stable claim: True
+  uncertainty convergence: NOT_APPLICABLE_SELECTED_K_NOT_2_OR_UNSTABLE
+  CF convergence: NOT_APPLICABLE_SCENARIO_OR_SELECTED_K
+
+--- S5_GOVERNANCE_CONFOUNDED / official replicate 2 ---
+  selected: R1_PCA85__HAC_WARD__K4
+  k: 4 | stability ARI median: 1.0000 | stable claim: True
+  uncertainty convergence: NOT_APPLICABLE_SELECTED_K_NOT_2_OR_UNSTABLE
+  CF convergence: NOT_APPLICABLE_SCENARIO_OR_SELECTED_K
+
+--- S6_NO_CLUSTER_NULL / official replicate 2 ---
+  selected: R1_PCA85__KMEANS__K2
+  k: 2 | stability ARI median: 0.8770 | stable claim: True
+  uncertainty convergence Spearman: 0.9158 | pass .95: False
+  robust ensemble eligible 200/1000: 113/573
+  robust agreement evaluable: False
+
+=== OFFICIAL REPLICATE CONVERGENCE SUMMARY ===
+
+                   scenario  replicate     selected_candidate  selected_k  stability_ari_median  stable_partition_claim  configurational_profile_claim  uncertainty_applicable  uncertainty_spearman_200_vs_1000 uncertainty_pass_0_95  cf_applicable  robust_eligible_200  robust_eligible_1000 robust_agreement_evaluable  robust_tau090_agreement robust_pass_0_95
+      S1_CONFIG_TWO_PROFILE          2 R1_PCA85__HAC_WARD__K2           2              1.000000                    True                           True                    True                               NaN                 False           True                200.0                1000.0                       True                      1.0             True
+           S2_CORE_BOUNDARY          2 R1_PCA85__HAC_WARD__K3           3              1.000000                    True                           True                   False                               NaN                  None          False                  NaN                   NaN                       None                      NaN             None
+S3_DIRECTIONAL_REACHABILITY          2 R1_PCA85__HAC_WARD__K2           2              1.000000                    True                           True                    True                               NaN                 False           True                200.0                1000.0                       True                      1.0             True
+      S4_SEVERITY_CONTINUUM          2   R1_PCA85__KMEANS__K4           4              1.000000                    True                          False                   False                               NaN                  None          False                  NaN                   NaN                       None                      NaN             None
+   S5_GOVERNANCE_CONFOUNDED          2 R1_PCA85__HAC_WARD__K4           4              1.000000                    True                          False                   False                               NaN                  None          False                  NaN                   NaN                       None                      NaN             None
+         S6_NO_CLUSTER_NULL          2   R1_PCA85__KMEANS__K2           2              0.876971                    True                           True                    True                          0.915845                 False           True                113.0                 573.0                      False                      NaN            False
+
+=== TECHNICAL GATE CHECKS ===
+
+[PASS] prechecks_pass
+[PASS] six_scenarios_completed
+[PASS] all_scenario_technical_checks_pass
+[PASS] replicate_identity_preserved
+[PASS] no_smoke_index_used
+
+GATE STATUS: PASS_STAGE_8F1_OFFICIAL_REPLICATE
+FINALIZED OFFICIAL REPLICATE: cipher/outputs/synthetic/official/convergence_audit/replicate_002
+Do not modify or overwrite this finalized directory.

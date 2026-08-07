@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "stage8c1_evaluator_v2_passed": true,
+    "stage8d1_v2_core_smoke_passed": true,
+    "no_official_synthetic_results_exist": true,
+    "stage8a_design_still_present": true
+  },
+  "freeze_path": "cipher/design/stage8_counterfactual_evaluator_freeze_v1.json",
+  "freeze_sha256": "90fdf1e3923bb7066a6629d2e43d025644ea1e4c6eecc68543599c7205b28389",
+  "gate_status": "PASS_STAGE_8C2_COUNTERFACTUAL_EVALUATOR_FREEZE"
+}

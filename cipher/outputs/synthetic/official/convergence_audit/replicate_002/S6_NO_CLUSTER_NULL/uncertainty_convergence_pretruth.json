@@ -1,0 +1,28 @@
+{
+  "applicable": true,
+  "status": "COMPLETED",
+  "ensemble_200": {
+    "ensemble_members": 200,
+    "members_per_family": 50,
+    "minimum_oob_predictions": 21,
+    "median_oob_predictions": 39.0,
+    "certainty_class_counts": {
+      "CORE": 56,
+      "BOUNDARY": 15,
+      "HALO": 9
+    }
+  },
+  "ensemble_1000": {
+    "ensemble_members": 1000,
+    "members_per_family": 250,
+    "minimum_oob_predictions": 175,
+    "median_oob_predictions": 200.0,
+    "certainty_class_counts": {
+      "CORE": 60,
+      "BOUNDARY": 12,
+      "HALO": 8
+    }
+  },
+  "normalized_entropy_spearman_200_vs_1000": 0.915845026132499,
+  "passes_0_95": false
+}

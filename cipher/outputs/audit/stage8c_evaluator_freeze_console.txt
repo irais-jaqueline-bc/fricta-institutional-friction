@@ -1,0 +1,43 @@
+
+=== CIPHER STAGE 8C — SYNTHETIC EVALUATOR FREEZE ===
+
+Model selection:
+  eligibility: full-data min cluster >=5 AND resampling min cluster >=5
+  primary: maximum median resampling ARI
+  tied equivalent partitions (ARI>=.95): Silhouette, DB, CH, lower k
+  tied non-equivalent: ARI q025, weakest-cluster Jaccard, Silhouette, lower k
+
+Severity null:
+  severity nearly reconstructs = median BA >= .90 AND median ARI >= .80
+  matched-severity pairs remain descriptive only
+
+Governance null:
+  strong association = bias-corrected Cramer's V >= .50 AND p < .05
+  nearly reconstructs = median BA >= .90 AND median ARI >= .80
+
+Primary uncertainty metric:
+  normalized_entropy (prospectively selected; higher = more uncertain)
+  S2 primary metric = boundary-vs-core ROC-AUC
+
+Stable/configurational claim gate:
+  stable partition = eligible selected model AND median stability ARI >= .70
+  configurational claim additionally requires severity/governance flags to be false
+
+Prospective-status check:
+  official synthetic performance artifacts absent: True
+
+=== FREEZE CHECKS ===
+
+[PASS] stage8a_design_passed
+[PASS] stage8b_implementation_frozen
+[PASS] stage8b_smoke_passed
+[PASS] no_official_synthetic_performance_results_exist
+[PASS] real_model_selection_rule_found
+[PASS] real_severity_flag_found
+[PASS] real_governance_flags_found
+[PASS] real_uncertainty_formulas_found
+
+GATE STATUS: PASS_STAGE_8C_EVALUATOR_FREEZE
+Frozen evaluator: cipher/design/stage8_evaluator_freeze_v1.json
+Next: Stage 8D one-replicate end-to-end pipeline smoke per scenario.
+Do NOT start the 600 official replicates yet.

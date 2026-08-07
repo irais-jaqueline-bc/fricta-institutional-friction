@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "stage8e_v1_passed": true,
+    "official_replicate_002_finalized": true,
+    "replicate_003_not_started": true,
+    "replicate_002_is_frozen_official_index": true
+  },
+  "parent_plan_sha256": "4bbd0af5398840728375d47804480dbf414bf439ac3853b746559e174e59d05f",
+  "official_replicate_002_audit_sha256": "850ce323feb5c59f4c56b0d977ae03e1113407ff5fe24640ea8b758ff9196277",
+  "freeze_path": "cipher/design/stage8_official_run_plan_freeze_v2.json",
+  "freeze_sha256": "0a91f1700caad2f72774d7e73c5a0e750bd5a81eada88f6185b17d9671eb0d49",
+  "gate_status": "PASS_STAGE_8E1_CONVERGENCE_EDGE_SEMANTICS"
+}

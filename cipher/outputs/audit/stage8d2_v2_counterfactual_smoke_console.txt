@@ -1,0 +1,106 @@
+
+=== CIPHER STAGE 8D2 v2 — COUNTERFACTUAL / ROBUST-REACHABILITY SMOKE ===
+
+NON-OFFICIAL smoke only. No discovery model is reselected and no smoke value is a scientific result.
+
+=== PRECHECKS ===
+
+[PASS] stage8c2_cf_freeze_passed
+[PASS] stage8c1_evaluator_v2_passed
+[PASS] stage8d1_v2_core_smoke_passed
+[PASS] core_smoke_outputs_exist
+[PASS] cf_smoke_output_absent
+[PASS] official_outputs_absent
+
+--- S1_CONFIG_TWO_PROFILE ---
+  selected 20 truth-blind queries: P1=10, P2=10
+  [01/20] SYN_S1_CONFIG_TWO_PROFILE_R001_003 P2→P1 evaluated=66378 valid=0 saved=0
+  [02/20] SYN_S1_CONFIG_TWO_PROFILE_R001_008 P2→P1 evaluated=66378 valid=0 saved=0
+  [03/20] SYN_S1_CONFIG_TWO_PROFILE_R001_010 P2→P1 evaluated=66378 valid=0 saved=0
+  [04/20] SYN_S1_CONFIG_TWO_PROFILE_R001_023 P2→P1 evaluated=66378 valid=0 saved=0
+  [05/20] SYN_S1_CONFIG_TWO_PROFILE_R001_024 P2→P1 evaluated=66378 valid=0 saved=0
+  [06/20] SYN_S1_CONFIG_TWO_PROFILE_R001_025 P2→P1 evaluated=66378 valid=0 saved=0
+  [07/20] SYN_S1_CONFIG_TWO_PROFILE_R001_026 P2→P1 evaluated=66378 valid=0 saved=0
+  [08/20] SYN_S1_CONFIG_TWO_PROFILE_R001_030 P2→P1 evaluated=66378 valid=0 saved=0
+  [09/20] SYN_S1_CONFIG_TWO_PROFILE_R001_032 P2→P1 evaluated=66378 valid=0 saved=0
+  [10/20] SYN_S1_CONFIG_TWO_PROFILE_R001_035 P2→P1 evaluated=66378 valid=0 saved=0
+  [11/20] SYN_S1_CONFIG_TWO_PROFILE_R001_044 P1→P2 evaluated=66378 valid=0 saved=0
+  [12/20] SYN_S1_CONFIG_TWO_PROFILE_R001_045 P1→P2 evaluated=66378 valid=0 saved=0
+  [13/20] SYN_S1_CONFIG_TWO_PROFILE_R001_052 P1→P2 evaluated=66378 valid=0 saved=0
+  [14/20] SYN_S1_CONFIG_TWO_PROFILE_R001_055 P1→P2 evaluated=66378 valid=0 saved=0
+  [15/20] SYN_S1_CONFIG_TWO_PROFILE_R001_059 P1→P2 evaluated=66378 valid=0 saved=0
+  [16/20] SYN_S1_CONFIG_TWO_PROFILE_R001_061 P1→P2 evaluated=66378 valid=0 saved=0
+  [17/20] SYN_S1_CONFIG_TWO_PROFILE_R001_069 P1→P2 evaluated=66378 valid=0 saved=0
+  [18/20] SYN_S1_CONFIG_TWO_PROFILE_R001_071 P1→P2 evaluated=66378 valid=0 saved=0
+  [19/20] SYN_S1_CONFIG_TWO_PROFILE_R001_073 P1→P2 evaluated=66378 valid=0 saved=0
+  [20/20] SYN_S1_CONFIG_TWO_PROFILE_R001_079 P1→P2 evaluated=66378 valid=0 saved=0
+  reference partition ARI: 1.0000
+  reference inductive fidelity: 1.0000
+  eligible ensemble members: 200
+  single-model reachable: 0/20
+  robust reachable tau=.80/.90/.95: 0/0/0
+
+--- S2_CORE_BOUNDARY ---
+  CF status: NOT_APPLICABLE_SELECTED_K_NOT_2
+
+--- S3_DIRECTIONAL_REACHABILITY ---
+  selected 20 truth-blind queries: P1=10, P2=10
+  [01/20] SYN_S3_DIRECTIONAL_REACHABILITY_R001_007 P1→P2 evaluated=66378 valid=0 saved=0
+  [02/20] SYN_S3_DIRECTIONAL_REACHABILITY_R001_011 P1→P2 evaluated=66378 valid=0 saved=0
+  [03/20] SYN_S3_DIRECTIONAL_REACHABILITY_R001_014 P1→P2 evaluated=66378 valid=0 saved=0
+  [04/20] SYN_S3_DIRECTIONAL_REACHABILITY_R001_020 P1→P2 evaluated=66378 valid=0 saved=0
+  [05/20] SYN_S3_DIRECTIONAL_REACHABILITY_R001_022 P1→P2 evaluated=66378 valid=0 saved=0
+  [06/20] SYN_S3_DIRECTIONAL_REACHABILITY_R001_026 P1→P2 evaluated=66378 valid=8442 saved=5
+  [07/20] SYN_S3_DIRECTIONAL_REACHABILITY_R001_030 P1→P2 evaluated=66378 valid=14556 saved=5
+  [08/20] SYN_S3_DIRECTIONAL_REACHABILITY_R001_032 P1→P2 evaluated=66378 valid=7688 saved=5
+  [09/20] SYN_S3_DIRECTIONAL_REACHABILITY_R001_037 P1→P2 evaluated=66378 valid=10768 saved=5
+  [10/20] SYN_S3_DIRECTIONAL_REACHABILITY_R001_039 P1→P2 evaluated=66378 valid=16507 saved=5
+  [11/20] SYN_S3_DIRECTIONAL_REACHABILITY_R001_046 P2→P1 evaluated=66378 valid=0 saved=0
+  [12/20] SYN_S3_DIRECTIONAL_REACHABILITY_R001_048 P2→P1 evaluated=66378 valid=0 saved=0
+  [13/20] SYN_S3_DIRECTIONAL_REACHABILITY_R001_049 P2→P1 evaluated=66378 valid=0 saved=0
+  [14/20] SYN_S3_DIRECTIONAL_REACHABILITY_R001_050 P2→P1 evaluated=66378 valid=0 saved=0
+  [15/20] SYN_S3_DIRECTIONAL_REACHABILITY_R001_052 P2→P1 evaluated=66378 valid=0 saved=0
+  [16/20] SYN_S3_DIRECTIONAL_REACHABILITY_R001_053 P2→P1 evaluated=66378 valid=0 saved=0
+  [17/20] SYN_S3_DIRECTIONAL_REACHABILITY_R001_055 P2→P1 evaluated=66378 valid=0 saved=0
+  [18/20] SYN_S3_DIRECTIONAL_REACHABILITY_R001_059 P2→P1 evaluated=66378 valid=0 saved=0
+  [19/20] SYN_S3_DIRECTIONAL_REACHABILITY_R001_060 P2→P1 evaluated=66378 valid=0 saved=0
+  [20/20] SYN_S3_DIRECTIONAL_REACHABILITY_R001_074 P2→P1 evaluated=66378 valid=0 saved=0
+  reference partition ARI: 1.0000
+  reference inductive fidelity: 1.0000
+  eligible ensemble members: 200
+  single-model reachable: 5/20
+  robust reachable tau=.80/.90/.95: 1/0/0
+  SMOKE S3 oracle positives in query set: 5
+  SMOKE single-model oracle F1: 1.0000
+  SMOKE robust precision/F1: 0.0000/0.0000
+  SMOKE direction recovered: False
+  SMOKE numeric-label-swap invariant: True
+
+--- S4_SEVERITY_CONTINUUM ---
+  CF status: NOT_APPLICABLE_SCENARIO_POLICY
+
+--- S5_GOVERNANCE_CONFOUNDED ---
+  CF status: NOT_APPLICABLE_SCENARIO_POLICY
+
+--- S6_NO_CLUSTER_NULL ---
+  selected 20 truth-blind queries: P1=10, P2=10
+  [01/20] SYN_S6_NO_CLUSTER_NULL_R001_001 P1→P2 evaluated=66378 valid=1933 saved=5
+  [02/20] SYN_S6_NO_CLUSTER_NULL_R001_019 P1→P2 evaluated=66378 valid=30305 saved=5
+  [03/20] SYN_S6_NO_CLUSTER_NULL_R001_025 P1→P2 evaluated=66378 valid=6138 saved=5
+  [04/20] SYN_S6_NO_CLUSTER_NULL_R001_031 P1→P2 evaluated=66378 valid=12 saved=5
+  [05/20] SYN_S6_NO_CLUSTER_NULL_R001_040 P2→P1 evaluated=66378 valid=35054 saved=5
+  [06/20] SYN_S6_NO_CLUSTER_NULL_R001_041 P2→P1 evaluated=66378 valid=42 saved=5
+  [07/20] SYN_S6_NO_CLUSTER_NULL_R001_050 P1→P2 evaluated=66378 valid=28366 saved=5
+  [08/20] SYN_S6_NO_CLUSTER_NULL_R001_051 P1→P2 evaluated=66378 valid=4684 saved=5
+  [09/20] SYN_S6_NO_CLUSTER_NULL_R001_052 P2→P1 evaluated=66378 valid=77 saved=5
+  [10/20] SYN_S6_NO_CLUSTER_NULL_R001_053 P1→P2 evaluated=66378 valid=14920 saved=5
+  [11/20] SYN_S6_NO_CLUSTER_NULL_R001_054 P2→P1 evaluated=66378 valid=10848 saved=5
+  [12/20] SYN_S6_NO_CLUSTER_NULL_R001_055 P1→P2 evaluated=66378 valid=37321 saved=5
+  [13/20] SYN_S6_NO_CLUSTER_NULL_R001_057 P1→P2 evaluated=66378 valid=5394 saved=5
+  [14/20] SYN_S6_NO_CLUSTER_NULL_R001_066 P1→P2 evaluated=66378 valid=11800 saved=5
+  [15/20] SYN_S6_NO_CLUSTER_NULL_R001_068 P2→P1 evaluated=66378 valid=945 saved=5
+  [16/20] SYN_S6_NO_CLUSTER_NULL_R001_070 P2→P1 evaluated=66378 valid=12093 saved=5
+  [17/20] SYN_S6_NO_CLUSTER_NULL_R001_071 P2→P1 evaluated=66378 valid=3351 saved=5
+  [18/20] SYN_S6_NO_CLUSTER_NULL_R001_074 P2→P1 evaluated=66378 valid=0 saved=0
+  [19/20] SYN_S6_NO_CLUSTER_NULL_R001_078 P2→P1 evaluated=66378 valid=2482 saved=5
+  [20/20] SYN_S6_NO_CLUSTER_NULL_R001_080 P2→P1 evaluated=66378 valid=1195 saved=5

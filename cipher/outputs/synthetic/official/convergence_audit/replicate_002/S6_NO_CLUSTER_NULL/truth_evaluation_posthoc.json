@@ -1,0 +1,9 @@
+{
+  "scenario": "S6_NO_CLUSTER_NULL",
+  "replicate": 2,
+  "ari_vs_true_profile": null,
+  "nmi_vs_true_profile": null,
+  "false_stable_profile_claim": true,
+  "false_robust_cf_claim_200": null,
+  "false_robust_cf_claim_1000": null
+}

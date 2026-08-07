@@ -1,0 +1,3 @@
+reference_profile,n_institutions,robust_n_tau_0.90,median_baseline_target_support,median_selected_candidate_support,median_support_gain,median_conditional_flip_rate
+1,10,10,0.32215447154471544,0.991361788617886,0.6666666666666666,0.9883869066293983
+2,9,0,0.0010162601626016261,0.4186991869918699,0.4176829268292683,0.41810783316378436

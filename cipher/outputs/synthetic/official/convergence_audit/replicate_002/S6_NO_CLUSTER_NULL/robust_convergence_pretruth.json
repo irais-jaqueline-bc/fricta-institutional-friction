@@ -1,0 +1,55 @@
+{
+  "applicable": true,
+  "status": "COMPLETED",
+  "ensemble_200": {
+    "eligible_members": 113,
+    "minimum_required": 120,
+    "family_counts": {
+      "R0_WARD": {
+        "accepted": 4,
+        "excluded_fidelity": 46
+      },
+      "R1_PCA85_WARD": {
+        "accepted": 9,
+        "excluded_fidelity": 41
+      },
+      "R0_KMEANS": {
+        "accepted": 50,
+        "excluded_fidelity": 0
+      },
+      "R1_PCA85_KMEANS": {
+        "accepted": 50,
+        "excluded_fidelity": 0
+      }
+    },
+    "frozen_minimum_required": 120,
+    "evaluable": false
+  },
+  "ensemble_1000": {
+    "eligible_members": 573,
+    "minimum_required": 600,
+    "family_counts": {
+      "R0_WARD": {
+        "accepted": 32,
+        "excluded_fidelity": 218
+      },
+      "R1_PCA85_WARD": {
+        "accepted": 41,
+        "excluded_fidelity": 209
+      },
+      "R0_KMEANS": {
+        "accepted": 250,
+        "excluded_fidelity": 0
+      },
+      "R1_PCA85_KMEANS": {
+        "accepted": 250,
+        "excluded_fidelity": 0
+      }
+    },
+    "frozen_minimum_required": 600,
+    "evaluable": false
+  },
+  "agreement_evaluable": false,
+  "tau_090_decision_agreement_200_vs_1000": null,
+  "passes_0_95": false
+}

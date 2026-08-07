@@ -1,0 +1,29 @@
+{
+  "scenario": "S1_CONFIG_TWO_PROFILE",
+  "ensemble_report": {
+    "eligible_members": 200,
+    "minimum_required": 120,
+    "family_counts": {
+      "R0_WARD": {
+        "accepted": 50,
+        "excluded_fidelity": 0
+      },
+      "R1_PCA85_WARD": {
+        "accepted": 50,
+        "excluded_fidelity": 0
+      },
+      "R0_KMEANS": {
+        "accepted": 50,
+        "excluded_fidelity": 0
+      },
+      "R1_PCA85_KMEANS": {
+        "accepted": 50,
+        "excluded_fidelity": 0
+      }
+    }
+  },
+  "single_model_reachable_count": 0,
+  "robust_reachable_tau_080_count": 0,
+  "robust_reachable_tau_090_count": 0,
+  "robust_reachable_tau_095_count": 0
+}

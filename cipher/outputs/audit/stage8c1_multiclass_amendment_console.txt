@@ -1,0 +1,38 @@
+
+=== CIPHER STAGE 8C1 — MULTICLASS EVALUATOR AMENDMENT ===
+
+Why this amendment exists:
+  candidate search is k=2..6
+  inherited real severity threshold is binary
+  frozen CIPHER uncertainty/reachability ensemble is k=2
+  mismatch detected BEFORE synthetic performance
+
+Severity policy:
+  k=2: inherited exact threshold/direction baseline
+  k>2: 1D severity-only DecisionTreeClassifier
+       max_leaf_nodes=selected_k, class_weight='balanced', min_samples_leaf=2
+  reconstruction thresholds remain BA>=.90 AND ARI>=.80
+
+Governance policy:
+  already multiclass-compatible; no methodological change
+
+Uncertainty/reachability policy:
+  selected k=2: run frozen binary CIPHER layer
+  selected k>2: NOT_APPLICABLE_SELECTED_K_NOT_2
+  NOT_APPLICABLE is not counted as a successful negative prediction
+
+Null accounting:
+  S4/S5: any configurational claim is false, regardless of selected k
+  S6: any stable-partition claim is false
+      robust-CF false claim can only be evaluated when selected k=2
+
+=== FREEZE CHECKS ===
+
+[PASS] stage8c_v1_passed
+[PASS] candidate_search_includes_multiclass_k
+[PASS] synthetic_uncertainty_ensemble_is_frozen_at_k2
+[PASS] no_official_synthetic_performance_results_exist
+
+GATE STATUS: PASS_STAGE_8C1_MULTICLASS_AMENDMENT
+Frozen evaluator v2: cipher/design/stage8_evaluator_freeze_v2.json
+Next: Stage 8D1 smoke. Do NOT start official synthetic replicates.

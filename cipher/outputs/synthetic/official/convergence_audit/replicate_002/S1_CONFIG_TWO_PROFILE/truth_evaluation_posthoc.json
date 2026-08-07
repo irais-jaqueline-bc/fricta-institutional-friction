@@ -1,0 +1,6 @@
+{
+  "scenario": "S1_CONFIG_TWO_PROFILE",
+  "replicate": 2,
+  "ari_vs_true_profile": 1.0,
+  "nmi_vs_true_profile": 1.0
+}

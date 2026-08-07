@@ -1,0 +1,6 @@
+{
+  "scenario": "S2_CORE_BOUNDARY",
+  "replicate": 2,
+  "ari_vs_true_profile": 0.481266898416377,
+  "nmi_vs_true_profile": 0.5423642877357389
+}

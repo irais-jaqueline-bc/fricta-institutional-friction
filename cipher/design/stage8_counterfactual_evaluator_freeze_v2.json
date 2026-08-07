@@ -1,0 +1,251 @@
+{
+  "version": "STAGE8_COUNTERFACTUAL_EVALUATOR_FREEZE_V2",
+  "status": "FROZEN_BEFORE_OFFICIAL_SYNTHETIC_COUNTERFACTUAL_RUNS",
+  "purpose": "Resolve counterfactual-specific operational details and internal Stage-8 inconsistencies before the first synthetic CF/reachability result.",
+  "parents": {
+    "stage8a": {
+      "path": "cipher/design/stage8_synthetic_validation_freeze_v1.json",
+      "sha256": "d69ef2382c847668ac9e6a6db068ea847d37761587732c14a3c185db11a64160"
+    },
+    "evaluator_v2": {
+      "path": "cipher/design/stage8_evaluator_freeze_v2.json",
+      "sha256": "48b56a69d1abeb4fcf0424001ca0a2b8e1e91db596f16ae895871e423fc80e7c"
+    },
+    "stage8d1_v2_audit": {
+      "path": "cipher/outputs/audit/stage8d1_core_pipeline_smoke_audit_v2.json",
+      "sha256": "7509ba743faa0fe13ddc8ee20dd72bcd8fc6dbf5bc347b877ecb3701ab825819"
+    }
+  },
+  "resolved_pre_cf_inconsistencies": {
+    "truth_stratification_conflict": {
+      "problem": "Stage 8A said the 20 CF queries were stratified by truth, while the later frozen leakage policy forbids truth use during CF search.",
+      "resolution": "Query selection is stratified by the discovered reference profiles, never by planted truth. Truth is used only after all CF outputs for the replicate are frozen."
+    },
+    "s6_false_robust_cf_metric_without_query_budget": {
+      "problem": "Stage 8A specified an S6 false robust-reachability criterion but its original query-budget line named only S1-S3.",
+      "resolution": "S6 receives the same 20-query budget only when a stable k=2 partition is claimed. This makes the already-frozen S6 false-CF criterion measurable; it does not change that criterion."
+    },
+    "continuous_synthetic_values_vs_exact_observed_level_search": {
+      "problem": "Synthetic features are continuous, so enumerating every observed value of every edited feature would be computationally intractable.",
+      "resolution": "For each queried institution, candidate levels for every feature are frozen to the current value plus the observed values carried by the three nearest observations in the discovered target profile. The official search is exact over this frozen local observed-level grid."
+    },
+    "oracle_scoring_scope": {
+      "problem": "Only S3 contains planted institution-level sparse-reachability truth.",
+      "resolution": "Oracle precision/recall/F1 and direction recovery are primary only for S3. S1/S2 CF outputs are mechanics/descriptive diagnostics, not oracle-scored reachability claims."
+    }
+  },
+  "applicability": {
+    "binary_selected_k_required": 2,
+    "stable_partition_claim_required": true,
+    "selected_k_not_2": "NOT_APPLICABLE_SELECTED_K_NOT_2",
+    "ward_reference_extension_fidelity_min": 0.95,
+    "ward_reference_extension_failure": "NOT_APPLICABLE_WARD_REFERENCE_EXTENSION_FIDELITY_FAIL",
+    "target_profile_minimum_size_for_5nn": 6,
+    "too_small_target_status": "NOT_APPLICABLE_TARGET_PROFILE_TOO_SMALL_FOR_5NN"
+  },
+  "query_selection": {
+    "query_count_per_applicable_replicate": 20,
+    "truth_blind": true,
+    "primary_stratification": "discovered_reference_profile",
+    "binary_allocation": "Select 10 deterministic institutions from each discovered profile when both profiles contain at least 10. Otherwise select all available from the smaller profile up to 10 and fill the remaining slots from the larger profile. Selection uses a replicate-derived deterministic RNG.",
+    "scenarios": {
+      "S1_CONFIG_TWO_PROFILE": "query if stable selected k=2",
+      "S2_CORE_BOUNDARY": "query if stable selected k=2",
+      "S3_DIRECTIONAL_REACHABILITY": "query if stable selected k=2",
+      "S4_SEVERITY_CONTINUUM": "no CF query",
+      "S5_GOVERNANCE_CONFOUNDED": "no CF query",
+      "S6_NO_CLUSTER_NULL": "query only if a stable selected k=2 partition is claimed; used solely for false robust-CF accounting"
+    }
+  },
+  "reference_counterfactual_model": {
+    "representation": "the selected replicate representation",
+    "algorithm": "the selected replicate algorithm",
+    "k": 2,
+    "kmeans_inductive_rule": "native predict() in the fitted representation",
+    "ward_inductive_rule": "nearest centroid in the fitted representation",
+    "ward_training_fidelity_requirement": 0.95
+  },
+  "local_observed_level_grid": {
+    "distance_space": "original 13D normalized [0,1] feature space",
+    "target_anchor_count": 3,
+    "target_anchor_rule": "three nearest observations belonging to the discovered target profile",
+    "feature_candidate_values": "current institution value union the values of that feature among the three target anchors; duplicate values removed",
+    "truth_or_oracle_values_forbidden": true,
+    "exactness_statement": "Every combination of up to four changed features and every alternative value on this frozen per-institution local observed-level grid is enumerated."
+  },
+  "counterfactual_constraints": {
+    "max_changed_features": 4,
+    "bounds": [
+      0.0,
+      1.0
+    ],
+    "diagnostic_not_causal": true,
+    "transition_required": true,
+    "target_profile_plausibility_required": true,
+    "plausibility_rule": {
+      "distance": "Euclidean in original normalized 13D space",
+      "candidate_score": "distance to the fifth nearest target-profile observation",
+      "threshold": "95th percentile of within-target-profile fifth-nearest-neighbor distances"
+    },
+    "cost": {
+      "formula": "weighted_L1 + 0.25 * L0",
+      "weighted_L1": "sum_j abs(x'_j-x_j) / max(IQR_j, 1e-6) over changed features",
+      "iqr_scope": "full synthetic replicate before truth evaluation",
+      "l0_penalty": 0.25
+    }
+  },
+  "single_model_candidate_selection": {
+    "valid_candidate": "reference-model target transition AND target-manifold plausibility",
+    "single_model_reachable": "at least one valid candidate exists",
+    "pareto_dimensions": [
+      "total_cost ascending",
+      "L0 ascending",
+      "plausibility_distance ascending"
+    ],
+    "pareto_definition": "Candidate is retained on the Pareto front if no other valid candidate is <= on all three dimensions and strictly < on at least one.",
+    "max_saved_candidates_per_institution": 5,
+    "diversity_rule": "Sort Pareto candidates by total_cost, L0, plausibility_distance, then deterministic lexical edit signature. Greedily prefer unique signed changed-feature sets; if fewer than five unique sets exist, fill remaining slots in deterministic sorted order."
+  },
+  "robust_ensemble": {
+    "primary_members": 200,
+    "family_members": {
+      "R0_WARD": 50,
+      "R1_PCA85_WARD": 50,
+      "R0_KMEANS": 50,
+      "R1_PCA85_KMEANS": 50
+    },
+    "row_sample_fraction": 0.8,
+    "feature_count": 11,
+    "pca_variance_threshold": 0.85,
+    "k": 2,
+    "kmeans_n_init": 25,
+    "alignment": "Hungarian alignment to the discovered reference partition on sampled overlap",
+    "ward_inductive_rule": "nearest centroid",
+    "ward_member_fidelity_min": 0.95,
+    "ward_members_below_fidelity": "excluded before CF support evaluation",
+    "minimum_eligible_members": 120,
+    "primary_tau": 0.9,
+    "sensitivity_taus": [
+      0.8,
+      0.95
+    ],
+    "robust_candidate": "target-profile support >= tau",
+    "robust_reachable_institution": "at least one of the saved single-model candidates is robust",
+    "insufficient_eligible_member_policy": {
+      "condition": "eligible_members < 120",
+      "status": "ROBUST_LAYER_NOT_EVALUABLE_INSUFFICIENT_ELIGIBLE_ENSEMBLE",
+      "single_model_counterfactuals_remain_valid": true,
+      "robust_support_computation": "DO_NOT_COMPUTE",
+      "robust_reachable_tau_080": null,
+      "robust_reachable_tau_090": null,
+      "robust_reachable_tau_095": null,
+      "do_not_impute_as_negative_prediction": true,
+      "do_not_lower_minimum_member_requirement": true,
+      "do_not_lower_ward_fidelity_threshold": true
+    }
+  },
+  "s3_oracle_evaluation": {
+    "truth_used_only_after_cf_outputs_frozen": true,
+    "query_level_truth": "oracle_reachable",
+    "single_model_metrics": [
+      "precision",
+      "recall",
+      "F1"
+    ],
+    "robust_metrics": [
+      "precision",
+      "recall",
+      "F1"
+    ],
+    "primary_success_metrics": {
+      "oracle_reachability_F1_min": 0.7,
+      "robust_precision_min": 0.8
+    },
+    "direction_recovery": {
+      "prediction": "Among queried institutions, compute robust-reachable fraction within each discovered reference profile. The profile with the higher fraction is the predicted accessible source direction; a tie is scored incorrect.",
+      "truth_mapping": "After CF outputs are frozen, map the two discovered reference profiles to latent A/B using maximum-overlap assignment, then compare the predicted accessible source with the planted accessible_source_latent.",
+      "official_success_rate_min": 0.8
+    },
+    "numeric_label_swap_invariance": {
+      "per_replicate_test": "Swap only the synthetic numeric true_profile labels 1<->2 in the post-hoc evaluator. Pipeline outputs and latent-A/B direction evaluation must remain unchanged.",
+      "official_mean_invariance_min": 0.95
+    }
+  },
+  "s6_false_robust_cf_accounting": {
+    "replicate_level_false_claim": "True iff the replicate makes a stable k=2 partition claim and at least one of its 20 queried institutions is robustly reachable at tau=.90.",
+    "abstention": "If no stable k=2 claim is made, false_robust_cf_claim=False and CF_applicable=False are both recorded. Abstention is not reported as a successful institution-level negative prediction.",
+    "official_false_claim_rate_max": 0.05,
+    "report_applicability_rate_separately": true
+  },
+  "s1_s2_policy": {
+    "oracle_reachability_metrics": "NOT_DEFINED",
+    "allowed_outputs": [
+      "single-model reachable fraction",
+      "robust reachable fraction",
+      "cost/L0/plausibility summaries",
+      "technical integrity checks"
+    ],
+    "scientific_use": "S1/S2 CF outputs are secondary diagnostics only unless a separate truth construct was frozen before results; no such construct is added here."
+  },
+  "no_post_result_changes": [
+    "no changing target-anchor count after smoke results",
+    "no adding oracle target values to the candidate grid",
+    "no increasing max changed features after smoke results",
+    "no relaxing 5NN plausibility threshold after smoke results",
+    "no changing tau=.90 after smoke results",
+    "no changing the 20-query budget after smoke results",
+    "no truth-based query selection",
+    "no scoring S1/S2 as oracle reachability positives or negatives",
+    "no lowering the 120-member minimum after insufficient-ensemble smoke",
+    "no lowering Ward fidelity .95 after insufficient-ensemble smoke",
+    "no converting robust-layer NOT_EVALUABLE into a negative prediction",
+    "no dropping non-evaluable replicates from applicability reporting"
+  ],
+  "next_stage": {
+    "id": "STAGE_8D2_V3",
+    "name": "Counterfactual smoke with graceful insufficient-ensemble handling",
+    "rule": "Rerun the non-official CF smoke in a fresh output namespace. If an applicable replicate has fewer than 120 eligible ensemble members, preserve its single-model CF results and mark the robust layer NOT_EVALUABLE instead of crashing."
+  },
+  "gate_status": "PASS_STAGE_8C3_INSUFFICIENT_ENSEMBLE_POLICY",
+  "parent_cf_evaluator": {
+    "path": "cipher/design/stage8_counterfactual_evaluator_freeze_v1.json",
+    "sha256": "90fdf1e3923bb7066a6629d2e43d025644ea1e4c6eecc68543599c7205b28389"
+  },
+  "prospective_insufficient_ensemble_amendment": {
+    "reason": "The Stage 8D2 v2 smoke reached a stable k=2 null replicate whose heterogeneous ensemble retained fewer than the already-frozen minimum of 120 eligible members after Ward fidelity filtering. The threshold is not relaxed. This amendment defines the required non-crashing evaluation status for that pre-existing failure condition.",
+    "timing": "AFTER_NON_OFFICIAL_SMOKE_FAILURE_AND_BEFORE_ANY_OFFICIAL_SYNTHETIC_RUN",
+    "scientific_thresholds_changed": false,
+    "minimum_eligible_members": 120,
+    "ward_fidelity_threshold": 0.95
+  },
+  "insufficient_ensemble_truth_scoring": {
+    "S3_DIRECTIONAL_REACHABILITY": {
+      "single_model_oracle_metrics": "MAY_BE_COMPUTED because they do not depend on the robust ensemble",
+      "robust_precision_recall_f1": "NOT_EVALUABLE",
+      "robust_direction_recovery": "NOT_EVALUABLE",
+      "robust_label_swap_metric": "NOT_EVALUABLE",
+      "reason": "A robust performance metric cannot be scored when the frozen minimum heterogeneous ensemble was not formed."
+    },
+    "S6_NO_CLUSTER_NULL": {
+      "cf_search_applicable": true,
+      "robust_layer_applicable": false,
+      "false_robust_cf_claim": null,
+      "status": "NOT_EVALUABLE_INSUFFICIENT_ELIGIBLE_ENSEMBLE",
+      "do_not_record_false_as_no_false_claim": true
+    }
+  },
+  "official_reporting_for_non_evaluable_robust_layer": {
+    "required_counts": [
+      "total_replicates",
+      "robust_layer_evaluable_replicates",
+      "robust_layer_not_evaluable_replicates"
+    ],
+    "required_rates_when_defined": [
+      "unconditional false-claim count / total replicates",
+      "conditional false-claim rate among robust-layer-evaluable replicates"
+    ],
+    "missing_robust_metrics": "Keep as NA/NOT_EVALUABLE. Never coerce to zero, False, or successful abstention.",
+    "interpretation": "A low robust-layer evaluability rate must be reported as a limitation; it cannot be hidden by excluding those replicates from the narrative.",
+    "new_success_threshold_added": false
+  }
+}

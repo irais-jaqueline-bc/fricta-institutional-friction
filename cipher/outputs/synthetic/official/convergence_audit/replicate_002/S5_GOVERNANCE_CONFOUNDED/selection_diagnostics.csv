@@ -1,0 +1,5 @@
+candidate_id,representation,algorithm,k_requested,ari_median,ari_p025,ari_p975,clusterwise_jaccard_min_mean,minimum_resample_cluster_size_min,stability_iterations,silhouette,davies_bouldin,calinski_harabasz,minimum_cluster_size,maximum_cluster_size,eligible_min_cluster_size,resampling_min_cluster_ok,full_data_min_cluster_ok,selection_eligible
+R0_STANDARDIZED__HAC_WARD__K4,R0_STANDARDIZED,HAC_WARD,4,1.0,0.9569111689594673,1.0,0.9943863802863803,7,1000,0.4051747176193478,0.9601639275990088,46.149467278193775,15,26,True,True,True,True
+R0_STANDARDIZED__KMEANS__K4,R0_STANDARDIZED,KMEANS,4,1.0,1.0,1.0,0.9997329893360853,7,1000,0.4051747176193478,0.9601639275990088,46.14946727819377,15,26,True,True,True,True
+R1_PCA85__HAC_WARD__K4,R1_PCA85,HAC_WARD,4,1.0,0.9529621785925909,1.0,0.9976917693443094,7,1000,0.4879301293258266,0.7786147048993246,68.9111938815446,15,26,True,True,True,True
+R1_PCA85__KMEANS__K4,R1_PCA85,KMEANS,4,1.0,1.0,1.0,0.9994695210061696,7,1000,0.4879301293258266,0.7786147048993246,68.9111938815446,15,26,True,True,True,True

@@ -1,0 +1,116 @@
+{
+  "parent_design_path": "cipher/design/stage8_synthetic_validation_freeze_v1.json",
+  "parent_design_sha256": "d69ef2382c847668ac9e6a6db068ea847d37761587732c14a3c185db11a64160",
+  "implementation_spec": {
+    "version": "STAGE8_GENERATOR_IMPLEMENTATION_V1",
+    "status": "FROZEN_BEFORE_SMOKE_RESULTS",
+    "common": {
+      "n": 80,
+      "p": 13,
+      "center": 0.5,
+      "profile_deviation": 0.24,
+      "core_noise_sd": 0.06,
+      "boundary_noise_sd": 0.04,
+      "continuum_noise_sd": 0.08,
+      "clip": [
+        0.0,
+        1.0
+      ],
+      "master_seed": 20260807,
+      "numeric_label_swap_probability": 0.5
+    },
+    "S1_CONFIG_TWO_PROFILE": {
+      "latent_counts": {
+        "A": 40,
+        "B": 40
+      },
+      "noise_sd": 0.06
+    },
+    "S2_CORE_BOUNDARY": {
+      "core_counts": {
+        "A": 28,
+        "B": 28
+      },
+      "boundary_counts": {
+        "A_side": 12,
+        "B_side": 12
+      },
+      "A_side_target_weight_interval": [
+        0.35,
+        0.5
+      ],
+      "B_side_target_weight_interval": [
+        0.5,
+        0.65
+      ],
+      "boundary_noise_sd": 0.04
+    },
+    "S3_DIRECTIONAL_REACHABILITY": {
+      "accessible_source_is_randomized_each_replicate": true,
+      "accessible_source_core_count": 24,
+      "accessible_source_bridge_count": 16,
+      "target_profile_count": 40,
+      "gate_feature_count": 3,
+      "reverse_lock_feature_count": 6,
+      "bridge_target_weight": 0.45,
+      "bridge_non_gate_noise_sd": 0.06,
+      "bridge_gate_noise_sd": 0.04,
+      "target_non_gate_noise_sd": 0.3,
+      "target_gate_noise_sd": 0.06,
+      "target_neutral_noise_sd": 0.06,
+      "oracle_positive_required_changes": 3,
+      "oracle_negative_minimum_required_changes": 6,
+      "oracle_candidate_gate_values": "copied from a paired observed target-profile institution",
+      "smoke_forward_plausibility_rate_min": 0.75,
+      "smoke_mirrored_reverse_plausibility_rate_max": 0.25,
+      "note": "The accessible source has a narrow core plus 16 targetward bridges. Only three gate features remain source-like on each bridge. The target profile is deliberately broader on non-gate dimensions. This creates a planted sparse source-to-target candidate while making the mirrored three-gate reverse move fail source-manifold plausibility in the smoke geometry. Official CIPHER recovery remains an empirical test."
+    },
+    "S4_SEVERITY_CONTINUUM": {
+      "latent_z": "Uniform(0,1)",
+      "feature_loading_distribution": "Uniform(0.65,1.00)",
+      "formula": "x_j = 0.5 + loading_j * (z - 0.5) + Normal(0,0.08)",
+      "smoke_median_spearman_with_z_min": 0.75
+    },
+    "S5_GOVERNANCE_CONFOUNDED": {
+      "exact_counts": {
+        "NGO": 26,
+        "PUBLIC": 22,
+        "PRIVATE": 17,
+        "MIXED": 15
+      },
+      "feature_blocks": {
+        "NGO": [
+          0,
+          1,
+          2
+        ],
+        "PUBLIC": [
+          3,
+          4,
+          5
+        ],
+        "PRIVATE": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "MIXED": [
+          10,
+          11,
+          12
+        ]
+      },
+      "positive_block_offset": 0.18,
+      "compensation_rule": "all non-block features receive -0.18*m/(13-m), so each governance offset vector sums to zero",
+      "noise_sd": 0.08,
+      "smoke_min_pairwise_governance_centroid_distance_min": 0.2
+    },
+    "S6_NO_CLUSTER_NULL": {
+      "gaussian_copula_pairwise_rho": 0.2,
+      "beta_marginal_alpha": 2.5,
+      "beta_marginal_beta": 2.5
+    }
+  },
+  "gate_status": "FROZEN_STAGE8_GENERATOR_IMPLEMENTATION_V1"
+}

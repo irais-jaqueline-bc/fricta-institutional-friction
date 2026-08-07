@@ -1,0 +1,106 @@
+{
+  "version": "STAGE6_ENSEMBLE_ROBUSTNESS_V1",
+  "status": "FROZEN_BEFORE_ENSEMBLE_COUNTERFACTUAL_EVALUATION",
+  "parent_thesis_revision": {
+    "path": "cipher/design/cipher_thesis_revision_v2.json",
+    "sha256": "8ecf61436e9dd4768393c8131b8453e05fad35c52d60585ba54a578c466ca027"
+  },
+  "scope": {
+    "institutions": 19,
+    "institution_ids": [
+      "INST_007",
+      "INST_019",
+      "INST_022",
+      "INST_023",
+      "INST_025",
+      "INST_027",
+      "INST_030",
+      "INST_033",
+      "INST_034",
+      "INST_036",
+      "INST_037",
+      "INST_039",
+      "INST_054",
+      "INST_064",
+      "INST_065",
+      "INST_066",
+      "INST_071",
+      "INST_073",
+      "INST_077"
+    ],
+    "candidate_source": "Stage 5C exact, sparse, single-model plausible counterfactuals",
+    "maximum_saved_candidates_per_institution": 5,
+    "global_81_institution_coverage_gate": "RETIRED_AFTER_STAGE5C_FAILURE"
+  },
+  "primary_question": "Among institutions with at least one exact sparse plausible single-model transition, which candidate transitions retain target-profile support across the frozen heterogeneous ensemble?",
+  "candidate_evaluation": {
+    "unit": "institution-counterfactual candidate",
+    "candidate_set": "all Stage 5C saved exact Pareto/diverse candidates, not only rank 1",
+    "source_profile": "the institution's frozen reference profile",
+    "target_profile": "the opposite frozen profile",
+    "ensemble_support_definition": "fraction of eligible frozen Stage 4 ensemble members that predict the counterfactual candidate as the target profile",
+    "primary_tau": 0.9,
+    "sensitivity_taus": [
+      0.8,
+      0.95
+    ],
+    "primary_candidate_validity_rule": "ensemble target-profile support >= 0.90"
+  },
+  "member_evaluation_rules": {
+    "ensemble_source": "the 984 Stage-4 counterfactual-eligible frozen members",
+    "member_filtering": "No additional member is dropped based on counterfactual results.",
+    "feature_subset_handling": "Each member receives the candidate values on its own frozen 11-feature subset; omitted features are irrelevant to that member.",
+    "representation_handling": "R0 members use their frozen standardized original-feature representation; R1 members apply their own frozen scaler/PCA.",
+    "algorithm_handling": {
+      "KMEANS": "Predict by the member's fitted cluster-centroid rule.",
+      "WARD": "Predict by the already-validated Stage-4 nearest-centroid inductive extension in that member's fitted representation."
+    },
+    "label_alignment": "Use each member's frozen Stage-1 alignment to the two reference profiles; never realign using counterfactual outcomes."
+  },
+  "institution_level_outputs": {
+    "robustly_reachable_primary": "institution has >=1 saved Stage-5C candidate with ensemble support >= 0.90",
+    "best_robust_candidate": "among primary-valid candidates, choose lowest Stage-5C exact cost; ties by higher ensemble support, then lower plausibility distance, then deterministic candidate rank",
+    "if_none_primary_valid": "retain maximum observed ensemble support and mark institution NOT_ROBUSTLY_REACHABLE; do not generate new looser candidates"
+  },
+  "primary_outputs": [
+    "candidate-level ensemble support across all eligible members",
+    "candidate support by ensemble family",
+    "institution-level robust reachability at tau=0.90",
+    "sensitivity at tau=0.80 and tau=0.95",
+    "best robust candidate per institution",
+    "robust reachability by reference profile and certainty class"
+  ],
+  "required_family_breakdown": [
+    "R0_KMEANS",
+    "R0_WARD",
+    "R1_PCA85_KMEANS",
+    "R1_PCA85_WARD"
+  ],
+  "interpretive_constraints": [
+    "Stage 6 is conditional on Stage-5C single-model reachability and does not restore the failed 70% global coverage claim.",
+    "Ensemble support measures predictive robustness under the frozen perturbation ensemble, not causal validity.",
+    "Comparisons by certainty class/profile are descriptive unless explicitly labeled exploratory.",
+    "No new candidate may be generated after observing ensemble support in Stage 6A/6B."
+  ],
+  "stage6b_gate": {
+    "purpose": "artifact and prediction-engine audit before official evaluation",
+    "requirements": [
+      "exactly 984 eligible frozen members recovered",
+      "family counts match Stage 4: 250,244,250,240 in the frozen order",
+      "member predictions reproduce stored Stage-4 inductive behavior where auditable",
+      "all 19 institutions and all saved Stage-5C candidates are loadable",
+      "no candidate exceeds four changed features",
+      "no candidate violates the frozen Stage-5C plausibility constraint"
+    ]
+  },
+  "stage6c_policy": {
+    "official_evaluation": "Only after Stage 6B passes, evaluate every saved candidate for all 19 reachable institutions across all 984 members.",
+    "no_global_pass_fail_threshold": "There is no new minimum proportion of robustly reachable institutions. The observed robust reachability rate is a result."
+  },
+  "source_hashes": {
+    "stage5c_results": "9c91b5f3f3a3d0b01072c8a8bc8f284ecfee1da23f35918651b89486076acd86",
+    "stage5c_diagnostics": "1bb1084ea15a3b20171880ddd405d67b92a532db1af7445593943140f729ff08",
+    "cipher_config": "2de429b82e3b6f21997f2fa420d5baeed84c2c8e9b0fc59b31482adc15a9b329"
+  },
+  "gate_status": "PASS_STAGE_6A_DESIGN_FREEZE"
+}

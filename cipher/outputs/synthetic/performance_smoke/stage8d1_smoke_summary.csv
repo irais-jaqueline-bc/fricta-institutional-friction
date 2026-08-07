@@ -1,0 +1,7 @@
+scenario,selected_candidate,selected_k,stability_ari_median,silhouette,stable_partition_claim,severity_reconstructs,governance_strong,governance_reconstructs,configurational_claim,uncertainty_status,truth_ari_smoke_only,boundary_auc_smoke_only,false_configurational_claim_smoke_only,false_stable_claim_smoke_only
+S1_CONFIG_TWO_PROFILE,R1_PCA85__HAC_WARD__K2,2,1.0,0.9581245273171195,True,False,False,False,True,COMPLETED_K2,1.0,,,
+S2_CORE_BOUNDARY,R1_PCA85__HAC_WARD__K3,3,1.0,0.8587153390808178,True,False,False,False,True,NOT_APPLICABLE_SELECTED_K_NOT_2,0.481266898416377,,,
+S3_DIRECTIONAL_REACHABILITY,R1_PCA85__HAC_WARD__K2,2,1.0,0.5298722166296894,True,False,False,False,True,COMPLETED_K2,1.0,,,
+S4_SEVERITY_CONTINUUM,R0_STANDARDIZED__KMEANS__K3,3,1.0,0.5287676670824972,True,True,False,False,False,NOT_APPLICABLE_SELECTED_K_NOT_2,,,False,
+S5_GOVERNANCE_CONFOUNDED,R1_PCA85__HAC_WARD__K4,4,1.0,0.4788746078138034,True,False,True,True,False,NOT_APPLICABLE_SELECTED_K_NOT_2,,,False,
+S6_NO_CLUSTER_NULL,R1_PCA85__KMEANS__K2,2,0.8178835803786122,0.1571670592670243,True,False,False,False,True,COMPLETED_K2,,,,True

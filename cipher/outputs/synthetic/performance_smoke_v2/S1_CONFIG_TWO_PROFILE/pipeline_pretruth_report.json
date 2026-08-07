@@ -1,0 +1,90 @@
+{
+  "scenario": "S1_CONFIG_TWO_PROFILE",
+  "smoke_replicate": 1,
+  "selected_candidate": "R1_PCA85__HAC_WARD__K2",
+  "selected_representation": "R1_PCA85",
+  "selected_algorithm": "HAC_WARD",
+  "selected_k": 2,
+  "selected_silhouette": 0.9581245273171195,
+  "selected_ari_median": 1.0,
+  "selected_ari_p025": 1.0,
+  "selected_weakest_cluster_mean_jaccard": 1.0,
+  "selected_minimum_cluster_size": 40,
+  "selected_minimum_resample_cluster_size": 27,
+  "selection_decision": {
+    "maximum_ari_median": 1.0,
+    "median_tied_candidates": [
+      "R0_STANDARDIZED__HAC_WARD__K2",
+      "R0_STANDARDIZED__KMEANS__K2",
+      "R1_PCA85__HAC_WARD__K2",
+      "R1_PCA85__KMEANS__K2"
+    ],
+    "tied_partitions_equivalent": true,
+    "tied_pairwise_ari": [
+      {
+        "candidate_a": "R0_STANDARDIZED__HAC_WARD__K2",
+        "candidate_b": "R0_STANDARDIZED__KMEANS__K2",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__HAC_WARD__K2",
+        "candidate_b": "R1_PCA85__HAC_WARD__K2",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__HAC_WARD__K2",
+        "candidate_b": "R1_PCA85__KMEANS__K2",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__KMEANS__K2",
+        "candidate_b": "R1_PCA85__HAC_WARD__K2",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__KMEANS__K2",
+        "candidate_b": "R1_PCA85__KMEANS__K2",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      },
+      {
+        "candidate_a": "R1_PCA85__HAC_WARD__K2",
+        "candidate_b": "R1_PCA85__KMEANS__K2",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      }
+    ],
+    "rule_used": "Median-ARI tie with partition-equivalent solutions; internal-separation tiebreak."
+  },
+  "stable_partition_claim": true,
+  "severity": {
+    "method": "INHERITED_BINARY_THRESHOLD",
+    "balanced_accuracy_median": 0.5,
+    "macro_f1_median": 0.4920634920634921,
+    "roc_auc_median": 0.546875,
+    "ari_median": -0.04419889502762431,
+    "nmi_median": 0.013904961003752067,
+    "matched_severity_opposite_cluster_pairs": 1537,
+    "severity_nearly_reconstructs_profiles": false
+  },
+  "governance": {
+    "status": "NOT_APPLICABLE_NO_GOVERNANCE_VARIABLE",
+    "strong_governance_association": false,
+    "governance_nearly_reconstructs_profiles": false
+  },
+  "configurational_profile_claim": true,
+  "uncertainty": {
+    "ensemble_members": 200,
+    "members_per_family": 50,
+    "minimum_oob_predictions": 27,
+    "median_oob_predictions": 40.5,
+    "certainty_class_counts": {
+      "CORE": 80
+    },
+    "status": "COMPLETED_K2"
+  }
+}

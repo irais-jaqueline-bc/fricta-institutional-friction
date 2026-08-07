@@ -1,0 +1,87 @@
+{
+  "scenario": "S5_GOVERNANCE_CONFOUNDED",
+  "replicate": 2,
+  "selected_candidate": "R1_PCA85__HAC_WARD__K4",
+  "selected_representation": "R1_PCA85",
+  "selected_algorithm": "HAC_WARD",
+  "selected_k": 4,
+  "selected_ari_median": 1.0,
+  "selected_ari_p025": 0.9529621785925909,
+  "selected_silhouette": 0.4879301293258266,
+  "selected_minimum_cluster_size": 15,
+  "selected_minimum_resample_cluster_size": 7,
+  "selection_decision": {
+    "maximum_ari_median": 1.0,
+    "median_tied_candidates": [
+      "R0_STANDARDIZED__HAC_WARD__K4",
+      "R0_STANDARDIZED__KMEANS__K4",
+      "R1_PCA85__HAC_WARD__K4",
+      "R1_PCA85__KMEANS__K4"
+    ],
+    "tied_partitions_equivalent": true,
+    "tied_pairwise_ari": [
+      {
+        "candidate_a": "R0_STANDARDIZED__HAC_WARD__K4",
+        "candidate_b": "R0_STANDARDIZED__KMEANS__K4",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__HAC_WARD__K4",
+        "candidate_b": "R1_PCA85__HAC_WARD__K4",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__HAC_WARD__K4",
+        "candidate_b": "R1_PCA85__KMEANS__K4",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__KMEANS__K4",
+        "candidate_b": "R1_PCA85__HAC_WARD__K4",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__KMEANS__K4",
+        "candidate_b": "R1_PCA85__KMEANS__K4",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      },
+      {
+        "candidate_a": "R1_PCA85__HAC_WARD__K4",
+        "candidate_b": "R1_PCA85__KMEANS__K4",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      }
+    ],
+    "rule_used": "Median-ARI tie with partition-equivalent solutions; internal-separation tiebreak."
+  },
+  "stable_partition_claim": true,
+  "severity": {
+    "method": "PROSPECTIVE_1D_TREE_MULTICLASS",
+    "balanced_accuracy_median": 0.25,
+    "macro_f1_median": 0.1625,
+    "roc_auc_median": null,
+    "ari_median": -0.011494252873563218,
+    "nmi_median": 0.18876367172830916,
+    "matched_severity_opposite_cluster_pairs": 2094,
+    "severity_nearly_reconstructs_profiles": false
+  },
+  "governance": {
+    "status": "COMPLETED",
+    "bias_corrected_cramers_v": 1.0,
+    "permutation_p": 0.0004997501249375312,
+    "balanced_accuracy_median": 1.0,
+    "ari_median": 1.0,
+    "macro_f1_median": 1.0,
+    "nmi_median": 1.0,
+    "strong_governance_association": true,
+    "governance_nearly_reconstructs_profiles": true
+  },
+  "configurational_profile_claim": false,
+  "uncertainty_applicable": false,
+  "cf_applicable": false
+}

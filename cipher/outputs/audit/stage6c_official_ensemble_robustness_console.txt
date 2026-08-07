@@ -1,0 +1,100 @@
+
+=== CIPHER STAGE 6C — OFFICIAL ENSEMBLE ROBUSTNESS EVALUATION ===
+
+Pre-evaluation checks:
+[PASS] stage6a_freeze_passed
+[PASS] stage6b_v2_passed
+[PASS] exactly_984_eligible_members
+[PASS] eligible_family_counts_match_frozen_stage4
+[PASS] exactly_69_saved_stage5c_candidates
+[PASS] exactly_19_stage5c_reachable_institutions
+[PASS] candidate_institution_ids_match_frozen_stage6_scope
+[PASS] all_candidates_within_four_changes
+[PASS] one_rank1_candidate_per_reachable_institution
+Evaluated 100/984 ensemble members...
+Evaluated 200/984 ensemble members...
+Evaluated 300/984 ensemble members...
+Evaluated 400/984 ensemble members...
+Evaluated 500/984 ensemble members...
+Evaluated 600/984 ensemble members...
+Evaluated 700/984 ensemble members...
+Evaluated 800/984 ensemble members...
+Evaluated 900/984 ensemble members...
+
+=== STAGE 6C — TAU SENSITIVITY SUMMARY ===
+
+ tau  valid_candidate_rows  total_candidate_rows  candidate_valid_rate  robustly_reachable_institutions  reachable_stage5c_institutions  conditional_robust_reachability_rate  unconditional_81_institution_rate
+0.80                    34                    69              0.492754                               10                              19                              0.526316                           0.123457
+0.90                    32                    69              0.463768                               10                              19                              0.526316                           0.123457
+0.95                    29                    69              0.420290                               10                              19                              0.526316                           0.123457
+
+=== STAGE 6C — ROBUST REACHABILITY BY GROUP ===
+
+       group_type group_value  n_reachable_stage5c  robust_n_tau_0.80  robust_rate_tau_0.80  robust_n_tau_0.90  robust_rate_tau_0.90  robust_n_tau_0.95  robust_rate_tau_0.95
+          OVERALL         ALL                   19                 10              0.526316                 10              0.526316                 10              0.526316
+REFERENCE_PROFILE           1                   10                 10              1.000000                 10              1.000000                 10              1.000000
+REFERENCE_PROFILE           2                    9                  0              0.000000                  0              0.000000                  0              0.000000
+  CERTAINTY_CLASS    BOUNDARY                    6                  6              1.000000                  6              1.000000                  6              1.000000
+  CERTAINTY_CLASS        CORE                   10                  1              0.100000                  1              0.100000                  1              0.100000
+  CERTAINTY_CLASS        HALO                    3                  3              1.000000                  3              1.000000                  3              1.000000
+
+=== PRIMARY TAU=0.90 — INSTITUTION RESULTS ===
+
+institution_id  reference_profile certainty_class  saved_candidates  maximum_ensemble_support  robustly_reachable_tau_0.90  valid_candidate_count_tau_0.90 best_candidate_id_tau_0.90  best_candidate_cost_tau_0.90  best_candidate_support_tau_0.90  best_candidate_min_family_support_tau_0.90
+      INST_007                  1        BOUNDARY                 5                  0.998984                         True                               5             INST_007__CF01                      3.249995                         0.998984                                    0.995902
+      INST_019                  1        BOUNDARY                 4                  0.998984                         True                               4             INST_019__CF01                      3.249995                         0.979675                                    0.971311
+      INST_023                  1        BOUNDARY                 4                  0.998984                         True                               4             INST_023__CF01                      1.499998                         0.952236                                    0.913934
+      INST_033                  1            HALO                 3                  0.998984                         True                               3             INST_033__CF01                      4.499991                         0.988821                                    0.983333
+      INST_064                  1        BOUNDARY                 5                  0.998984                         True                               4             INST_064__CF02                      2.499996                         0.994919                                    0.987705
+      INST_066                  1        BOUNDARY                 5                  0.998984                         True                               4             INST_066__CF02                      2.499996                         0.994919                                    0.987705
+      INST_025                  1        BOUNDARY                 1                  0.997967                         True                               1             INST_025__CF01                      4.499993                         0.997967                                    0.995833
+      INST_073                  1            HALO                 2                  0.993902                         True                               2             INST_073__CF01                      3.999993                         0.993902                                    0.987500
+      INST_030                  1            CORE                 2                  0.991870                         True                               2             INST_030__CF01                      6.999988                         0.979675                                    0.963115
+      INST_077                  1            HALO                 5                  0.963415                         True                               3             INST_077__CF03                      4.499992                         0.963415                                    0.925000
+      INST_022                  2            CORE                 2                  0.477642                        False                               0                                                      NaN                              NaN                                         NaN
+      INST_034                  2            CORE                 5                  0.457317                        False                               0                                                      NaN                              NaN                                         NaN
+      INST_054                  2            CORE                 5                  0.427846                        False                               0                                                      NaN                              NaN                                         NaN
+      INST_071                  2            CORE                 5                  0.424797                        False                               0                                                      NaN                              NaN                                         NaN
+      INST_036                  2            CORE                 1                  0.418699                        False                               0                                                      NaN                              NaN                                         NaN
+      INST_039                  2            CORE                 5                  0.410569                        False                               0                                                      NaN                              NaN                                         NaN
+      INST_037                  2            CORE                 1                  0.392276                        False                               0                                                      NaN                              NaN                                         NaN
+      INST_027                  2            CORE                 4                  0.360772                        False                               0                                                      NaN                              NaN                                         NaN
+      INST_065                  2            CORE                 5                  0.355691                        False                               0                                                      NaN                              NaN                                         NaN
+
+=== TOP 15 CANDIDATES BY ENSEMBLE SUPPORT ===
+
+  candidate_id institution_id  reference_profile certainty_class  rank  total_cost  ensemble_support  minimum_family_support  family_support_range  support_R0_KMEANS  support_R0_WARD  support_R1_PCA85_KMEANS  support_R1_PCA85_WARD
+INST_064__CF04       INST_064                  1        BOUNDARY     4    2.999994          0.998984                0.995902              0.004098              1.000         0.995902                      1.0               1.000000
+INST_066__CF04       INST_066                  1        BOUNDARY     4    2.999994          0.998984                0.995902              0.004098              1.000         0.995902                      1.0               1.000000
+INST_023__CF04       INST_023                  1        BOUNDARY     4    2.999996          0.998984                0.995902              0.004098              1.000         0.995902                      1.0               1.000000
+INST_007__CF01       INST_007                  1        BOUNDARY     1    3.249995          0.998984                0.995902              0.004098              1.000         0.995902                      1.0               1.000000
+INST_019__CF03       INST_019                  1        BOUNDARY     3    3.999994          0.998984                0.995902              0.004098              1.000         0.995902                      1.0               1.000000
+INST_033__CF02       INST_033                  1            HALO     2    4.749990          0.998984                0.995902              0.004098              1.000         0.995902                      1.0               1.000000
+INST_033__CF03       INST_033                  1            HALO     3    4.999990          0.998984                0.995902              0.004098              1.000         0.995902                      1.0               1.000000
+INST_019__CF04       INST_019                  1        BOUNDARY     4    3.999994          0.997967                0.995833              0.004167              1.000         0.995902                      1.0               0.995833
+INST_025__CF01       INST_025                  1        BOUNDARY     1    4.499993          0.997967                0.995833              0.004167              1.000         0.995902                      1.0               0.995833
+INST_023__CF02       INST_023                  1        BOUNDARY     2    1.999997          0.996951                0.991667              0.008333              1.000         0.995902                      1.0               0.991667
+INST_023__CF03       INST_023                  1        BOUNDARY     3    2.249997          0.996951                0.991667              0.008333              1.000         0.995902                      1.0               0.991667
+INST_007__CF03       INST_007                  1        BOUNDARY     3    3.333329          0.996951                0.991803              0.008197              1.000         0.991803                      1.0               0.995833
+INST_064__CF02       INST_064                  1        BOUNDARY     2    2.499996          0.994919                0.987705              0.012295              0.992         0.987705                      1.0               1.000000
+INST_066__CF02       INST_066                  1        BOUNDARY     2    2.499996          0.994919                0.987705              0.012295              0.992         0.987705                      1.0               1.000000
+INST_073__CF01       INST_073                  1            HALO     1    3.999993          0.993902                0.987500              0.012500              1.000         0.987705                      1.0               0.987500
+
+=== TECHNICAL INTEGRITY CHECKS ===
+
+[PASS] all_984_eligible_members_evaluated
+[PASS] all_69_candidates_evaluated
+[PASS] all_support_values_binary_at_member_level
+[PASS] all_candidate_supports_in_unit_interval
+[PASS] all_four_family_supports_present
+[PASS] all_19_institutions_summarized
+[PASS] no_new_candidates_generated
+[PASS] primary_tau_is_frozen_090
+[PASS] sensitivity_taus_are_frozen_080_095
+
+Primary tau=0.90 robustly reachable: 10/19 (0.5263 conditional)
+Equivalent rate over full N=81: 0.1235
+Elapsed seconds: 17.71
+
+GATE STATUS: PASS_STAGE_6C_OFFICIAL_EVALUATION
+Stage 6C is technically complete. The observed robustness rate is a scientific result, not a pass/fail target. Review before Stage 7.

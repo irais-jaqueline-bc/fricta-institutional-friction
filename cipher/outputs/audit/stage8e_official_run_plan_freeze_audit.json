@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "stage8c1_evaluator_passed": true,
+    "stage8c3_cf_evaluator_passed": true,
+    "stage8d1_v2_smoke_passed": true,
+    "stage8d2_v3_smoke_passed": true,
+    "official_outputs_absent": true,
+    "official_replicate_count_is_100": true,
+    "convergence_replicate_count_is_10": true,
+    "smoke_replicate_1_excluded": true,
+    "generator_smoke_replicate_0_excluded": true,
+    "convergence_subset_of_official": true,
+    "remaining_plus_convergence_cover_official": true,
+    "no_overlap_between_audit_and_remaining": true
+  },
+  "freeze_path": "cipher/design/stage8_official_run_plan_freeze_v1.json",
+  "freeze_sha256": "4bbd0af5398840728375d47804480dbf414bf439ac3853b746559e174e59d05f",
+  "gate_status": "PASS_STAGE_8E_OFFICIAL_RUN_PLAN_FREEZE"
+}

@@ -1,0 +1,37 @@
+
+=== CIPHER STAGE 8C3 — INSUFFICIENT-ENSEMBLE POLICY FREEZE ===
+
+Smoke failure condition:
+  eligible robust-ensemble members < frozen minimum 120
+
+Thresholds remain unchanged:
+  minimum eligible members = 120
+  Ward inductive fidelity >= .95
+
+Frozen handling:
+  single-model CF outputs remain valid
+  robust support is NOT computed
+  status = ROBUST_LAYER_NOT_EVALUABLE_INSUFFICIENT_ELIGIBLE_ENSEMBLE
+  tau=.80/.90/.95 outputs = NA, not False
+
+Truth scoring:
+  S3 single-model oracle metrics may remain evaluable
+  S3 robust metrics/direction = NOT_EVALUABLE
+  S6 false robust-CF claim = NA, not False
+
+Official reporting later:
+  report evaluable and non-evaluable replicate counts separately
+  never hide or coerce non-evaluable robust replicates
+
+=== FREEZE CHECKS ===
+
+[PASS] stage8c2_cf_freeze_passed
+[PASS] stage8c1_evaluator_v2_passed
+[PASS] partial_cf_smoke_v2_exists
+[PASS] official_results_absent
+[PASS] minimum_eligible_members_still_120
+[PASS] ward_fidelity_threshold_still_095
+
+GATE STATUS: PASS_STAGE_8C3_INSUFFICIENT_ENSEMBLE_POLICY
+Frozen CF evaluator v2: cipher/design/stage8_counterfactual_evaluator_freeze_v2.json
+Next: Stage 8D2 v3 smoke. Do NOT run official replicates.

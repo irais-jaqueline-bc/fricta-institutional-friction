@@ -1,0 +1,13 @@
+signed_item,support_count,support_fraction
+administrative_disorganization_constraint↓,6,0.6
+internet_stability_constraint↑,4,0.4
+system_change_resistance_constraint↓,4,0.4
+digital_tool_variety_constraint↑,3,0.3
+time_constraint_score↓,3,0.3
+admin_time_load_constraint↓,2,0.2
+digital_usage_constraint_score↑,2,0.2
+recording_system_constraint↑,2,0.2
+resource_constraint_score↑,2,0.2
+willingness_constraint_score↓,2,0.2
+device_constraint↑,1,0.1
+staffing_constraint_score↓,1,0.1

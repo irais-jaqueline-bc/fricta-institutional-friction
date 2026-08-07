@@ -1,0 +1,106 @@
+{
+  "scenario": "S2_CORE_BOUNDARY",
+  "replicate": 2,
+  "selected_candidate": "R1_PCA85__HAC_WARD__K3",
+  "selected_representation": "R1_PCA85",
+  "selected_algorithm": "HAC_WARD",
+  "selected_k": 3,
+  "selected_ari_median": 1.0,
+  "selected_ari_p025": 1.0,
+  "selected_silhouette": 0.8745025263208259,
+  "selected_minimum_cluster_size": 24,
+  "selected_minimum_resample_cluster_size": 14,
+  "selection_decision": {
+    "maximum_ari_median": 1.0,
+    "median_tied_candidates": [
+      "R0_STANDARDIZED__HAC_WARD__K2",
+      "R0_STANDARDIZED__HAC_WARD__K3",
+      "R0_STANDARDIZED__KMEANS__K3",
+      "R1_PCA85__HAC_WARD__K3",
+      "R1_PCA85__KMEANS__K3"
+    ],
+    "tied_partitions_equivalent": false,
+    "tied_pairwise_ari": [
+      {
+        "candidate_a": "R0_STANDARDIZED__HAC_WARD__K2",
+        "candidate_b": "R0_STANDARDIZED__HAC_WARD__K3",
+        "ari": 0.5859538784067087,
+        "partition_equivalent_at_0_95": false
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__HAC_WARD__K2",
+        "candidate_b": "R0_STANDARDIZED__KMEANS__K3",
+        "ari": 0.5859538784067087,
+        "partition_equivalent_at_0_95": false
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__HAC_WARD__K2",
+        "candidate_b": "R1_PCA85__HAC_WARD__K3",
+        "ari": 0.5859538784067087,
+        "partition_equivalent_at_0_95": false
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__HAC_WARD__K2",
+        "candidate_b": "R1_PCA85__KMEANS__K3",
+        "ari": 0.5859538784067087,
+        "partition_equivalent_at_0_95": false
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__HAC_WARD__K3",
+        "candidate_b": "R0_STANDARDIZED__KMEANS__K3",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__HAC_WARD__K3",
+        "candidate_b": "R1_PCA85__HAC_WARD__K3",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__HAC_WARD__K3",
+        "candidate_b": "R1_PCA85__KMEANS__K3",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__KMEANS__K3",
+        "candidate_b": "R1_PCA85__HAC_WARD__K3",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__KMEANS__K3",
+        "candidate_b": "R1_PCA85__KMEANS__K3",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      },
+      {
+        "candidate_a": "R1_PCA85__HAC_WARD__K3",
+        "candidate_b": "R1_PCA85__KMEANS__K3",
+        "ari": 1.0,
+        "partition_equivalent_at_0_95": true
+      }
+    ],
+    "rule_used": "Median-ARI tie with non-equivalent solutions; lower-tail stability tiebreak."
+  },
+  "stable_partition_claim": true,
+  "severity": {
+    "method": "PROSPECTIVE_1D_TREE_MULTICLASS",
+    "balanced_accuracy_median": 0.36944444444444446,
+    "macro_f1_median": 0.2590155945419103,
+    "roc_auc_median": null,
+    "ari_median": -0.02127659574468085,
+    "nmi_median": 0.08195491875105487,
+    "matched_severity_opposite_cluster_pairs": 2094,
+    "severity_nearly_reconstructs_profiles": false
+  },
+  "governance": {
+    "status": "NOT_APPLICABLE_NO_GOVERNANCE_VARIABLE",
+    "strong_governance_association": false,
+    "governance_nearly_reconstructs_profiles": false
+  },
+  "configurational_profile_claim": true,
+  "uncertainty_applicable": false,
+  "cf_applicable": false
+}

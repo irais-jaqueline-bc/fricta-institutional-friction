@@ -1,0 +1,4 @@
+tau,valid_candidate_rows,total_candidate_rows,candidate_valid_rate,robustly_reachable_institutions,reachable_stage5c_institutions,conditional_robust_reachability_rate,unconditional_81_institution_rate
+0.8,34,69,0.4927536231884058,10,19,0.5263157894736842,0.12345679012345678
+0.9,32,69,0.463768115942029,10,19,0.5263157894736842,0.12345679012345678
+0.95,29,69,0.42028985507246375,10,19,0.5263157894736842,0.12345679012345678

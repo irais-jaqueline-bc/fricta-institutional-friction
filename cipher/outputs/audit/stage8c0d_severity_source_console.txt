@@ -1,0 +1,507 @@
+
+=== CIPHER STAGE 8C0D — EXACT SEVERITY-NULL SOURCE AUDIT ===
+
+Target: src/cipher_03_null_models.py
+Read-only. No synthetic model is fitted.
+
+=== BLOCK 1 — L1-L52 ===
+
+0001: from __future__ import annotations
+0002: 
+0003: import json
+0004: from pathlib import Path
+0005: 
+0006: import numpy as np
+0007: import pandas as pd
+0008: from scipy.stats import chi2_contingency
+0009: from sklearn.metrics import (
+0010:     adjusted_rand_score,
+0011:     balanced_accuracy_score,
+0012:     f1_score,
+0013:     normalized_mutual_info_score,
+0014:     roc_auc_score,
+0015: )
+0016: from sklearn.model_selection import RepeatedStratifiedKFold
+0017: 
+0018: PROJECT_ROOT = Path(__file__).resolve().parents[1]
+0019: 
+0020: FRICTA_CONFIG_PATH = PROJECT_ROOT / "icdm" / "design" / "experiment_config.json"
+0021: PRIMARY_MATRIX_PATH = (
+0022:     PROJECT_ROOT / "icdm" / "outputs" / "features" / "X_primary_raw.csv"
+0023: )
+0024: FINAL_LABELS_PATH = (
+0025:     PROJECT_ROOT / "icdm" / "outputs" / "clustering" / "final_cluster_labels.csv"
+0026: )
+0027: CERTAINTY_PATH = (
+0028:     PROJECT_ROOT / "cipher" / "outputs" / "certainty" / "institution_certainty.csv"
+0029: )
+0030: CIPHER_CONFIG_PATH = (
+0031:     PROJECT_ROOT / "cipher" / "design" / "cipher_experiment_config_frozen.json"
+0032: )
+0033: 
+0034: OUTPUT_DIR = PROJECT_ROOT / "cipher" / "outputs" / "null_models"
+0035: AUDIT_DIR = PROJECT_ROOT / "cipher" / "outputs" / "audit"
+0036: 
+0037: GOVERNANCE_CANDIDATES = [
+0038:     "governance_type",
+0039:     "institution_type",
+0040:     "management_type",
+0041:     "ownership_type",
+0042:     "sector_type",
+0043:     "governance",
+0044:     "type_of_institution",
+0045: ]
+0046: 
+0047: PROFILE_1 = 1
+0048: PROFILE_2 = 2
+0049: 
+0050: 
+0051: def load_json(path: Path) -> dict:
+0052:     if not path.exists():
+
+=== BLOCK 2 — L82-L204 ===
+
+0082: 
+0083:     best = None
+0084: 
+0085:     for direction in (1, -1):
+0086:         for threshold in thresholds:
+0087:             if direction == 1:
+0088:                 predicted = np.where(scores >= threshold, PROFILE_2, PROFILE_1)
+0089:             else:
+0090:                 predicted = np.where(scores >= threshold, PROFILE_1, PROFILE_2)
+0091: 
+0092:             ba = balanced_accuracy_score(labels, predicted)
+0093: 
+0094:             key = (
+0095:                 ba,
+0096:                 -abs(threshold - np.median(scores)),
+0097:                 direction,
+0098:             )
+0099:             if best is None or key > best[0]:
+0100:                 best = (
+0101:                     key,
+0102:                     float(threshold),
+0103:                     int(direction),
+0104:                     float(ba),
+0105:                 )
+0106: 
+0107:     assert best is not None
+0108:     return best[1], best[2], best[3]
+0109: 
+0110: 
+0111: def severity_cross_validation(
+0112:     severity: np.ndarray,
+0113:     labels: np.ndarray,
+0114:     splits: int,
+0115:     repeats: int,
+0116:     seed: int,
+0117: ) -> tuple[pd.DataFrame, pd.DataFrame]:
+0118:     rkf = RepeatedStratifiedKFold(
+0119:         n_splits=splits,
+0120:         n_repeats=repeats,
+0121:         random_state=seed,
+0122:     )
+0123: 
+0124:     fold_rows = []
+0125:     heldout_rows = []
+0126: 
+0127:     for fold_index, (train_idx, test_idx) in enumerate(
+0128:         rkf.split(severity.reshape(-1, 1), labels),
+0129:         start=1,
+0130:     ):
+0131:         threshold, direction, train_ba = best_threshold_from_training(
+0132:             severity[train_idx],
+0133:             labels[train_idx],
+0134:         )
+0135: 
+0136:         if direction == 1:
+0137:             test_pred = np.where(
+0138:                 severity[test_idx] >= threshold,
+0139:                 PROFILE_2,
+0140:                 PROFILE_1,
+0141:             )
+0142:         else:
+0143:             test_pred = np.where(
+0144:                 severity[test_idx] >= threshold,
+0145:                 PROFILE_1,
+0146:                 PROFILE_2,
+0147:             )
+0148: 
+0149:         test_ba = balanced_accuracy_score(labels[test_idx], test_pred)
+0150:         test_f1 = f1_score(
+0151:             labels[test_idx],
+0152:             test_pred,
+0153:             average="macro",
+0154:         )
+0155:         test_ari = adjusted_rand_score(labels[test_idx], test_pred)
+0156:         test_nmi = normalized_mutual_info_score(labels[test_idx], test_pred)
+0157: 
+0158:         y_binary = (labels[test_idx] == PROFILE_2).astype(int)
+0159:         score_direction = severity[test_idx] if direction == 1 else -severity[test_idx]
+0160: 
+0161:         try:
+0162:             test_auc = roc_auc_score(y_binary, score_direction)
+0163:         except ValueError:
+0164:             test_auc = np.nan
+0165: 
+0166:         fold_rows.append(
+0167:             {
+0168:                 "fold_index": fold_index,
+0169:                 "threshold": threshold,
+0170:                 "direction": direction,
+0171:                 "train_balanced_accuracy": train_ba,
+0172:                 "test_balanced_accuracy": test_ba,
+0173:                 "test_macro_f1": test_f1,
+0174:                 "test_roc_auc": test_auc,
+0175:                 "test_ari": test_ari,
+0176:                 "test_nmi": test_nmi,
+0177:             }
+0178:         )
+0179: 
+0180:         for local_pos, idx in enumerate(test_idx):
+0181:             heldout_rows.append(
+0182:                 {
+0183:                     "fold_index": fold_index,
+0184:                     "row_index": int(idx),
+0185:                     "true_profile": int(labels[idx]),
+0186:                     "severity_score": float(severity[idx]),
+0187:                     "predicted_profile": int(test_pred[local_pos]),
+0188:                     "correct": int(test_pred[local_pos] == labels[idx]),
+0189:                 }
+0190:             )
+0191: 
+0192:     return pd.DataFrame(fold_rows), pd.DataFrame(heldout_rows)
+0193: 
+0194: 
+0195: def cramers_v(table: np.ndarray) -> float:
+0196:     chi2, _, _, _ = chi2_contingency(table, correction=False)
+0197:     n = table.sum()
+0198:     r, k = table.shape
+0199: 
+0200:     if n <= 1 or min(r - 1, k - 1) <= 0:
+0201:         return np.nan
+0202: 
+0203:     phi2 = chi2 / n
+0204:     phi2corr = max(
+
+=== BLOCK 3 — L279-L331 ===
+
+0279:         global_majority = int(pd.Series(labels[train_idx]).value_counts().idxmax())
+0280: 
+0281:         pred = np.array(
+0282:             [mapping.get(value, global_majority) for value in governance[test_idx]],
+0283:             dtype=int,
+0284:         )
+0285: 
+0286:         rows.append(
+0287:             {
+0288:                 "fold_index": fold_index,
+0289:                 "balanced_accuracy": balanced_accuracy_score(
+0290:                     labels[test_idx],
+0291:                     pred,
+0292:                 ),
+0293:                 "macro_f1": f1_score(
+0294:                     labels[test_idx],
+0295:                     pred,
+0296:                     average="macro",
+0297:                 ),
+0298:                 "ari": adjusted_rand_score(
+0299:                     labels[test_idx],
+0300:                     pred,
+0301:                 ),
+0302:                 "nmi": normalized_mutual_info_score(
+0303:                     labels[test_idx],
+0304:                     pred,
+0305:                 ),
+0306:             }
+0307:         )
+0308: 
+0309:     return pd.DataFrame(rows)
+0310: 
+0311: 
+0312: def main() -> None:
+0313:     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+0314:     AUDIT_DIR.mkdir(parents=True, exist_ok=True)
+0315: 
+0316:     fricta_config = load_json(FRICTA_CONFIG_PATH)
+0317:     cipher_config = load_json(CIPHER_CONFIG_PATH)
+0318: 
+0319:     id_column = fricta_config["id_column"]
+0320:     features = fricta_config["primary_features"]
+0321: 
+0322:     primary = pd.read_csv(PRIMARY_MATRIX_PATH)
+0323:     labels = pd.read_csv(FINAL_LABELS_PATH)[[id_column, "cluster_id"]]
+0324:     certainty = pd.read_csv(CERTAINTY_PATH)
+0325: 
+0326:     primary[id_column] = primary[id_column].astype(str)
+0327:     labels[id_column] = labels[id_column].astype(str)
+0328:     certainty["institution_id"] = certainty["institution_id"].astype(str)
+0329: 
+0330:     data = (
+0331:         primary[[id_column] + features]
+
+=== BLOCK 4 — L355-L459 ===
+
+0355: 
+0356:     X = data[features].apply(
+0357:         pd.to_numeric,
+0358:         errors="coerce",
+0359:     )
+0360: 
+0361:     if X.isna().any().any():
+0362:         raise ValueError("Primary feature matrix contains missing values.")
+0363: 
+0364:     y = data["cluster_id"].astype(int).to_numpy()
+0365:     severity = X.mean(axis=1).to_numpy(dtype=float)
+0366: 
+0367:     splits = int(cipher_config["null_models"]["severity_cv_splits"])
+0368:     repeats = int(cipher_config["null_models"]["severity_cv_repeats"])
+0369:     tolerance = float(cipher_config["null_models"]["matched_severity_tolerance"])
+0370:     permutations = int(cipher_config["null_models"]["governance_permutations"])
+0371:     seed = int(cipher_config["random_seed"])
+0372: 
+0373:     severity_folds, heldout = severity_cross_validation(
+0374:         severity,
+0375:         y,
+0376:         splits=splits,
+0377:         repeats=repeats,
+0378:         seed=seed,
+0379:     )
+0380: 
+0381:     severity_folds.to_csv(
+0382:         OUTPUT_DIR / "severity_null_cv_folds.csv",
+0383:         index=False,
+0384:     )
+0385:     heldout.to_csv(
+0386:         OUTPUT_DIR / "severity_null_heldout_predictions.csv",
+0387:         index=False,
+0388:     )
+0389: 
+0390:     severity_summary = {
+0391:         "balanced_accuracy_median": float(
+0392:             severity_folds["test_balanced_accuracy"].median()
+0393:         ),
+0394:         "balanced_accuracy_q025": float(
+0395:             severity_folds["test_balanced_accuracy"].quantile(0.025)
+0396:         ),
+0397:         "balanced_accuracy_q975": float(
+0398:             severity_folds["test_balanced_accuracy"].quantile(0.975)
+0399:         ),
+0400:         "macro_f1_median": float(severity_folds["test_macro_f1"].median()),
+0401:         "roc_auc_median": float(severity_folds["test_roc_auc"].median()),
+0402:         "ari_median": float(severity_folds["test_ari"].median()),
+0403:         "nmi_median": float(severity_folds["test_nmi"].median()),
+0404:     }
+0405: 
+0406:     matched_pairs = []
+0407:     for i in range(len(data)):
+0408:         for j in range(i + 1, len(data)):
+0409:             if y[i] == y[j]:
+0410:                 continue
+0411: 
+0412:             gap = abs(severity[i] - severity[j])
+0413:             if gap <= tolerance:
+0414:                 feature_l1 = float(
+0415:                     np.abs(
+0416:                         X.iloc[i].to_numpy(dtype=float)
+0417:                         - X.iloc[j].to_numpy(dtype=float)
+0418:                     ).sum()
+0419:                 )
+0420:                 matched_pairs.append(
+0421:                     {
+0422:                         "institution_a": str(data.iloc[i][id_column]),
+0423:                         "profile_a": int(y[i]),
+0424:                         "severity_a": float(severity[i]),
+0425:                         "institution_b": str(data.iloc[j][id_column]),
+0426:                         "profile_b": int(y[j]),
+0427:                         "severity_b": float(severity[j]),
+0428:                         "severity_gap": float(gap),
+0429:                         "feature_l1_distance": feature_l1,
+0430:                     }
+0431:                 )
+0432: 
+0433:     matched_pairs_df = pd.DataFrame(matched_pairs)
+0434:     if len(matched_pairs_df):
+0435:         matched_pairs_df = matched_pairs_df.sort_values(
+0436:             ["severity_gap", "feature_l1_distance"],
+0437:             ascending=[True, False],
+0438:         )
+0439: 
+0440:     matched_pairs_df.to_csv(
+0441:         OUTPUT_DIR / "matched_severity_opposite_profile_pairs.csv",
+0442:         index=False,
+0443:     )
+0444: 
+0445:     governance_column = find_governance_column(primary)
+0446: 
+0447:     governance_status = "NOT_FOUND_IN_PRIMARY_MATRIX"
+0448:     governance_summary = {}
+0449:     governance_contingency = pd.DataFrame()
+0450:     governance_cv = pd.DataFrame()
+0451: 
+0452:     if governance_column is not None:
+0453:         governance_data = primary[[id_column, governance_column]].merge(
+0454:             labels,
+0455:             on=id_column,
+0456:             how="inner",
+0457:             validate="one_to_one",
+0458:         )
+0459: 
+
+=== BLOCK 5 — L461-L607 ===
+
+0461:             governance_data[governance_column].astype(str).str.strip()
+0462:         )
+0463: 
+0464:         governance = governance_data[governance_column].to_numpy()
+0465:         gov_y = governance_data["cluster_id"].astype(int).to_numpy()
+0466: 
+0467:         governance_contingency = pd.crosstab(
+0468:             governance_data["cluster_id"],
+0469:             governance_data[governance_column],
+0470:         )
+0471:         governance_contingency.to_csv(OUTPUT_DIR / "governance_contingency.csv")
+0472: 
+0473:         observed_v, permutation_p = governance_permutation_test(
+0474:             governance,
+0475:             gov_y,
+0476:             permutations=permutations,
+0477:             seed=seed + 5000,
+0478:         )
+0479: 
+0480:         governance_cv = governance_only_cv(
+0481:             governance,
+0482:             gov_y,
+0483:             splits=splits,
+0484:             repeats=repeats,
+0485:             seed=seed + 6000,
+0486:         )
+0487:         governance_cv.to_csv(
+0488:             OUTPUT_DIR / "governance_only_cv_folds.csv",
+0489:             index=False,
+0490:         )
+0491: 
+0492:         governance_summary = {
+0493:             "column": governance_column,
+0494:             "cramers_v": observed_v,
+0495:             "permutation_p": permutation_p,
+0496:             "balanced_accuracy_median": float(
+0497:                 governance_cv["balanced_accuracy"].median()
+0498:             ),
+0499:             "macro_f1_median": float(governance_cv["macro_f1"].median()),
+0500:             "ari_median": float(governance_cv["ari"].median()),
+0501:             "nmi_median": float(governance_cv["nmi"].median()),
+0502:         }
+0503:         governance_status = "COMPLETED"
+0504: 
+0505:     report = {
+0506:         "severity_null": severity_summary,
+0507:         "matched_opposite_profile_pairs_within_tolerance": int(len(matched_pairs_df)),
+0508:         "matched_severity_tolerance": tolerance,
+0509:         "governance_status": governance_status,
+0510:         "governance": governance_summary,
+0511:         "interpretation_flags": {
+0512:             "severity_nearly_reconstructs_profiles": bool(
+0513:                 severity_summary["balanced_accuracy_median"] >= 0.90
+0514:                 and severity_summary["ari_median"] >= 0.80
+0515:             ),
+0516:             "matched_severity_opposite_profile_pairs_exist": bool(
+0517:                 len(matched_pairs_df) > 0
+0518:             ),
+0519:         },
+0520:     }
+0521: 
+0522:     (OUTPUT_DIR / "null_model_report.json").write_text(
+0523:         json.dumps(report, indent=2, ensure_ascii=False),
+0524:         encoding="utf-8",
+0525:     )
+0526: 
+0527:     print("\n=== CIPHER STAGE 3 — SIMPLER-EXPLANATION FALSIFICATION ===\n")
+0528: 
+0529:     print("=== SEVERITY NULL ===\n")
+0530:     print(
+0531:         "Held-out balanced accuracy:",
+0532:         f"q025={severity_summary['balanced_accuracy_q025']:.4f},",
+0533:         f"median={severity_summary['balanced_accuracy_median']:.4f},",
+0534:         f"q975={severity_summary['balanced_accuracy_q975']:.4f}",
+0535:     )
+0536:     print(
+0537:         "Held-out macro-F1 median:",
+0538:         f"{severity_summary['macro_f1_median']:.4f}",
+0539:     )
+0540:     print(
+0541:         "Held-out ROC-AUC median:",
+0542:         f"{severity_summary['roc_auc_median']:.4f}",
+0543:     )
+0544:     print(
+0545:         "Held-out ARI median:",
+0546:         f"{severity_summary['ari_median']:.4f}",
+0547:     )
+0548:     print(
+0549:         "Held-out NMI median:",
+0550:         f"{severity_summary['nmi_median']:.4f}",
+0551:     )
+0552:     print(
+0553:         "Opposite-profile pairs with severity gap <=",
+0554:         tolerance,
+0555:         ":",
+0556:         len(matched_pairs_df),
+0557:     )
+0558: 
+0559:     if len(matched_pairs_df):
+0560:         print("\n10 closest opposite-profile severity pairs:\n")
+0561:         print(matched_pairs_df.head(10).to_string(index=False))
+0562: 
+0563:     print("\n=== GOVERNANCE NULL ===\n")
+0564:     print("Governance status:", governance_status)
+0565: 
+0566:     if governance_status == "COMPLETED":
+0567:         print("Governance column:", governance_summary["column"])
+0568:         print(
+0569:             "Cramer's V:",
+0570:             f"{governance_summary['cramers_v']:.4f}",
+0571:         )
+0572:         print(
+0573:             "Permutation p:",
+0574:             f"{governance_summary['permutation_p']:.6f}",
+0575:         )
+0576:         print(
+0577:             "Governance-only held-out balanced accuracy median:",
+0578:             f"{governance_summary['balanced_accuracy_median']:.4f}",
+0579:         )
+0580:         print(
+0581:             "Governance-only held-out macro-F1 median:",
+0582:             f"{governance_summary['macro_f1_median']:.4f}",
+0583:         )
+0584:         print(
+0585:             "Governance-only held-out ARI median:",
+0586:             f"{governance_summary['ari_median']:.4f}",
+0587:         )
+0588:         print("\nGovernance contingency:\n")
+0589:         print(governance_contingency.to_string())
+0590:     else:
+0591:         print(
+0592:             "No governance column was found in X_primary_raw.csv. "
+0593:             "Severity results are valid, but governance testing is incomplete."
+0594:         )
+0595: 
+0596:     print("\n=== INTERPRETIVE FLAGS ===\n")
+0597:     for key, value in report["interpretation_flags"].items():
+0598:         print(f"{key}: {value}")
+0599: 
+0600:     if governance_status == "COMPLETED":
+0601:         print("\nGATE STATUS: STAGE_3_COMPUTED_REVIEW_REQUIRED")
+0602:     else:
+0603:         print("\nGATE STATUS: STAGE_3_PARTIAL_GOVERNANCE_INPUT_REQUIRED")
+0604: 
+0605: 
+0606: if __name__ == "__main__":
+0607:     main()
+
+=== REVIEW TARGET ===
+
+Find the literal boolean condition used to decide whether aggregate severity nearly reconstructs the discovered profiles, plus any separate matched-severity-pair flag.
+
+GATE STATUS: STAGE_8C0D_SEVERITY_SOURCE_EXTRACTED
+Do not run synthetic model-performance experiments yet.

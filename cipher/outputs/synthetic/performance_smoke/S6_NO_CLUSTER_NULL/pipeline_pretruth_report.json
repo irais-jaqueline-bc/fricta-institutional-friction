@@ -1,0 +1,52 @@
+{
+  "scenario": "S6_NO_CLUSTER_NULL",
+  "smoke_replicate": 1,
+  "selected_candidate": "R1_PCA85__KMEANS__K2",
+  "selected_representation": "R1_PCA85",
+  "selected_algorithm": "KMEANS",
+  "selected_k": 2,
+  "selected_silhouette": 0.1571670592670243,
+  "selected_ari_median": 0.8178835803786122,
+  "selected_ari_p025": 0.09597950520524211,
+  "selected_weakest_cluster_mean_jaccard": 0.8145966011326135,
+  "selected_minimum_cluster_size": 30,
+  "selected_minimum_resample_cluster_size": 17,
+  "selection_decision": {
+    "maximum_ari_median": 0.8178835803786122,
+    "median_tied_candidates": [
+      "R1_PCA85__KMEANS__K2"
+    ],
+    "tied_partitions_equivalent": true,
+    "tied_pairwise_ari": [],
+    "rule_used": "Unique highest median ARI."
+  },
+  "stable_partition_claim": true,
+  "severity": {
+    "method": "INHERITED_BINARY_THRESHOLD",
+    "balanced_accuracy_median": 0.5,
+    "macro_f1_median": 0.2857142857142857,
+    "roc_auc_median": null,
+    "ari_median": 0.5333333333333333,
+    "nmi_median": 0.5615896365639194,
+    "matched_severity_opposite_cluster_pairs": 96,
+    "severity_nearly_reconstructs_profiles": false
+  },
+  "governance": {
+    "status": "NOT_APPLICABLE_NO_GOVERNANCE_VARIABLE",
+    "strong_governance_association": false,
+    "governance_nearly_reconstructs_profiles": false
+  },
+  "configurational_profile_claim": true,
+  "uncertainty": {
+    "ensemble_members": 200,
+    "members_per_family": 50,
+    "minimum_oob_predictions": 24,
+    "median_oob_predictions": 40.0,
+    "certainty_class_counts": {
+      "CORE": 41,
+      "BOUNDARY": 24,
+      "HALO": 15
+    },
+    "status": "COMPLETED_K2"
+  }
+}

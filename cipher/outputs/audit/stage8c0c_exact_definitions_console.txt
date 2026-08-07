@@ -1,0 +1,1548 @@
+
+=== CIPHER STAGE 8C0C — EXACT FLAG / UNCERTAINTY DEFINITIONS ===
+
+This is read-only. No synthetic model is fitted.
+Files scanned: ['src/cipher_02_membership_certainty.py', 'src/cipher_03_find_governance.py', 'src/cipher_03_null_models.py', 'src/cipher_03b_governance_null.py']
+
+=== SEVERITY ===
+
+FILE: src/cipher_03_null_models.py
+
+--- AST Assign L406-L406 ---
+0406:     matched_pairs = []
+
+--- AST Assign L433-L433 ---
+0433:     matched_pairs_df = pd.DataFrame(matched_pairs)
+
+--- AST If L434-L438 ---
+0434:     if len(matched_pairs_df):
+0435:         matched_pairs_df = matched_pairs_df.sort_values(
+0436:             ["severity_gap", "feature_l1_distance"],
+0437:             ascending=[True, False],
+0438:         )
+
+--- AST Assign L505-L520 ---
+0505:     report = {
+0506:         "severity_null": severity_summary,
+0507:         "matched_opposite_profile_pairs_within_tolerance": int(len(matched_pairs_df)),
+0508:         "matched_severity_tolerance": tolerance,
+0509:         "governance_status": governance_status,
+0510:         "governance": governance_summary,
+0511:         "interpretation_flags": {
+0512:             "severity_nearly_reconstructs_profiles": bool(
+0513:                 severity_summary["balanced_accuracy_median"] >= 0.90
+0514:                 and severity_summary["ari_median"] >= 0.80
+0515:             ),
+0516:             "matched_severity_opposite_profile_pairs_exist": bool(
+0517:                 len(matched_pairs_df) > 0
+0518:             ),
+0519:         },
+0520:     }
+
+--- AST If L559-L561 ---
+0559:     if len(matched_pairs_df):
+0560:         print("\n10 closest opposite-profile severity pairs:\n")
+0561:         print(matched_pairs_df.head(10).to_string(index=False))
+
+--- AST Assign L435-L438 ---
+0435:         matched_pairs_df = matched_pairs_df.sort_values(
+0436:             ["severity_gap", "feature_l1_distance"],
+0437:             ascending=[True, False],
+0438:         )
+
+--- AST If L413-L431 ---
+0413:             if gap <= tolerance:
+0414:                 feature_l1 = float(
+0415:                     np.abs(
+0416:                         X.iloc[i].to_numpy(dtype=float)
+0417:                         - X.iloc[j].to_numpy(dtype=float)
+0418:                     ).sum()
+0419:                 )
+0420:                 matched_pairs.append(
+0421:                     {
+0422:                         "institution_a": str(data.iloc[i][id_column]),
+0423:                         "profile_a": int(y[i]),
+0424:                         "severity_a": float(severity[i]),
+0425:                         "institution_b": str(data.iloc[j][id_column]),
+0426:                         "profile_b": int(y[j]),
+0427:                         "severity_b": float(severity[j]),
+0428:                         "severity_gap": float(gap),
+0429:                         "feature_l1_distance": feature_l1,
+0430:                     }
+0431:                 )
+
+--- CONTEXT term=severity_nearly_reconstructs L504-L520 ---
+0504: 
+0505:     report = {
+0506:         "severity_null": severity_summary,
+0507:         "matched_opposite_profile_pairs_within_tolerance": int(len(matched_pairs_df)),
+0508:         "matched_severity_tolerance": tolerance,
+0509:         "governance_status": governance_status,
+0510:         "governance": governance_summary,
+0511:         "interpretation_flags": {
+0512:             "severity_nearly_reconstructs_profiles": bool(
+0513:                 severity_summary["balanced_accuracy_median"] >= 0.90
+0514:                 and severity_summary["ari_median"] >= 0.80
+0515:             ),
+0516:             "matched_severity_opposite_profile_pairs_exist": bool(
+0517:                 len(matched_pairs_df) > 0
+0518:             ),
+0519:         },
+0520:     }
+
+--- CONTEXT term=matched_pairs L398-L414 ---
+0398:             severity_folds["test_balanced_accuracy"].quantile(0.975)
+0399:         ),
+0400:         "macro_f1_median": float(severity_folds["test_macro_f1"].median()),
+0401:         "roc_auc_median": float(severity_folds["test_roc_auc"].median()),
+0402:         "ari_median": float(severity_folds["test_ari"].median()),
+0403:         "nmi_median": float(severity_folds["test_nmi"].median()),
+0404:     }
+0405: 
+0406:     matched_pairs = []
+0407:     for i in range(len(data)):
+0408:         for j in range(i + 1, len(data)):
+0409:             if y[i] == y[j]:
+0410:                 continue
+0411: 
+0412:             gap = abs(severity[i] - severity[j])
+0413:             if gap <= tolerance:
+0414:                 feature_l1 = float(
+
+--- CONTEXT term=matched_pairs L412-L428 ---
+0412:             gap = abs(severity[i] - severity[j])
+0413:             if gap <= tolerance:
+0414:                 feature_l1 = float(
+0415:                     np.abs(
+0416:                         X.iloc[i].to_numpy(dtype=float)
+0417:                         - X.iloc[j].to_numpy(dtype=float)
+0418:                     ).sum()
+0419:                 )
+0420:                 matched_pairs.append(
+0421:                     {
+0422:                         "institution_a": str(data.iloc[i][id_column]),
+0423:                         "profile_a": int(y[i]),
+0424:                         "severity_a": float(severity[i]),
+0425:                         "institution_b": str(data.iloc[j][id_column]),
+0426:                         "profile_b": int(y[j]),
+0427:                         "severity_b": float(severity[j]),
+0428:                         "severity_gap": float(gap),
+
+--- CONTEXT term=matched_pairs L425-L441 ---
+0425:                         "institution_b": str(data.iloc[j][id_column]),
+0426:                         "profile_b": int(y[j]),
+0427:                         "severity_b": float(severity[j]),
+0428:                         "severity_gap": float(gap),
+0429:                         "feature_l1_distance": feature_l1,
+0430:                     }
+0431:                 )
+0432: 
+0433:     matched_pairs_df = pd.DataFrame(matched_pairs)
+0434:     if len(matched_pairs_df):
+0435:         matched_pairs_df = matched_pairs_df.sort_values(
+0436:             ["severity_gap", "feature_l1_distance"],
+0437:             ascending=[True, False],
+0438:         )
+0439: 
+0440:     matched_pairs_df.to_csv(
+0441:         OUTPUT_DIR / "matched_severity_opposite_profile_pairs.csv",
+
+--- CONTEXT term=matched_pairs L426-L442 ---
+0426:                         "profile_b": int(y[j]),
+0427:                         "severity_b": float(severity[j]),
+0428:                         "severity_gap": float(gap),
+0429:                         "feature_l1_distance": feature_l1,
+0430:                     }
+0431:                 )
+0432: 
+0433:     matched_pairs_df = pd.DataFrame(matched_pairs)
+0434:     if len(matched_pairs_df):
+0435:         matched_pairs_df = matched_pairs_df.sort_values(
+0436:             ["severity_gap", "feature_l1_distance"],
+0437:             ascending=[True, False],
+0438:         )
+0439: 
+0440:     matched_pairs_df.to_csv(
+0441:         OUTPUT_DIR / "matched_severity_opposite_profile_pairs.csv",
+0442:         index=False,
+
+--- CONTEXT term=matched_pairs L427-L443 ---
+0427:                         "severity_b": float(severity[j]),
+0428:                         "severity_gap": float(gap),
+0429:                         "feature_l1_distance": feature_l1,
+0430:                     }
+0431:                 )
+0432: 
+0433:     matched_pairs_df = pd.DataFrame(matched_pairs)
+0434:     if len(matched_pairs_df):
+0435:         matched_pairs_df = matched_pairs_df.sort_values(
+0436:             ["severity_gap", "feature_l1_distance"],
+0437:             ascending=[True, False],
+0438:         )
+0439: 
+0440:     matched_pairs_df.to_csv(
+0441:         OUTPUT_DIR / "matched_severity_opposite_profile_pairs.csv",
+0442:         index=False,
+0443:     )
+
+--- CONTEXT term=matched_pairs L432-L448 ---
+0432: 
+0433:     matched_pairs_df = pd.DataFrame(matched_pairs)
+0434:     if len(matched_pairs_df):
+0435:         matched_pairs_df = matched_pairs_df.sort_values(
+0436:             ["severity_gap", "feature_l1_distance"],
+0437:             ascending=[True, False],
+0438:         )
+0439: 
+0440:     matched_pairs_df.to_csv(
+0441:         OUTPUT_DIR / "matched_severity_opposite_profile_pairs.csv",
+0442:         index=False,
+0443:     )
+0444: 
+0445:     governance_column = find_governance_column(primary)
+0446: 
+0447:     governance_status = "NOT_FOUND_IN_PRIMARY_MATRIX"
+0448:     governance_summary = {}
+
+--- CONTEXT term=matched_pairs L499-L515 ---
+0499:             "macro_f1_median": float(governance_cv["macro_f1"].median()),
+0500:             "ari_median": float(governance_cv["ari"].median()),
+0501:             "nmi_median": float(governance_cv["nmi"].median()),
+0502:         }
+0503:         governance_status = "COMPLETED"
+0504: 
+0505:     report = {
+0506:         "severity_null": severity_summary,
+0507:         "matched_opposite_profile_pairs_within_tolerance": int(len(matched_pairs_df)),
+0508:         "matched_severity_tolerance": tolerance,
+0509:         "governance_status": governance_status,
+0510:         "governance": governance_summary,
+0511:         "interpretation_flags": {
+0512:             "severity_nearly_reconstructs_profiles": bool(
+0513:                 severity_summary["balanced_accuracy_median"] >= 0.90
+0514:                 and severity_summary["ari_median"] >= 0.80
+0515:             ),
+
+--- CONTEXT term=matched_pairs L509-L525 ---
+0509:         "governance_status": governance_status,
+0510:         "governance": governance_summary,
+0511:         "interpretation_flags": {
+0512:             "severity_nearly_reconstructs_profiles": bool(
+0513:                 severity_summary["balanced_accuracy_median"] >= 0.90
+0514:                 and severity_summary["ari_median"] >= 0.80
+0515:             ),
+0516:             "matched_severity_opposite_profile_pairs_exist": bool(
+0517:                 len(matched_pairs_df) > 0
+0518:             ),
+0519:         },
+0520:     }
+0521: 
+0522:     (OUTPUT_DIR / "null_model_report.json").write_text(
+0523:         json.dumps(report, indent=2, ensure_ascii=False),
+0524:         encoding="utf-8",
+0525:     )
+
+--- CONTEXT term=matched_pairs L548-L564 ---
+0548:     print(
+0549:         "Held-out NMI median:",
+0550:         f"{severity_summary['nmi_median']:.4f}",
+0551:     )
+0552:     print(
+0553:         "Opposite-profile pairs with severity gap <=",
+0554:         tolerance,
+0555:         ":",
+0556:         len(matched_pairs_df),
+0557:     )
+0558: 
+0559:     if len(matched_pairs_df):
+0560:         print("\n10 closest opposite-profile severity pairs:\n")
+0561:         print(matched_pairs_df.head(10).to_string(index=False))
+0562: 
+0563:     print("\n=== GOVERNANCE NULL ===\n")
+0564:     print("Governance status:", governance_status)
+
+--- CONTEXT term=matched_pairs L551-L567 ---
+0551:     )
+0552:     print(
+0553:         "Opposite-profile pairs with severity gap <=",
+0554:         tolerance,
+0555:         ":",
+0556:         len(matched_pairs_df),
+0557:     )
+0558: 
+0559:     if len(matched_pairs_df):
+0560:         print("\n10 closest opposite-profile severity pairs:\n")
+0561:         print(matched_pairs_df.head(10).to_string(index=False))
+0562: 
+0563:     print("\n=== GOVERNANCE NULL ===\n")
+0564:     print("Governance status:", governance_status)
+0565: 
+0566:     if governance_status == "COMPLETED":
+0567:         print("Governance column:", governance_summary["column"])
+
+--- CONTEXT term=matched_pairs L553-L569 ---
+0553:         "Opposite-profile pairs with severity gap <=",
+0554:         tolerance,
+0555:         ":",
+0556:         len(matched_pairs_df),
+0557:     )
+0558: 
+0559:     if len(matched_pairs_df):
+0560:         print("\n10 closest opposite-profile severity pairs:\n")
+0561:         print(matched_pairs_df.head(10).to_string(index=False))
+0562: 
+0563:     print("\n=== GOVERNANCE NULL ===\n")
+0564:     print("Governance status:", governance_status)
+0565: 
+0566:     if governance_status == "COMPLETED":
+0567:         print("Governance column:", governance_summary["column"])
+0568:         print(
+0569:             "Cramer's V:",
+
+--- CONTEXT term=matched_pair L398-L414 ---
+0398:             severity_folds["test_balanced_accuracy"].quantile(0.975)
+0399:         ),
+0400:         "macro_f1_median": float(severity_folds["test_macro_f1"].median()),
+0401:         "roc_auc_median": float(severity_folds["test_roc_auc"].median()),
+0402:         "ari_median": float(severity_folds["test_ari"].median()),
+0403:         "nmi_median": float(severity_folds["test_nmi"].median()),
+0404:     }
+0405: 
+0406:     matched_pairs = []
+0407:     for i in range(len(data)):
+0408:         for j in range(i + 1, len(data)):
+0409:             if y[i] == y[j]:
+0410:                 continue
+0411: 
+0412:             gap = abs(severity[i] - severity[j])
+0413:             if gap <= tolerance:
+0414:                 feature_l1 = float(
+
+--- CONTEXT term=matched_pair L412-L428 ---
+0412:             gap = abs(severity[i] - severity[j])
+0413:             if gap <= tolerance:
+0414:                 feature_l1 = float(
+0415:                     np.abs(
+0416:                         X.iloc[i].to_numpy(dtype=float)
+0417:                         - X.iloc[j].to_numpy(dtype=float)
+0418:                     ).sum()
+0419:                 )
+0420:                 matched_pairs.append(
+0421:                     {
+0422:                         "institution_a": str(data.iloc[i][id_column]),
+0423:                         "profile_a": int(y[i]),
+0424:                         "severity_a": float(severity[i]),
+0425:                         "institution_b": str(data.iloc[j][id_column]),
+0426:                         "profile_b": int(y[j]),
+0427:                         "severity_b": float(severity[j]),
+0428:                         "severity_gap": float(gap),
+
+--- CONTEXT term=matched_pair L425-L441 ---
+0425:                         "institution_b": str(data.iloc[j][id_column]),
+0426:                         "profile_b": int(y[j]),
+0427:                         "severity_b": float(severity[j]),
+0428:                         "severity_gap": float(gap),
+0429:                         "feature_l1_distance": feature_l1,
+0430:                     }
+0431:                 )
+0432: 
+0433:     matched_pairs_df = pd.DataFrame(matched_pairs)
+0434:     if len(matched_pairs_df):
+0435:         matched_pairs_df = matched_pairs_df.sort_values(
+0436:             ["severity_gap", "feature_l1_distance"],
+0437:             ascending=[True, False],
+0438:         )
+0439: 
+0440:     matched_pairs_df.to_csv(
+0441:         OUTPUT_DIR / "matched_severity_opposite_profile_pairs.csv",
+
+--- CONTEXT term=matched_pair L426-L442 ---
+0426:                         "profile_b": int(y[j]),
+0427:                         "severity_b": float(severity[j]),
+0428:                         "severity_gap": float(gap),
+0429:                         "feature_l1_distance": feature_l1,
+0430:                     }
+0431:                 )
+0432: 
+0433:     matched_pairs_df = pd.DataFrame(matched_pairs)
+0434:     if len(matched_pairs_df):
+0435:         matched_pairs_df = matched_pairs_df.sort_values(
+0436:             ["severity_gap", "feature_l1_distance"],
+0437:             ascending=[True, False],
+0438:         )
+0439: 
+0440:     matched_pairs_df.to_csv(
+0441:         OUTPUT_DIR / "matched_severity_opposite_profile_pairs.csv",
+0442:         index=False,
+
+--- CONTEXT term=matched_pair L427-L443 ---
+0427:                         "severity_b": float(severity[j]),
+0428:                         "severity_gap": float(gap),
+0429:                         "feature_l1_distance": feature_l1,
+0430:                     }
+0431:                 )
+0432: 
+0433:     matched_pairs_df = pd.DataFrame(matched_pairs)
+0434:     if len(matched_pairs_df):
+0435:         matched_pairs_df = matched_pairs_df.sort_values(
+0436:             ["severity_gap", "feature_l1_distance"],
+0437:             ascending=[True, False],
+0438:         )
+0439: 
+0440:     matched_pairs_df.to_csv(
+0441:         OUTPUT_DIR / "matched_severity_opposite_profile_pairs.csv",
+0442:         index=False,
+0443:     )
+
+--- CONTEXT term=matched_pair L432-L448 ---
+0432: 
+0433:     matched_pairs_df = pd.DataFrame(matched_pairs)
+0434:     if len(matched_pairs_df):
+0435:         matched_pairs_df = matched_pairs_df.sort_values(
+0436:             ["severity_gap", "feature_l1_distance"],
+0437:             ascending=[True, False],
+0438:         )
+0439: 
+0440:     matched_pairs_df.to_csv(
+0441:         OUTPUT_DIR / "matched_severity_opposite_profile_pairs.csv",
+0442:         index=False,
+0443:     )
+0444: 
+0445:     governance_column = find_governance_column(primary)
+0446: 
+0447:     governance_status = "NOT_FOUND_IN_PRIMARY_MATRIX"
+0448:     governance_summary = {}
+
+--- CONTEXT term=matched_pair L499-L515 ---
+0499:             "macro_f1_median": float(governance_cv["macro_f1"].median()),
+0500:             "ari_median": float(governance_cv["ari"].median()),
+0501:             "nmi_median": float(governance_cv["nmi"].median()),
+0502:         }
+0503:         governance_status = "COMPLETED"
+0504: 
+0505:     report = {
+0506:         "severity_null": severity_summary,
+0507:         "matched_opposite_profile_pairs_within_tolerance": int(len(matched_pairs_df)),
+0508:         "matched_severity_tolerance": tolerance,
+0509:         "governance_status": governance_status,
+0510:         "governance": governance_summary,
+0511:         "interpretation_flags": {
+0512:             "severity_nearly_reconstructs_profiles": bool(
+0513:                 severity_summary["balanced_accuracy_median"] >= 0.90
+0514:                 and severity_summary["ari_median"] >= 0.80
+0515:             ),
+
+--- CONTEXT term=matched_pair L509-L525 ---
+0509:         "governance_status": governance_status,
+0510:         "governance": governance_summary,
+0511:         "interpretation_flags": {
+0512:             "severity_nearly_reconstructs_profiles": bool(
+0513:                 severity_summary["balanced_accuracy_median"] >= 0.90
+0514:                 and severity_summary["ari_median"] >= 0.80
+0515:             ),
+0516:             "matched_severity_opposite_profile_pairs_exist": bool(
+0517:                 len(matched_pairs_df) > 0
+0518:             ),
+0519:         },
+0520:     }
+0521: 
+0522:     (OUTPUT_DIR / "null_model_report.json").write_text(
+0523:         json.dumps(report, indent=2, ensure_ascii=False),
+0524:         encoding="utf-8",
+0525:     )
+
+--- CONTEXT term=matched_pair L548-L564 ---
+0548:     print(
+0549:         "Held-out NMI median:",
+0550:         f"{severity_summary['nmi_median']:.4f}",
+0551:     )
+0552:     print(
+0553:         "Opposite-profile pairs with severity gap <=",
+0554:         tolerance,
+0555:         ":",
+0556:         len(matched_pairs_df),
+0557:     )
+0558: 
+0559:     if len(matched_pairs_df):
+0560:         print("\n10 closest opposite-profile severity pairs:\n")
+0561:         print(matched_pairs_df.head(10).to_string(index=False))
+0562: 
+0563:     print("\n=== GOVERNANCE NULL ===\n")
+0564:     print("Governance status:", governance_status)
+
+--- CONTEXT term=matched_pair L551-L567 ---
+0551:     )
+0552:     print(
+0553:         "Opposite-profile pairs with severity gap <=",
+0554:         tolerance,
+0555:         ":",
+0556:         len(matched_pairs_df),
+0557:     )
+0558: 
+0559:     if len(matched_pairs_df):
+0560:         print("\n10 closest opposite-profile severity pairs:\n")
+0561:         print(matched_pairs_df.head(10).to_string(index=False))
+0562: 
+0563:     print("\n=== GOVERNANCE NULL ===\n")
+0564:     print("Governance status:", governance_status)
+0565: 
+0566:     if governance_status == "COMPLETED":
+0567:         print("Governance column:", governance_summary["column"])
+
+--- CONTEXT term=matched_pair L553-L569 ---
+0553:         "Opposite-profile pairs with severity gap <=",
+0554:         tolerance,
+0555:         ":",
+0556:         len(matched_pairs_df),
+0557:     )
+0558: 
+0559:     if len(matched_pairs_df):
+0560:         print("\n10 closest opposite-profile severity pairs:\n")
+0561:         print(matched_pairs_df.head(10).to_string(index=False))
+0562: 
+0563:     print("\n=== GOVERNANCE NULL ===\n")
+0564:     print("Governance status:", governance_status)
+0565: 
+0566:     if governance_status == "COMPLETED":
+0567:         print("Governance column:", governance_summary["column"])
+0568:         print(
+0569:             "Cramer's V:",
+
+
+=== GOVERNANCE ===
+
+FILE: src/cipher_03b_governance_null.py
+
+--- AST Assign L336-L359 ---
+0336:     summary = {
+0337:         "cramers_v_bias_corrected": observed_v,
+0338:         "permutation_p": permutation_p,
+0339:         "permutations": permutations,
+0340:         "cv_splits": splits,
+0341:         "cv_repeats": repeats,
+0342:         "cv_folds": int(len(cv)),
+0343:         "balanced_accuracy": {
+0344:             "q025": float(cv["balanced_accuracy"].quantile(0.025)),
+0345:             "median": float(cv["balanced_accuracy"].median()),
+0346:             "q975": float(cv["balanced_accuracy"].quantile(0.975)),
+0347:         },
+0348:         "macro_f1_median": float(cv["macro_f1"].median()),
+0349:         "ari_median": float(cv["ari"].median()),
+0350:         "nmi_median": float(cv["nmi"].median()),
+0351:         "interpretive_flags": {
+0352:             "strong_governance_association": bool(
+0353:                 observed_v >= 0.50 and permutation_p < 0.05
+0354:             ),
+0355:             "governance_nearly_reconstructs_profiles": bool(
+0356:                 cv["balanced_accuracy"].median() >= 0.90 and cv["ari"].median() >= 0.80
+0357:             ),
+0358:         },
+0359:     }
+
+--- CONTEXT term=strong_governance_association L344-L360 ---
+0344:             "q025": float(cv["balanced_accuracy"].quantile(0.025)),
+0345:             "median": float(cv["balanced_accuracy"].median()),
+0346:             "q975": float(cv["balanced_accuracy"].quantile(0.975)),
+0347:         },
+0348:         "macro_f1_median": float(cv["macro_f1"].median()),
+0349:         "ari_median": float(cv["ari"].median()),
+0350:         "nmi_median": float(cv["nmi"].median()),
+0351:         "interpretive_flags": {
+0352:             "strong_governance_association": bool(
+0353:                 observed_v >= 0.50 and permutation_p < 0.05
+0354:             ),
+0355:             "governance_nearly_reconstructs_profiles": bool(
+0356:                 cv["balanced_accuracy"].median() >= 0.90 and cv["ari"].median() >= 0.80
+0357:             ),
+0358:         },
+0359:     }
+0360: 
+
+--- CONTEXT term=governance_nearly_reconstructs_profiles L347-L363 ---
+0347:         },
+0348:         "macro_f1_median": float(cv["macro_f1"].median()),
+0349:         "ari_median": float(cv["ari"].median()),
+0350:         "nmi_median": float(cv["nmi"].median()),
+0351:         "interpretive_flags": {
+0352:             "strong_governance_association": bool(
+0353:                 observed_v >= 0.50 and permutation_p < 0.05
+0354:             ),
+0355:             "governance_nearly_reconstructs_profiles": bool(
+0356:                 cv["balanced_accuracy"].median() >= 0.90 and cv["ari"].median() >= 0.80
+0357:             ),
+0358:         },
+0359:     }
+0360: 
+0361:     (OUTPUT_DIR / "governance_null_report.json").write_text(
+0362:         json.dumps(
+0363:             summary,
+
+
+=== UNCERTAINTY ===
+
+FILE: src/cipher_02_membership_certainty.py
+
+--- AST FunctionDef L36-L42 ---
+0036: def normalized_entropy_binary(p1: float, p2: float) -> float:
+0037:     probs = np.array([p1, p2], dtype=float)
+0038:     probs = probs[probs > 0]
+0039:     if len(probs) == 0:
+0040:         return np.nan
+0041:     entropy = -np.sum(probs * np.log(probs))
+0042:     return float(entropy / np.log(2.0))
+
+--- AST Assign L167-L167 ---
+0167:     core_family = float(cipher_config["certainty"]["core_family_consistency_threshold"])
+
+--- AST Assign L169-L171 ---
+0169:     boundary_family = float(
+0170:         cipher_config["certainty"]["boundary_family_consistency_threshold"]
+0171:     )
+
+--- AST Assign L313-L332 ---
+0313:     profile_summary = (
+0314:         certainty.groupby("reference_profile", observed=True)
+0315:         .agg(
+0316:             n=("institution_id", "count"),
+0317:             median_reference_probability=("reference_profile_probability", "median"),
+0318:             minimum_reference_probability=("reference_profile_probability", "min"),
+0319:             median_family_consistency=("family_consistency", "median"),
+0320:             minimum_family_consistency=("family_consistency", "min"),
+0321:             median_entropy=("normalized_entropy", "median"),
+0322:             median_consensus_gap=("consensus_gap", "median"),
+0323:             core_count=("certainty_class", lambda s: int((s == "CORE").sum())),
+0324:             halo_count=("certainty_class", lambda s: int((s == "HALO").sum())),
+0325:             boundary_count=("certainty_class", lambda s: int((s == "BOUNDARY").sum())),
+0326:             ensemble_reference_disagreements=(
+0327:                 "ensemble_agrees_with_reference",
+0328:                 lambda s: int((s == 0).sum()),
+0329:             ),
+0330:         )
+0331:         .reset_index()
+0332:     )
+
+--- AST Assign L338-L345 ---
+0338:     lowest_certainty = certainty.sort_values(
+0339:         [
+0340:             "reference_profile_probability",
+0341:             "family_consistency",
+0342:             "membership_margin",
+0343:         ],
+0344:         ascending=[True, True, True],
+0345:     ).head(15)
+
+--- AST Assign L354-L372 ---
+0354:     family_profile_summary = (
+0355:         certainty_by_family.groupby(
+0356:             ["reference_profile", "family"],
+0357:             observed=True,
+0358:         )
+0359:         .agg(
+0360:             institutions=("institution_id", "count"),
+0361:             median_reference_probability=(
+0362:                 "family_reference_profile_probability",
+0363:                 "median",
+0364:             ),
+0365:             minimum_reference_probability=(
+0366:                 "family_reference_profile_probability",
+0367:                 "min",
+0368:             ),
+0369:             median_oob_predictions=("n_oob_predictions", "median"),
+0370:         )
+0371:         .reset_index()
+0372:     )
+
+--- AST Assign L430-L457 ---
+0430:     report = {
+0431:         "gate_checks": gate_checks,
+0432:         "gate_status": (
+0433:             "PASS_STAGE_2_COMPUTATION"
+0434:             if all(gate_checks.values())
+0435:             else "FAIL_STAGE_2_COMPUTATION"
+0436:         ),
+0437:         "thresholds": {
+0438:             "core_reference_probability": core_p,
+0439:             "core_family_consistency": core_family,
+0440:             "boundary_reference_probability": boundary_p,
+0441:             "boundary_family_consistency": boundary_family,
+0442:         },
+0443:         "class_counts": {str(key): int(value) for key, value in class_counts.items()},
+0444:         "ensemble_reference_disagreements": int(
+0445:             (certainty["ensemble_agrees_with_reference"] == 0).sum()
+0446:         ),
+0447:         "minimum_reference_profile_probability": float(
+0448:             certainty["reference_profile_probability"].min()
+0449:         ),
+0450:         "median_reference_profile_probability": float(
+0451:             certainty["reference_profile_probability"].median()
+0452:         ),
+0453:         "minimum_family_consistency": float(certainty["family_consistency"].min()),
+0454:         "median_family_consistency": float(certainty["family_consistency"].median()),
+0455:         "minimum_consensus_gap": float(certainty["consensus_gap"].min()),
+0456:         "median_consensus_gap": float(certainty["consensus_gap"].median()),
+0457:     }
+
+--- AST Assign L194-L194 ---
+0194:         entropy = normalized_entropy_binary(p1, p2)
+
+--- AST Assign L244-L244 ---
+0244:         family_consistency = float(min(family_reference_probs))
+
+--- AST If L252-L257 ---
+0252:         if reference_probability >= core_p and family_consistency >= core_family:
+0253:             certainty_class = "CORE"
+0254:         elif reference_probability < boundary_p or family_consistency < boundary_family:
+0255:             certainty_class = "BOUNDARY"
+0256:         else:
+0257:             certainty_class = "HALO"
+
+--- AST If L254-L257 ---
+0254:         elif reference_probability < boundary_p or family_consistency < boundary_family:
+0255:             certainty_class = "BOUNDARY"
+0256:         else:
+0257:             certainty_class = "HALO"
+
+--- CONTEXT term=normalized_entropy L28-L44 ---
+0028: 
+0029: 
+0030: def load_json(path: Path) -> dict:
+0031:     if not path.exists():
+0032:         raise FileNotFoundError(f"Missing required file: {path}")
+0033:     return json.loads(path.read_text(encoding="utf-8"))
+0034: 
+0035: 
+0036: def normalized_entropy_binary(p1: float, p2: float) -> float:
+0037:     probs = np.array([p1, p2], dtype=float)
+0038:     probs = probs[probs > 0]
+0039:     if len(probs) == 0:
+0040:         return np.nan
+0041:     entropy = -np.sum(probs * np.log(probs))
+0042:     return float(entropy / np.log(2.0))
+0043: 
+0044: 
+
+--- CONTEXT term=normalized_entropy L186-L202 ---
+0186: 
+0187:         dominant_profile, dominant_probability, probs = majority_probability(
+0188:             all_values,
+0189:             profiles,
+0190:         )
+0191: 
+0192:         p1 = probs[1]
+0193:         p2 = probs[2]
+0194:         entropy = normalized_entropy_binary(p1, p2)
+0195:         margin = float(2.0 * abs(p1 - 0.5))
+0196: 
+0197:         within_consensus, cross_leakage = compute_pair_consensus(
+0198:             i,
+0199:             reference_labels,
+0200:             coassign_oob,
+0201:         )
+0202: 
+
+--- CONTEXT term=normalized_entropy L261-L277 ---
+0261:                 "institution_id": institution_id,
+0262:                 "reference_profile": reference_profile,
+0263:                 "n_oob_predictions": int(len(all_values)),
+0264:                 "ensemble_dominant_profile": int(dominant_profile),
+0265:                 "ensemble_dominant_probability": dominant_probability,
+0266:                 "reference_profile_probability": reference_probability,
+0267:                 "profile_1_probability": float(p1),
+0268:                 "profile_2_probability": float(p2),
+0269:                 "normalized_entropy": entropy,
+0270:                 "membership_margin": margin,
+0271:                 "within_reference_profile_consensus": within_consensus,
+0272:                 "cross_profile_leakage": cross_leakage,
+0273:                 "consensus_gap": (
+0274:                     float(within_consensus - cross_leakage)
+0275:                     if np.isfinite(within_consensus) and np.isfinite(cross_leakage)
+0276:                     else np.nan
+0277:                 ),
+
+--- CONTEXT term=normalized_entropy L496-L512 ---
+0496:     print("\n=== 15 LOWEST-CERTAINTY INSTITUTIONS ===\n")
+0497:     print(
+0498:         lowest_certainty[
+0499:             [
+0500:                 "institution_id",
+0501:                 "reference_profile",
+0502:                 "reference_profile_probability",
+0503:                 "family_consistency",
+0504:                 "normalized_entropy",
+0505:                 "membership_margin",
+0506:                 "consensus_gap",
+0507:                 "family_disagreement_count",
+0508:                 "certainty_class",
+0509:             ]
+0510:         ].to_string(index=False)
+0511:     )
+0512: 
+
+--- CONTEXT term=reference_profile_probability L226-L242 ---
+0226:             family_rows.append(
+0227:                 {
+0228:                     "institution_id": institution_id,
+0229:                     "reference_profile": reference_profile,
+0230:                     "family": family,
+0231:                     "n_oob_predictions": int(len(values)),
+0232:                     "family_dominant_profile": int(fam_dom),
+0233:                     "family_dominant_probability": fam_dom_p,
+0234:                     "family_reference_profile_probability": reference_probability,
+0235:                     "profile_1_probability": float(fam_probs[1]),
+0236:                     "profile_2_probability": float(fam_probs[2]),
+0237:                 }
+0238:             )
+0239: 
+0240:             family_dominant_probs.append(fam_dom_p)
+0241:             family_reference_probs.append(reference_probability)
+0242:             family_disagreement_flags.append(int(fam_dom != dominant_profile))
+
+--- CONTEXT term=reference_profile_probability L258-L274 ---
+0258: 
+0259:         rows.append(
+0260:             {
+0261:                 "institution_id": institution_id,
+0262:                 "reference_profile": reference_profile,
+0263:                 "n_oob_predictions": int(len(all_values)),
+0264:                 "ensemble_dominant_profile": int(dominant_profile),
+0265:                 "ensemble_dominant_probability": dominant_probability,
+0266:                 "reference_profile_probability": reference_probability,
+0267:                 "profile_1_probability": float(p1),
+0268:                 "profile_2_probability": float(p2),
+0269:                 "normalized_entropy": entropy,
+0270:                 "membership_margin": margin,
+0271:                 "within_reference_profile_consensus": within_consensus,
+0272:                 "cross_profile_leakage": cross_leakage,
+0273:                 "consensus_gap": (
+0274:                     float(within_consensus - cross_leakage)
+
+--- CONTEXT term=reference_profile_probability L309-L325 ---
+0309:         OUTPUT_DIR / "core_halo_boundary_counts.csv",
+0310:         index=False,
+0311:     )
+0312: 
+0313:     profile_summary = (
+0314:         certainty.groupby("reference_profile", observed=True)
+0315:         .agg(
+0316:             n=("institution_id", "count"),
+0317:             median_reference_probability=("reference_profile_probability", "median"),
+0318:             minimum_reference_probability=("reference_profile_probability", "min"),
+0319:             median_family_consistency=("family_consistency", "median"),
+0320:             minimum_family_consistency=("family_consistency", "min"),
+0321:             median_entropy=("normalized_entropy", "median"),
+0322:             median_consensus_gap=("consensus_gap", "median"),
+0323:             core_count=("certainty_class", lambda s: int((s == "CORE").sum())),
+0324:             halo_count=("certainty_class", lambda s: int((s == "HALO").sum())),
+0325:             boundary_count=("certainty_class", lambda s: int((s == "BOUNDARY").sum())),
+
+--- CONTEXT term=reference_profile_probability L310-L326 ---
+0310:         index=False,
+0311:     )
+0312: 
+0313:     profile_summary = (
+0314:         certainty.groupby("reference_profile", observed=True)
+0315:         .agg(
+0316:             n=("institution_id", "count"),
+0317:             median_reference_probability=("reference_profile_probability", "median"),
+0318:             minimum_reference_probability=("reference_profile_probability", "min"),
+0319:             median_family_consistency=("family_consistency", "median"),
+0320:             minimum_family_consistency=("family_consistency", "min"),
+0321:             median_entropy=("normalized_entropy", "median"),
+0322:             median_consensus_gap=("consensus_gap", "median"),
+0323:             core_count=("certainty_class", lambda s: int((s == "CORE").sum())),
+0324:             halo_count=("certainty_class", lambda s: int((s == "HALO").sum())),
+0325:             boundary_count=("certainty_class", lambda s: int((s == "BOUNDARY").sum())),
+0326:             ensemble_reference_disagreements=(
+
+--- CONTEXT term=reference_profile_probability L332-L348 ---
+0332:     )
+0333:     profile_summary.to_csv(
+0334:         OUTPUT_DIR / "certainty_profile_summary.csv",
+0335:         index=False,
+0336:     )
+0337: 
+0338:     lowest_certainty = certainty.sort_values(
+0339:         [
+0340:             "reference_profile_probability",
+0341:             "family_consistency",
+0342:             "membership_margin",
+0343:         ],
+0344:         ascending=[True, True, True],
+0345:     ).head(15)
+0346: 
+0347:     lowest_certainty.to_csv(
+0348:         OUTPUT_DIR / "lowest_certainty_institutions.csv",
+
+--- CONTEXT term=reference_profile_probability L358-L374 ---
+0358:         )
+0359:         .agg(
+0360:             institutions=("institution_id", "count"),
+0361:             median_reference_probability=(
+0362:                 "family_reference_profile_probability",
+0363:                 "median",
+0364:             ),
+0365:             minimum_reference_probability=(
+0366:                 "family_reference_profile_probability",
+0367:                 "min",
+0368:             ),
+0369:             median_oob_predictions=("n_oob_predictions", "median"),
+0370:         )
+0371:         .reset_index()
+0372:     )
+0373:     family_profile_summary.to_csv(
+0374:         OUTPUT_DIR / "family_profile_summary.csv",
+
+--- CONTEXT term=reference_profile_probability L380-L396 ---
+0380:         "all_have_at_least_150_oob_predictions": bool(
+0381:             (certainty["n_oob_predictions"] >= 150).all()
+0382:         ),
+0383:         "all_probabilities_in_0_1": bool(
+0384:             (
+0385:                 certainty[
+0386:                     [
+0387:                         "ensemble_dominant_probability",
+0388:                         "reference_profile_probability",
+0389:                         "profile_1_probability",
+0390:                         "profile_2_probability",
+0391:                         "family_consistency",
+0392:                         "minimum_family_dominant_probability",
+0393:                     ]
+0394:                 ]
+0395:                 .apply(pd.to_numeric)
+0396:                 .ge(0)
+
+--- CONTEXT term=reference_profile_probability L396-L412 ---
+0396:                 .ge(0)
+0397:                 .all()
+0398:                 .all()
+0399:             )
+0400:             and (
+0401:                 certainty[
+0402:                     [
+0403:                         "ensemble_dominant_probability",
+0404:                         "reference_profile_probability",
+0405:                         "profile_1_probability",
+0406:                         "profile_2_probability",
+0407:                         "family_consistency",
+0408:                         "minimum_family_dominant_probability",
+0409:                     ]
+0410:                 ]
+0411:                 .apply(pd.to_numeric)
+0412:                 .le(1)
+
+--- CONTEXT term=reference_profile_probability L442-L458 ---
+0442:         },
+0443:         "class_counts": {str(key): int(value) for key, value in class_counts.items()},
+0444:         "ensemble_reference_disagreements": int(
+0445:             (certainty["ensemble_agrees_with_reference"] == 0).sum()
+0446:         ),
+0447:         "minimum_reference_profile_probability": float(
+0448:             certainty["reference_profile_probability"].min()
+0449:         ),
+0450:         "median_reference_profile_probability": float(
+0451:             certainty["reference_profile_probability"].median()
+0452:         ),
+0453:         "minimum_family_consistency": float(certainty["family_consistency"].min()),
+0454:         "median_family_consistency": float(certainty["family_consistency"].median()),
+0455:         "minimum_consensus_gap": float(certainty["consensus_gap"].min()),
+0456:         "median_consensus_gap": float(certainty["consensus_gap"].median()),
+0457:     }
+0458: 
+
+--- CONTEXT term=reference_profile_probability L443-L459 ---
+0443:         "class_counts": {str(key): int(value) for key, value in class_counts.items()},
+0444:         "ensemble_reference_disagreements": int(
+0445:             (certainty["ensemble_agrees_with_reference"] == 0).sum()
+0446:         ),
+0447:         "minimum_reference_profile_probability": float(
+0448:             certainty["reference_profile_probability"].min()
+0449:         ),
+0450:         "median_reference_profile_probability": float(
+0451:             certainty["reference_profile_probability"].median()
+0452:         ),
+0453:         "minimum_family_consistency": float(certainty["family_consistency"].min()),
+0454:         "median_family_consistency": float(certainty["family_consistency"].median()),
+0455:         "minimum_consensus_gap": float(certainty["consensus_gap"].min()),
+0456:         "median_consensus_gap": float(certainty["consensus_gap"].median()),
+0457:     }
+0458: 
+0459:     (OUTPUT_DIR / "certainty_report.json").write_text(
+
+--- CONTEXT term=reference_profile_probability L468-L484 ---
+0468:         {key: int(value) for key, value in class_counts.items()},
+0469:     )
+0470:     print(
+0471:         "Ensemble/reference disagreements:",
+0472:         report["ensemble_reference_disagreements"],
+0473:     )
+0474:     print(
+0475:         "Reference-profile probability:",
+0476:         f"min={report['minimum_reference_profile_probability']:.4f},",
+0477:         f"median={report['median_reference_profile_probability']:.4f}",
+0478:     )
+0479:     print(
+0480:         "Family consistency:",
+0481:         f"min={report['minimum_family_consistency']:.4f},",
+0482:         f"median={report['median_family_consistency']:.4f}",
+0483:     )
+0484:     print(
+
+--- CONTEXT term=reference_profile_probability L469-L485 ---
+0469:     )
+0470:     print(
+0471:         "Ensemble/reference disagreements:",
+0472:         report["ensemble_reference_disagreements"],
+0473:     )
+0474:     print(
+0475:         "Reference-profile probability:",
+0476:         f"min={report['minimum_reference_profile_probability']:.4f},",
+0477:         f"median={report['median_reference_profile_probability']:.4f}",
+0478:     )
+0479:     print(
+0480:         "Family consistency:",
+0481:         f"min={report['minimum_family_consistency']:.4f},",
+0482:         f"median={report['median_family_consistency']:.4f}",
+0483:     )
+0484:     print(
+0485:         "Consensus gap:",
+
+--- CONTEXT term=reference_profile_probability L494-L510 ---
+0494:     print(family_profile_summary.to_string(index=False))
+0495: 
+0496:     print("\n=== 15 LOWEST-CERTAINTY INSTITUTIONS ===\n")
+0497:     print(
+0498:         lowest_certainty[
+0499:             [
+0500:                 "institution_id",
+0501:                 "reference_profile",
+0502:                 "reference_profile_probability",
+0503:                 "family_consistency",
+0504:                 "normalized_entropy",
+0505:                 "membership_margin",
+0506:                 "consensus_gap",
+0507:                 "family_disagreement_count",
+0508:                 "certainty_class",
+0509:             ]
+0510:         ].to_string(index=False)
+
+--- CONTEXT term=family_consistency L159-L175 ---
+0159: 
+0160:     missing_families = [
+0161:         family for family, members in family_members.items() if len(members) == 0
+0162:     ]
+0163:     if missing_families:
+0164:         raise ValueError(f"Missing ensemble families: {missing_families}")
+0165: 
+0166:     core_p = float(cipher_config["certainty"]["core_probability_threshold"])
+0167:     core_family = float(cipher_config["certainty"]["core_family_consistency_threshold"])
+0168:     boundary_p = float(cipher_config["certainty"]["boundary_probability_threshold"])
+0169:     boundary_family = float(
+0170:         cipher_config["certainty"]["boundary_family_consistency_threshold"]
+0171:     )
+0172: 
+0173:     rows = []
+0174:     family_rows = []
+0175: 
+
+--- CONTEXT term=family_consistency L162-L178 ---
+0162:     ]
+0163:     if missing_families:
+0164:         raise ValueError(f"Missing ensemble families: {missing_families}")
+0165: 
+0166:     core_p = float(cipher_config["certainty"]["core_probability_threshold"])
+0167:     core_family = float(cipher_config["certainty"]["core_family_consistency_threshold"])
+0168:     boundary_p = float(cipher_config["certainty"]["boundary_probability_threshold"])
+0169:     boundary_family = float(
+0170:         cipher_config["certainty"]["boundary_family_consistency_threshold"]
+0171:     )
+0172: 
+0173:     rows = []
+0174:     family_rows = []
+0175: 
+0176:     for i, institution_id in enumerate(institution_ids):
+0177:         all_values = (
+0178:             pd.to_numeric(
+
+--- CONTEXT term=family_consistency L236-L252 ---
+0236:                     "profile_2_probability": float(fam_probs[2]),
+0237:                 }
+0238:             )
+0239: 
+0240:             family_dominant_probs.append(fam_dom_p)
+0241:             family_reference_probs.append(reference_probability)
+0242:             family_disagreement_flags.append(int(fam_dom != dominant_profile))
+0243: 
+0244:         family_consistency = float(min(family_reference_probs))
+0245:         minimum_family_dominant_probability = float(min(family_dominant_probs))
+0246:         family_disagreement_count = int(sum(family_disagreement_flags))
+0247: 
+0248:         reference_profile = int(reference_labels[i])
+0249:         reference_probability = float(probs[reference_profile])
+0250:         ensemble_agrees_with_reference = int(dominant_profile == reference_profile)
+0251: 
+0252:         if reference_probability >= core_p and family_consistency >= core_family:
+
+--- CONTEXT term=family_consistency L244-L260 ---
+0244:         family_consistency = float(min(family_reference_probs))
+0245:         minimum_family_dominant_probability = float(min(family_dominant_probs))
+0246:         family_disagreement_count = int(sum(family_disagreement_flags))
+0247: 
+0248:         reference_profile = int(reference_labels[i])
+0249:         reference_probability = float(probs[reference_profile])
+0250:         ensemble_agrees_with_reference = int(dominant_profile == reference_profile)
+0251: 
+0252:         if reference_probability >= core_p and family_consistency >= core_family:
+0253:             certainty_class = "CORE"
+0254:         elif reference_probability < boundary_p or family_consistency < boundary_family:
+0255:             certainty_class = "BOUNDARY"
+0256:         else:
+0257:             certainty_class = "HALO"
+0258: 
+0259:         rows.append(
+0260:             {
+
+--- CONTEXT term=family_consistency L246-L262 ---
+0246:         family_disagreement_count = int(sum(family_disagreement_flags))
+0247: 
+0248:         reference_profile = int(reference_labels[i])
+0249:         reference_probability = float(probs[reference_profile])
+0250:         ensemble_agrees_with_reference = int(dominant_profile == reference_profile)
+0251: 
+0252:         if reference_probability >= core_p and family_consistency >= core_family:
+0253:             certainty_class = "CORE"
+0254:         elif reference_probability < boundary_p or family_consistency < boundary_family:
+0255:             certainty_class = "BOUNDARY"
+0256:         else:
+0257:             certainty_class = "HALO"
+0258: 
+0259:         rows.append(
+0260:             {
+0261:                 "institution_id": institution_id,
+0262:                 "reference_profile": reference_profile,
+
+--- CONTEXT term=family_consistency L270-L286 ---
+0270:                 "membership_margin": margin,
+0271:                 "within_reference_profile_consensus": within_consensus,
+0272:                 "cross_profile_leakage": cross_leakage,
+0273:                 "consensus_gap": (
+0274:                     float(within_consensus - cross_leakage)
+0275:                     if np.isfinite(within_consensus) and np.isfinite(cross_leakage)
+0276:                     else np.nan
+0277:                 ),
+0278:                 "family_consistency": family_consistency,
+0279:                 "minimum_family_dominant_probability": minimum_family_dominant_probability,
+0280:                 "family_disagreement_count": family_disagreement_count,
+0281:                 "ensemble_agrees_with_reference": ensemble_agrees_with_reference,
+0282:                 "certainty_class": certainty_class,
+0283:             }
+0284:         )
+0285: 
+0286:     certainty = pd.DataFrame(rows)
+
+--- CONTEXT term=family_consistency L311-L327 ---
+0311:     )
+0312: 
+0313:     profile_summary = (
+0314:         certainty.groupby("reference_profile", observed=True)
+0315:         .agg(
+0316:             n=("institution_id", "count"),
+0317:             median_reference_probability=("reference_profile_probability", "median"),
+0318:             minimum_reference_probability=("reference_profile_probability", "min"),
+0319:             median_family_consistency=("family_consistency", "median"),
+0320:             minimum_family_consistency=("family_consistency", "min"),
+0321:             median_entropy=("normalized_entropy", "median"),
+0322:             median_consensus_gap=("consensus_gap", "median"),
+0323:             core_count=("certainty_class", lambda s: int((s == "CORE").sum())),
+0324:             halo_count=("certainty_class", lambda s: int((s == "HALO").sum())),
+0325:             boundary_count=("certainty_class", lambda s: int((s == "BOUNDARY").sum())),
+0326:             ensemble_reference_disagreements=(
+0327:                 "ensemble_agrees_with_reference",
+
+--- CONTEXT term=family_consistency L312-L328 ---
+0312: 
+0313:     profile_summary = (
+0314:         certainty.groupby("reference_profile", observed=True)
+0315:         .agg(
+0316:             n=("institution_id", "count"),
+0317:             median_reference_probability=("reference_profile_probability", "median"),
+0318:             minimum_reference_probability=("reference_profile_probability", "min"),
+0319:             median_family_consistency=("family_consistency", "median"),
+0320:             minimum_family_consistency=("family_consistency", "min"),
+0321:             median_entropy=("normalized_entropy", "median"),
+0322:             median_consensus_gap=("consensus_gap", "median"),
+0323:             core_count=("certainty_class", lambda s: int((s == "CORE").sum())),
+0324:             halo_count=("certainty_class", lambda s: int((s == "HALO").sum())),
+0325:             boundary_count=("certainty_class", lambda s: int((s == "BOUNDARY").sum())),
+0326:             ensemble_reference_disagreements=(
+0327:                 "ensemble_agrees_with_reference",
+0328:                 lambda s: int((s == 0).sum()),
+
+--- CONTEXT term=family_consistency L333-L349 ---
+0333:     profile_summary.to_csv(
+0334:         OUTPUT_DIR / "certainty_profile_summary.csv",
+0335:         index=False,
+0336:     )
+0337: 
+0338:     lowest_certainty = certainty.sort_values(
+0339:         [
+0340:             "reference_profile_probability",
+0341:             "family_consistency",
+0342:             "membership_margin",
+0343:         ],
+0344:         ascending=[True, True, True],
+0345:     ).head(15)
+0346: 
+0347:     lowest_certainty.to_csv(
+0348:         OUTPUT_DIR / "lowest_certainty_institutions.csv",
+0349:         index=False,
+
+--- CONTEXT term=family_consistency L383-L399 ---
+0383:         "all_probabilities_in_0_1": bool(
+0384:             (
+0385:                 certainty[
+0386:                     [
+0387:                         "ensemble_dominant_probability",
+0388:                         "reference_profile_probability",
+0389:                         "profile_1_probability",
+0390:                         "profile_2_probability",
+0391:                         "family_consistency",
+0392:                         "minimum_family_dominant_probability",
+0393:                     ]
+0394:                 ]
+0395:                 .apply(pd.to_numeric)
+0396:                 .ge(0)
+0397:                 .all()
+0398:                 .all()
+0399:             )
+
+--- CONTEXT term=family_consistency L399-L415 ---
+0399:             )
+0400:             and (
+0401:                 certainty[
+0402:                     [
+0403:                         "ensemble_dominant_probability",
+0404:                         "reference_profile_probability",
+0405:                         "profile_1_probability",
+0406:                         "profile_2_probability",
+0407:                         "family_consistency",
+0408:                         "minimum_family_dominant_probability",
+0409:                     ]
+0410:                 ]
+0411:                 .apply(pd.to_numeric)
+0412:                 .le(1)
+0413:                 .all()
+0414:                 .all()
+0415:             )
+
+--- CONTEXT term=family_consistency L445-L461 ---
+0445:             (certainty["ensemble_agrees_with_reference"] == 0).sum()
+0446:         ),
+0447:         "minimum_reference_profile_probability": float(
+0448:             certainty["reference_profile_probability"].min()
+0449:         ),
+0450:         "median_reference_profile_probability": float(
+0451:             certainty["reference_profile_probability"].median()
+0452:         ),
+0453:         "minimum_family_consistency": float(certainty["family_consistency"].min()),
+0454:         "median_family_consistency": float(certainty["family_consistency"].median()),
+0455:         "minimum_consensus_gap": float(certainty["consensus_gap"].min()),
+0456:         "median_consensus_gap": float(certainty["consensus_gap"].median()),
+0457:     }
+0458: 
+0459:     (OUTPUT_DIR / "certainty_report.json").write_text(
+0460:         json.dumps(report, indent=2, ensure_ascii=False),
+0461:         encoding="utf-8",
+
+--- CONTEXT term=family_consistency L446-L462 ---
+0446:         ),
+0447:         "minimum_reference_profile_probability": float(
+0448:             certainty["reference_profile_probability"].min()
+0449:         ),
+0450:         "median_reference_profile_probability": float(
+0451:             certainty["reference_profile_probability"].median()
+0452:         ),
+0453:         "minimum_family_consistency": float(certainty["family_consistency"].min()),
+0454:         "median_family_consistency": float(certainty["family_consistency"].median()),
+0455:         "minimum_consensus_gap": float(certainty["consensus_gap"].min()),
+0456:         "median_consensus_gap": float(certainty["consensus_gap"].median()),
+0457:     }
+0458: 
+0459:     (OUTPUT_DIR / "certainty_report.json").write_text(
+0460:         json.dumps(report, indent=2, ensure_ascii=False),
+0461:         encoding="utf-8",
+0462:     )
+
+--- CONTEXT term=family_consistency L473-L489 ---
+0473:     )
+0474:     print(
+0475:         "Reference-profile probability:",
+0476:         f"min={report['minimum_reference_profile_probability']:.4f},",
+0477:         f"median={report['median_reference_profile_probability']:.4f}",
+0478:     )
+0479:     print(
+0480:         "Family consistency:",
+0481:         f"min={report['minimum_family_consistency']:.4f},",
+0482:         f"median={report['median_family_consistency']:.4f}",
+0483:     )
+0484:     print(
+0485:         "Consensus gap:",
+0486:         f"min={report['minimum_consensus_gap']:.4f},",
+0487:         f"median={report['median_consensus_gap']:.4f}",
+0488:     )
+0489: 
+
+--- CONTEXT term=family_consistency L474-L490 ---
+0474:     print(
+0475:         "Reference-profile probability:",
+0476:         f"min={report['minimum_reference_profile_probability']:.4f},",
+0477:         f"median={report['median_reference_profile_probability']:.4f}",
+0478:     )
+0479:     print(
+0480:         "Family consistency:",
+0481:         f"min={report['minimum_family_consistency']:.4f},",
+0482:         f"median={report['median_family_consistency']:.4f}",
+0483:     )
+0484:     print(
+0485:         "Consensus gap:",
+0486:         f"min={report['minimum_consensus_gap']:.4f},",
+0487:         f"median={report['median_consensus_gap']:.4f}",
+0488:     )
+0489: 
+0490:     print("\n=== PROFILE SUMMARY ===\n")
+
+--- CONTEXT term=family_consistency L495-L511 ---
+0495: 
+0496:     print("\n=== 15 LOWEST-CERTAINTY INSTITUTIONS ===\n")
+0497:     print(
+0498:         lowest_certainty[
+0499:             [
+0500:                 "institution_id",
+0501:                 "reference_profile",
+0502:                 "reference_profile_probability",
+0503:                 "family_consistency",
+0504:                 "normalized_entropy",
+0505:                 "membership_margin",
+0506:                 "consensus_gap",
+0507:                 "family_disagreement_count",
+0508:                 "certainty_class",
+0509:             ]
+0510:         ].to_string(index=False)
+0511:     )
+
+--- CONTEXT term=membership_margin L262-L278 ---
+0262:                 "reference_profile": reference_profile,
+0263:                 "n_oob_predictions": int(len(all_values)),
+0264:                 "ensemble_dominant_profile": int(dominant_profile),
+0265:                 "ensemble_dominant_probability": dominant_probability,
+0266:                 "reference_profile_probability": reference_probability,
+0267:                 "profile_1_probability": float(p1),
+0268:                 "profile_2_probability": float(p2),
+0269:                 "normalized_entropy": entropy,
+0270:                 "membership_margin": margin,
+0271:                 "within_reference_profile_consensus": within_consensus,
+0272:                 "cross_profile_leakage": cross_leakage,
+0273:                 "consensus_gap": (
+0274:                     float(within_consensus - cross_leakage)
+0275:                     if np.isfinite(within_consensus) and np.isfinite(cross_leakage)
+0276:                     else np.nan
+0277:                 ),
+0278:                 "family_consistency": family_consistency,
+
+--- CONTEXT term=membership_margin L334-L350 ---
+0334:         OUTPUT_DIR / "certainty_profile_summary.csv",
+0335:         index=False,
+0336:     )
+0337: 
+0338:     lowest_certainty = certainty.sort_values(
+0339:         [
+0340:             "reference_profile_probability",
+0341:             "family_consistency",
+0342:             "membership_margin",
+0343:         ],
+0344:         ascending=[True, True, True],
+0345:     ).head(15)
+0346: 
+0347:     lowest_certainty.to_csv(
+0348:         OUTPUT_DIR / "lowest_certainty_institutions.csv",
+0349:         index=False,
+0350:     )
+
+--- CONTEXT term=membership_margin L497-L513 ---
+0497:     print(
+0498:         lowest_certainty[
+0499:             [
+0500:                 "institution_id",
+0501:                 "reference_profile",
+0502:                 "reference_profile_probability",
+0503:                 "family_consistency",
+0504:                 "normalized_entropy",
+0505:                 "membership_margin",
+0506:                 "consensus_gap",
+0507:                 "family_disagreement_count",
+0508:                 "certainty_class",
+0509:             ]
+0510:         ].to_string(index=False)
+0511:     )
+0512: 
+0513:     print("\n=== COMPUTATION CHECKS ===\n")
+
+--- CONTEXT term=consensus_gap L265-L281 ---
+0265:                 "ensemble_dominant_probability": dominant_probability,
+0266:                 "reference_profile_probability": reference_probability,
+0267:                 "profile_1_probability": float(p1),
+0268:                 "profile_2_probability": float(p2),
+0269:                 "normalized_entropy": entropy,
+0270:                 "membership_margin": margin,
+0271:                 "within_reference_profile_consensus": within_consensus,
+0272:                 "cross_profile_leakage": cross_leakage,
+0273:                 "consensus_gap": (
+0274:                     float(within_consensus - cross_leakage)
+0275:                     if np.isfinite(within_consensus) and np.isfinite(cross_leakage)
+0276:                     else np.nan
+0277:                 ),
+0278:                 "family_consistency": family_consistency,
+0279:                 "minimum_family_dominant_probability": minimum_family_dominant_probability,
+0280:                 "family_disagreement_count": family_disagreement_count,
+0281:                 "ensemble_agrees_with_reference": ensemble_agrees_with_reference,
+
+--- CONTEXT term=consensus_gap L447-L463 ---
+0447:         "minimum_reference_profile_probability": float(
+0448:             certainty["reference_profile_probability"].min()
+0449:         ),
+0450:         "median_reference_profile_probability": float(
+0451:             certainty["reference_profile_probability"].median()
+0452:         ),
+0453:         "minimum_family_consistency": float(certainty["family_consistency"].min()),
+0454:         "median_family_consistency": float(certainty["family_consistency"].median()),
+0455:         "minimum_consensus_gap": float(certainty["consensus_gap"].min()),
+0456:         "median_consensus_gap": float(certainty["consensus_gap"].median()),
+0457:     }
+0458: 
+0459:     (OUTPUT_DIR / "certainty_report.json").write_text(
+0460:         json.dumps(report, indent=2, ensure_ascii=False),
+0461:         encoding="utf-8",
+0462:     )
+0463: 
+
+--- CONTEXT term=consensus_gap L448-L464 ---
+0448:             certainty["reference_profile_probability"].min()
+0449:         ),
+0450:         "median_reference_profile_probability": float(
+0451:             certainty["reference_profile_probability"].median()
+0452:         ),
+0453:         "minimum_family_consistency": float(certainty["family_consistency"].min()),
+0454:         "median_family_consistency": float(certainty["family_consistency"].median()),
+0455:         "minimum_consensus_gap": float(certainty["consensus_gap"].min()),
+0456:         "median_consensus_gap": float(certainty["consensus_gap"].median()),
+0457:     }
+0458: 
+0459:     (OUTPUT_DIR / "certainty_report.json").write_text(
+0460:         json.dumps(report, indent=2, ensure_ascii=False),
+0461:         encoding="utf-8",
+0462:     )
+0463: 
+0464:     print("\n=== CIPHER STAGE 2 MEMBERSHIP CERTAINTY ===\n")
+
+--- CONTEXT term=consensus_gap L478-L494 ---
+0478:     )
+0479:     print(
+0480:         "Family consistency:",
+0481:         f"min={report['minimum_family_consistency']:.4f},",
+0482:         f"median={report['median_family_consistency']:.4f}",
+0483:     )
+0484:     print(
+0485:         "Consensus gap:",
+0486:         f"min={report['minimum_consensus_gap']:.4f},",
+0487:         f"median={report['median_consensus_gap']:.4f}",
+0488:     )
+0489: 
+0490:     print("\n=== PROFILE SUMMARY ===\n")
+0491:     print(profile_summary.to_string(index=False))
+0492: 
+0493:     print("\n=== FAMILY PROFILE SUMMARY ===\n")
+0494:     print(family_profile_summary.to_string(index=False))
+
+--- CONTEXT term=consensus_gap L479-L495 ---
+0479:     print(
+0480:         "Family consistency:",
+0481:         f"min={report['minimum_family_consistency']:.4f},",
+0482:         f"median={report['median_family_consistency']:.4f}",
+0483:     )
+0484:     print(
+0485:         "Consensus gap:",
+0486:         f"min={report['minimum_consensus_gap']:.4f},",
+0487:         f"median={report['median_consensus_gap']:.4f}",
+0488:     )
+0489: 
+0490:     print("\n=== PROFILE SUMMARY ===\n")
+0491:     print(profile_summary.to_string(index=False))
+0492: 
+0493:     print("\n=== FAMILY PROFILE SUMMARY ===\n")
+0494:     print(family_profile_summary.to_string(index=False))
+0495: 
+
+--- CONTEXT term=consensus_gap L498-L514 ---
+0498:         lowest_certainty[
+0499:             [
+0500:                 "institution_id",
+0501:                 "reference_profile",
+0502:                 "reference_profile_probability",
+0503:                 "family_consistency",
+0504:                 "normalized_entropy",
+0505:                 "membership_margin",
+0506:                 "consensus_gap",
+0507:                 "family_disagreement_count",
+0508:                 "certainty_class",
+0509:             ]
+0510:         ].to_string(index=False)
+0511:     )
+0512: 
+0513:     print("\n=== COMPUTATION CHECKS ===\n")
+0514:     for name, passed in gate_checks.items():
+
+FILE: src/cipher_03_null_models.py
+
+--- AST Assign L330-L351 ---
+0330:     data = (
+0331:         primary[[id_column] + features]
+0332:         .merge(
+0333:             labels,
+0334:             on=id_column,
+0335:             how="inner",
+0336:             validate="one_to_one",
+0337:         )
+0338:         .merge(
+0339:             certainty[
+0340:                 [
+0341:                     "institution_id",
+0342:                     "certainty_class",
+0343:                     "reference_profile_probability",
+0344:                 ]
+0345:             ],
+0346:             left_on=id_column,
+0347:             right_on="institution_id",
+0348:             how="inner",
+0349:             validate="one_to_one",
+0350:         )
+0351:     )
+
+
+=== EXISTING REPORT FLAGS / THRESHOLDS ===
+
+cipher/outputs/null_models/severity_null_report.json: MISSING
+
+cipher/outputs/null_models/governance_null_report.json:
+  interpretive_flags = {"governance_nearly_reconstructs_profiles": false, "strong_governance_association": false}
+  cramers_v_bias_corrected = 0.15661071577921537
+  permutation_p = 0.25507449255074494
+  balanced_accuracy = {"median": 0.5, "q025": 0.5, "q975": 0.5}
+
+cipher/outputs/certainty/certainty_report.json:
+  thresholds = {"boundary_family_consistency": 0.6, "boundary_reference_probability": 0.75, "core_family_consistency": 0.8, "core_reference_probability": 0.9}
+
+=== REQUIRED REVIEW BEFORE STAGE 8C ===
+We need the literal boolean conditions for the severity and governance flags, plus the formulas for the continuous uncertainty quantities.
+If the code contains no pre-existing 'primary uncertainty score', Stage 8C will explicitly choose one prospectively before synthetic results.
+
+GATE STATUS: STAGE_8C0C_EXACT_DEFINITIONS_EXTRACTED
+Do not run synthetic model-performance experiments yet.

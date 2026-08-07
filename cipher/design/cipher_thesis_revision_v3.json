@@ -1,0 +1,112 @@
+{
+  "version": "CIPHER_THESIS_V3",
+  "status": "FROZEN_AFTER_EMPIRICAL_MOTIF_STOP_RULE",
+  "method_name": "CIPHER: Counterfactual Institutional Profiling under Heterogeneous Ensemble Robustness",
+  "parent_revision": {
+    "path": "cipher/design/cipher_thesis_revision_v2.json",
+    "sha256": "8ecf61436e9dd4768393c8131b8453e05fad35c52d60585ba54a578c466ca027"
+  },
+  "empirical_motif_claim": {
+    "status": "RETIRED",
+    "reason": "Among the 10 primary ensemble-robust Profile-1-to-Profile-2 transactions, no signed itemset of size 2-4 reached the frozen minimum support of four institutions. Therefore bootstrap and randomized-margin motif inference is not run, and the empirical motif claim is removed without threshold relaxation.",
+    "frozen_minimum_support_count": 4,
+    "raw_frequent_itemsets": 0,
+    "raw_closed_itemsets": 0
+  },
+  "single_feature_recurrence_policy": {
+    "status": "DESCRIPTIVE_ONLY",
+    "allowed": "Individual signed changes may be reported descriptively as recurring items, but they are not called motifs and are not treated as inferential discoveries.",
+    "top_singletons": [
+      {
+        "signed_item": "administrative_disorganization_constraint↓",
+        "support_count": 6,
+        "support_fraction": 0.6
+      },
+      {
+        "signed_item": "internet_stability_constraint↑",
+        "support_count": 4,
+        "support_fraction": 0.4
+      },
+      {
+        "signed_item": "system_change_resistance_constraint↓",
+        "support_count": 4,
+        "support_fraction": 0.4
+      },
+      {
+        "signed_item": "digital_tool_variety_constraint↑",
+        "support_count": 3,
+        "support_fraction": 0.3
+      },
+      {
+        "signed_item": "time_constraint_score↓",
+        "support_count": 3,
+        "support_fraction": 0.3
+      },
+      {
+        "signed_item": "admin_time_load_constraint↓",
+        "support_count": 2,
+        "support_fraction": 0.2
+      },
+      {
+        "signed_item": "digital_usage_constraint_score↑",
+        "support_count": 2,
+        "support_fraction": 0.2
+      },
+      {
+        "signed_item": "recording_system_constraint↑",
+        "support_count": 2,
+        "support_fraction": 0.2
+      },
+      {
+        "signed_item": "resource_constraint_score↑",
+        "support_count": 2,
+        "support_fraction": 0.2
+      },
+      {
+        "signed_item": "willingness_constraint_score↓",
+        "support_count": 2,
+        "support_fraction": 0.2
+      }
+    ]
+  },
+  "revised_core_empirical_story": [
+    "A stable two-profile institutional partition is recovered under representation and algorithm perturbations.",
+    "Membership uncertainty is concentrated on the organizational-capacity side, while the infrastructure-bottleneck profile forms a perturbation-stable core.",
+    "The partition is not reducible to aggregate friction severity or governance type.",
+    "Exact sparse plausible profile transitions are available for only 19/81 institutions, rejecting broad counterfactual reachability.",
+    "Reachability is strongly associated with membership uncertainty and is asymmetric by reference profile.",
+    "Among the 19 single-model reachable institutions, 10/19 retain target-profile support >=0.90 across the 984-member heterogeneous ensemble; all 10 are Profile 1 -> Profile 2.",
+    "Those 10 robust transitions show positive ensemble support gain and substantial source-to-target member flips, so high final support is not merely inherited from baseline ambiguity.",
+    "No recurrent multi-feature signed motif meets the frozen empirical support criterion, so motif discovery is not part of the retained empirical claim."
+  ],
+  "revised_methodological_question": "When stable institutional profiles are discovered under heterogeneous perturbation, can membership uncertainty and ensemble-validated counterfactual reachability characterize which profile transitions are structurally accessible without forcing implausible explanations?",
+  "claims_removed": [
+    "broad counterfactual availability across institutions",
+    "empirical recurrent multi-feature counterfactual motif discovery",
+    "empirical profile-specific motif discrimination"
+  ],
+  "claims_retained_subject_to_synthetic_validation": [
+    "heterogeneous-ensemble profile stability",
+    "uncertainty-aware counterfactual reachability",
+    "directional asymmetry of ensemble-robust reachability",
+    "counterfactual support gain as a safeguard against confusing baseline ambiguity with true prediction change"
+  ],
+  "stage8_policy": {
+    "status": "REQUIRED_NEXT",
+    "purpose": "Synthetic validation must now test the retained reachability and uncertainty claims, including whether the method detects stable cores, ambiguous boundaries, directional accessibility, and avoids forcing counterfactual or motif structure under severity-only and no-cluster nulls.",
+    "motif_metrics": "Motif false-discovery behavior remains useful as a negative-control diagnostic in synthetic experiments, but empirical motif recovery is no longer a headline objective."
+  },
+  "interpretive_constraints": [
+    "Counterfactual transitions are diagnostic model transitions, not causal interventions or policy recommendations.",
+    "The Stage-5D uncertainty-reachability association is exploratory post-failure and structurally internal to the feature geometry.",
+    "The real sample does not identify profile-specific motif effects because all robust transitions are Profile 1 -> Profile 2.",
+    "The Mexican N=81 case is not nationally representative."
+  ],
+  "source_hashes": {
+    "stage7_policy": "f5017e2ae2ca6b29e8eb13e70d53a75cd67736e8669c7d6769b12a4b8762336c",
+    "stage7_report": "12fe786f818453a81a828e78fa6189aa1ce189a95ed39740580489679287d448",
+    "raw_itemsets": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "item_frequency": "ea98049ce93220cd31454cf393bcf856c55ce15b8e5836f80498b71549157687"
+  },
+  "gate_status": "PASS_STAGE_7B_MOTIF_RETIREMENT"
+}

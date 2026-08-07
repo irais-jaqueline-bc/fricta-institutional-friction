@@ -1,0 +1,65 @@
+{
+  "scenario": "S4_SEVERITY_CONTINUUM",
+  "smoke_replicate": 1,
+  "selected_candidate": "R0_STANDARDIZED__KMEANS__K3",
+  "selected_representation": "R0_STANDARDIZED",
+  "selected_algorithm": "KMEANS",
+  "selected_k": 3,
+  "selected_silhouette": 0.5287676670824972,
+  "selected_ari_median": 1.0,
+  "selected_ari_p025": 0.9513324075147582,
+  "selected_weakest_cluster_mean_jaccard": 0.9846794934082086,
+  "selected_minimum_cluster_size": 25,
+  "selected_minimum_resample_cluster_size": 16,
+  "selection_decision": {
+    "maximum_ari_median": 1.0,
+    "median_tied_candidates": [
+      "R0_STANDARDIZED__KMEANS__K2",
+      "R0_STANDARDIZED__KMEANS__K3",
+      "R1_PCA85__KMEANS__K3"
+    ],
+    "tied_partitions_equivalent": false,
+    "tied_pairwise_ari": [
+      {
+        "candidate_a": "R0_STANDARDIZED__KMEANS__K2",
+        "candidate_b": "R0_STANDARDIZED__KMEANS__K3",
+        "ari": 0.48609860176898045,
+        "partition_equivalent_at_0_95": false
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__KMEANS__K2",
+        "candidate_b": "R1_PCA85__KMEANS__K3",
+        "ari": 0.5108528053144535,
+        "partition_equivalent_at_0_95": false
+      },
+      {
+        "candidate_a": "R0_STANDARDIZED__KMEANS__K3",
+        "candidate_b": "R1_PCA85__KMEANS__K3",
+        "ari": 0.9618972910402668,
+        "partition_equivalent_at_0_95": true
+      }
+    ],
+    "rule_used": "Median-ARI tie with non-equivalent solutions; lower-tail stability tiebreak."
+  },
+  "stable_partition_claim": true,
+  "severity": {
+    "method": "PROSPECTIVE_1D_TREE_MULTICLASS",
+    "balanced_accuracy_median": 1.0,
+    "macro_f1_median": 1.0,
+    "roc_auc_median": null,
+    "ari_median": 1.0,
+    "nmi_median": 1.0,
+    "matched_severity_opposite_cluster_pairs": 2,
+    "severity_nearly_reconstructs_profiles": true
+  },
+  "governance": {
+    "status": "NOT_APPLICABLE_NO_GOVERNANCE_VARIABLE",
+    "strong_governance_association": false,
+    "governance_nearly_reconstructs_profiles": false
+  },
+  "configurational_profile_claim": false,
+  "uncertainty": {
+    "status": "NOT_APPLICABLE_SELECTED_K_NOT_2",
+    "selected_k": 3
+  }
+}

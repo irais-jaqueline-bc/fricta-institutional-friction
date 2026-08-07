@@ -1,0 +1,5 @@
+family,members,hybrid_all_mismatches,oob_inductive_mismatches,sample_extension_disagreements,sampled_oob_nonmissing_cells,fidelity_mismatches
+R0_KMEANS,250,0,0,0,0,0
+R0_WARD,244,0,0,192,0,0
+R1_PCA85_KMEANS,250,0,0,0,0,0
+R1_PCA85_WARD,240,0,0,182,0,0

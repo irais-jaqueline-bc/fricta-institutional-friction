@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "stage8c2_cf_freeze_passed": true,
+    "stage8c1_evaluator_v2_passed": true,
+    "partial_cf_smoke_v2_exists": true,
+    "official_results_absent": true,
+    "minimum_eligible_members_still_120": true,
+    "ward_fidelity_threshold_still_095": true
+  },
+  "freeze_path": "cipher/design/stage8_counterfactual_evaluator_freeze_v2.json",
+  "freeze_sha256": "f656b88fd2509968c342f125c9a7eb9b3f56da69a5ca0065f8b14b1a9cb069fa",
+  "gate_status": "PASS_STAGE_8C3_INSUFFICIENT_ENSEMBLE_POLICY"
+}

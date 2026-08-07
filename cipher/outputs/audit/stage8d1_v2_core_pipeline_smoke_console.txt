@@ -1,0 +1,81 @@
+
+=== CIPHER STAGE 8D1 v2 — CORE PIPELINE PERFORMANCE SMOKE ===
+
+NON-OFFICIAL smoke only. These six replicates do not count toward Stage 8 official results.
+This stage tests discovery, stability, falsification, and binary uncertainty mechanics. Counterfactual reachability is NOT run yet.
+
+=== PRECHECKS ===
+
+[PASS] evaluator_v2_passed
+[PASS] generator_implementation_frozen
+[PASS] generator_smoke_passed
+[PASS] performance_smoke_not_preexisting
+
+--- Running S1_CONFIG_TWO_PROFILE ---
+selected: R1_PCA85__HAC_WARD__K2
+k: 2 | median stability ARI: 1.0000 | silhouette: 0.9581
+stable claim: True | severity reconstructs: False | governance strong/reconstructs: False / False | configurational claim: True
+uncertainty: COMPLETED_K2
+SMOKE truth ARI: 1.0000
+
+--- Running S2_CORE_BOUNDARY ---
+selected: R1_PCA85__HAC_WARD__K3
+k: 3 | median stability ARI: 1.0000 | silhouette: 0.8587
+stable claim: True | severity reconstructs: False | governance strong/reconstructs: False / False | configurational claim: True
+uncertainty: NOT_APPLICABLE_SELECTED_K_NOT_2
+SMOKE truth ARI: 0.4813
+
+--- Running S3_DIRECTIONAL_REACHABILITY ---
+selected: R1_PCA85__HAC_WARD__K2
+k: 2 | median stability ARI: 1.0000 | silhouette: 0.5299
+stable claim: True | severity reconstructs: False | governance strong/reconstructs: False / False | configurational claim: True
+uncertainty: COMPLETED_K2
+SMOKE truth ARI: 1.0000
+
+--- Running S4_SEVERITY_CONTINUUM ---
+selected: R0_STANDARDIZED__KMEANS__K3
+k: 3 | median stability ARI: 1.0000 | silhouette: 0.5288
+stable claim: True | severity reconstructs: True | governance strong/reconstructs: False / False | configurational claim: False
+uncertainty: NOT_APPLICABLE_SELECTED_K_NOT_2
+SMOKE false configurational claim: False
+
+--- Running S5_GOVERNANCE_CONFOUNDED ---
+selected: R1_PCA85__HAC_WARD__K4
+k: 4 | median stability ARI: 1.0000 | silhouette: 0.4789
+stable claim: True | severity reconstructs: False | governance strong/reconstructs: True / True | configurational claim: False
+uncertainty: NOT_APPLICABLE_SELECTED_K_NOT_2
+SMOKE false configurational claim: False
+
+--- Running S6_NO_CLUSTER_NULL ---
+selected: R1_PCA85__KMEANS__K2
+k: 2 | median stability ARI: 0.8179 | silhouette: 0.1572
+stable claim: True | severity reconstructs: True | governance strong/reconstructs: False / False | configurational claim: False
+uncertainty: COMPLETED_K2
+SMOKE false stable claim: True
+
+=== NON-OFFICIAL SMOKE SUMMARY ===
+
+                   scenario          selected_candidate  selected_k  stability_ari_median  silhouette  stable_partition_claim  severity_reconstructs  governance_strong  governance_reconstructs  configurational_claim              uncertainty_status  truth_ari_smoke_only boundary_auc_smoke_only false_configurational_claim_smoke_only false_stable_claim_smoke_only
+      S1_CONFIG_TWO_PROFILE      R1_PCA85__HAC_WARD__K2           2              1.000000    0.958125                    True                  False              False                    False                   True                    COMPLETED_K2              1.000000                    None                                   None                          None
+           S2_CORE_BOUNDARY      R1_PCA85__HAC_WARD__K3           3              1.000000    0.858715                    True                  False              False                    False                   True NOT_APPLICABLE_SELECTED_K_NOT_2              0.481267                    None                                   None                          None
+S3_DIRECTIONAL_REACHABILITY      R1_PCA85__HAC_WARD__K2           2              1.000000    0.529872                    True                  False              False                    False                   True                    COMPLETED_K2              1.000000                    None                                   None                          None
+      S4_SEVERITY_CONTINUUM R0_STANDARDIZED__KMEANS__K3           3              1.000000    0.528768                    True                   True              False                    False                  False NOT_APPLICABLE_SELECTED_K_NOT_2                   NaN                    None                                  False                          None
+   S5_GOVERNANCE_CONFOUNDED      R1_PCA85__HAC_WARD__K4           4              1.000000    0.478875                    True                  False               True                     True                  False NOT_APPLICABLE_SELECTED_K_NOT_2                   NaN                    None                                  False                          None
+         S6_NO_CLUSTER_NULL        R1_PCA85__KMEANS__K2           2              0.817884    0.157167                    True                   True              False                    False                  False                    COMPLETED_K2                   NaN                    None                                   None                          True
+
+=== TECHNICAL GATE CHECKS ===
+
+[PASS] prechecks_pass
+[PASS] six_scenarios_completed
+[PASS] all_scenario_integrity_checks_pass
+[PASS] official_result_directory_untouched
+S1_CONFIG_TWO_PROFILE: PASS
+S2_CORE_BOUNDARY: PASS
+S3_DIRECTIONAL_REACHABILITY: PASS
+S4_SEVERITY_CONTINUUM: PASS
+S5_GOVERNANCE_CONFOUNDED: PASS
+S6_NO_CLUSTER_NULL: PASS
+
+GATE STATUS: PASS_STAGE_8D1_V2_CORE_PIPELINE_SMOKE
+Core pipeline mechanics pass. Do NOT treat smoke ARI/AUC/false-claim values as scientific results.
+Next step after review: Stage 8D2 counterfactual/reachability smoke for the structured k=2-eligible scenarios.

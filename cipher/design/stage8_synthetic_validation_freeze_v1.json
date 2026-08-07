@@ -1,0 +1,308 @@
+{
+  "version": "STAGE8_SYNTHETIC_VALIDATION_FREEZE_V1",
+  "status": "FROZEN_BEFORE_SYNTHETIC_RESULTS",
+  "parent_thesis_revision": {
+    "path": "cipher/design/cipher_thesis_revision_v3.json",
+    "sha256": "a801d6897526166289041bfaa77df0fe2462c1e7b51b06853167e1124bb38cad"
+  },
+  "primary_goal": "Test whether the retained CIPHER pipeline recovers stable configurational profiles, localizes uncertainty to ambiguous regions, distinguishes structural reachability from forced counterfactuals, and avoids unsupported profile claims under severity-only, governance-confounded, and no-cluster data.",
+  "claims_under_test": [
+    "heterogeneous-ensemble profile stability",
+    "membership uncertainty localizes ambiguous boundary regions",
+    "sparse plausible counterfactual reachability can be heterogeneous",
+    "ensemble robustness filters single-model reachable transitions",
+    "directional reachability asymmetry can be recovered without label bias",
+    "severity and governance falsification suppress simpler explanations",
+    "the method does not force profile/reachability claims under null structure"
+  ],
+  "claims_not_under_test_as_headline": [
+    "empirical multi-feature motif discovery",
+    "causal intervention efficacy",
+    "national representativeness"
+  ],
+  "common_simulation": {
+    "n_institutions": 80,
+    "n_features": 13,
+    "feature_names": [
+      "willingness_constraint_score",
+      "digital_usage_constraint_score",
+      "training_deficit_score",
+      "device_constraint",
+      "digital_tool_variety_constraint",
+      "internet_stability_constraint",
+      "staffing_constraint_score",
+      "time_constraint_score",
+      "administrative_disorganization_constraint",
+      "recording_system_constraint",
+      "system_change_resistance_constraint",
+      "admin_time_load_constraint",
+      "resource_constraint_score"
+    ],
+    "feature_domain": [
+      0.0,
+      1.0
+    ],
+    "master_seed": 20260807,
+    "official_replicates_per_scenario": 100,
+    "scenario_count": 6,
+    "total_structural_replicates": 600,
+    "profile_labels_are_semantically_arbitrary": true,
+    "label_swap_policy": "For every structured two-profile replicate, randomly swap numeric profile labels with probability 0.5 before evaluation."
+  },
+  "synthetic_compute_plan": {
+    "reason": "Exact Stage-5C enumeration and a 1000-member perturbation ensemble over 600 datasets would be unnecessarily expensive. Synthetic validation therefore uses a frozen computational proxy plus a convergence audit against the real-case ensemble size.",
+    "primary_synthetic_ensemble": {
+      "members_total": 200,
+      "members_per_family": {
+        "R0_WARD": 50,
+        "R1_PCA85_WARD": 50,
+        "R0_KMEANS": 50,
+        "R1_PCA85_KMEANS": 50
+      },
+      "row_sample_fraction": 0.8,
+      "features_sampled": 11,
+      "pca_variance_threshold": 0.85,
+      "k": 2,
+      "kmeans_n_init": 25,
+      "ward_inductive_rule": "nearest centroid in fitted representation",
+      "ward_min_extension_fidelity": 0.95
+    },
+    "convergence_audit": {
+      "replicates_per_scenario": 10,
+      "comparison_ensemble_members": 1000,
+      "required_certainty_rank_correlation_spearman": 0.95,
+      "required_tau090_reachability_agreement": 0.95,
+      "policy_if_failed": "Do not interpret the 200-member synthetic ensemble as a valid proxy; rerun official synthetic evaluation with 1000 members for the affected metric family."
+    },
+    "counterfactual_query_budget": {
+      "structured_scenarios_only": [
+        "S1_CONFIG_TWO_PROFILE",
+        "S2_CORE_BOUNDARY",
+        "S3_DIRECTIONAL_REACHABILITY"
+      ],
+      "query_institutions_per_replicate": 20,
+      "sampling_policy": "Stratified by true profile and, where defined, true core/boundary or oracle-reachability status. Sampling seed is derived only from master seed + scenario + replicate.",
+      "exact_search_max_changed_features": 4,
+      "candidate_values": "levels observed within the synthetic replicate",
+      "plausibility_rule": "5-NN Euclidean distance to target-profile observations; candidate must not exceed the target-profile 95th percentile of within-profile 5-NN distance.",
+      "cost": "weighted L1 by replicate IQR + 0.25 * L0",
+      "ensemble_support_primary_tau": 0.9,
+      "ensemble_support_sensitivity": [
+        0.8,
+        0.95
+      ]
+    }
+  },
+  "base_generator": {
+    "center": 0.5,
+    "profile_deviation": 0.24,
+    "core_noise_sd": 0.06,
+    "boundary_noise_sd": 0.04,
+    "continuum_noise_sd": 0.08,
+    "clip_to_unit_interval": true,
+    "balanced_profile_sizes_when_profiles_exist": true,
+    "configuration_vector": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      0
+    ],
+    "note": "The configuration vector sums to zero, so the two primary prototype profiles have equal mean aggregate severity by construction."
+  },
+  "scenarios": [
+    {
+      "id": "S1_CONFIG_TWO_PROFILE",
+      "truth": "two stable configurational profiles",
+      "generator": "Profile A = center + deviation * configuration_vector; Profile B = center - deviation * configuration_vector; independent truncated-normal noise with core_noise_sd.",
+      "true_profiles": true,
+      "true_boundary": false,
+      "oracle_reachability": "symmetric baseline; no planted directional advantage",
+      "purpose": "Test stable profile recovery without relying on aggregate severity."
+    },
+    {
+      "id": "S2_CORE_BOUNDARY",
+      "truth": "stable cores plus ambiguous boundary",
+      "generator": "70% of observations are generated from the two core prototypes. 30% are convex mixtures of the prototypes with lambda Uniform(0.35,0.65), plus boundary_noise_sd. Boundary observations receive a true boundary flag.",
+      "true_profiles": true,
+      "true_boundary": true,
+      "boundary_fraction": 0.3,
+      "purpose": "Test whether ensemble uncertainty localizes genuinely ambiguous geometry."
+    },
+    {
+      "id": "S3_DIRECTIONAL_REACHABILITY",
+      "truth": "stable profiles with planted asymmetric sparse accessibility",
+      "generator": "Start from S1 prototypes. In each replicate, randomly choose one source profile as the accessible direction. For 40% of that source profile, generate bridge observations whose target-manifold mismatch is concentrated in three randomly selected discriminative features. For the reverse direction, require mismatch across at least six discriminative features. The accessible direction is randomized before numeric label assignment.",
+      "true_profiles": true,
+      "true_boundary": false,
+      "oracle_reachability": true,
+      "accessible_fraction_within_source_profile": 0.4,
+      "accessible_changed_features": 3,
+      "reverse_minimum_required_features": 6,
+      "purpose": "Test directional reachability recovery without privileging Profile 1->2."
+    },
+    {
+      "id": "S4_SEVERITY_CONTINUUM",
+      "truth": "one-dimensional severity continuum; no categorical profiles",
+      "generator": "Draw latent severity z ~ Uniform(0,1). Each feature is a monotone noisy transform of z with randomly signed-free positive loading between 0.65 and 1.00 and continuum_noise_sd, clipped to [0,1].",
+      "true_profiles": false,
+      "true_boundary": false,
+      "purpose": "Test whether severity falsification prevents a configurational-profile claim."
+    },
+    {
+      "id": "S5_GOVERNANCE_CONFOUNDED",
+      "truth": "governance-driven feature offsets; no latent friction profile beyond governance",
+      "generator": "Assign four governance categories with probabilities matching [0.33, 0.27, 0.21, 0.19]. Governance-specific offsets affect feature blocks, but there is no independent latent profile. Overall noise uses continuum_noise_sd.",
+      "true_profiles": false,
+      "true_boundary": false,
+      "governance_categories": 4,
+      "purpose": "Test whether governance falsification suppresses a confounded profile claim."
+    },
+    {
+      "id": "S6_NO_CLUSTER_NULL",
+      "truth": "single unimodal population with mild correlation; no profiles",
+      "generator": "Draw one 13-dimensional Gaussian-copula population with pairwise correlation 0.20, transform marginals to Beta(2.5,2.5), and clip numerically to [0,1]. No mixture components are present.",
+      "true_profiles": false,
+      "true_boundary": false,
+      "purpose": "Estimate false stable-profile and forced-counterfactual behavior under null structure."
+    }
+  ],
+  "pipeline_under_test": {
+    "discovery": {
+      "representations": [
+        "R0_STANDARDIZED",
+        "R1_PCA85"
+      ],
+      "algorithms": [
+        "HAC_WARD",
+        "KMEANS"
+      ],
+      "candidate_k": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "selection_metrics": [
+        "silhouette",
+        "davies_bouldin",
+        "calinski_harabasz",
+        "perturbation_stability",
+        "minimum_cluster_size"
+      ],
+      "minimum_cluster_size": 5,
+      "no_use_of_true_labels_during_selection": true
+    },
+    "uncertainty": {
+      "same_core_halo_boundary_logic_as_real_case": true,
+      "core_thresholds": {
+        "reference_probability_min": 0.9,
+        "family_consistency_min": 0.8
+      },
+      "boundary_thresholds": {
+        "reference_probability_below": 0.75,
+        "family_consistency_below": 0.6
+      }
+    },
+    "falsification": {
+      "severity_null": "same train/test thresholding logic as Stage 3",
+      "governance_null": "same permutation/CV logic as Stage 3",
+      "governance_permutations": 2000,
+      "note": "Synthetic permutations are reduced from 10,000 for compute; the threshold and interpretation are unchanged."
+    },
+    "counterfactuals": {
+      "exact_enumeration": true,
+      "max_features": 4,
+      "diagnostic_not_causal": true,
+      "plausibility_required": true,
+      "ensemble_robustness_required_for_robust_label": true
+    }
+  },
+  "primary_metrics": {
+    "structured_profile_recovery": [
+      "ARI",
+      "NMI",
+      "selected_k_accuracy"
+    ],
+    "uncertainty_localization": [
+      "AUROC_boundary_vs_core_using_membership_uncertainty",
+      "median_uncertainty_boundary_minus_core"
+    ],
+    "reachability": [
+      "oracle_reachability_precision",
+      "oracle_reachability_recall",
+      "oracle_reachability_F1",
+      "robust_reachability_precision",
+      "robust_reachability_recall",
+      "robust_reachability_F1"
+    ],
+    "directionality": [
+      "accessible_direction_recovery_accuracy",
+      "label_swap_invariance"
+    ],
+    "null_control": [
+      "false_configurational_profile_claim_rate",
+      "false_robust_reachability_claim_rate"
+    ]
+  },
+  "predeclared_success_criteria": {
+    "S1_CONFIG_TWO_PROFILE": {
+      "median_ARI_min": 0.7,
+      "selected_k_equals_2_rate_min": 0.8
+    },
+    "S2_CORE_BOUNDARY": {
+      "median_ARI_min": 0.6,
+      "boundary_uncertainty_AUROC_min": 0.8,
+      "median_boundary_uncertainty_gt_core": true
+    },
+    "S3_DIRECTIONAL_REACHABILITY": {
+      "median_profile_ARI_min": 0.6,
+      "oracle_reachability_F1_min": 0.7,
+      "robust_reachability_precision_min": 0.8,
+      "accessible_direction_recovery_rate_min": 0.8,
+      "label_swap_invariance_rate_min": 0.95
+    },
+    "S4_SEVERITY_CONTINUUM": {
+      "false_configurational_profile_claim_rate_max": 0.1,
+      "require_severity_falsification_to_flag_simpler_explanation": true
+    },
+    "S5_GOVERNANCE_CONFOUNDED": {
+      "false_configurational_profile_claim_rate_max": 0.1,
+      "require_governance_falsification_to_flag_simpler_explanation": true
+    },
+    "S6_NO_CLUSTER_NULL": {
+      "false_stable_profile_claim_rate_max": 0.1,
+      "false_robust_reachability_claim_rate_max": 0.05
+    }
+  },
+  "claim_policy_after_synthetic_validation": {
+    "full_support": "Retain the uncertainty-aware ensemble-robust reachability thesis only if all scenario-specific primary criteria pass.",
+    "partial_support": "If profile recovery passes but reachability/directionality criteria fail, retain only the stable-profile + uncertainty contribution.",
+    "null_failure": "If severity, governance, or no-cluster false-claim criteria fail, the corresponding CIPHER claim must be weakened or removed.",
+    "no_threshold_relaxation_after_results": true,
+    "all_failures_reported": true
+  },
+  "motif_policy": {
+    "empirical_claim_remains_retired": true,
+    "synthetic_role": "Optional negative-control diagnostic only. Do not restore motif discovery as a headline contribution from synthetic success."
+  },
+  "next_stage": {
+    "id": "STAGE_8B",
+    "name": "Synthetic generator implementation + smoke/audit",
+    "rule": "Implement generators exactly as frozen, run one smoke replicate per scenario, and audit truth labels/geometry before any official 100-replicate run."
+  },
+  "source_hashes": {
+    "thesis_v3": "a801d6897526166289041bfaa77df0fe2462c1e7b51b06853167e1124bb38cad",
+    "stage7b_audit": "2ebb53f19702dc99bb0ae5dcb86acf7ddc34396fbee7c7bafd705dc4d9b184f5"
+  },
+  "gate_status": "PASS_STAGE_8A_SYNTHETIC_DESIGN_FREEZE"
+}

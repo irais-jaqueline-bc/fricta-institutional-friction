@@ -1,0 +1,9 @@
+{
+  "scenario": "S4_SEVERITY_CONTINUUM",
+  "selected_k": 3,
+  "ari_vs_true_profile": null,
+  "nmi_vs_true_profile": null,
+  "boundary_uncertainty_auc": null,
+  "false_configurational_profile_claim": false,
+  "false_stable_profile_claim": null
+}

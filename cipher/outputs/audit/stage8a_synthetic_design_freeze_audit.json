@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "thesis_v3_is_frozen_after_motif_stop": true,
+    "stage7b_audit_passed": true,
+    "empirical_motif_claim_is_retired": true,
+    "stage8_is_required_next": true
+  },
+  "design_path": "cipher/design/stage8_synthetic_validation_freeze_v1.json",
+  "design_sha256": "d69ef2382c847668ac9e6a6db068ea847d37761587732c14a3c185db11a64160",
+  "gate_status": "PASS_STAGE_8A_SYNTHETIC_DESIGN_FREEZE"
+}

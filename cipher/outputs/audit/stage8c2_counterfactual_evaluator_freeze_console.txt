@@ -1,0 +1,39 @@
+
+=== CIPHER STAGE 8C2 — COUNTERFACTUAL EVALUATOR FREEZE ===
+
+Resolved before any synthetic CF performance:
+  truth-stratified query conflict -> discovered-profile stratification
+  S6 false-CF criterion had no query budget -> 20 queries when stable k=2
+  continuous observed levels -> exact local 3-anchor observed-level grid
+  only S3 has oracle institution-level reachability truth
+
+CF search:
+  20 queries / applicable replicate
+  max 4 changed features
+  exact enumeration over current + 3 nearest-target-anchor feature values
+  5NN target plausibility, 95th-percentile target threshold
+  cost = weighted L1/IQR + .25*L0
+  save up to 5 diverse Pareto candidates
+
+Robust ensemble:
+  200 members = 50/family
+  80% row sampling, 11/13 features, PCA85 where applicable
+  Ward members require inductive fidelity >=.95
+  minimum eligible ensemble = 120
+  primary tau=.90; sensitivities .80/.95
+
+Primary truth scoring:
+  S3 only: oracle F1, robust precision, direction recovery, label-swap invariance
+  S6: replicate-level false robust-CF claim rate
+  S1/S2: diagnostic CF summaries only
+
+=== FREEZE CHECKS ===
+
+[PASS] stage8c1_evaluator_v2_passed
+[PASS] stage8d1_v2_core_smoke_passed
+[PASS] no_official_synthetic_results_exist
+[PASS] stage8a_design_still_present
+
+GATE STATUS: PASS_STAGE_8C2_COUNTERFACTUAL_EVALUATOR_FREEZE
+Frozen CF evaluator: cipher/design/stage8_counterfactual_evaluator_freeze_v1.json
+Next: Stage 8D2 CF/reachability smoke. Do NOT run official replicates.

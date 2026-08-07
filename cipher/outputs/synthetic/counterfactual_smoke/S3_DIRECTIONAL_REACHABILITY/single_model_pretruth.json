@@ -1,0 +1,1169 @@
+{
+  "scenario": "S3_DIRECTIONAL_REACHABILITY",
+  "selected_candidate": "R1_PCA85__HAC_WARD__K2",
+  "selected_k": 2,
+  "reference_partition_ari": 1.0,
+  "reference_inductive_fidelity": 1.0,
+  "query_indices": [
+    51,
+    75,
+    46,
+    71,
+    78,
+    45,
+    9,
+    15,
+    39,
+    76,
+    22,
+    34,
+    21,
+    17,
+    50,
+    60,
+    20,
+    38,
+    13,
+    4
+  ],
+  "query_institution_ids": [
+    "SYN_S3_DIRECTIONAL_REACHABILITY_R001_007",
+    "SYN_S3_DIRECTIONAL_REACHABILITY_R001_011",
+    "SYN_S3_DIRECTIONAL_REACHABILITY_R001_014",
+    "SYN_S3_DIRECTIONAL_REACHABILITY_R001_020",
+    "SYN_S3_DIRECTIONAL_REACHABILITY_R001_022",
+    "SYN_S3_DIRECTIONAL_REACHABILITY_R001_026",
+    "SYN_S3_DIRECTIONAL_REACHABILITY_R001_030",
+    "SYN_S3_DIRECTIONAL_REACHABILITY_R001_032",
+    "SYN_S3_DIRECTIONAL_REACHABILITY_R001_037",
+    "SYN_S3_DIRECTIONAL_REACHABILITY_R001_039",
+    "SYN_S3_DIRECTIONAL_REACHABILITY_R001_046",
+    "SYN_S3_DIRECTIONAL_REACHABILITY_R001_048",
+    "SYN_S3_DIRECTIONAL_REACHABILITY_R001_049",
+    "SYN_S3_DIRECTIONAL_REACHABILITY_R001_050",
+    "SYN_S3_DIRECTIONAL_REACHABILITY_R001_052",
+    "SYN_S3_DIRECTIONAL_REACHABILITY_R001_053",
+    "SYN_S3_DIRECTIONAL_REACHABILITY_R001_055",
+    "SYN_S3_DIRECTIONAL_REACHABILITY_R001_059",
+    "SYN_S3_DIRECTIONAL_REACHABILITY_R001_060",
+    "SYN_S3_DIRECTIONAL_REACHABILITY_R001_074"
+  ],
+  "iqr_denominators": {
+    "willingness_constraint_score": 0.34875952205232186,
+    "digital_usage_constraint_score": 0.47206889415693193,
+    "training_deficit_score": 0.4709984574103705,
+    "device_constraint": 0.3878644432403714,
+    "digital_tool_variety_constraint": 0.48606221593556875,
+    "internet_stability_constraint": 0.4961974977200086,
+    "staffing_constraint_score": 0.4723575131951208,
+    "time_constraint_score": 0.3440350931703213,
+    "administrative_disorganization_constraint": 0.41640599751437274,
+    "recording_system_constraint": 0.5984910911134345,
+    "system_change_resistance_constraint": 0.5259672598688064,
+    "admin_time_load_constraint": 0.4787464973246123,
+    "resource_constraint_score": 0.08469598191613481
+  },
+  "single_model_query_results": [
+    {
+      "institution_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_007",
+      "source_index": 51,
+      "source_profile": 1,
+      "target_profile": 2,
+      "status": "COMPLETED",
+      "target_profile_size": 40,
+      "target_anchor_indices": [
+        77,
+        31,
+        41
+      ],
+      "target_anchor_count": 3,
+      "candidate_count_evaluated": 66378,
+      "valid_candidate_count": 0,
+      "pareto_candidate_count": 0,
+      "single_model_reachable": false,
+      "saved_candidates": []
+    },
+    {
+      "institution_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_011",
+      "source_index": 75,
+      "source_profile": 1,
+      "target_profile": 2,
+      "status": "COMPLETED",
+      "target_profile_size": 40,
+      "target_anchor_indices": [
+        77,
+        31,
+        41
+      ],
+      "target_anchor_count": 3,
+      "candidate_count_evaluated": 66378,
+      "valid_candidate_count": 0,
+      "pareto_candidate_count": 0,
+      "single_model_reachable": false,
+      "saved_candidates": []
+    },
+    {
+      "institution_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_014",
+      "source_index": 46,
+      "source_profile": 1,
+      "target_profile": 2,
+      "status": "COMPLETED",
+      "target_profile_size": 40,
+      "target_anchor_indices": [
+        77,
+        31,
+        41
+      ],
+      "target_anchor_count": 3,
+      "candidate_count_evaluated": 66378,
+      "valid_candidate_count": 0,
+      "pareto_candidate_count": 0,
+      "single_model_reachable": false,
+      "saved_candidates": []
+    },
+    {
+      "institution_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_020",
+      "source_index": 71,
+      "source_profile": 1,
+      "target_profile": 2,
+      "status": "COMPLETED",
+      "target_profile_size": 40,
+      "target_anchor_indices": [
+        77,
+        41,
+        31
+      ],
+      "target_anchor_count": 3,
+      "candidate_count_evaluated": 66378,
+      "valid_candidate_count": 0,
+      "pareto_candidate_count": 0,
+      "single_model_reachable": false,
+      "saved_candidates": []
+    },
+    {
+      "institution_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_022",
+      "source_index": 78,
+      "source_profile": 1,
+      "target_profile": 2,
+      "status": "COMPLETED",
+      "target_profile_size": 40,
+      "target_anchor_indices": [
+        77,
+        31,
+        36
+      ],
+      "target_anchor_count": 3,
+      "candidate_count_evaluated": 66378,
+      "valid_candidate_count": 0,
+      "pareto_candidate_count": 0,
+      "single_model_reachable": false,
+      "saved_candidates": []
+    },
+    {
+      "institution_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_026",
+      "source_index": 45,
+      "source_profile": 1,
+      "target_profile": 2,
+      "status": "COMPLETED",
+      "target_profile_size": 40,
+      "target_anchor_indices": [
+        41,
+        6,
+        77
+      ],
+      "target_anchor_count": 3,
+      "candidate_count_evaluated": 66378,
+      "valid_candidate_count": 8442,
+      "pareto_candidate_count": 46,
+      "single_model_reachable": true,
+      "saved_candidates": [
+        {
+          "rank": 1,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_026__CF01",
+          "l0": 2,
+          "weighted_l1": 2.1293516855119314,
+          "total_cost": 2.6293516855119314,
+          "plausibility_distance": 0.9276119415019306,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "digital_tool_variety_constraint:DOWN",
+            "admin_time_load_constraint:UP"
+          ],
+          "candidate_vector": [
+            0.5938289294565502,
+            0.5011543842821321,
+            0.6913282335317971,
+            0.5170296789026574,
+            0.3256483143133803,
+            0.41580530193641196,
+            0.4107838357421324,
+            0.456488325583483,
+            0.48726523473244426,
+            0.520481587380751,
+            0.5274458835527119,
+            0.7385916747281482,
+            0.4527927894514508
+          ]
+        },
+        {
+          "rank": 2,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_026__CF02",
+          "l0": 3,
+          "weighted_l1": 2.156667297919795,
+          "total_cost": 2.906667297919795,
+          "plausibility_distance": 0.9134855289661242,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "digital_usage_constraint_score:DOWN",
+            "digital_tool_variety_constraint:DOWN",
+            "admin_time_load_constraint:UP"
+          ],
+          "candidate_vector": [
+            0.5938289294565502,
+            0.4422334712706279,
+            0.6913282335317971,
+            0.5170296789026574,
+            0.3256483143133803,
+            0.41580530193641196,
+            0.4107838357421324,
+            0.456488325583483,
+            0.48726523473244426,
+            0.520481587380751,
+            0.5274458835527119,
+            0.6919145556172074,
+            0.4527927894514508
+          ]
+        },
+        {
+          "rank": 3,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_026__CF03",
+          "l0": 3,
+          "weighted_l1": 2.285468465284806,
+          "total_cost": 3.035468465284806,
+          "plausibility_distance": 0.9041850651256135,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "training_deficit_score:DOWN",
+            "recording_system_constraint:UP",
+            "admin_time_load_constraint:UP"
+          ],
+          "candidate_vector": [
+            0.5938289294565502,
+            0.5011543842821321,
+            0.26684907285838455,
+            0.5170296789026574,
+            0.8370375737087876,
+            0.41580530193641196,
+            0.4107838357421324,
+            0.456488325583483,
+            0.48726523473244426,
+            0.7625648822646145,
+            0.5274458835527119,
+            0.6919145556172074,
+            0.4527927894514508
+          ]
+        },
+        {
+          "rank": 4,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_026__CF04",
+          "l0": 3,
+          "weighted_l1": 2.2986296332324723,
+          "total_cost": 3.0486296332324723,
+          "plausibility_distance": 0.8978737867506575,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "device_constraint:DOWN",
+            "digital_tool_variety_constraint:DOWN",
+            "admin_time_load_constraint:UP"
+          ],
+          "candidate_vector": [
+            0.5938289294565502,
+            0.5011543842821321,
+            0.6913282335317971,
+            0.413556536998285,
+            0.3256483143133803,
+            0.41580530193641196,
+            0.4107838357421324,
+            0.456488325583483,
+            0.48726523473244426,
+            0.520481587380751,
+            0.5274458835527119,
+            0.6919145556172074,
+            0.4527927894514508
+          ]
+        },
+        {
+          "rank": 5,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_026__CF05",
+          "l0": 3,
+          "weighted_l1": 2.4363424607826163,
+          "total_cost": 3.1863424607826163,
+          "plausibility_distance": 0.8962172521476436,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "digital_tool_variety_constraint:DOWN",
+            "recording_system_constraint:UP",
+            "admin_time_load_constraint:UP"
+          ],
+          "candidate_vector": [
+            0.5938289294565502,
+            0.5011543842821321,
+            0.6913282335317971,
+            0.5170296789026574,
+            0.3256483143133803,
+            0.41580530193641196,
+            0.4107838357421324,
+            0.456488325583483,
+            0.48726523473244426,
+            0.7625648822646145,
+            0.5274458835527119,
+            0.6919145556172074,
+            0.4527927894514508
+          ]
+        }
+      ]
+    },
+    {
+      "institution_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_030",
+      "source_index": 9,
+      "source_profile": 1,
+      "target_profile": 2,
+      "status": "COMPLETED",
+      "target_profile_size": 40,
+      "target_anchor_indices": [
+        23,
+        41,
+        32
+      ],
+      "target_anchor_count": 3,
+      "candidate_count_evaluated": 66378,
+      "valid_candidate_count": 14556,
+      "pareto_candidate_count": 40,
+      "single_model_reachable": true,
+      "saved_candidates": [
+        {
+          "rank": 1,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_030__CF01",
+          "l0": 2,
+          "weighted_l1": 1.8304940845181181,
+          "total_cost": 2.330494084518118,
+          "plausibility_distance": 0.9487794015841762,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "digital_tool_variety_constraint:DOWN",
+            "admin_time_load_constraint:UP"
+          ],
+          "candidate_vector": [
+            0.40213490642041183,
+            0.4715819640575254,
+            0.7343351891247343,
+            0.4262053225520369,
+            0.37638599523319455,
+            0.5575831240482528,
+            0.32136956655766036,
+            0.48543326669848696,
+            0.5192428192724645,
+            0.5569759819263979,
+            0.5070854667265503,
+            0.7239168101912868,
+            0.5694870425067178
+          ]
+        },
+        {
+          "rank": 2,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_030__CF02",
+          "l0": 3,
+          "weighted_l1": 1.9427011301859531,
+          "total_cost": 2.692701130185953,
+          "plausibility_distance": 0.9342482671936895,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "digital_tool_variety_constraint:DOWN",
+            "internet_stability_constraint:DOWN",
+            "admin_time_load_constraint:UP"
+          ],
+          "candidate_vector": [
+            0.40213490642041183,
+            0.4715819640575254,
+            0.7343351891247343,
+            0.4262053225520369,
+            0.2888164640169522,
+            0.5233545356046793,
+            0.32136956655766036,
+            0.48543326669848696,
+            0.5192428192724645,
+            0.5569759819263979,
+            0.5070854667265503,
+            0.6583592300836557,
+            0.5694870425067178
+          ]
+        },
+        {
+          "rank": 3,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_030__CF03",
+          "l0": 3,
+          "weighted_l1": 2.0980245027487836,
+          "total_cost": 2.8480245027487836,
+          "plausibility_distance": 0.9217765471119819,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "digital_usage_constraint_score:DOWN",
+            "digital_tool_variety_constraint:DOWN",
+            "admin_time_load_constraint:UP"
+          ],
+          "candidate_vector": [
+            0.40213490642041183,
+            0.28064599882887986,
+            0.7343351891247343,
+            0.4262053225520369,
+            0.37638599523319455,
+            0.5575831240482528,
+            0.32136956655766036,
+            0.48543326669848696,
+            0.5192428192724645,
+            0.5569759819263979,
+            0.5070854667265503,
+            0.6583592300836557,
+            0.5694870425067178
+          ]
+        },
+        {
+          "rank": 4,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_030__CF04",
+          "l0": 3,
+          "weighted_l1": 2.267803786835554,
+          "total_cost": 3.017803786835554,
+          "plausibility_distance": 0.9182107535648459,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "digital_tool_variety_constraint:DOWN",
+            "system_change_resistance_constraint:UP",
+            "admin_time_load_constraint:UP"
+          ],
+          "candidate_vector": [
+            0.40213490642041183,
+            0.4715819640575254,
+            0.7343351891247343,
+            0.4262053225520369,
+            0.37638599523319455,
+            0.5575831240482528,
+            0.32136956655766036,
+            0.48543326669848696,
+            0.5192428192724645,
+            0.5569759819263979,
+            0.8091198500595101,
+            0.6583592300836557,
+            0.5694870425067178
+          ]
+        },
+        {
+          "rank": 5,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_030__CF05",
+          "l0": 3,
+          "weighted_l1": 2.2739587744509087,
+          "total_cost": 3.0239587744509087,
+          "plausibility_distance": 0.895599167571203,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "training_deficit_score:DOWN",
+            "digital_tool_variety_constraint:DOWN",
+            "recording_system_constraint:UP"
+          ],
+          "candidate_vector": [
+            0.40213490642041183,
+            0.4715819640575254,
+            0.2562499982990531,
+            0.4262053225520369,
+            0.37638599523319455,
+            0.5575831240482528,
+            0.32136956655766036,
+            0.48543326669848696,
+            0.5192428192724645,
+            0.8374721731459792,
+            0.5070854667265503,
+            0.22589894991167103,
+            0.5694870425067178
+          ]
+        }
+      ]
+    },
+    {
+      "institution_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_032",
+      "source_index": 15,
+      "source_profile": 1,
+      "target_profile": 2,
+      "status": "COMPLETED",
+      "target_profile_size": 40,
+      "target_anchor_indices": [
+        77,
+        41,
+        23
+      ],
+      "target_anchor_count": 3,
+      "candidate_count_evaluated": 66378,
+      "valid_candidate_count": 7688,
+      "pareto_candidate_count": 38,
+      "single_model_reachable": true,
+      "saved_candidates": [
+        {
+          "rank": 1,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_032__CF01",
+          "l0": 2,
+          "weighted_l1": 2.2485462061785477,
+          "total_cost": 2.7485462061785477,
+          "plausibility_distance": 0.9697884773652244,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "training_deficit_score:DOWN",
+            "digital_tool_variety_constraint:DOWN"
+          ],
+          "candidate_vector": [
+            0.47014813713877746,
+            0.5144848249601205,
+            0.17660428038544002,
+            0.5214236910569103,
+            0.2888164640169522,
+            0.598294988747172,
+            0.5337746983689995,
+            0.4495628884293095,
+            0.5068907770116222,
+            0.46754643872977675,
+            0.40865145860786006,
+            0.24414495327908795,
+            0.5119379077422727
+          ]
+        },
+        {
+          "rank": 2,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_032__CF02",
+          "l0": 3,
+          "weighted_l1": 2.3227103359473773,
+          "total_cost": 3.0727103359473773,
+          "plausibility_distance": 0.9478774638801466,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "training_deficit_score:DOWN",
+            "digital_tool_variety_constraint:DOWN",
+            "system_change_resistance_constraint:UP"
+          ],
+          "candidate_vector": [
+            0.47014813713877746,
+            0.5144848249601205,
+            0.26684907285838455,
+            0.5214236910569103,
+            0.21309435855240377,
+            0.598294988747172,
+            0.5337746983689995,
+            0.4495628884293095,
+            0.5068907770116222,
+            0.46754643872977675,
+            0.4664975645292602,
+            0.24414495327908795,
+            0.5119379077422727
+          ]
+        },
+        {
+          "rank": 3,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_032__CF03",
+          "l0": 3,
+          "weighted_l1": 2.348391658694397,
+          "total_cost": 3.098391658694397,
+          "plausibility_distance": 0.9466521250564653,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "training_deficit_score:DOWN",
+            "digital_tool_variety_constraint:DOWN",
+            "staffing_constraint_score:UP"
+          ],
+          "candidate_vector": [
+            0.47014813713877746,
+            0.5144848249601205,
+            0.26684907285838455,
+            0.5214236910569103,
+            0.27077971495775527,
+            0.598294988747172,
+            0.6539144435848113,
+            0.4495628884293095,
+            0.5068907770116222,
+            0.46754643872977675,
+            0.40865145860786006,
+            0.24414495327908795,
+            0.5119379077422727
+          ]
+        },
+        {
+          "rank": 4,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_032__CF04",
+          "l0": 3,
+          "weighted_l1": 2.3657824669643546,
+          "total_cost": 3.1157824669643546,
+          "plausibility_distance": 0.9426545596310213,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "digital_usage_constraint_score:DOWN",
+            "training_deficit_score:DOWN",
+            "digital_tool_variety_constraint:DOWN"
+          ],
+          "candidate_vector": [
+            0.47014813713877746,
+            0.4422334712706279,
+            0.26684907285838455,
+            0.5214236910569103,
+            0.21309435855240377,
+            0.598294988747172,
+            0.5337746983689995,
+            0.4495628884293095,
+            0.5068907770116222,
+            0.46754643872977675,
+            0.40865145860786006,
+            0.24414495327908795,
+            0.5119379077422727
+          ]
+        },
+        {
+          "rank": 5,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_032__CF05",
+          "l0": 3,
+          "weighted_l1": 2.3952142302057515,
+          "total_cost": 3.1452142302057515,
+          "plausibility_distance": 0.9421340749512958,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "training_deficit_score:DOWN",
+            "digital_tool_variety_constraint:DOWN",
+            "administrative_disorganization_constraint:UP"
+          ],
+          "candidate_vector": [
+            0.47014813713877746,
+            0.5144848249601205,
+            0.17660428038544002,
+            0.5214236910569103,
+            0.2888164640169522,
+            0.598294988747172,
+            0.5337746983689995,
+            0.4495628884293095,
+            0.567964221860132,
+            0.46754643872977675,
+            0.40865145860786006,
+            0.24414495327908795,
+            0.5119379077422727
+          ]
+        }
+      ]
+    },
+    {
+      "institution_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_037",
+      "source_index": 39,
+      "source_profile": 1,
+      "target_profile": 2,
+      "status": "COMPLETED",
+      "target_profile_size": 40,
+      "target_anchor_indices": [
+        77,
+        34,
+        23
+      ],
+      "target_anchor_count": 3,
+      "candidate_count_evaluated": 66378,
+      "valid_candidate_count": 10768,
+      "pareto_candidate_count": 28,
+      "single_model_reachable": true,
+      "saved_candidates": [
+        {
+          "rank": 1,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_037__CF01",
+          "l0": 2,
+          "weighted_l1": 2.1630650591563128,
+          "total_cost": 2.6630650591563128,
+          "plausibility_distance": 0.9858756715016183,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "digital_tool_variety_constraint:DOWN",
+            "admin_time_load_constraint:UP"
+          ],
+          "candidate_vector": [
+            0.5534088733251549,
+            0.48062486984583686,
+            0.701676921681315,
+            0.5845868494082603,
+            0.21309435855240377,
+            0.4989324001062702,
+            0.3892550348989542,
+            0.4196795321211656,
+            0.5466631444012955,
+            0.39431890803588354,
+            0.5750540550354502,
+            0.7536285706743993,
+            0.4858698909549198
+          ]
+        },
+        {
+          "rank": 2,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_037__CF02",
+          "l0": 2,
+          "weighted_l1": 2.201832294928268,
+          "total_cost": 2.701832294928268,
+          "plausibility_distance": 0.9502368618356907,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "training_deficit_score:DOWN",
+            "digital_tool_variety_constraint:DOWN"
+          ],
+          "candidate_vector": [
+            0.5534088733251549,
+            0.48062486984583686,
+            0.17940137534366452,
+            0.5845868494082603,
+            0.24686578324262226,
+            0.4989324001062702,
+            0.3892550348989542,
+            0.4196795321211656,
+            0.5466631444012955,
+            0.39431890803588354,
+            0.5750540550354502,
+            0.27458427333625923,
+            0.4858698909549198
+          ]
+        },
+        {
+          "rank": 3,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_037__CF03",
+          "l0": 3,
+          "weighted_l1": 2.1697750369159805,
+          "total_cost": 2.9197750369159805,
+          "plausibility_distance": 0.9491889192024152,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "training_deficit_score:DOWN",
+            "digital_tool_variety_constraint:DOWN",
+            "time_constraint_score:UP"
+          ],
+          "candidate_vector": [
+            0.5534088733251549,
+            0.48062486984583686,
+            0.17940137534366452,
+            0.5845868494082603,
+            0.2888164640169522,
+            0.4989324001062702,
+            0.3892550348989542,
+            0.4383434243839449,
+            0.5466631444012955,
+            0.39431890803588354,
+            0.5750540550354502,
+            0.27458427333625923,
+            0.4858698909549198
+          ]
+        },
+        {
+          "rank": 4,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_037__CF04",
+          "l0": 3,
+          "weighted_l1": 2.1757724498298625,
+          "total_cost": 2.9257724498298625,
+          "plausibility_distance": 0.9445286879955109,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "willingness_constraint_score:DOWN",
+            "training_deficit_score:DOWN",
+            "digital_tool_variety_constraint:DOWN"
+          ],
+          "candidate_vector": [
+            0.5219769107135365,
+            0.48062486984583686,
+            0.26684907285838455,
+            0.5845868494082603,
+            0.21309435855240377,
+            0.4989324001062702,
+            0.3892550348989542,
+            0.4196795321211656,
+            0.5466631444012955,
+            0.39431890803588354,
+            0.5750540550354502,
+            0.27458427333625923,
+            0.4858698909549198
+          ]
+        },
+        {
+          "rank": 5,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_037__CF05",
+          "l0": 3,
+          "weighted_l1": 2.1936577366802568,
+          "total_cost": 2.9436577366802568,
+          "plausibility_distance": 0.9260989240213606,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "training_deficit_score:DOWN",
+            "digital_tool_variety_constraint:DOWN",
+            "recording_system_constraint:UP"
+          ],
+          "candidate_vector": [
+            0.5534088733251549,
+            0.48062486984583686,
+            0.26684907285838455,
+            0.5845868494082603,
+            0.24686578324262226,
+            0.4989324001062702,
+            0.3892550348989542,
+            0.4196795321211656,
+            0.5466631444012955,
+            0.5005450625516646,
+            0.5750540550354502,
+            0.27458427333625923,
+            0.4858698909549198
+          ]
+        }
+      ]
+    },
+    {
+      "institution_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_039",
+      "source_index": 76,
+      "source_profile": 1,
+      "target_profile": 2,
+      "status": "COMPLETED",
+      "target_profile_size": 40,
+      "target_anchor_indices": [
+        41,
+        77,
+        23
+      ],
+      "target_anchor_count": 3,
+      "candidate_count_evaluated": 66378,
+      "valid_candidate_count": 16507,
+      "pareto_candidate_count": 42,
+      "single_model_reachable": true,
+      "saved_candidates": [
+        {
+          "rank": 1,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_039__CF01",
+          "l0": 2,
+          "weighted_l1": 1.7346818619654945,
+          "total_cost": 2.2346818619654947,
+          "plausibility_distance": 0.9582872161623988,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "digital_tool_variety_constraint:DOWN",
+            "admin_time_load_constraint:UP"
+          ],
+          "candidate_vector": [
+            0.4605262665446508,
+            0.44112786924222336,
+            0.7737658755768776,
+            0.4960135034412944,
+            0.2888164640169522,
+            0.4775600294101284,
+            0.5031896362519825,
+            0.4699868916394547,
+            0.6057826752136823,
+            0.5307026690165196,
+            0.3957674662775883,
+            0.6583592300836557,
+            0.5401919421942172
+          ]
+        },
+        {
+          "rank": 2,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_039__CF02",
+          "l0": 2,
+          "weighted_l1": 1.8423158957264754,
+          "total_cost": 2.3423158957264754,
+          "plausibility_distance": 0.9354901848820897,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "training_deficit_score:DOWN",
+            "recording_system_constraint:UP"
+          ],
+          "candidate_vector": [
+            0.4605262665446508,
+            0.44112786924222336,
+            0.26684907285838455,
+            0.4960135034412944,
+            0.6883332630457891,
+            0.4775600294101284,
+            0.5031896362519825,
+            0.4699868916394547,
+            0.6057826752136823,
+            0.9891802941602867,
+            0.3957674662775883,
+            0.2213900395060824,
+            0.5401919421942172
+          ]
+        },
+        {
+          "rank": 3,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_039__CF03",
+          "l0": 2,
+          "weighted_l1": 1.898205810579164,
+          "total_cost": 2.3982058105791637,
+          "plausibility_distance": 0.9315901153474753,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "training_deficit_score:DOWN",
+            "digital_tool_variety_constraint:DOWN"
+          ],
+          "candidate_vector": [
+            0.4605262665446508,
+            0.44112786924222336,
+            0.26684907285838455,
+            0.4960135034412944,
+            0.2888164640169522,
+            0.4775600294101284,
+            0.5031896362519825,
+            0.4699868916394547,
+            0.6057826752136823,
+            0.5307026690165196,
+            0.3957674662775883,
+            0.2213900395060824,
+            0.5401919421942172
+          ]
+        },
+        {
+          "rank": 4,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_039__CF04",
+          "l0": 2,
+          "weighted_l1": 1.9889960638959585,
+          "total_cost": 2.4889960638959585,
+          "plausibility_distance": 0.910345166783815,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "training_deficit_score:DOWN",
+            "admin_time_load_constraint:UP"
+          ],
+          "candidate_vector": [
+            0.4605262665446508,
+            0.44112786924222336,
+            0.26684907285838455,
+            0.4960135034412944,
+            0.6883332630457891,
+            0.4775600294101284,
+            0.5031896362519825,
+            0.4699868916394547,
+            0.6057826752136823,
+            0.5307026690165196,
+            0.3957674662775883,
+            0.6583592300836557,
+            0.5401919421942172
+          ]
+        },
+        {
+          "rank": 5,
+          "candidate_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_039__CF05",
+          "l0": 3,
+          "weighted_l1": 2.074636204222991,
+          "total_cost": 2.824636204222991,
+          "plausibility_distance": 0.9046953629160106,
+          "plausibility_threshold": 1.0057057446569277,
+          "edit_signature": [
+            "digital_usage_constraint_score:DOWN",
+            "digital_tool_variety_constraint:DOWN",
+            "admin_time_load_constraint:UP"
+          ],
+          "candidate_vector": [
+            0.4605262665446508,
+            0.28064599882887986,
+            0.7737658755768776,
+            0.4960135034412944,
+            0.2888164640169522,
+            0.4775600294101284,
+            0.5031896362519825,
+            0.4699868916394547,
+            0.6057826752136823,
+            0.5307026690165196,
+            0.3957674662775883,
+            0.6583592300836557,
+            0.5401919421942172
+          ]
+        }
+      ]
+    },
+    {
+      "institution_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_046",
+      "source_index": 22,
+      "source_profile": 2,
+      "target_profile": 1,
+      "status": "COMPLETED",
+      "target_profile_size": 40,
+      "target_anchor_indices": [
+        76,
+        70,
+        72
+      ],
+      "target_anchor_count": 3,
+      "candidate_count_evaluated": 66378,
+      "valid_candidate_count": 0,
+      "pareto_candidate_count": 0,
+      "single_model_reachable": false,
+      "saved_candidates": []
+    },
+    {
+      "institution_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_048",
+      "source_index": 34,
+      "source_profile": 2,
+      "target_profile": 1,
+      "status": "COMPLETED",
+      "target_profile_size": 40,
+      "target_anchor_indices": [
+        2,
+        76,
+        39
+      ],
+      "target_anchor_count": 3,
+      "candidate_count_evaluated": 66378,
+      "valid_candidate_count": 0,
+      "pareto_candidate_count": 0,
+      "single_model_reachable": false,
+      "saved_candidates": []
+    },
+    {
+      "institution_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_049",
+      "source_index": 21,
+      "source_profile": 2,
+      "target_profile": 1,
+      "status": "COMPLETED",
+      "target_profile_size": 40,
+      "target_anchor_indices": [
+        76,
+        70,
+        0
+      ],
+      "target_anchor_count": 3,
+      "candidate_count_evaluated": 66378,
+      "valid_candidate_count": 0,
+      "pareto_candidate_count": 0,
+      "single_model_reachable": false,
+      "saved_candidates": []
+    },
+    {
+      "institution_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_050",
+      "source_index": 17,
+      "source_profile": 2,
+      "target_profile": 1,
+      "status": "COMPLETED",
+      "target_profile_size": 40,
+      "target_anchor_indices": [
+        76,
+        0,
+        70
+      ],
+      "target_anchor_count": 3,
+      "candidate_count_evaluated": 66378,
+      "valid_candidate_count": 0,
+      "pareto_candidate_count": 0,
+      "single_model_reachable": false,
+      "saved_candidates": []
+    },
+    {
+      "institution_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_052",
+      "source_index": 50,
+      "source_profile": 2,
+      "target_profile": 1,
+      "status": "COMPLETED",
+      "target_profile_size": 40,
+      "target_anchor_indices": [
+        39,
+        2,
+        76
+      ],
+      "target_anchor_count": 3,
+      "candidate_count_evaluated": 66378,
+      "valid_candidate_count": 0,
+      "pareto_candidate_count": 0,
+      "single_model_reachable": false,
+      "saved_candidates": []
+    },
+    {
+      "institution_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_053",
+      "source_index": 60,
+      "source_profile": 2,
+      "target_profile": 1,
+      "status": "COMPLETED",
+      "target_profile_size": 40,
+      "target_anchor_indices": [
+        2,
+        39,
+        76
+      ],
+      "target_anchor_count": 3,
+      "candidate_count_evaluated": 66378,
+      "valid_candidate_count": 0,
+      "pareto_candidate_count": 0,
+      "single_model_reachable": false,
+      "saved_candidates": []
+    },
+    {
+      "institution_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_055",
+      "source_index": 20,
+      "source_profile": 2,
+      "target_profile": 1,
+      "status": "COMPLETED",
+      "target_profile_size": 40,
+      "target_anchor_indices": [
+        70,
+        76,
+        39
+      ],
+      "target_anchor_count": 3,
+      "candidate_count_evaluated": 66378,
+      "valid_candidate_count": 0,
+      "pareto_candidate_count": 0,
+      "single_model_reachable": false,
+      "saved_candidates": []
+    },
+    {
+      "institution_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_059",
+      "source_index": 38,
+      "source_profile": 2,
+      "target_profile": 1,
+      "status": "COMPLETED",
+      "target_profile_size": 40,
+      "target_anchor_indices": [
+        76,
+        72,
+        9
+      ],
+      "target_anchor_count": 3,
+      "candidate_count_evaluated": 66378,
+      "valid_candidate_count": 0,
+      "pareto_candidate_count": 0,
+      "single_model_reachable": false,
+      "saved_candidates": []
+    },
+    {
+      "institution_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_060",
+      "source_index": 13,
+      "source_profile": 2,
+      "target_profile": 1,
+      "status": "COMPLETED",
+      "target_profile_size": 40,
+      "target_anchor_indices": [
+        76,
+        39,
+        70
+      ],
+      "target_anchor_count": 3,
+      "candidate_count_evaluated": 66378,
+      "valid_candidate_count": 0,
+      "pareto_candidate_count": 0,
+      "single_model_reachable": false,
+      "saved_candidates": []
+    },
+    {
+      "institution_id": "SYN_S3_DIRECTIONAL_REACHABILITY_R001_074",
+      "source_index": 4,
+      "source_profile": 2,
+      "target_profile": 1,
+      "status": "COMPLETED",
+      "target_profile_size": 40,
+      "target_anchor_indices": [
+        76,
+        70,
+        15
+      ],
+      "target_anchor_count": 3,
+      "candidate_count_evaluated": 66378,
+      "valid_candidate_count": 0,
+      "pareto_candidate_count": 0,
+      "single_model_reachable": false,
+      "saved_candidates": []
+    }
+  ]
+}

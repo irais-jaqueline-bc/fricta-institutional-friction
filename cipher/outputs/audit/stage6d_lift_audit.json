@@ -1,0 +1,41 @@
+{
+  "status": "EXPLORATORY_POST_STAGE6C_CONTEXT_AUDIT",
+  "purpose": "Distinguish high absolute target-profile support from actual counterfactual prediction change relative to each original institution.",
+  "robust_selected_all_have_positive_support_gain": true,
+  "robust_selected_support_gain_quantiles": {
+    "min": 0.21443089430894313,
+    "median": 0.6666666666666666,
+    "max": 0.9298780487804877
+  },
+  "profile_summary": [
+    {
+      "reference_profile": 1,
+      "n_institutions": 10,
+      "robust_n_tau_0.90": 10,
+      "median_baseline_target_support": 0.32215447154471544,
+      "median_selected_candidate_support": 0.991361788617886,
+      "median_support_gain": 0.6666666666666666,
+      "median_conditional_flip_rate": 0.9883869066293983
+    },
+    {
+      "reference_profile": 2,
+      "n_institutions": 9,
+      "robust_n_tau_0.90": 0,
+      "median_baseline_target_support": 0.0010162601626016261,
+      "median_selected_candidate_support": 0.4186991869918699,
+      "median_support_gain": 0.4176829268292683,
+      "median_conditional_flip_rate": 0.41810783316378436
+    }
+  ],
+  "checks": {
+    "all_69_candidates_have_lift_metrics": true,
+    "all_19_institutions_have_selected_candidate_context": true,
+    "exactly_10_primary_robust_institutions": true,
+    "exactly_9_primary_nonrobust_institutions": true,
+    "all_supports_and_flip_rates_in_valid_ranges": true,
+    "stage6c_support_recomputed_from_matrix_matches_summary": true
+  },
+  "interpretation_boundary": "This audit does not alter Stage 6C's frozen robust-validity definition. It contextualizes it by measuring ensemble support gain and member-level source-to-target flips under the same audited inductive rules.",
+  "elapsed_seconds": 16.698384270999668,
+  "gate_status": "PASS_STAGE_6D_LIFT_AUDIT"
+}

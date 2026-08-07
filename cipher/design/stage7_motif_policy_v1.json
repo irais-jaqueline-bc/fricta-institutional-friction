@@ -1,0 +1,41 @@
+{
+  "version": "STAGE7_MOTIF_POLICY_V1",
+  "status": "FROZEN_BEFORE_BOOTSTRAP_AND_RANDOMIZATION",
+  "empirical_scope": {
+    "institutions": 10,
+    "transaction_unit": "one Stage-6C best primary-robust candidate per institution",
+    "equal_institution_weighting": true,
+    "source_profiles_present": [
+      1
+    ],
+    "target_profiles_present": [
+      2
+    ],
+    "scope_mode": "UNIDIRECTIONAL_ROBUST_TRANSITION_MOTIFS"
+  },
+  "frozen_thresholds": {
+    "signed_items": true,
+    "itemset_size_min": 2,
+    "itemset_size_max": 4,
+    "minimum_support_fraction": 0.25,
+    "minimum_support_absolute": 4,
+    "effective_minimum_support_count_real_case": 4,
+    "bootstrap_iterations": 1000,
+    "bootstrap_recurrence_threshold": 0.7,
+    "randomized_collections": 10000,
+    "bh_q_threshold": 0.05
+  },
+  "specificity_constraint": {
+    "real_case_profile_specificity_identifiable": false,
+    "reason_if_not_identifiable": "All primary-robust empirical transactions share the same reference-to-target direction, so real-case profile specificity cannot be estimated separately from transition direction.",
+    "allowed_real_case_claim": "recurrent signed motifs among robust Profile-1-to-Profile-2 diagnostic transitions",
+    "forbidden_claim": "motifs distinguish robustness from source profile in the real sample",
+    "profile_specificity_recovery": "evaluate in synthetic validation scenarios rather than pretending the real sample identifies it"
+  },
+  "stop_rule": "If no itemset survives both bootstrap recurrence >=0.70 and randomized-margin testing with BH q<0.05, remove the empirical motif claim without relaxing thresholds.",
+  "raw_readiness": {
+    "raw_frequent_itemsets": 0,
+    "raw_closed_itemsets": 0
+  },
+  "gate_status": "STOP_STAGE_7_NO_MOTIF_READINESS"
+}

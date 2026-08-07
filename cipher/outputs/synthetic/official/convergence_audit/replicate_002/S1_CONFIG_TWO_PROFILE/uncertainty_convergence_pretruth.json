@@ -1,0 +1,24 @@
+{
+  "applicable": true,
+  "status": "COMPLETED",
+  "ensemble_200": {
+    "ensemble_members": 200,
+    "members_per_family": 50,
+    "minimum_oob_predictions": 29,
+    "median_oob_predictions": 39.0,
+    "certainty_class_counts": {
+      "CORE": 80
+    }
+  },
+  "ensemble_1000": {
+    "ensemble_members": 1000,
+    "members_per_family": 250,
+    "minimum_oob_predictions": 174,
+    "median_oob_predictions": 200.0,
+    "certainty_class_counts": {
+      "CORE": 80
+    }
+  },
+  "normalized_entropy_spearman_200_vs_1000": NaN,
+  "passes_0_95": false
+}

@@ -1,0 +1,9 @@
+{
+  "scenario": "S3_DIRECTIONAL_REACHABILITY",
+  "selected_k": 2,
+  "ari_vs_true_profile": 1.0,
+  "nmi_vs_true_profile": 1.0,
+  "boundary_uncertainty_auc": null,
+  "false_configurational_profile_claim": null,
+  "false_stable_profile_claim": null
+}

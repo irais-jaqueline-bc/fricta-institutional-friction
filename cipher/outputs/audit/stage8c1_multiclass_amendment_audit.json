@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "stage8c_v1_passed": true,
+    "candidate_search_includes_multiclass_k": true,
+    "synthetic_uncertainty_ensemble_is_frozen_at_k2": true,
+    "no_official_synthetic_performance_results_exist": true
+  },
+  "amendment_path": "cipher/design/stage8_evaluator_freeze_v2.json",
+  "amendment_sha256": "48b56a69d1abeb4fcf0424001ca0a2b8e1e91db596f16ae895871e423fc80e7c",
+  "gate_status": "PASS_STAGE_8C1_MULTICLASS_AMENDMENT"
+}

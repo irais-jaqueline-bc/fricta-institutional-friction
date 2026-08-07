@@ -1,0 +1,14 @@
+{
+  "checks": {
+    "stage7a_stop_rule_triggered": true,
+    "policy_matches_stage7a_stop": true,
+    "zero_raw_frequent_itemsets": true,
+    "empty_itemset_artifact_is_consistent_with_stop_rule": true,
+    "zero_raw_closed_itemsets": true,
+    "effective_support_count_was_four": true,
+    "thesis_v2_had_passed": true
+  },
+  "revision_path": "cipher/design/cipher_thesis_revision_v3.json",
+  "revision_sha256": "a801d6897526166289041bfaa77df0fe2462c1e7b51b06853167e1124bb38cad",
+  "gate_status": "PASS_STAGE_7B_MOTIF_RETIREMENT"
+}

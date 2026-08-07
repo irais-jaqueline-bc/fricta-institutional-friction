@@ -1,0 +1,57 @@
+
+=== CIPHER STAGE 6B v2 — WARD SEMANTICS AUDIT ===
+
+Static checks:
+[PASS] manifest_1000
+[PASS] cf_manifest_1000
+[PASS] eligible_984
+[PASS] excluded_16
+[PASS] eligible_family_counts_match
+[PASS] all_matrix_81_rows
+[PASS] oob_matrix_81_rows
+[PASS] all_matrix_1000_member_columns
+[PASS] oob_matrix_1000_member_columns
+[PASS] excluded_file_16
+[PASS] ward_fidelity_500
+Audited 0100/1000 members...
+Audited 0200/1000 members...
+Audited 0300/1000 members...
+Audited 0400/1000 members...
+Audited 0500/1000 members...
+Audited 0600/1000 members...
+Audited 0700/1000 members...
+Audited 0800/1000 members...
+Audited 0900/1000 members...
+Audited 1000/1000 members...
+
+=== ELIGIBLE FAMILY SEMANTICS SUMMARY ===
+
+         family  members  hybrid_all_mismatches  oob_inductive_mismatches  sample_extension_disagreements  sampled_oob_nonmissing_cells  fidelity_mismatches
+      R0_KMEANS      250                      0                         0                               0                             0                    0
+        R0_WARD      244                      0                         0                             192                             0                    0
+R1_PCA85_KMEANS      250                      0                         0                               0                             0                    0
+  R1_PCA85_WARD      240                      0                         0                             182                             0                    0
+
+=== INTERPRETATION OF THE PREVIOUS 449 MISMATCHES ===
+
+Total sample native-vs-inductive disagreements across 1000 members: 449
+Eligible-member sample native-vs-inductive disagreements: 374
+These are expected Ward training-label vs nearest-centroid-extension differences, not failures of the out-of-sample prediction engine.
+
+=== STAGE 6B v2 CHECKS ===
+
+[PASS] all_1000_members_audited
+[PASS] stored_all_matrix_reconstructed_with_hybrid_semantics
+[PASS] all_declared_oob_predictions_match_inductive_rule
+[PASS] oob_matrix_blank_on_sampled_rows
+[PASS] ward_previous_mismatches_localize_exactly_to_sample_extension_disagreements
+[PASS] kmeans_native_and_inductive_rules_agree
+[PASS] all_extension_fidelities_reproduce
+[PASS] all_984_eligible_members_have_exact_oob_inductive_reconstruction
+
+Hybrid ALL mismatch cells: 0
+OOB inductive mismatch cells: 0
+Elapsed seconds: 18.98
+
+GATE STATUS: PASS_STAGE_6B_RECONSTRUCTION_AUDIT_V2
+The out-of-sample prediction engine for all 984 eligible members is exactly reproduced. Stage 6C may begin after review.

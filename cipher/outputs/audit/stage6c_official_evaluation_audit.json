@@ -1,0 +1,35 @@
+{
+  "eligible_ensemble_members": 984,
+  "candidate_rows": 69,
+  "stage5c_reachable_institutions": 19,
+  "primary_tau": 0.9,
+  "sensitivity_taus": [
+    0.8,
+    0.95
+  ],
+  "primary_robustly_reachable_institutions": 10,
+  "primary_conditional_robust_reachability_rate": 0.5263157894736842,
+  "primary_unconditional_81_institution_rate": 0.12345679012345678,
+  "candidate_ensemble_support_quantiles": {
+    "q025": 0.3046747967479675,
+    "q25": 0.366869918699187,
+    "median": 0.7103658536585366,
+    "q75": 0.9888211382113821,
+    "q975": 0.9989837398373984
+  },
+  "elapsed_seconds": 17.707430431999455,
+  "checks": {
+    "all_984_eligible_members_evaluated": true,
+    "all_69_candidates_evaluated": true,
+    "all_support_values_binary_at_member_level": true,
+    "all_candidate_supports_in_unit_interval": true,
+    "all_four_family_supports_present": true,
+    "all_19_institutions_summarized": true,
+    "no_new_candidates_generated": true,
+    "primary_tau_is_frozen_090": true,
+    "sensitivity_taus_are_frozen_080_095": true
+  },
+  "scientific_result_gate": "NONE_PREDECLARED_AFTER_STAGE5E_REVISION",
+  "interpretation": "This stage reports ensemble robustness conditional on the 19 institutions that were exactly reachable under Stage 5C. No minimum robust-reachability percentage is imposed post hoc. Counterfactuals remain diagnostic profile-transition explanations, not causal interventions.",
+  "gate_status": "PASS_STAGE_6C_OFFICIAL_EVALUATION"
+}
