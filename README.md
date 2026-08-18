@@ -94,3 +94,13 @@ CIPHER evaluates robustness using a heterogeneous ensemble of **1,000 perturbed 
 The framework intentionally distinguishes between claims that are **supported, limited, rejected, or not evaluable**, rather than collapsing robustness into a single global validity score.
 
 **Status:** Paper submitted to the **IEEE ICDM 2026 Teen Research Competition** and currently under review.
+
+## Repository Note
+
+This repository has undergone several rounds of restructuring as the research evolved from the original FRICTA framework into the current FRICTA and CIPHER research tracks.
+
+As a result, some directories may currently appear **empty or contain only minimal placeholder files**. In most cases, this does not indicate unfinished work: their original contents were moved, reorganized, consolidated, or replaced as the analytical pipeline and repository architecture evolved.
+
+Some legacy directories have been intentionally preserved to maintain project history, references between earlier versions, and compatibility with previous research documentation.
+
+For the most current implementations and analyses, refer to the active files described in the sections below.
