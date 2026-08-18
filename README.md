@@ -103,4 +103,3 @@ As a result, some directories may currently appear **empty or contain only minim
 
 Some legacy directories have been intentionally preserved to maintain project history, references between earlier versions, and compatibility with previous research documentation.
 
-For the most current implementations and analyses, refer to the active files described in the sections below.
